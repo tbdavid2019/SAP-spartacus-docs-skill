@@ -1,6 +1,6 @@
 # SAP Spartacus Documentation Index
 
-Last Updated: 2026-04-18 18:44:02
+Last Updated: 2026-05-12 06:30:59
 
 This is a comprehensive index of all available SAP Spartacus documentation, organized by category.
 
@@ -110,6 +110,7 @@ This is a comprehensive index of all available SAP Spartacus documentation, orga
 - [Customer Interests](dev/features/customer-interests.md)
 - [Event Service](dev/features/event-service.md)
 - [Express Checkout](dev/features/express-checkout.md)
+- [Federated Login](dev/features/federated-login.md)
 - [Future Stock](dev/features/future-stock.md)
 - [Guest Checkout](dev/features/guest-checkout.md)
 - [Image Zoom](dev/features/image-zoom.md)
