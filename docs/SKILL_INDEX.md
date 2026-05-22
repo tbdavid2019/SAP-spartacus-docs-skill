@@ -1,6 +1,6 @@
 # SAP Spartacus Documentation Index
 
-Last Updated: 2026-05-20 07:34:44
+Last Updated: 2026-05-22 07:35:43
 
 This is a comprehensive index of all available SAP Spartacus documentation, organized by category.
 
@@ -383,6 +383,7 @@ This is a comprehensive index of all available SAP Spartacus documentation, orga
 - [Order Confirmation Scripts (CTA Scripts)](install/integrations/opf-integration/opf-child-pages/3-order-confirmation-scripts.md)
 - [On-site Messaging](install/integrations/opf-integration/opf-child-pages/4-on-site-messaging.md)
 - [Open Payment Framework Global Functions](install/integrations/opf-integration/opf-child-pages/5-opf-global-functions.md)
+- [Gift Card](install/integrations/opf-integration/opf-child-pages/6-giftcard.md)
 
 ## Install > landing-page
 - [Getting Started With Spartacus Libraries](install/landing-page/getting-started.md)
