@@ -89,7 +89,26 @@ if __name__ == "__main__":
     print(f"🔍 Scanning {base_dir}...")
     index_content = generate_index(base_dir)
     
-    with open(output_file, 'w', encoding='utf-8') as f:
-        f.write(index_content)
-        
-    print(f"✅ Generated {output_file}")
+    should_write = True
+    if os.path.exists(output_file):
+        try:
+            with open(output_file, 'r', encoding='utf-8') as f:
+                old_content = f.read()
+            
+            # Normalize timestamp lines to compare content
+            pattern = r'Last Updated: \d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}'
+            old_norm = re.sub(pattern, 'Last Updated: TIMESTAMP', old_content)
+            new_norm = re.sub(pattern, 'Last Updated: TIMESTAMP', index_content)
+            
+            if old_norm == new_norm:
+                print("✨ Index content (excluding timestamp) has not changed. Skipping update to preserve file date.")
+                should_write = False
+        except Exception as e:
+            print(f"⚠️ Error reading old index: {e}")
+            
+    if should_write:
+        with open(output_file, 'w', encoding='utf-8') as f:
+            f.write(index_content)
+        print(f"✅ Generated {output_file}")
+    else:
+        print("⏭️ Skipped writing to SKILL_INDEX.md because there were no changes in documentation index.")
