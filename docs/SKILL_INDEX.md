@@ -1,6 +1,6 @@
 # SAP Spartacus Documentation Index
 
-Last Updated: 2026-06-02 08:19:23
+Last Updated: 2026-06-03 08:46:25
 
 This is a comprehensive index of all available SAP Spartacus documentation, organized by category.
 
@@ -384,7 +384,7 @@ This is a comprehensive index of all available SAP Spartacus documentation, orga
 - [On-site Messaging](install/integrations/opf-integration/opf-child-pages/4-on-site-messaging.md)
 - [Open Payment Framework Global Functions](install/integrations/opf-integration/opf-child-pages/5-opf-global-functions.md)
 - [Gift Card](install/integrations/opf-integration/opf-child-pages/6-giftcard.md)
-- [Tokenisation](install/integrations/opf-integration/opf-child-pages/6-tokenisation.md)
+- [Tokenization](install/integrations/opf-integration/opf-child-pages/6-tokenization.md)
 
 ## Install > landing-page
 - [Getting Started With Spartacus Libraries](install/landing-page/getting-started.md)
