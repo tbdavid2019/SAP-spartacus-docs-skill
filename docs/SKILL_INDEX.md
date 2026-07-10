@@ -1,6 +1,6 @@
 # SAP Spartacus Documentation Index
 
-Last Updated: 2026-07-09 07:27:55
+Last Updated: 2026-07-10 07:25:39
 
 This is a comprehensive index of all available SAP Spartacus documentation, organized by category.
 
@@ -96,6 +96,7 @@ This is a comprehensive index of all available SAP Spartacus documentation, orga
 - [Anonymous Consent](dev/features/anonymous-consent.md)
 - [Applied Promotions](dev/features/applied-promotions.md)
 - [Assisted Service Module](dev/features/asm.md)
+- [Auth Config Initializer](dev/features/auth-config-initializer.md)
 - [B2B Commerce Organization](dev/features/b2b-commerce-organization.md)
 - [B2B Organization User Registration](dev/features/b2b-organization-user-registration.md)
 - [B2B Reorder](dev/features/b2b-reorder.md)
