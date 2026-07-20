@@ -1,6 +1,6 @@
 # SAP Spartacus Documentation Index
 
-Last Updated: 2026-07-19 06:21:58
+Last Updated: 2026-07-20 06:37:10
 
 This is a comprehensive index of all available SAP Spartacus documentation, organized by category.
 
