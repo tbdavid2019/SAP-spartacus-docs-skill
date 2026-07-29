@@ -2,6 +2,8 @@
 title: On-site Messaging
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 On-site messaging is a feature that highlights available financing options on the Product Details page and the cart page. For example, you can display a banner or a button with a financing recommendation, such as splitting the total cart amount into three separate payments.
 
 On-site messaging consists of an HTML chunk that is injected into the Product Details page or the cart page.
@@ -10,7 +12,7 @@ Before enabling on-site messaging in Spartacus, you must first enable the functi
 
 ## Enabling On-Site Messaging
 
-On-site messaging functionality is added to your storefront app when you install the open payment framework library, as described in [Enabling Open Payment Framework in Spartacus](link-to-section-in-1-open-payment-framework-in-spartacus.md).
+On-site messaging functionality is added to your storefront app when you install the open payment framework library, as described in [Enabling Open Payment Framework in Spartacus](https://sap.github.io/spartacus-docs/link-to-section-in-1-open-payment-framework-in-spartacus/).
 
 ### CMS Components
 

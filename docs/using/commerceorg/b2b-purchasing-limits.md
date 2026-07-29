@@ -2,6 +2,8 @@
 title: Purchasing Limits
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Purchasing limits are assigned to individual users or to user groups. When an order that is placed by a buyer is below a limit, the order is automatically allowed to proceed through the seller's purchase flow. If the order surpasses any of the limits, the order is placed, but held until approval is given. If the order is rejected, the order is cancelled.
 
 ***
@@ -38,7 +40,7 @@ A normal scenario might be that a standard approver can approve based on order a
 
    The following is an example:
 
-   <img src="{{ site.baseurl }}/assets/images/commerceorg/spendlimits_1-perorder.png" alt="Creating a Purchase Limit" width="500" border="1px" />
+   <img src="https://sap.github.io/spartacus-docs/assets/images/commerceorg/spendlimits_1-perorder.png" alt="Creating a Purchase Limit" width="500" border="1px" />
 
 3. Click **Save**.
 
@@ -54,7 +56,7 @@ For the purposes of this tutorial, create the following purchase limits:
 
 Assign them all to your root unit. The following is an example:
 
-<img src="{{ site.baseurl }}/assets/images/commerceorg/spendlimits_1-listoflimits.png" alt="List of Limits" width="450" border="1px" />
+<img src="https://sap.github.io/spartacus-docs/assets/images/commerceorg/spendlimits_1-listoflimits.png" alt="List of Limits" width="450" border="1px" />
 
 ## Assigning Purchase Limits
 
@@ -80,7 +82,7 @@ For this example, we'll assign the following:
 
    In the following example, our buyer, John Doe (Customer role) has been assigned both a per-month and a per-order limit:
 
-   <img src="{{ site.baseurl }}/assets/images/commerceorg/spendlimits_2-buyerlimit.png" alt="Buyer Limit" width="450" border="1px" />
+   <img src="https://sap.github.io/spartacus-docs/assets/images/commerceorg/spendlimits_2-buyerlimit.png" alt="Buyer Limit" width="450" border="1px" />
 
 Repeat this process as follows:
 

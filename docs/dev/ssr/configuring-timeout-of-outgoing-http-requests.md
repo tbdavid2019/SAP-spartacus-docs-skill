@@ -2,6 +2,8 @@
 title: Configuring the Timeout of Outgoing HTTP Requests in SSR
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 You can set a timeout for all outgoing HTTP requests, including those sent to the OCC back end. Configuring this timeout is particularly important for Server-Side Rendering (SSR), where long-lasting outgoing requests can destabilize the SSR process if they take too long to return a response, or if they never return a response because of network issues.
 
 When a request times out, the following warning is logged to the console:
@@ -43,12 +45,12 @@ import { HTTP_TIMEOUT_CONFIG } from `@spartacus/core`;
 
 const context = new HttpContext().set(
   HTTP_TIMEOUT_CONFIG,
-  { server: 15_000 } 
+  { server: 15_000 }
 )
 
 return this.httpClient.get('/some/api', { context });
 ```
-  
+
 ## Setting Timeouts for Outgoing Requests in Older Versions of Spartacus
 
 If you are using a version of Spartacus that is older than 6.0, and you wish to add configurable timeouts for outgoing HTTP requests to your application, the [original implementation of the HTTP interceptor that was released in Spartacus 6.0](https://github.com/SAP/spartacus/blob/907d7897dba6add3ce2b56aa194f71596b9afb77/projects/core/src/http/http-timeout/http-timeout.interceptor.ts) may provide you with some ideas and inspiration for adding this feature to your own codebase.

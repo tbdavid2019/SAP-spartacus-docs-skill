@@ -6,11 +6,9 @@ feature:
   cx_version: 1905
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.2 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.2 of the Spartacus libraries.
 
 The Spartacus store locator feature helps customers find brick-and-mortar retail locations. Customers can view a list of all stores, they can search for stores based on their location, or they can search for stores based on a postal code, a town, or an address that the customer provides.
 
@@ -22,7 +20,7 @@ The customer can also search for the nearest stores by entering an address, a to
 
 ## Enabling the Store Locator
 
-You can enable the store locator by installing the `@spartacus/storefinder` feature library. For more information, see [Installing Additional Spartacus Libraries]({{ site.baseurl }}/schematics/#installing-additional-spartacus-libraries).
+You can enable the store locator by installing the `@spartacus/storefinder` feature library. For more information, see [Installing Additional Spartacus Libraries](https://sap.github.io/spartacus-docs/schematics/#installing-additional-spartacus-libraries).
 
 ## Configuring the Store Locator
 

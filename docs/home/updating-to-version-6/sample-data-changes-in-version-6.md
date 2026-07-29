@@ -2,6 +2,8 @@
 title: Changes to Sample Data in Spartacus 6.0
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 ## Checkout Library
 
 The following changes were made to the checkout library sample data in Spartacus 6.0.

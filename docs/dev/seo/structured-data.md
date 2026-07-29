@@ -6,11 +6,9 @@ feature:
   cx_version: n/a
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.3 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.3 of the Spartacus libraries.
 
 Structured data is a standardized way of describing the page content of a website to make it easier for web crawlers and search engines to understand. For example, using HTML alone, an `img` element does not indicate whether the element represents a product or a person. When you use structured data, you provide various data sets to the page to make the content easier for web crawlers to classify. The data sets used in Spartacus are aligned with the standard schemas that are provided by the Schema.org community.
 
@@ -27,7 +25,7 @@ Structured data is a standardized way of describing the page content of a websit
 
 It is possible to use structured data in combination with a tag management system (TMS), but you can also use structured data to add various schemas to your HTML without using a TMS. For example, tag managers have great advantages over tags implemented by a development team, but there can also be certain disadvantages regarding the runtime performance and the governance of tags. Of course, the use of structured data is also optional.
 
-For more information, see [{% assign linkedpage = site.pages | where: "name", "tag-management-system.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/tag-management-system.md %}).
+For more information, see [Tag Management System](../features/tag-management-system.md).
 
 ## Schema Types
 

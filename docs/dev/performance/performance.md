@@ -2,8 +2,10 @@
 title: Performance Optimizations
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 This is a landing page for performance-related topics. This includes the following topics:
 
-- [{% assign linkedpage = site.pages | where: "name", "above-the-fold.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/performance/above-the-fold.md %})
-- [{% assign linkedpage = site.pages | where: "name", "deferred-loading.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/performance/deferred-loading.md %})
-- [{% assign linkedpage = site.pages | where: "name", "performance-best-practices.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/performance/performance-best-practices.md %})
+- [Above-the-Fold Loading](above-the-fold.md)
+- [Deferred Loading](deferred-loading.md)
+- [Performance Best Practices](performance-best-practices.md)

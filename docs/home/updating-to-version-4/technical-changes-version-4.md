@@ -2,6 +2,8 @@
 title: Technical Changes in Spartacus 4.0
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 ***
 
 **Table of Contents**
@@ -65,7 +67,7 @@ You do not need to change anything in places where you use this config, but anyw
 
 It is recommended that you make top-level configuration properties optional, so that you can pass the configuration in multiple chunks, and not in a single place.
 
-For more information on module augmentation in Spartacus, see [{% assign linkedpage = site.pages | where: "name", "type-augmentation.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/type-augmentation.md %}).
+For more information on module augmentation in Spartacus, see [Extending Built-In Models](../../dev/type-augmentation.md).
 
 ## Detailed List of Changes
 
@@ -211,7 +213,7 @@ constructor(
 Spartacus 4.0 introduces the checkout library. The code related to checkout is moved out of `@spartacus/core` and `@spartacus/storefrontlib` and into one of the entry points of the new checkout library.  The checkout library is split into the following entry points:
 
 ```text
-@spartacus/checkout/assets 
+@spartacus/checkout/assets
 The checkout related i18n keys are moved here.
 
 @spartacus/checkout/components
@@ -467,7 +469,7 @@ Imports for these symbols must be updated in custom code.
 | OccCheckoutDeliveryAdapter | @spartacus/core | @spartacus/checkout/occ | - |
 | OccCheckoutPaymentTypeAdapter | @spartacus/core | @spartacus/checkout/occ | - |
 | OccCheckoutPaymentAdapter | @spartacus/core | @spartacus/checkout/occ | - |
-| OccCheckoutReplenishmentOrderAdapter | @spartacus/core | @spartacus/checkout/occ | -  
+| OccCheckoutReplenishmentOrderAdapter | @spartacus/core | @spartacus/checkout/occ | -
 | OccCheckoutAdapter | @spartacus/core | @spartacus/checkout/occ | - |
 | OccReplenishmentOrderFormSerializer | @spartacus/core | @spartacus/checkout/occ | - |
 | CheckoutModule | @spartacus/core | @spartacus/checkout/core | CheckoutCoreModule |
@@ -750,7 +752,7 @@ In release 4.0, a number of modules that grouped feature modules and provided so
 - The `OccModule` was removed from `@spartacus/core`
 - The `EventsModule` was removed from `@spartacus/storefront`
 
-For more information, see [{% assign linkedpage = site.pages | where: "name", "updating-to-version-4.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/home/updating-to-version-4/updating-to-version-4.md %}).
+For more information, see [Updating to Version 4.0](updating-to-version-4.md).
 
 ### ViewConfigModule Removed
 
@@ -758,7 +760,7 @@ For more information, see [{% assign linkedpage = site.pages | where: "name", "u
 
 ### EventService
 
-- The `EventService` now registers the parent of an event as an event. For more information, see [Event Type Inheritance]({{ site.baseurl }}/event-service/#event-type-inheritance).
+- The `EventService` now registers the parent of an event as an event. For more information, see [Event Type Inheritance](https://sap.github.io/spartacus-docs/event-service/#event-type-inheritance).
 
 ### Changes in the Product Configurator Feature Library
 
@@ -978,7 +980,7 @@ The display of the guest checkout button relies on the presence of the `forced` 
 
 ### Product reloading
 
-- The `reload` method was removed from `ProductService`. Instead, use the [reloading triggers]({{ site.baseurl }}/loading-scopes/#reloading-triggers).
+- The `reload` method was removed from `ProductService`. Instead, use the [reloading triggers](https://sap.github.io/spartacus-docs/loading-scopes/#reloading-triggers).
 - The `EventService` from `@spartacus/core` was added as a parameter to the constructor for the `ProductLoadingService`.
 
 ### Product Variants Changes
@@ -1248,7 +1250,7 @@ The following unused keys were removed:
 - `orgUser.messages.deactivateBody`
 - `orgUser.byName`
 - `orgUser.byUnitName`
-  
+
 ### Dependencies Changes
 
 - The `i18next-xhr-backend` peer dependency package was replaced with `i18next-http-backend`.

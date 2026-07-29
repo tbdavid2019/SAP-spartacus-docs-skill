@@ -2,11 +2,9 @@
 title: Contract Termination (Without Assurance)
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 3.0 {{ site.version_note_forTUA }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 3.0 of the TUA Spartacus libraries.
 
 A contract termination is described as a contract being brought to an early end for any number of reasons. The effect of termination is to bring the contract to an end at a certain point and absolve parties of the majority of all ongoing obligations. The Contact Termination feature enables a customer to initiate a contract termination based on rules defined in the accelerator.
 
@@ -38,11 +36,11 @@ An eligible customer wants to terminate an existing and active subscription. The
 1. Navigate to **Account** -> **Subscriptions**. All subscriptions of the logged in customer are displayed.
 1. Click on the header of the active subscription that you want to terminate. For example, *internet_22341 (Fiber Internet)*. The details of the subscription are displayed below the banner with the **Terminate** button.
 
-    <p align="center"><img src="{{ site.baseurl }}/assets/images/telco/1banner-termination-button.png" alt="Banner Termination Button"></p>
+    <p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/1banner-termination-button.png" alt="Banner Termination Button"></p>
 
 -  Click **Terminate** to terminate your active subscription. A confirmation message, *Are you sure you want to terminate your subscription?* is displayed.
 
-<p align="center"><img src="{{ site.baseurl }}/assets/images/telco/confirmation-message.png" alt="Confirmation Message"></p>
+<p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/confirmation-message.png" alt="Confirmation Message"></p>
 
 - Click **Yes**. The cart screen displays the Order Number, date on which termination was initiated, and the status of termination.
 
@@ -54,7 +52,7 @@ If you are eligible as per the configured The [eligibility](https://help.sap.com
 
 **Note** The [eligibility](https://help.sap.com/viewer/c762d9007c5c4f38bafbe4788446983e/2102/en-US/602fadbbb42c40a68750d0dac7deba8a.html) rules automatically determine if you are eligible to terminate one or more of your active and existing subscriptions. If you are not eligible, the **Terminate** button does not display as depicted in the following figure:
 
- <p align="center"><img src="{{ site.baseurl }}/assets/images/telco/No-renewal-eligibility.png" alt="No Renewal Eligibility"></p>
+ <p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/No-renewal-eligibility.png" alt="No Renewal Eligibility"></p>
 
 ## Frontend and Backend Dependencies
 

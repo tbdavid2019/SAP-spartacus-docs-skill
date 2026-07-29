@@ -2,6 +2,8 @@
 title: Form Submission
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 This page explains how to persist form-data content in a database when the submission of a form is triggered from the "outside".
 
 ***
@@ -27,7 +29,7 @@ In the FSA SPA application, the second approach has been used to implement form 
 
 ## Executing Form Data Submission
 
-The idea is to create a BehaviorSubject to pass values inside. Every time the stream changes, the observer will know about it and execute the callback function (update/save of formData). 
+The idea is to create a BehaviorSubject to pass values inside. Every time the stream changes, the observer will know about it and execute the callback function (update/save of formData).
 
 We created a *submittedForm* BehaviorSubject in form data service and a method **submit()** which is used to add formData to the BehaviorSubject stream.
 
@@ -141,4 +143,4 @@ export class FNOLNavigationComponent implements OnInit, OnDestroy {
 
 The following diagram illustrates an example of a form submission flow:
 
-![Form Submission Flow Diagram]({{ site.baseurl }}/assets/images/fsa/form_submission_flow.png)
+![Form Submission Flow Diagram](https://sap.github.io/spartacus-docs/assets/images/fsa/form_submission_flow.png)

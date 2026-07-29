@@ -6,11 +6,9 @@ feature:
     cx_version: 2005
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 4.1 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 4.1 of the Spartacus libraries.
 
 When inventory display is enabled on a Spartacus B2B site, it allows sellers to control the maximum stock displayed for a given category or base site. For example, if there are 200 units of an item in stock, and B2B Inventory Display for the site is set to `25`, then "25 in stock" is displayed, regardless of the actual stock number. For more information, see [B2B Inventory Display](https://help.sap.com/viewer/4c33bf189ab9409e84e589295c36d96e/latest/en-US/8ac35e1d866910148876ef95adde0c60.html) on the SAP Help Portal.
 
@@ -37,7 +35,7 @@ provideConfig(<CmsConfig>{
 }),
 ```
 
-For more information on providing a configuration, see [provideConfig]({{ site.baseurl }}/global-configuration-in-spartacus/#provideconfig).
+For more information on providing a configuration, see [provideConfig](https://sap.github.io/spartacus-docs/global-configuration-in-spartacus/#provideconfig).
 
 **Note:** Inventory display is disabled by default.
 

@@ -6,11 +6,9 @@ feature:
   cx_version: 1905
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 2.1 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 2.1 of the Spartacus libraries.
 
 The directionality feature provides support for bidirectional text and layout. You can configure Spartacus to use a left-to-right (LTR) orientation, or a right-to-left (RTL) orientation.
 
@@ -29,7 +27,7 @@ In Spartacus, the direction of the UI reflects the active language, so that dire
 
 ## Breaking Changes
 
-The changes made to the DOM and CSS are considered breaking changes, so the directionality feature can only be used if you enable it with the 2.1 feature flag and the 2.1 CSS version. For more information about the CSS version, see [Style Versioning]({{ site.baseurl }}/css-architecture/#style-versioning) in CSS Architecture.
+The changes made to the DOM and CSS are considered breaking changes, so the directionality feature can only be used if you enable it with the 2.1 feature flag and the 2.1 CSS version. For more information about the CSS version, see [Style Versioning](https://sap.github.io/spartacus-docs/css-architecture/#style-versioning) in CSS Architecture.
 
 ## Configuring Directionality
 
@@ -58,7 +56,7 @@ ConfigModule.withConfig({
 } as DirectionConfig),
 ```
 
-For more information on configuration, see [{% assign linkedpage = site.pages | where: "name", "global-configuration-in-spartacus.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/global-configuration-in-spartacus.md %}).
+For more information on configuration, see [Global Configuration in Spartacus](../global-configuration-in-spartacus.md).
 
 ## Implementation Details
 

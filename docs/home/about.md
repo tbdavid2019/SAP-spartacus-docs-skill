@@ -2,6 +2,8 @@
 title: About Spartacus
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Spartacus is a lean, Angular-based JavaScript storefront for SAP Commerce Cloud. Spartacus talks to SAP Commerce Cloud exclusively through the Commerce REST API.
 
 Spartacus is also an open source project. You can view the Spartacus source code in this [GitHub repository](https://github.com/SAP/spartacus).
@@ -28,7 +30,7 @@ Spartacus is on a journey to be fully compliant with the Progressive Web Applica
 
 Spartacus is open source. It will be continually developed by the SAP Commerce Cloud team, but we are very keen to welcome contributors and to foster an inclusive, active development community for Spartacus.
 
-See [Contributing to the Spartacus Storefront]({{ site.baseurl }}{% link _pages/contributing/contributing-to-the-spartacus-storefront.md %}) for more information.
+See [Contributing to the Spartacus Storefront](../contributing/contributing-to-the-spartacus-storefront.md) for more information.
 
 ## Technology
 
@@ -59,7 +61,7 @@ Your Angular development environment should include the following:
 
 For the back end, SAP Commerce Cloud version 2105 or higher is required.
 
-**Note:** Some Spartacus features require API endpoints that are only available in newer versions of SAP Commerce Cloud. For more information, see [Feature Compatibility]({{ site.baseurl }}{% link _pages/home/feature-release-versions.md %}).
+**Note:** Some Spartacus features require API endpoints that are only available in newer versions of SAP Commerce Cloud. For more information, see [Feature Compatibility](feature-release-versions.md).
 
 ## Download and Installation
 
@@ -67,7 +69,7 @@ To get up and running with Spartacus, the recommended approach is to build your 
 
 Spartacus currently can only be used with a SAP Commerce Cloud instance through Commerce APIs.
 
-For complete setup instructions, see the [Building the Spartacus Storefront from Libraries]({{ site.baseurl }}{% link _pages/install/frontend/building-the-spartacus-storefront-from-libraries.md %}) guide.
+For complete setup instructions, see the [Building the Spartacus Storefront from Libraries](../install/frontend/building-the-spartacus-storefront-from-libraries.md) guide.
 
 ## Customizing and Extending Spartacus
 
@@ -90,7 +92,7 @@ You can get support for Spartacus in the following ways:
 Team Spartacus welcomes feedback, ideas, requests, and especially code contributions.
 
 - Post comments to our feedback channel in our [Slack](https://join.slack.com/t/spartacus-storefront/shared_invite/zt-jekftqo0-HP6xt6IF~ffVB2cGG66fcQ) workspace.
-- Read [Contributing to the Spartacus Storefront]({{ site.baseurl }}{% link _pages/contributing/contributing-to-the-spartacus-storefront.md %}) to learn how to:
+- Read [Contributing to the Spartacus Storefront](../contributing/contributing-to-the-spartacus-storefront.md) to learn how to:
   - Help others
   - Report an issue
   - Contribute code to Spartacus

@@ -2,6 +2,8 @@
 title: Tokenization
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Tokenization is an OPF-based feature that enables customers to save payment cards, reuse them during checkout, and manage saved cards in **My Account**.
 
 Tokenization supports two key flows:
@@ -21,13 +23,13 @@ Checkout tokenization is outlet-driven, not CMS-driven. OPF injects tokenization
 
 ### Rendered Elements
 
-**Saved cards payment option (radio button) and heading**  
+**Saved cards payment option (radio button) and heading**
  Displayed when saved cards exist.
 
-**Saved cards list and actions**  
+**Saved cards list and actions**
  Displays tokenised cards and allows actions such as selecting a card for payment and setting default.
 
-**New payment heading**  
+**New payment heading**
  Separates the saved-cards area from the new-payment area.
 
 ### Key Behavior

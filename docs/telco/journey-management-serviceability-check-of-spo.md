@@ -2,11 +2,9 @@
 title: Journey Management - Serviceability
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 3.0 {{ site.version_note_forTUA }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 3.0 of the TUA Spartacus libraries.
 
 The feature enables customers to confirm the availability (serviceability) of product offerings at the specified address before placing an order, so that customers can place orders only for product offerings that are available (serviceable) at the specified address. The feature enhances customer experience as the customers can compare different product offerings, which are available at the specified address before placing an order.
 
@@ -46,21 +44,21 @@ For refer different Business Scenarios, see [Serviceabiity Checklist](https://he
 
 This feature is enabled on the advertisement banner, by providing the **CHECK AVAILABILITY** button to check the availability of the single or multiple product offerings, which require a serviceability check as per the journey checklist configuration.
 
-<p align="center"><img src="{{ site.baseurl }}/assets/images/telco/banner.png" alt="Banner"></p>
+<p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/banner.png" alt="Banner"></p>
 
  When you click **CHECK AVAILABILITY** button on the banner, the *Check Availability* screen is displayed to validate the provided site address:
 
- <p align="center"><img src="{{ site.baseurl }}/assets/images/telco/check-availability.png" alt="Check Availability"></p>
- 
+ <p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/check-availability.png" alt="Check Availability"></p>
+
  If the selected product offering is serviceable at the provided site address, the following screen is displayed to confirm that the site address can be serviced.
 
- <p align="center"><img src="{{ site.baseurl }}/assets/images/telco/availability-successful.png" alt="Availability Successful"></p>
+ <p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/availability-successful.png" alt="Availability Successful"></p>
 
 If the selected product offering is not serviceable at the provided site address, an information message: *The selected product offering is currently unavailable at the provided address. Please provide a different address to proceed*  is displayed.
 
 To check the serviceability (availability) of a single or multiple product offerings at a specified address, click the **BROADBAND** menu and then click the **CHANGE ADDRESS** button.
 
-<p align="center"><img src="{{ site.baseurl }}/assets/images/telco/change-address.png" alt="Change Address Button"></p>
+<p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/change-address.png" alt="Change Address Button"></p>
 
 ## Frontend and Backend Dependencies
 

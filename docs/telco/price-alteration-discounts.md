@@ -2,11 +2,9 @@
 title: Pricing - Price Alteration Discounts
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 2.0 {{ site.version_note_forTUA }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 2.0 of the TUA Spartacus libraries.
 
 The Price Alterations in the form of Discounts works on top of the Composite Pricing data model and enables the ability to offer fixed-price and percentage discounts at any level in the composite price structure, and for any type of charge including one-time charges, recurring charges, and usage-based charges. With price alteration - discounts, customers can see discounts upfront before placing their order. For more information, see [Price Alteration Discounts](https://help.sap.com/viewer/32f0086927f44c9ab1199f1dab8833cd/2007/en-US/61b21155624e4a498632964bc566e1eb.html) in the TUA Help portal.
 
@@ -36,7 +34,7 @@ Customers browsing the storefront want to view detailed pricing information of a
 
 The following figure illustrates the hierarchical structure of the price alteration discounts for Signature Unlimited Plan that is configured by the Administrator in the backoffice as an example.
 
-<p align="center"><img src="{{ site.baseurl }}/assets/images/telco/price-alteration-discounts.png" alt="Price Alteration Discounts"></p>
+<p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/price-alteration-discounts.png" alt="Price Alteration Discounts"></p>
 
 ## Changes Implemented
 
@@ -150,6 +148,6 @@ For further reading, see the following topics in the TUA Help portal.
 
 - [Price Alterations](https://help.sap.com/viewer/32f0086927f44c9ab1199f1dab8833cd/2011/en-US/8863e0400d5448a480c1d330826b92dd.html).
 - [Creating Price Row for a Price Context](https://help.sap.com/viewer/32f0086927f44c9ab1199f1dab8833cd/2011/en-US/edd790667fd54960a216646c85deb5a7.html).
-- [Pricing - Composite Pricing]({{ site.baseurl }}{% link _pages/telco/composite-pricing.md %})
+- [Pricing - Composite Pricing](composite-pricing.md)
 - [TUA APIs Documentation](https://help.sap.com/viewer/f59b0ac006d746caaa5fb599b4270151/2011/en-US/52cf34e46ce34672bc3e47bdabcbc838.html).
 - [Making Components Visible](https://help.sap.com/viewer/9d346683b0084da2938be8a285c0c27a/2005/en-US/1cea3b2cb3334fc085dda9cc070ad6ac.html).

@@ -2,7 +2,9 @@
 title: Building the Spartacus Storefront Using 5.x Libraries
 ---
 
-The following instructions describe how to build a storefront application, for both B2C (Electronics, Apparel) and B2B (Powertools) sample stores. If you are building Spartacus from source, see [{% assign linkedpage = site.pages | where: "name", "contributor-setup.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/contributing/contributor-setup.md %}).
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+The following instructions describe how to build a storefront application, for both B2C (Electronics, Apparel) and B2B (Powertools) sample stores. If you are building Spartacus from source, see [Contributor Setup](../../contributing/contributor-setup.md).
 
 ***
 
@@ -28,19 +30,24 @@ With the release of Spartacus 5.0, the hosting service of SAP Commerce Cloud can
 
 ## Prerequisites
 
-If you are using a version of SAP Commerce Cloud that is older than 2211, you will need the `webApplicationInjector.js` file that ships with your version of SAP Commerce Cloud. For more information, see [Updating the Web Application Injector]({{ site.baseurl }}{% link _pages/install/frontend/building-the-spartacus-storefront-from-libraries-5-x.md %}#updating-the-web-application-injector).
+If you are using a version of SAP Commerce Cloud that is older than 2211, you will need the `webApplicationInjector.js` file that ships with your version of SAP Commerce Cloud. For more information, see [Updating the Web Application Injector](building-the-spartacus-storefront-from-libraries-5-x.md#updating-the-web-application-injector).
 
 ## Front End Development Requirements
 
-{% include docs/frontend_requirements.html %}
+<p>Your Angular development environment should include the following:</p>
+<ul>
+    <li><a href="https://angular.io/">Angular CLI:</a> Version <strong>14.2.3</strong> or newer.</li>
+    <li><a href="https://nodejs.org/">Node.js:</a> Version <strong>14.15</strong> or newer (but <strong>less than</strong> version 15), or <strong>16.10</strong> or newer.</li>
+    <li><a href="https://npmjs.org/">npm:</a> Version <strong>8.0</strong> or newer.</li>
+</ul>
 
 ## Back End Server Requirements
 
-Spartacus uses SAP Commerce Cloud for its back end and makes use of the sample data. Spartacus can only be used with SAP Commerce Cloud 2105 or newer; the latest release is recommended. The difference between releases is in the APIs and features available. Newer releases of SAP Commerce Cloud contain new OCC APIs that enable the use of new features. For more information on which back end releases contain which APIs, see [{% assign linkedpage = site.pages | where: "name", "feature-release-versions.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/home/feature-release-versions.md %}).
+Spartacus uses SAP Commerce Cloud for its back end and makes use of the sample data. Spartacus can only be used with SAP Commerce Cloud 2105 or newer; the latest release is recommended. The difference between releases is in the APIs and features available. Newer releases of SAP Commerce Cloud contain new OCC APIs that enable the use of new features. For more information on which back end releases contain which APIs, see [Feature Compatibility](../../home/feature-release-versions.md).
 
 No matter the version, the latest patch is required, as important fixes are often added that affect Spartacus.
 
-For more information, see [{% assign linkedpage = site.pages | where: "name", "installing-sap-commerce-cloud.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/backend/installing-sap-commerce-cloud.md %}).
+For more information, see [Installing SAP Commerce Cloud for use with Spartacus](../backend/installing-sap-commerce-cloud.md).
 
 ## Creating a New Angular App
 
@@ -89,7 +96,7 @@ You can now proceed to [Spartacus Project Setup](#spartacus-project-setup).
 
 The easiest way to start a new project is to use Spartacus schematics to quickly set up your application.
 
-For a full list of available parameters, see [{% assign linkedpage = site.pages | where: "name", "schematics.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/schematics.md %}).
+For a full list of available parameters, see [Schematics](../schematics.md).
 
 ## Setting Up Your Project Using Schematics
 
@@ -113,7 +120,7 @@ When you run this command, you are asked to choose which features you would like
 - To install the latest "next" release, you can add `@next` at the end of the command.
 - To install the latest release candidate, you can add `@rc` at the end of the command.
 - To verify what versions of Spartacus libraries were installed, open `package.json` and look for `@spartacus`.
-- To bypass the schematics prompts and install Spartacus with a predefined set of features, you can use the `--no-interactive` flag. For more information, see [Adding Spartacus Core Libraries and Features to Your Angular Project]({{ site.baseurl }}/schematics/#adding-spartacus-core-libraries-and-features-to-your-angular-project).
+- To bypass the schematics prompts and install Spartacus with a predefined set of features, you can use the `--no-interactive` flag. For more information, see [Adding Spartacus Core Libraries and Features to Your Angular Project](https://sap.github.io/spartacus-docs/schematics/#adding-spartacus-core-libraries-and-features-to-your-angular-project).
 - With each release of Spartacus, existing features are moved out of the core libraries and into their own dedicated feature libraries. With time, the core libraries will shrink as features are extracted to their own, separate packages.
 
 ## Installing Dependencies
@@ -148,7 +155,7 @@ For example, check:
      ```
 
   - If using Powertools, add `powertools-spa` to the list in `baseSite`.
-  
+
 ## Updating the Web Application Injector
 
 For Spartacus to work with SmartEdit, your Spartacus application needs to use the `webApplicationInjector.js` file that is shipped with the version of SAP Commerce Cloud that you are using. In Spartacus 5.0, the `webApplicationInjector.js` file has been updated to work with SAP Commerce Cloud 2211. If you are using SAP Commerce Cloud 2211, then no action is required. However, if you are using an older version of SAP Commerce Cloud, then you need to replace the `webApplicationInjector.js` file in your Spartacus application with the `webApplicationInjector.js` file that is included with your version of SAP Commerce Cloud. For more information, see [Web Application Injector](https://help.sap.com/docs/SAP_COMMERCE_CLOUD_PUBLIC_CLOUD/e1391e5265574bfbb56ca4c0573ba1dc/e9340d1d3d3249849ff154731277069a.html).

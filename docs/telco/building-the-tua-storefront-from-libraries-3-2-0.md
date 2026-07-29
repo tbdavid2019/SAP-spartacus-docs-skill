@@ -2,9 +2,11 @@
 title: Building the TUA Spartacus Storefront Using 3.2 Libraries
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The following instructions describe how to build a TUA storefront application using published TUA Spartacus 3.x libraries.
 
-**Note:** If you are building TUA Spartacus from source, see [Contributor Setup]({{ site.baseurl }}{% link _pages/contributing/contributor-setup.md %}).
+**Note:** If you are building TUA Spartacus from source, see [Contributor Setup](../contributing/contributor-setup.md).
 
 ## Prerequisites
 
@@ -43,7 +45,7 @@ TUA Spartacus uses SAP Commerce Cloud and Telco & Utilities Accelerator for its 
 - SAP Commerce Cloud version: Release 2011 (latest patch is recommended).
 - Telco & Utilities Accelerator version: Release 2108 (latest patch) is required.
 
-For more information, see [Installing SAP Commerce Cloud for use with TUA Spartacus]({{ site.baseurl }}{% link _pages/telco/installing-sap-commerce-for-tua-spartacus.md %}).
+For more information, see [Installing SAP Commerce Cloud for use with TUA Spartacus](installing-sap-commerce-for-tua-spartacus.md).
 
 ## Creating a New Angular App
 
@@ -251,7 +253,7 @@ The dependencies in this procedure are required by the TUA Spartacus storefront.
     })
     ],
     providers: [
-    
+
     provideConfig(<CmsConfig>{
         featureModules: {
         organizationAdministration: {
@@ -295,7 +297,7 @@ The dependencies in this procedure are required by the TUA Spartacus storefront.
    ```html
    <cx-storefront>Loading...</cx-storefront>
    ```
-  
+
 3. Open `mystore/package.json` using a text editor.
 
 4. Add the following dependencies to the end of the `dependencies` section of `package.json`.
@@ -363,7 +365,7 @@ The dependencies in this procedure are required by the TUA Spartacus storefront.
 
 7. Add the following import in the `/mystore/src/polyfills.ts` file:
 
-    For Telco, Utilities and Media: 
+    For Telco, Utilities and Media:
    ```bash
    import '@angular/localize/init';
    import 'zone.js/dist/zone';
@@ -379,13 +381,13 @@ The dependencies in this procedure are required by the TUA Spartacus storefront.
    ```bash
    yarn install
    ```
-  
+
 9. Start the angular client app. From the terminal window, within `mystore` start the application by running the following command:
 
    ```bash
    yarn start
    ```
-  
+
 10. Make sure your backend server is up and running (SAP Commerce with TUA). When the backend server is properly started, point your browser to http://localhost:4200/telcospa/en/USD/.
 
 11. Your client application is accessible at the following locations in your local environment:
@@ -434,7 +436,7 @@ To start your TUA Spartacus storefront, enter the following command from `mystor
    ```bash
 yarn start
    ```
-  
+
 When the app server is properly started, point your browser to http://localhost:4200.
 
 Or, to start your TUA Spartacus storefront securely, enter the following command:
@@ -442,5 +444,5 @@ Or, to start your TUA Spartacus storefront securely, enter the following command
    ```bash
 yarn start --ssl
    ```
-  
+
 Then point your browser to `https://localhost:4200`.

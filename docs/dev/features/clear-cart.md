@@ -6,11 +6,9 @@ feature:
   cx_version: 1905
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 5.0 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 5.0 of the Spartacus libraries.
 
 The clear cart feature allows users to quickly clear their active shopping cart. This feature works for both registered users and anonymous users.
 
@@ -38,9 +36,9 @@ $contentCatalog=powertools-spaContentCatalog
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
 ```
 
-For more information about the `spartacussampledata` extension, see [{% assign linkedpage = site.pages | where: "name", "spartacussampledata-extension.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/spartacussampledata-extension.md %}).
+For more information about the `spartacussampledata` extension, see [Spartacus Sample Data Extension](../../install/spartacussampledata-extension.md).
 
-For more information about installing libraries, see [Installing Additional Spartacus Libraries]({{ site.baseurl }}/schematics/#installing-additional-spartacus-libraries).
+For more information about installing libraries, see [Installing Additional Spartacus Libraries](https://sap.github.io/spartacus-docs/schematics/#installing-additional-spartacus-libraries).
 
 ### Adding the Clear Cart CMS Component Manually
 

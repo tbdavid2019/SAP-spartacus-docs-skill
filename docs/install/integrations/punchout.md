@@ -2,6 +2,8 @@
 title: B2B PunchOut Integration
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 B2B PunchOut allows a buyer to shop a supplier's online catalog and save the items that have been selected for purchase as a requisition in the buyer's procurement system.
 
 The following sections describe how to enable, configure and customize B2B PunchOut.

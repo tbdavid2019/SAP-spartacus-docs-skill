@@ -2,7 +2,9 @@
 title: Installing SAP Commerce Cloud for Use with FSA Spartacus 4.0
 ---
 
-The following instructions describe how to install and configure SAP Commerce (release 2105) with Financial Services Accelerator (release 2202) for use with FSA Spartacus storefront. 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+The following instructions describe how to install and configure SAP Commerce (release 2105) with Financial Services Accelerator (release 2202) for use with FSA Spartacus storefront.
 In these instructions, SAP Commerce and Financial Services Accelerator are installed on your local computer, so localhost is used in the browser URLs.
 
 The installation procedure includes steps for installing and using *financial_spa* and *financial_spa_integrations* recipes that make use of the FSA Spartacus Sample Data (*financialspastore*), but you can use your own sample data or recipe as long as it includes the *cmsocc*, *commercewebservices*, *acceleratorocc* extensions and the FSA module.
@@ -27,7 +29,7 @@ Summary:
 
 ### Step 1: Setting up SAP Commerce with Financial Services Accelerator
 
-Some steps in this procedure derive from the documentation for installing SAP Commerce using recipes. 
+Some steps in this procedure derive from the documentation for installing SAP Commerce using recipes.
 For more information, see [Installing SAP Commerce Using Installer Recipes](https://help.sap.com/viewer/a74589c3a81a4a95bf51d87258c0ab15/latest/en-US/8c46c266866910149666a0fe4caeee4e.html) on the SAP Help Portal.
 
 1. Unzip the SAP Commerce and Financial Services Accelerator zip archives.
@@ -36,7 +38,7 @@ For more information, see [Installing SAP Commerce Using Installer Recipes](http
 
 2. In the "sap-commerce-folder/installer/recipes" folder, you should be able to see the financial_spa and financial_spa_integrations recipes.
 
-   **Note**: The procedure for installing the *financial_spa_integrations* recipe is exactly the same as for the *financial_spa* recipe. 
+   **Note**: The procedure for installing the *financial_spa_integrations* recipe is exactly the same as for the *financial_spa* recipe.
    The *financial_spa_integrations* recipe is used for installing SAP for Insurance integrations with FSA Storefront.
 
 3. In the financial_spa recipe folder, the `build.gradle` file should have the following content:
@@ -44,24 +46,24 @@ For more information, see [Installing SAP Commerce Using Installer Recipes](http
     ```typescript
     apply plugin: 'installer-platform-plugin'
     apply plugin: 'installer-addon2-plugin'
-    
+
     def pl = platform {
         localProperties {
             property 'storefront.show.debug.info', 'false'
         }
-    
+
         extensions {
             extName 'financialspastore'
             extName 'financialprocess'
             extName 'financialwebservices'
             extName 'financialb2bocc'
             extName 'financialb2bbackoffice'
-    
+
             extName 'backofficesolrsearch'
             extName 'configurablebundlebackoffice'
             extName 'solrfacetsearchbackoffice'
             extName 'solrserver'
-    
+
             extName 'xyformsbackoffice'
             extName 'adaptivesearchsolr'
             extName 'adaptivesearchbackoffice'
@@ -70,14 +72,14 @@ For more information, see [Installing SAP Commerce Using Installer Recipes](http
             extName 'promotionenginebackoffice'
             extName 'rulebuilderbackoffice'
             extName 'customercouponbackoffice'
-    
+
             extName 'assistedservicewebservices'
-    
+
             extName 'yacceleratorfulfilmentprocess'
             extName 'yacceleratorcore'
-   
+
             extName 'promotionengineservices'
-    
+
             extName 'cmsocc'
             extName 'customercouponocc'
             extName 'acceleratorocc'
@@ -92,41 +94,41 @@ For more information, see [Installing SAP Commerce Using Installer Recipes](http
             extName 'pcmbackoffice'
             extName 'subscriptionbackoffice'
         }
-    
+
         addons {
         }
     }
-    
+
     task setup {
         doLast {
             pl.setup()
         }
     }
-    
+
     task buildSystem(dependsOn: setup) {
         doLast {
             pl.build()
         }
     }
-    
+
     task initialize(dependsOn: buildSystem) {
         doLast {
             pl.initialize()
         }
     }
-    
+
     task start {
         doLast {
             pl.start()
         }
     }
-    
+
     task startInBackground {
         doLast {
             pl.startInBackground()
         }
     }
-    
+
     task stopInBackground {
         doLast {
             pl.stopInBackground()
@@ -212,7 +214,7 @@ You can verify that the OAuth client has been successfully defined with the foll
 curl -k -d "client_id=mobile_android&client_secret=secret&grant_type=client_credentials" -X POST https://localhost:9002/authorizationserver/oauth/token
 ```
 
-The `curl` command sends a POST request for an access token, using the client ID and password that you added to the back end. 
+The `curl` command sends a POST request for an access token, using the client ID and password that you added to the back end.
 The command should return something similar to the following:
 
 ```typescript
@@ -226,9 +228,9 @@ The command should return something similar to the following:
 
 ### Step 3: Configuring CORS
 
-CORS (Cross-Origin Resource Sharing) defines a way for a browser and a server to decide which cross-origin requests for restricted resources can or cannot be allowed. 
-Certain FSA Spartacus functionalities, such as checkout and consent management, may not work properly if the CORS OCC REST API settings are not configured properly in SAP Commerce. 
-You can add these settings using the Hybris Administration Console. 
+CORS (Cross-Origin Resource Sharing) defines a way for a browser and a server to decide which cross-origin requests for restricted resources can or cannot be allowed.
+Certain FSA Spartacus functionalities, such as checkout and consent management, may not work properly if the CORS OCC REST API settings are not configured properly in SAP Commerce.
+You can add these settings using the Hybris Administration Console.
 Hover your mouse over the **Platform** tab, click **Configuration**, then update the CORS settings.
 
 To configure CORS settings for OCC REST APIs, add the following to your SAP Commerce configuration (the `local.properties` file of your config folder):
@@ -245,9 +247,9 @@ corsfilter.acceleratorservices.allowedHeaders=origin content-type accept authori
 corsfilter.acceleratorservices.exposedHeaders=x-anonymous-consents
 ```
 
-**Note**: The x-anonymous-consents custom header is included in the above example, but it can be removed if you plan to disable the anonymous consent feature. 
-However, do not remove this header if you do not plan to disable the anonymous consent feature. 
-For more information, see [Anonymous Consent]({{ site.baseurl }}{% link _pages/dev/features/anonymous-consent.md %}).
+**Note**: The x-anonymous-consents custom header is included in the above example, but it can be removed if you plan to disable the anonymous consent feature.
+However, do not remove this header if you do not plan to disable the anonymous consent feature.
+For more information, see [Anonymous Consent](../../dev/features/anonymous-consent.md).
 
 ### Step 4: Update system and user credentials (optional)
 
@@ -257,15 +259,15 @@ For more information, see [Setting Passwords for Default Users](https://help.sap
 
 **All Done! You can now start FSA Spartacus!**
 
-After you have configured SAP Commerce to accept OCC REST API calls, you can set up and start your storefront. 
-See [Building FSA Spartacus storefront from 4.0 libraries]({{ site.baseurl }}{% link _pages/fsa/install/building-the-fsa-storefront-from-libraries-4-0.md %}) for more information.
+After you have configured SAP Commerce to accept OCC REST API calls, you can set up and start your storefront.
+See [Building FSA Spartacus storefront from 4.0 libraries](building-the-fsa-storefront-from-libraries-4-0.md) for more information.
 
 ## Alternate Method for Setting the SAP Commerce Admin Password
 
 Instead of including the admin password in every install command, you can create a configuration file.
 
 1. Create a file named custom.properties inside the installer/customconfig folder of your SAP Commerce folder.
-2. Add the following line: `initialpassword.admin=Y0urFav0r!tePassw0rd`. 
+2. Add the following line: `initialpassword.admin=Y0urFav0r!tePassw0rd`.
 3. Replace `Y0urFav0r!tePassw0rd` with the password you want to use.
 4. Save the file.
 
@@ -274,12 +276,12 @@ Next time you run the recipe install command, the settings inside custom.propert
 ## CORS Settings
 
 - CORS settings **are very important for security**. We strongly recommend that a professional SAP Commerce Cloud administrator reviews these settings to suit your requirements, as the sample properties should not be used for production servers.
-- CORS (Cross-Origin Resource Sharing) defines a way for a browser and a server to decide which cross-origin requests for restricted resources can or cannot be allowed. 
+- CORS (Cross-Origin Resource Sharing) defines a way for a browser and a server to decide which cross-origin requests for restricted resources can or cannot be allowed.
 Certain Spartacus functionalities, such as checkout and consent management, may not work properly if the CORS OCC REST API settings are not configured properly in SAP Commerce Cloud.
-- You can add these settings using the Hybris Administration Console. 
+- You can add these settings using the Hybris Administration Console.
 Hover your mouse over the **Platform** tab, click **Configuration**, then update the CORS settings.
-- For information on Spartacus and CORS settings, see [Cross-Origin Resource Sharing]({{ site.baseurl }}{% link _pages/install/cors.md %}).
-- Several other Spartacus features also require additional CORS settings. 
+- For information on Spartacus and CORS settings, see [Cross-Origin Resource Sharing](../../install/cors.md).
+- Several other Spartacus features also require additional CORS settings.
 For more information about CORS, see the [ycommercewebservices Extension](https://help.sap.com/viewer/9d346683b0084da2938be8a285c0c27a/latest/en-US/8c91f3a486691014b085fb11c44412ff.html) on the SAP Help Portal.
 
 ## Troubleshooting

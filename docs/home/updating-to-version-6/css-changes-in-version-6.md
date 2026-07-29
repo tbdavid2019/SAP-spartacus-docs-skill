@@ -2,6 +2,8 @@
 title: Changes to Styles in Spartacus 6.0
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The following styling changes were in made in Spartacus 6.0.
 
 ## Changes to Styles in the ASM Feature Library

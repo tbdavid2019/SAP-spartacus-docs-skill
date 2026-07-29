@@ -2,6 +2,8 @@
 title: Gift Card
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The open payment framework (OPF) gift card feature enables customers to use one or more gift cards as a payment method during checkout. Within OPF, gift cards are categorized as a “stored value payment” type.
 
 Customers can apply a gift card by entering the card number and PIN, allowing the gift card balance to be used toward the cart total. If the available balance fully covers the order amount, the order can be completed without adding any other payment method.
@@ -10,10 +12,10 @@ Customers can apply a gift card by entering the card number and PIN, allowing th
 
 The feature supports the following checkout flows:
 
-1. **Checkout with Gift Card Only**  
+1. **Checkout with Gift Card Only**
    Customers can apply one or more gift cards to reduce the cart total. If the total amount is fully covered by the gift card balance, the order can be completed without selecting any additional payment method.
 
-2. **Checkout with Gift Card and Other Payment Methods**  
+2. **Checkout with Gift Card and Other Payment Methods**
    If the applied gift card balance does not fully cover the cart total, an additional payment method is required to complete the purchase.
 
 ## Enabling Gift Card in Spartacus
@@ -79,7 +81,7 @@ The gift card feature emits this event reactively whenever `opfGiftCardSummary.g
 
 1. **Gift Card Operations**: Apply and remove actions trigger cart reload on success
 2. **Add Gift Card Button**: Displayed based on `applyGiftCard` availability in `cart.availableOperations`
-3. **Form Auto-Close**: The gift card entry form closes when `selectedPaymentOptionId >= -1` (any payment option, including saved payment details with ID `-1`)  
+3. **Form Auto-Close**: The gift card entry form closes when `selectedPaymentOptionId >= -1` (any payment option, including saved payment details with ID `-1`)
 4. **Full Coverage Flow**: When `giftCardsCoverFullAmount` is `true`, the payment step is skipped and the Place Order button is displayed
 5. **Payment Failure Recovery**: HTTP interceptor reloads the cart when `placePaymentAuthorizedOrder` fails (backend removes gift cards on error)
 

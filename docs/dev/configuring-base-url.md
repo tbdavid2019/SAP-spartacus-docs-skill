@@ -2,6 +2,8 @@
 title: Configuring the Base URL
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 You can configure the base URL with a special HTML `meta` tag, instead of hard coding it with `provideConfig()` in the Spartacus configuration. This allows you to deploy to different environments with only one compiled JavaScript application, because you only need to modify the `meta` tag of the `index.html` file for each environment.
 
 The following example shows how the `meta` tag can be configured in the `index.html` file:

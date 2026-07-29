@@ -2,11 +2,9 @@
 title: Selfcare - View Subscriptions, Billing Account, Billing Agreements
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 4.1 {{ site.version_note_forTUA }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 4.1 of the TUA Spartacus libraries.
 
 With this feature, Application Clients:
 
@@ -39,10 +37,10 @@ The **Account** menu is updated with the **Selfcare** option, which includes mod
 To view the Subscribed Product Inventory:
 
 1. Log in to the TUA Spartacus.
-  
-1. Navigate to **Account** -> **Selfcare**. 
 
-    <p align="center"><img src="{{ site.baseurl }}/assets/images/telco/selfcare-account-dropdown.png"></p>
+1. Navigate to **Account** -> **Selfcare**.
+
+    <p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/selfcare-account-dropdown.png"></p>
 
 1. The Selfcare page displays the following modules:
 
@@ -50,39 +48,39 @@ To view the Subscribed Product Inventory:
     -   Billing Accounts
     -   Billing Agreements
 
-    <p align="center"><img src="{{ site.baseurl }}/assets/images/telco/selfcare-homepg.png"></p>
+    <p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/selfcare-homepg.png"></p>
 
 1. Click **Subscriptions** to view the Subscribed Product Inventory details displayed in a tabular format, which includes Subscription name, status, and ID.
 
-    <p align="center"><img src="{{ site.baseurl }}/assets/images/telco/subscriptions-page.png"></p>
+    <p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/subscriptions-page.png"></p>
 
 1. Click the required subscription to view more details about it in a separate section that is displayed corresponding to the selected subscription. The section also includes **Billing Account**, **Billing Agreement**, and **Order Number**.
 
-    <p align="center"><img src="{{ site.baseurl }}/assets/images/telco/selected-subscription-detail.png"></p>
+    <p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/selected-subscription-detail.png"></p>
 
 1.  All BPO-related subscriptions have a dropdown icon next to it and can be easily identified from other subscriptions.
 
-    <p align="center"><img src="{{ site.baseurl }}/assets/images/telco/bpo-type-subscriptions.png"></p>
+    <p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/bpo-type-subscriptions.png"></p>
 
-1.  Click the required BPO subscription type to view more details. 
+1.  Click the required BPO subscription type to view more details.
 
-    <p align="center"><img src="{{ site.baseurl }}/assets/images/telco/bpo-type-subscription-detail.png"></p>
+    <p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/bpo-type-subscription-detail.png"></p>
 
 1.  Click the required option listed in the section to view more details about it. Click **Child Products** to view more details.
 
-    <p align="center"><img src="{{ site.baseurl }}/assets/images/telco/child-product-details.png"></p>
+    <p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/child-product-details.png"></p>
 
 1. Click **Billing Account** to view the relevant details.
 
-    <p align="center"><img src="{{ site.baseurl }}/assets/images/telco/billing-account.png"></p>
+    <p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/billing-account.png"></p>
 
 1.  Click **Billing Agreement** to view the relevant details. If no details are available, then 'No agreement found' information is displayed.
 
-    <p align="center"><img src="{{ site.baseurl }}/assets/images/telco/billing-agreement.png"></p>
+    <p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/billing-agreement.png"></p>
 
 1.  Click **Order Number** to view the relevant details.
 
-    <p align="center"><img src="{{ site.baseurl }}/assets/images/telco/order-number.png"></p>
+    <p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/order-number.png"></p>
 
 ## Feature Enablement
 

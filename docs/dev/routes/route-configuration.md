@@ -2,6 +2,8 @@
 title: Route Configuration
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Spartacus includes predefined route configurations in `default-routing-config.ts` that allow you to run your storefront app without needing to configure any routes at all. However, all routes in Spartacus can be configured by importing `ConfigModule.withConfig()` with an object containing the `routing` property, and every part of the predefined configurations can be extended or overwritten using `ConfigModule.withConfig()` as well.
 
 The following is an example of extending a predefined configuration:
@@ -33,7 +35,7 @@ ConfigModule.withConfig({
 })
 ```
 
-**Note:** The `paths` property takes the form of an array to support route aliases. For more information, see [{% assign linkedpage = site.pages | where: "name", "route-aliases.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/routes/route-aliases.md %}).
+**Note:** The `paths` property takes the form of an array to support route aliases. For more information, see [Route Aliases](route-aliases.md).
 
 ## Working with Angular Routes
 

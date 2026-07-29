@@ -6,6 +6,8 @@ feature:
   cx_version: n/a
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The carousel component provides a generic UI component for displaying list items in a carousel. The component is not tied to specific items, such as products, pages, categories, or images. The focus of the component is on the sliding layout, and on the navigation elements that allow users to access the different slides.
 
 The carousel component is highly reusable, and is used by various CMS components, such as the following:
@@ -23,7 +25,7 @@ The flexibility of the carousel component to render any item is driven by the in
 <cx-carousel title="Example Carousel Usage" [items]="items$ | async" [template]="carouselItem"> </cx-carousel>
 
 <ng-template #carouselItem let-item="item">
-    <!-- custom template implemention 
+    <!-- custom template implemention
   for the items goes here... -->
 </ng-template>
 ```
@@ -41,7 +43,7 @@ There are two types of navigation for the carousel, as follows:
 - Previous and Next buttons
 - Slide Indicator Buttons, which are optional
 
-The buttons use icons by default, but the icons are configurable. This is a result of both the way Spartacus implements its [{% assign linkedpage = site.pages | where: "name", "icon-library.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/styling-and-page-layout/icon-library.md %}), as well as the fact that there is an input for icons available in the component, as shown in the following example:
+The buttons use icons by default, but the icons are configurable. This is a result of both the way Spartacus implements its [Icon Library](../styling-and-page-layout/icon-library.md), as well as the fact that there is an input for icons available in the component, as shown in the following example:
 
 ```typescript
 @Input() indicatorIcon = ICON_TYPE.CIRCLE;

@@ -2,25 +2,27 @@
 title: Definition of Done
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The Spartacus Definition of Done describes a series of requirements that must be fulfilled to declare a feature or bug as "Done".
 
 ## General requirements
 
 All new features for Spartacus must:
 
-- Comply with Spartacus's architecture. For more information, see [{% assign linkedpage = site.pages | where: "name", "connecting-to-other-systems.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/backend_communication/connecting-to-other-systems.md %}).
+- Comply with Spartacus's architecture. For more information, see [Connecting to Other Systems](../dev/backend_communication/connecting-to-other-systems.md).
 
-- Follow our security best practices. For more information, see [{% assign linkedpage = site.pages | where: "name", "security-best-practices.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/security/security-best-practices.md %}).
+- Follow our security best practices. For more information, see [Security Best Practices](../dev/security/security-best-practices.md).
 
-- Follow our accessibility best practices. New features and fixes must be thoroughly tested with JAWS and AMP before they are merged, in accordance with SAP practices. For more information, see [{% assign linkedpage = site.pages | where: "name", "a11y-best-practices.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/accessibility/best-practices/a11y-best-practices.md %}).
+- Follow our accessibility best practices. New features and fixes must be thoroughly tested with JAWS and AMP before they are merged, in accordance with SAP practices. For more information, see [Accessibility Best Practices](../dev/accessibility/best-practices/a11y-best-practices.md).
 
-- Ensure that new feature modules are lazy loaded. For more information, see [{% assign linkedpage = site.pages | where: "name", "lazy-loading-guide.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/lazy-loading-guide.md %}).
+- Ensure that new feature modules are lazy loaded. For more information, see [Lazy Loading](../dev/lazy-loading-guide.md).
 
-- Provide the necessary sample data. For more information, see [{% assign linkedpage = site.pages | where: "name", "spartacussampledata-extension.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/spartacussampledata-extension.md %}).
+- Provide the necessary sample data. For more information, see [Spartacus Sample Data Extension](../install/spartacussampledata-extension.md).
 
-- Ensure the CSS supports directionality for new features. For more information, see [{% assign linkedpage = site.pages | where: "name", "directionality.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/styling-and-page-layout/directionality.md %}).
+- Ensure the CSS supports directionality for new features. For more information, see [Directionality](../dev/styling-and-page-layout/directionality.md).
 
-- Provide necessary code deprecations for schematics. For more information, see [{% assign linkedpage = site.pages | where: "name", "updating-schematics.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/contributing/updating-schematics.md %}).
+- Provide necessary code deprecations for schematics. For more information, see [Updating Schematics](updating-schematics.md).
 
 - Contain no blocker, critical or major bugs to be accepted and released.
 
@@ -30,7 +32,7 @@ All new features for Spartacus must:
 
 - Pass a security review during the initial POC phase. For more information, see [Security Review](#security-review).
 
-- Avoid breaking changes. If you cannot avoid introducing a breaking change, ensure the breaking change is handled in a way that corresponds to the type of release you are working on, whether it is a major release (**X**.y.z), a minor release (x.**Y**.z), or a patch release (x.y.**Z**). Breaking changes are permitted in major releases, but must be accompanied by migration documentation and schematics. Breaking changes are never allowed in minor or patch releases, and must be handled through deprecation and the use of feature flags. For more information, see [Avoiding Breaking Changes]({{ site.baseurl }}{% link _pages/contributing/breaking-changes.md %}#avoiding-breaking-changes).
+- Avoid breaking changes. If you cannot avoid introducing a breaking change, ensure the breaking change is handled in a way that corresponds to the type of release you are working on, whether it is a major release (**X**.y.z), a minor release (x.**Y**.z), or a patch release (x.y.**Z**). Breaking changes are permitted in major releases, but must be accompanied by migration documentation and schematics. Breaking changes are never allowed in minor or patch releases, and must be handled through deprecation and the use of feature flags. For more information, see [Avoiding Breaking Changes](breaking-changes.md#avoiding-breaking-changes).
 
 ***
 
@@ -47,7 +49,7 @@ The Spartacus team adopted the following set of rules to keep the Spartacus code
 
 ## Code Standards
 
-There are several aspects to consider when writing code. Please review the [{% assign linkedpage = site.pages | where: "name", "coding-guidelines.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/contributing/coding-guidelines.md %}).
+There are several aspects to consider when writing code. Please review the [Coding Guidelines](coding-guidelines.md).
 
 ## Linting
 
@@ -77,7 +79,7 @@ To format and prettify your codebase, run the following:
 npm run prettier:fix
 ```
 
-We also encourage to use the Prettier VS Code plugin. For more information, see [{% assign linkedpage = site.pages | where: "name", "development-tools-for-spartacus.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/contributing/development-tools-for-spartacus.md %}).
+We also encourage to use the Prettier VS Code plugin. For more information, see [Development Tools for Spartacus](development-tools-for-spartacus.md).
 
 ## SCSS is Preprocessed (node-sass)
 
@@ -128,7 +130,7 @@ All new features in Spartacus require end-to-end tests written with [Cypress](ht
 
 When applicable, write end-to-end tests to ensure that your new or updated feature is foolproof. If it makes sense to write end-to-end tests, the minimum requirement is to write basic UI end-to-end tests. You can also consider writing UI end-to-end tests with a user-flow, but this is optional.
 
-All newly written end-to-end tests must be reviewed, updated, or reused. They should also follow the [{% assign linkedpage = site.pages | where: "name", "e2e-guidelines.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/contributing/e2e-guidelines.md %}).
+All newly written end-to-end tests must be reviewed, updated, or reused. They should also follow the [End-to-End Test Guidelines](e2e-guidelines.md).
 
 Run the following commands to perform end-to-end tests:
 
@@ -154,11 +156,11 @@ The objective of end-to-end tests is to make sure your feature works. For exampl
 
 ## Accessibility
 
-The UI of the feature complies with the Accessibility success criteria that are defined for the given released version. This includes writing [accessibility end-to-end tests]({{ site.baseurl }}{% link _pages/contributing/a11y-e2e-tests.md %}).
+The UI of the feature complies with the Accessibility success criteria that are defined for the given released version. This includes writing [accessibility end-to-end tests](a11y-e2e-tests.md).
 
-For more information, see [{% assign linkedpage = site.pages | where: "name", "a11y-best-practices.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/accessibility/best-practices/a11y-best-practices.md %}).
+For more information, see [Accessibility Best Practices](../dev/accessibility/best-practices/a11y-best-practices.md).
 
-Manual tests should be performed to ensure the new feature is accessible and does not raise any AMP violations. This means conducting screen reader testing using VO for Mac or JAWS for Windows, as well as using Access Assistant to verify AMP violations.  
+Manual tests should be performed to ensure the new feature is accessible and does not raise any AMP violations. This means conducting screen reader testing using VO for Mac or JAWS for Windows, as well as using Access Assistant to verify AMP violations.
 
 ## Browser Compatibility
 

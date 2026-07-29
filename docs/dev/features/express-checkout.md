@@ -6,11 +6,9 @@ feature:
   cx_version: n/a
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.2 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.2 of the Spartacus libraries.
 
 The express checkout feature in Spartacus allows customers to go directly to the Order Summary page when they click or tap **Proceed to Checkout**. Spartacus uses default values from the customer's account, as well as from the Spartacus configuration, to set the values for delivery address, delivery mode, and payment method. When the customer arrives at the Order Summary page, they have the option to edit any of the values that have been automatically selected.
 

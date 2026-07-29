@@ -2,6 +2,8 @@
 title: Technical Changes in TUA Spartacus 2.0
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 ***
 
 **Table of Contents**
@@ -97,7 +99,7 @@ For example, Inside "Per Minutes Charges (Charged By Each Respective Tier)" TmaP
 
 ### TmaOneTimeChargeComponent
 
-This component displays the one time charges in the product pages in the following format:  
+This component displays the one time charges in the product pages in the following format:
 
 `<value><currency> <billingEvent>`
 
@@ -291,4 +293,4 @@ This components is used for populating address details, such as House/Building N
 2. TmaVolumeChargeComponent
 3. TmaPerUnitChargeCo
 
-For more information, see [Updating to Version 2.0]({{ site.baseurl }}{% link _pages/telco/updating-tua-spartacus-to-2.md %}).
+For more information, see [Updating to Version 2.0](updating-tua-spartacus-to-2.md).

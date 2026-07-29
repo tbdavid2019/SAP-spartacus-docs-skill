@@ -2,6 +2,8 @@
 title: Disabling and Deleting Commerce Organization Entities
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 You can disable Commerce Organization entities, such as units, users, cost centers, and most other entities, but you cannot delete them. This is due to the interconnected nature of Commerce Organization entities.
 
 Disabling an entity, such as a user, means that the user cannot make purchases and cannot be edited. The user must be re-enabled first.

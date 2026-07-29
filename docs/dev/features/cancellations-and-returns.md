@@ -6,11 +6,9 @@ feature:
   cx_version: 2005
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.4 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.4 of the Spartacus libraries.
 
 The Cancellations and Returns feature in Spartacus allows customers to request a complete or partial cancellation for an order that has been placed, or a return for an order that has already been received. This allows customers to bypass having to call a customer service agent to cancel or return an order that was placed.
 
@@ -41,8 +39,8 @@ Since the feature is CMS-driven, the only way to enable it is through the CMS. T
 
     When this ImpEx is imported, the cancel or return action buttons are displayed on the Order Details page. The following is an example:
 
-    ![Cancel Items Button]({{ site.baseurl }}/assets/images/cancel-items-button.png)
-  
+    ![Cancel Items Button](https://sap.github.io/spartacus-docs/assets/images/cancel-items-button.png)
+
 2. Add the **All Orders** and **Returns** tabs to the Order History page by importing the following ImpEx:
 
     ```sql
@@ -52,7 +50,7 @@ Since the feature is CMS-driven, the only way to enable it is through the CMS. T
 
     By replacing the `AccountOrderHistoryComponent` with the `AccountOrderHistoryTabContainer` component in the `BodyContent-orders` slot, you can then see tabs in the Order History page, as follows:
 
-    ![Order History Tabs]({{ site.baseurl }}/assets/images/order-history-tabs.png)
+    ![Order History Tabs](https://sap.github.io/spartacus-docs/assets/images/order-history-tabs.png)
 
     These steps can also be done in Backoffice.
 

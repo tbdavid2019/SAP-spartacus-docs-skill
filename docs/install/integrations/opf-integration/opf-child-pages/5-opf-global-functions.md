@@ -2,6 +2,8 @@
 title: Open Payment Framework Global Functions
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 To help you configure your Payment Service Provider (PSP) or Gateway, the open payment framework provides a number of global functions that you can use to speed up the configuration of client-side scripts.
 
 The global functions are organized into the following domains:
@@ -296,13 +298,13 @@ The following is an example of a cancel callback implementation:
 submitCancel: (response) => {
   // Log the cancellation
   console.log('Payment cancelled:', response);
-  
+
   // Show a user-friendly message
   alert('Payment was cancelled. Please try again or select a different payment method.');
-  
+
   // Redirect to the payment selection
   window.location.href = '/checkout/payment';
-  
+
   // Or reset the payment form
   // resetPaymentForm();
 }
@@ -329,10 +331,10 @@ window.Opf.payments.checkout.submit({
   },
   submitFailure: (response) => {
     console.log('Payment failed:', response);
-    
+
     // Show an error message to the user
     alert('Payment failed. Please try again.');
-    
+
     // Reinitialize the payment form to allow retry
     window.Opf.payments.checkout.reinitiatePaymentForm()
       .then((success) => {
@@ -348,7 +350,7 @@ window.Opf.payments.checkout.submit({
   },
   submitCancel: (response) => {
     console.log('Payment cancelled:', response);
-    
+
     // Reinitialize the payment form on cancellation
     window.Opf.payments.checkout.reinitiatePaymentForm()
       .then((success) => {
@@ -367,10 +369,10 @@ The following is an example of reinitializing with a specific payment option:
 // When a specific payment option fails, reinitialize with a different option
 submitFailure: (response) => {
   console.log('Payment failed:', response);
-  
+
   // Reinitialize with a different payment option ID
   const alternativePaymentOptionId = 456; // Different payment method
-  
+
   window.Opf.payments.checkout.reinitiatePaymentForm(alternativePaymentOptionId)
     .then((success) => {
       if (success) {

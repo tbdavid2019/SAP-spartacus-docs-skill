@@ -2,6 +2,8 @@
 title: Writing Extensible and Customizable Code
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 To make Spartacus code easier to extend and customize, we should avoid using private constants for default values in the TypeScript class logic. Instead, those default values should be stored in `protected readonly` fields, unless it is justified to extract them as separate constants. For example, it might be justified when a `const` is used in multiple classes. In that case, the `const` should be exported to the public API using a clear, descriptive name.
 
 The following is an example of how to properly set a default value in the TypeScript class logic:

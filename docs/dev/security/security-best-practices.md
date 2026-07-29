@@ -2,11 +2,13 @@
 title: Security Best Practices
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 When you are developing your Spartacus storefront, you can improve the security of your storefront application by implementing the security best practices described here and in the following pages:
 
-- [{% assign linkedpage = site.pages | where: "name", "content-security-policy.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/security/content-security-policy.md %})
-- [{% assign linkedpage = site.pages | where: "name", "dos-protection.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/security/dos-protection.md %})
-- [{% assign linkedpage = site.pages | where: "name", "token-revocation.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/security/token-revocation.md %})
+- [Content Security Policy](content-security-policy.md)
+- [Protection Against Denial of Service Attacks](dos-protection.md)
+- [Token Revocation](token-revocation.md)
 
 ## Secure Authentication
 

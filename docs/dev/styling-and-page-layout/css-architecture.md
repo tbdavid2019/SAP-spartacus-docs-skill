@@ -7,6 +7,8 @@ feature:
     anchor: '#style-versioning'
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 This page provides a high level overview of the CSS architecture in Spartacus.
 
 ---
@@ -382,4 +384,4 @@ Skipping specific component styles might be beneficial if you need to create sty
 
 ## Page Layout Styles
 
-Global theming and component styles are most important to render components on the page. However, the overall layout that orchestrates components on a page is another important style layer. For more information about this layer, see [{% assign linkedpage = site.pages | where: "name", "page-layout.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/styling-and-page-layout/page-layout.md %}).
+Global theming and component styles are most important to render components on the page. However, the overall layout that orchestrates components on a page is another important style layer. For more information about this layer, see [Page Layout](page-layout.md).

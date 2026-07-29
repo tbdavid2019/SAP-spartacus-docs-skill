@@ -2,16 +2,18 @@
 title: Contributing Integration Libraries to Spartacus
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The guidelines presented here are essential for anyone who is contributing an integration library to Spartacus.
 
-For information on the various integration libraries that are available for Spartacus, see [{% assign linkedpage = site.pages | where: "name", "integrations.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/integrations/integrations.md %}).
+For information on the various integration libraries that are available for Spartacus, see [Integrations](../install/integrations/integrations.md).
 
 **Note:** The following Spartacus integration libraries are developed and owned by integration teams that are within SAP but outside of the Spartacus core development team:
 
-- [{% assign linkedpage = site.pages | where: "name", "cds-integration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/integrations/cds-integration.md %})
-- [{% assign linkedpage = site.pages | where: "name", "configurable-products-integration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/integrations/configurable-products-integration.md %})
-- [{% assign linkedpage = site.pages | where: "name", "cdc-integration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/integrations/cdc-integration.md %})
-- [{% assign linkedpage = site.pages | where: "name", "digital-payments-integration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/integrations/digital-payments-integration.md %})
+- [Intelligent Selling Services for SAP Commerce Cloud Integration](../install/integrations/cds-integration.md)
+- [Configurable Products Integration](../install/integrations/configurable-products-integration.md)
+- [SAP Customer Data Cloud Integration](../install/integrations/cdc-integration.md)
+- [SAP Digital Payments Integration](../install/integrations/digital-payments-integration.md)
 
 Each integration teams owns its own integration library, and the Spartacus core team takes care of releasing these libraries.
 

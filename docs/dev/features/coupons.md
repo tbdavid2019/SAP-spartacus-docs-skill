@@ -6,11 +6,9 @@ feature:
   cx_version: 1905
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.3 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.3 of the Spartacus libraries.
 
 The coupons feature allows you to create digital coupons that your customers can redeem for discounts on the storefront.
 

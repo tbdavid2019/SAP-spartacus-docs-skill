@@ -6,11 +6,9 @@ feature:
   cx_version: 2005
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 3.3 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 3.3 of the Spartacus libraries.
 
 The CPQ Configurable Products integration provides a user interface in Spartacus for configuring and selling configurable products that have been modeled using *SAP CPQ Integration for Configurable Products* and the associated configuration engine. Note that the Spartacus library does not include SAP CPQ itself.
 
@@ -55,7 +53,7 @@ You can either [install the product configurator library during initial setup of
 
 ### Installing the Product Configurator Library During the Initial Setup of Spartacus
 
-1. Follow the steps for setting up your Spartacus project, as described in [{% assign linkedpage = site.pages | where: "name", "building-the-spartacus-storefront-from-libraries.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/frontend/building-the-spartacus-storefront-from-libraries.md %}).
+1. Follow the steps for setting up your Spartacus project, as described in [Building the Spartacus Storefront From Libraries](../frontend/building-the-spartacus-storefront-from-libraries.md).
 1. While setting up your project using schematics, when you are asked which Spartacus features you would like to set up, choose `Product Configurator - CPQ Configurator (b2b feature)`.
 
 **Note:** At runtime, most of the configurator library is lazy loaded when the configurator is first loaded. This is done for performance reasons.
@@ -76,7 +74,7 @@ After running this command, you are asked which product configurator features yo
 
 ## Early Login
 
-You must have early login enabled to be able to use the configurable products integration with Spartacus. For more information, see [{% assign linkedpage = site.pages | where: "name", "early-login.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/routes/early-login.md %}).
+You must have early login enabled to be able to use the configurable products integration with Spartacus. For more information, see [Early Login](../../dev/routes/early-login.md).
 
 ## Supported Attribute Types and Display Types
 
@@ -205,7 +203,7 @@ Cart validation is currently not supported, although you can implement your own 
 
     The following is an example:
 
-    {% raw %}
+
 
     ```ts
     <ng-container *ngIf="cart$ | async as cart">
@@ -227,7 +225,7 @@ Cart validation is currently not supported, although you can implement your own 
     </ng-container>
     ```
 
-    {% endraw %}
+
 
 ### Configuring SAP Commerce 2005 and 2011 for Cart Validation
 
@@ -248,7 +246,7 @@ protected void validateCart(final CartData cartData) throws InvalidCartException
     {
         throw new WebserviceValidationException(errors);
     }
- 
+
     try
     {
         final List<CartModificationData> modificationList = cartFacade.validateCurrentCartData();

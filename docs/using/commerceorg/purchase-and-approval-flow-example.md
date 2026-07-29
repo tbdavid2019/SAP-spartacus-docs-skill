@@ -2,6 +2,8 @@
 title: Purchase and Approval Flow Example
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 In this purchase and approval flow example, we make use of the new buyer and approver that were set up with your new organization.
 
 ***
@@ -43,7 +45,7 @@ Because the order is over $500, the order is placed, but it is held for approval
 
 To see that an order is being held, display your order history. Wait a few moments for the back end to start the order flow. The order status starts out as **Created** but eventually you will see **Pending** and an approval table at the bottom of the order. The following is an example:
 
-<img src="{{ site.baseurl }}/assets/images/commerceorg/johndoe_2-orderdetailsapprovaltable-waiting.png" alt="Order Details Approval Table - Waiting" width="600" border="1px" />
+<img src="https://sap.github.io/spartacus-docs/assets/images/commerceorg/johndoe_2-orderdetailsapprovaltable-waiting.png" alt="Order Details Approval Table - Waiting" width="600" border="1px" />
 
 You can see the reason why an order is held under the **Permission** heading. In this case, the order was held because the total cost of the order exceeded the per-order limit. You can also see who the approver is.
 
@@ -59,19 +61,19 @@ In these steps, we are working with Tommy Durang, the new approver that we creat
 
    The list of orders requiring approval is displayed, as shown in the following example:
 
-   <img src="{{ site.baseurl }}/assets/images/commerceorg/tommy_1-approvaldashboard.png" alt="Approval Dashboard" width="600" border="1px" />
+   <img src="https://sap.github.io/spartacus-docs/assets/images/commerceorg/tommy_1-approvaldashboard.png" alt="Approval Dashboard" width="600" border="1px" />
 
 3. Click the order number for the order that requires approval.
 
    The entire order is displayed in the same way that the buyer would see it, but with the addition of an approval section at the top. The following is an example:
 
-   <img src="{{ site.baseurl }}/assets/images/commerceorg/tommy_2-orderapprovalacceptreject.png" alt="Order Approval Accept Reject" width="600" border="1px" />
+   <img src="https://sap.github.io/spartacus-docs/assets/images/commerceorg/tommy_2-orderapprovalacceptreject.png" alt="Order Approval Accept Reject" width="600" border="1px" />
 
 4. Click **Approve Order**.
 
    The **Order Approval** screen is displayed, as shown in the following example:
 
-   <img src="{{ site.baseurl }}/assets/images/commerceorg/tommy_3-orderapprove.png" alt="Order Approval Screen" width="600" border="1px" />
+   <img src="https://sap.github.io/spartacus-docs/assets/images/commerceorg/tommy_3-orderapprove.png" alt="Order Approval Screen" width="600" border="1px" />
 
    You can enter a comment if you wish.
 
@@ -81,4 +83,4 @@ In these steps, we are working with Tommy Durang, the new approver that we creat
 
    If John Doe checks the order after approval, he can see that the approval table has been updated with the confirmation that the order was approved, along with the comment. The same would appear if the order were rejected. The following is an example:
 
-   <img src="{{ site.baseurl }}/assets/images/commerceorg/johndoe_2-orderdetailsapprovaltable-approved.png" alt="Order Details Approval Table - Approved" width="600" border="1px" />
+   <img src="https://sap.github.io/spartacus-docs/assets/images/commerceorg/johndoe_2-orderdetailsapprovaltable-approved.png" alt="Order Details Approval Table - Approved" width="600" border="1px" />

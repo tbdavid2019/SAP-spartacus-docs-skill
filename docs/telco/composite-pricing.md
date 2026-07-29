@@ -2,11 +2,9 @@
 title: Pricing - Composite Pricing
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 2.0 {{ site.version_note_forTUA }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 2.0 of the TUA Spartacus libraries.
 
 Composite Pricing brings forth a new way of handling pricing information and supports recurring charges, one-time charges and usage-based charges that are built in a hierarchical tree structure.  Pricing displayed on the storefront is now based on the composite pricing structure.  Priority pricing is also supported to determine the applicable price for a customer in the case where there are multiple prices that a given customer is eligible for.  For more information, see [Composite Pricing](https://help.sap.com/viewer/32f0086927f44c9ab1199f1dab8833cd/latest/en-US/2e0fa8602fff440ba756e1a0a8390ea3.html) in the TUA Help portal.
 
@@ -21,7 +19,7 @@ Composite Pricing brings forth a new way of handling pricing information and sup
 
 ## Business Use Case
 
-Customers browsing the storefront are able to view detailed pricing information about a product offering. 
+Customers browsing the storefront are able to view detailed pricing information about a product offering.
 
 | Page   Information 	| Eligible Prices 	|
 |-	|-	|
@@ -36,7 +34,7 @@ Customers browsing the storefront are able to view detailed pricing information 
 
 The following figure illustrates the hierarchical structure of the composite pricing for Signature Unlimited Plan that is configured by the Administrator in the backoffice as an example.
 
-<p align="center"><img src="{{ site.baseurl }}/assets/images/telco/composite-pricing-feature.png" alt="Composite Pricing Feature"></p>
+<p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/composite-pricing-feature.png" alt="Composite Pricing Feature"></p>
 
 
 ## Changes Implemented
@@ -203,6 +201,6 @@ The following new and updated components must be enabled in the TUA backoffice t
 For further reading, see the following topics in the TUA Help portal.
 
 - [Creating Composite Prices for a Simple Product Offering](https://help.sap.com/viewer/32f0086927f44c9ab1199f1dab8833cd/2011/en-US/cc31b2c3e2c049059766598fe0cd88de.html).
-- [Pricing - Price Alteration Discounts]({{ site.baseurl }}{% link _pages/telco/price-alteration-discounts.md %}).
+- [Pricing - Price Alteration Discounts](price-alteration-discounts.md).
 - [TUA APIs Documentation](https://help.sap.com/viewer/f59b0ac006d746caaa5fb599b4270151/2011/en-US/52cf34e46ce34672bc3e47bdabcbc838.html).
 - [Making Components Visible](https://help.sap.com/viewer/9d346683b0084da2938be8a285c0c27a/2005/en-US/1cea3b2cb3334fc085dda9cc070ad6ac.html).

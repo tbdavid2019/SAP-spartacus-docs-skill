@@ -6,17 +6,15 @@ feature:
   cx_version: n/a
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.4 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.4 of the Spartacus libraries.
 
 Above-the-fold loading is a technique that prioritizes the creation of components that are "above the fold". The term "above the fold" is traditionally known as the upper-half of a newspaper, where the most important stories are located. When this concept is transferred to the web, it refers to all the components that are placed at the top of the page, where the experience starts.
 
 Above-the-fold loading requires the following important ingredients:
 
-- Deferred loading, which is a technique that postpones the creation of components that are "below the fold". For more information, see [{% assign linkedpage = site.pages | where: "name", "deferred-loading.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/performance/deferred-loading.md %}).
+- Deferred loading, which is a technique that postpones the creation of components that are "below the fold". For more information, see [Deferred Loading](deferred-loading.md).
 - The notion of the "page fold". The page fold is not static, and differs from device to device, from screen to screen, and even changes depending on the size of the browser.
 - A couple of CSS rules that initially move components below the page fold.
 
@@ -67,7 +65,7 @@ ProductDetailsPageTemplate: {
 }
 ```
 
-For more information on page layout configuration, see [Configuring the Layout]({{ site.baseurl }}/page-layout/#configuring-the-layout).
+For more information on page layout configuration, see [Configuring the Layout](https://sap.github.io/spartacus-docs/page-layout/#configuring-the-layout).
 
 ## CSS Configuration
 

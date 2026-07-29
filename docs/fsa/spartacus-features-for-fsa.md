@@ -2,40 +2,42 @@
 title: FSA Spartacus Features
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 This is a landing page for grouping together FSA Spartacus features. The FSA Spartacus features include the following:
 
 ## Release 4.0
 
-- [SAP Digital Payments Integration]({{ site.baseurl }}{% link _pages/fsa/features/fsa-checkout.md %})
-- [Policy Renewal]({{ site.baseurl }}{% link _pages/fsa/features/fsa-policy-renewal.md %})
-- [Quote Comparison]({{ site.baseurl }}{% link _pages/fsa/features/fsa-quote-comparison.md %})
-- [Claim Update]({{ site.baseurl }}{% link _pages/fsa/features/claims/claim-update.md %})
-- [Chatbot]({{ site.baseurl }}{% link _pages/fsa/features/fsa-chatbot.md %})
-- [Agent Enablement - On-Behalf-of Framework]({{ site.baseurl }}{% link _pages/fsa/features/fsa-agent-enablement.md %})
-- [My Dashboard]({{ site.baseurl }}{% link _pages/fsa/features/fsa-my-dashboard.md %})
-- [Live Contract Integration Enhancements]({{ site.baseurl }}{% link _pages/fsa/features/agents/fsa-insurance-agent-capabilities.md %})
+- [SAP Digital Payments Integration](features/fsa-checkout.md)
+- [Policy Renewal](features/fsa-policy-renewal.md)
+- [Quote Comparison](features/fsa-quote-comparison.md)
+- [Claim Update](features/claims/claim-update.md)
+- [Chatbot](features/fsa-chatbot.md)
+- [Agent Enablement - On-Behalf-of Framework](features/fsa-agent-enablement.md)
+- [My Dashboard](features/fsa-my-dashboard.md)
+- [Live Contract Integration Enhancements](features/agents/fsa-insurance-agent-capabilities.md)
 
 
 ## Release 3.0
 
-- [Coupons]({{ site.baseurl }}{% link _pages/fsa/features/fsa-coupons.md %})
-- [Product Discovery]({{ site.baseurl }}{% link _pages/fsa/features/fsa-product-discovery.md %})
-- [Claims Details Page]({{ site.baseurl }}{% link _pages/fsa/features/claims/claims-details-page.md %})
-- [Quote Details Page]({{ site.baseurl }}{% link _pages/fsa/features/fsa-quote-details-page.md %})
-- [Speak to an Agent]({{ site.baseurl }}{% link _pages/fsa/features/agents/fsa-speak-to-agent.md %})
-- [Agent Availability]({{ site.baseurl }}{% link _pages/fsa/features/agents/fsa-agent-availability.md %})
+- [Coupons](features/fsa-coupons.md)
+- [Product Discovery](features/fsa-product-discovery.md)
+- [Claims Details Page](features/claims/claims-details-page.md)
+- [Quote Details Page](features/fsa-quote-details-page.md)
+- [Speak to an Agent](features/agents/fsa-speak-to-agent.md)
+- [Agent Availability](features/agents/fsa-agent-availability.md)
 
 
 ## Release 2.0
 
-- [Additional Policy Changes]({{ site.baseurl }}{% link _pages/fsa/features/fsa-policy-change.md %})
-- [Claims Integration Enhancement]({{ site.baseurl }}{% link _pages/fsa/features/claims/claims-integration.md %})  
-- [Document Upload]({{ site.baseurl }}{% link _pages/fsa/features/dynamicforms/core/form-controls-document-upload.md %})  
-- [Invoice Payment]({{ site.baseurl }}{% link _pages/fsa/features/fsa-invoice-payment.md %})  
-- [Order Splitting]({{ site.baseurl }}{% link _pages/fsa/features/fsa-order-splitting.md %})  
+- [Additional Policy Changes](features/fsa-policy-change.md)
+- [Claims Integration Enhancement](features/claims/claims-integration.md)
+- [Document Upload](features/dynamicforms/core/form-controls-document-upload.md)
+- [Invoice Payment](features/fsa-invoice-payment.md)
+- [Order Splitting](features/fsa-order-splitting.md)
 
 ## Release 1.0
 
-- [Dynamic Forms]({{ site.baseurl }}{% link _pages/fsa/features/dynamicforms/dynamicforms.md %})
-- [Inbox]({{ site.baseurl }}{% link _pages/fsa/features/fsa-inbox.md %})
-- [Checkout]({{ site.baseurl }}{% link _pages/fsa/features/fsa-checkout.md %})
+- [Dynamic Forms](features/dynamicforms/dynamicforms.md)
+- [Inbox](features/fsa-inbox.md)
+- [Checkout](features/fsa-checkout.md)

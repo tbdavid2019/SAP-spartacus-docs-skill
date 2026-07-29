@@ -2,13 +2,15 @@
 title: Adding Form to a Simple Page
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 This page explains how to add a form to a simple page.
 
 ## Procedure
 
 To add a form to a simple page:
 
-- Create JSON form definition for a new form. For more information, see [Form Definition - JSON Structure]({{ site.baseurl }}{% link _pages/fsa/features/dynamicforms/json-structure.md %}).
+- Create JSON form definition for a new form. For more information, see [Form Definition - JSON Structure](../json-structure.md).
 
 - In the ImpEx file, create a YFormDefinition with a reference to the newly created JSON definition:
 

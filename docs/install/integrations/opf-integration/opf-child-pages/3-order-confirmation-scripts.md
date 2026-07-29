@@ -2,6 +2,8 @@
 title: Order Confirmation Scripts (CTA Scripts)
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Order confirmation scripts, also known as Call-to-Action (CTA) scripts, display feedback or instructions to customers after an order has been placed. For example, an order confirmation message might provide bank details or voucher codes for a delayed payment method, such as Boleto. Another example is providing customers with a direct debit mandate.
 
 Order confirmation scripts consist of a bundle that includes an HTML snippet with JS and CSS resource files.
@@ -12,7 +14,7 @@ Before enabling order confirmation scripts in Spartacus, you must first enable t
 
 ## Enabling Order Confirmation Scripts
 
-The functionality for order confirmation scripts is added to your storefront app when you install the open payment framework library, as described in [Enabling Open Payment Framework in Spartacus](link-to-section-in-1-open-payment-framework-in-spartacus.md).
+The functionality for order confirmation scripts is added to your storefront app when you install the open payment framework library, as described in [Enabling Open Payment Framework in Spartacus](https://sap.github.io/spartacus-docs/link-to-section-in-1-open-payment-framework-in-spartacus/).
 
 ### CMS Components
 

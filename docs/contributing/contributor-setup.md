@@ -2,6 +2,8 @@
 title: Contributor Setup
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 To contribute to Spartacus, you need to build and run Spartacus in development mode in the early phases of development, and then as your project gets closer to completion, you also need to build and run Spartacus in production mode. This guide shows how to get up and running with Spartacus, in both development mode and production mode, so that you can start contributing.
 
 ***
@@ -19,13 +21,18 @@ Before carrying out the procedures below, please ensure the following front end 
 
 ## Front End Requirements
 
-{% include docs/frontend_requirements.html %}
+<p>Your Angular development environment should include the following:</p>
+<ul>
+    <li><a href="https://angular.io/">Angular CLI:</a> Version <strong>14.2.3</strong> or newer.</li>
+    <li><a href="https://nodejs.org/">Node.js:</a> Version <strong>14.15</strong> or newer (but <strong>less than</strong> version 15), or <strong>16.10</strong> or newer.</li>
+    <li><a href="https://npmjs.org/">npm:</a> Version <strong>8.0</strong> or newer.</li>
+</ul>
 
 ## Back End Requirements
 
 The Spartacus  Storefront uses SAP Commerce Cloud for its back end, and makes use of the sample data from the B2C Accelerator electronics storefront in particular.
 
-For more information, see [{% assign linkedpage = site.pages | where: "name", "installing-sap-commerce-cloud.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/backend/installing-sap-commerce-cloud.md %}).
+For more information, see [Installing SAP Commerce Cloud for use with Spartacus](../install/backend/installing-sap-commerce-cloud.md).
 
 **Note:** The latest release of SAP Commerce Cloud is recommended.
 
@@ -129,7 +136,7 @@ npm run build
    },
    ```
 
-   **Note**: The base site and its context can also be detected automatically, based on URL patterns defined in the CMS. For more information, see [Automatic Multi-Site Configuration]({{ site.baseurl }}{% link _pages/dev/context/automatic-context-configuration.md %}).
+   **Note**: The base site and its context can also be detected automatically, based on URL patterns defined in the CMS. For more information, see [Automatic Multi-Site Configuration](../dev/context/automatic-context-configuration.md).
 
 ### Launching the Spartacus Storefront
 

@@ -11,6 +11,8 @@ feature:
   anchor: "#lazy-loading-of-modules"
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Lazy loading, also known as code splitting, lets you divide your JavaScript code into multiple chunks. The result is that you do not have to load all the JavaScript of the full application when a user accesses the first page. Instead, only the chunks that are required for the given page are loaded. While navigating the storefront, additional chunks are loaded when needed.
 
 Such an approach can substantially improve "Time To Interactive", especially in the case of complex web applications being accessed by low-end mobile devices.
@@ -49,11 +51,7 @@ At the time of writing (Angular 9 and Angular 10), mixing static imports with dy
 
 ### Configuration in Lazy-Loaded Modules
 
-{% capture version_note %}
-{{ site.version_note_part1a }} 3.0 {{ site.version_note_part2 }}
-{% endcapture %}
-
-{% include docs/feature_version.html content=version_note %}
+> **Note:** This functionality is introduced with version 3.0 of the Spartacus libraries.
 
 If additional configuration is provided inside the lazy-loaded module, Spartacus merges it into the global application configuration to support lazy loading scenarios for existing components and services. In most cases, especially when lazy-loaded modules provide mostly default configurations, this works reliably. However, it can cause problems if it is overused, especially when two modules provide different configurations for the same part of the config. Scenarios such as these can be fixed by providing the necessary overrides in the main app.
 
@@ -98,11 +96,7 @@ Although technically it is possible to import the `HttpClientModule` in the libr
 
 ## Lazy Loading of CMS Components
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 2.0 {{ site.version_note_part2 }}
-{% endcapture %}
-
-{% include docs/feature_version.html content=version_note %}
+> **Note:** This feature is introduced with version 2.0 of the Spartacus libraries.
 
 ### Configuration of Lazy Loading CMS Components
 
@@ -118,7 +112,7 @@ Lazy loading of CMS code is achieved by specifying a dynamic import in place of 
 }
 ```
 
-For more information on CMS mapping, see [{% assign linkedpage = site.pages | where: "name", "customizing-cms-components.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/components/customizing-cms-components.md %}).
+For more information on CMS mapping, see [Customizing CMS Components](components/customizing-cms-components.md).
 
 ### Technical Details
 
@@ -128,11 +122,7 @@ It is possible to extend this handler to customize its behavior, to add special 
 
 ## Lazy Loading of Modules
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 2.1 {{ site.version_note_part2 }}
-{% endcapture %}
-
-{% include docs/feature_version.html content=version_note %}
+> **Note:** This feature is introduced with version 2.1 of the Spartacus libraries.
 
 CMS-driven lazy loading of feature modules allows the following:
 
@@ -179,7 +169,7 @@ Spartacus is able to extract a CMS component mapping configuration from a lazy-l
 
 ### Defining Shared-Dependency Modules
 
-It is possible to extract some logic to a shared, lazy-loaded module that can be defined as a lazy-loaded dependency for a feature module by providing an array of dynamic imports in the `dependencies` property of the feature configuration. The following is an example:  
+It is possible to extract some logic to a shared, lazy-loaded module that can be defined as a lazy-loaded dependency for a feature module by providing an array of dynamic imports in the `dependencies` property of the feature configuration. The following is an example:
 
 ```typescript
 {
@@ -201,11 +191,11 @@ It is possible to extract some logic to a shared, lazy-loaded module that can be
 }
 ```
 
-Such unnamed dependency modules are instantiated only once, when lazy loading the first feature that depends on it. Its providers contribute to the combined injector that is passed to the feature module, and as a result, all feature services and components have access to the services provided by the dependency modules.  
+Such unnamed dependency modules are instantiated only once, when lazy loading the first feature that depends on it. Its providers contribute to the combined injector that is passed to the feature module, and as a result, all feature services and components have access to the services provided by the dependency modules.
 
 ### Dependency Aliases
 
-For greater flexibility, it is possible to use string aliases for both dependencies and for whole features. If one feature depends on another one, you can reference it as a dependency, as shown in the following example: 
+For greater flexibility, it is possible to use string aliases for both dependencies and for whole features. If one feature depends on another one, you can reference it as a dependency, as shown in the following example:
 
 ```typescript
 {
@@ -265,7 +255,7 @@ The following is an example of the default approach:
       ],
     },
     // Core to Feature alias is a part of default config, provided by UserAccountRootModule
-    // and usually can be ommited  
+    // and usually can be ommited
     [USER_ACCOUNT_CORE_FEATURE]: USER_ACCOUNT_FEATURE, // by default core is bundled together with components
 }
 ```
@@ -280,7 +270,7 @@ The following is an example of a decoupled approach that is easier to customize:
           import('@spartacus/user/account/components').then((m) => m.UserAccountComponentsModule),
       },
       // cmsComponents is a part of default config, bundled with UserAccountRootModule
-      // and usually can be ommited      
+      // and usually can be ommited
       cmsComponents: [
         'LoginComponent',
         'ReturningCustomerLoginComponent',
@@ -295,7 +285,7 @@ The following is an example of a decoupled approach that is easier to customize:
           import('@spartacus/user/account/occ').then(
               (m) => m.UserAccountOccModule
         ),
-    ]        
+    ]
   },
   }
 ```
@@ -304,7 +294,7 @@ The following is an example of a decoupled approach that is easier to customize:
 
 Proxy facades offer a flexible way to expose core functionality from lazy-loaded feature modules in such a way that components consuming those facades do not have to know if it is lazy loaded and needs to be initialized, or not.
 
-Any access to a method or property of a proxy facade triggers the lazy loading and initialization of all related features. For more information, see [{% assign linkedpage = site.pages | where: "name", "proxy-facades.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/proxy-facades.md %}).
+Any access to a method or property of a proxy facade triggers the lazy loading and initialization of all related features. For more information, see [Proxy Facades](proxy-facades.md).
 
 ### Combined Injector
 
@@ -317,11 +307,7 @@ When a CMS component that is covered by a lazy-loaded module is instantiated, it
 
 ### Initializing Lazy Loaded Modules
 
-{% capture version_note %}
-{{ site.version_note_part1a }} 3.2 {{ site.version_note_part2 }}
-{% endcapture %}
-
-{% include docs/feature_version.html content=version_note %}
+> **Note:** This functionality is introduced with version 3.2 of the Spartacus libraries.
 
 Spartacus provides a `MODULE_INITIALIZER` that should be used instead of the Angular `APP_INITIALIZER` for initializing lazy-loaded modules. The `APP_INITIALIZER` mechanism finishes initializing the application before any lazy loading occurs, so lazy-loaded features that may need to run initialization logic when they are loaded are unable to do so.
 

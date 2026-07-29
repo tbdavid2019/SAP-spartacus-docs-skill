@@ -2,8 +2,10 @@
 title: Building the FSA Spartacus Storefront using 4.0 Libraries
 ---
 
-The following instructions describe how to build an FSA storefront application using published FSA Spartacus 4.x libraries. 
-If you are building Spartacus from the source, see [Contributor Setup]({{ site.baseurl }}{% link _pages/contributing/contributor-setup.md %}).
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+The following instructions describe how to build an FSA storefront application using published FSA Spartacus 4.x libraries.
+If you are building Spartacus from the source, see [Contributor Setup](../../contributing/contributor-setup.md).
 
 ***
 
@@ -33,7 +35,7 @@ FSA Spartacus uses SAP Commerce and Financial Services Accelerator back end and 
 - **SAP Commerce Cloud**: Release **2105** is required. Patch version **2105.5** is recommended.
 - **Financial Services Accelerator**: Version **2202** is required.
 
-For more information, see [Installing SAP Commerce Cloud FSA for use with FSA Spartacus]({{ site.baseurl }}{% link _pages/fsa/install/installing-sap-commerce-with-fsa-spartacus.md %}).
+For more information, see [Installing SAP Commerce Cloud FSA for use with FSA Spartacus](installing-sap-commerce-with-fsa-spartacus.md).
 
 ### Windows Setup
 
@@ -43,8 +45,8 @@ Next, create the .npmrc file at the root of your Angular project.
 The .npmrc file should contain the following:
 
 ```shell
-shell = "{instalation directory}\\Git\\bin\\bash.exe" 
-script-shell = "{instalation directory}\\Git\\bin\\bash.exe" 
+shell = "{instalation directory}\\Git\\bin\\bash.exe"
+script-shell = "{instalation directory}\\Git\\bin\\bash.exe"
 
 
 Example:
@@ -124,7 +126,7 @@ The following procedure describes how to create a new Angular application with t
     yarn install
     ```
 
-3. After the installation is completed, the app structure needs to be updated to meet Spartacus requirements. 
+3. After the installation is completed, the app structure needs to be updated to meet Spartacus requirements.
 To do that, you need to replace the existing `app` folder with the one that contains the required structure.
 You can download a ready-made `app` folder with the new structure on link provided below.
 Perform the following steps:
@@ -154,12 +156,12 @@ Perform the following steps:
 
 Your app will be compiled and then started.
 
-To display your storefront, assuming everything is installed locally, browse to `http://localhost:4200`. 
+To display your storefront, assuming everything is installed locally, browse to `http://localhost:4200`.
 If you installed Financial SPA sample data with the *financialprocess* extension, the FSA Spartacus storefront for Financial services should appear.
 
-**Note**: If your storefront doesn’t appear, you probably need to accept a privacy certificate. 
-To do so, browse to `https://localhost:9002/occ/v2/financial/cms/pages`, and then accept the privacy certificate. 
-This step is necessary because your browser will block calls to the app which makes calls to `localhost:9002`, due to security settings. 
+**Note**: If your storefront doesn’t appear, you probably need to accept a privacy certificate.
+To do so, browse to `https://localhost:9002/occ/v2/financial/cms/pages`, and then accept the privacy certificate.
+This step is necessary because your browser will block calls to the app which makes calls to `localhost:9002`, due to security settings.
 To see the browser message, right-click in your browser, select **Inspect**, and then click **Console**.
 
 **Congratulations! You've built your first FSA Spartacus storefront.**

@@ -2,6 +2,8 @@
 title: Recommended Development Environment
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 ***
 
 **Table of Contents**
@@ -17,11 +19,16 @@ There are a number of necessary CLI tools that you need to have installed in ord
 
 - Node - first and foremost you need Node installed. To install it, refer to the [official site](https://nodejs.org). An alternative to installing a system-wide version of node is to use a Node version manager, such as [nvm](https://github.com/nvm-sh/nvm#installation-and-update). `nvm` also works on Windows via Windows Subsystem for Linux, a.k.a. `WSL`; if `WSL` is not available, [nvm-windows](https://github.com/coreybutler/nvm-windows) can be used. The advantage of installing a Node version manager is that it provides an ability to easily switch to a different version of Node.
 - Package manager - the Spartacus team uses `npm` as a package manager solution. `npm` comes pre-installed with Node.
-- Angular CLI - to install it, run `npm install -g @angular/cli`. 
+- Angular CLI - to install it, run `npm install -g @angular/cli`.
 
 ### Versions
 
-{% include docs/frontend_requirements.html %}
+<p>Your Angular development environment should include the following:</p>
+<ul>
+    <li><a href="https://angular.io/">Angular CLI:</a> Version <strong>14.2.3</strong> or newer.</li>
+    <li><a href="https://nodejs.org/">Node.js:</a> Version <strong>14.15</strong> or newer (but <strong>less than</strong> version 15), or <strong>16.10</strong> or newer.</li>
+    <li><a href="https://npmjs.org/">npm:</a> Version <strong>8.0</strong> or newer.</li>
+</ul>
 
 ## Editor
 
@@ -88,7 +95,7 @@ Some other notable extensions:
 
 ## Project Setup
 
-After following the steps in [{% assign linkedpage = site.pages | where: "name", "building-the-spartacus-storefront-from-libraries.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/frontend/building-the-spartacus-storefront-from-libraries.md %}), it's time to set up the project.
+After following the steps in [Building the Spartacus Storefront From Libraries](frontend/building-the-spartacus-storefront-from-libraries.md), it's time to set up the project.
 
 ### Code Formatting
 

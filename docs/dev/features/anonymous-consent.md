@@ -6,11 +6,9 @@ feature:
   cx_version: 1905
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.3 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.3 of the Spartacus libraries.
 
 Anonymous Consent Management gives anonymous users control over the tracking of their data. Anonymous users can grant or decline their consent for applications that collect and process personal data. For more, refer to the [Anonymous Consent Management on SAP Help Portal](https://help.sap.com/viewer/9d346683b0084da2938be8a285c0c27a/latest/en-US/a9f387f70d484c19971aca001dc71bc5.html?q=anonymous%20consent).
 
@@ -97,7 +95,7 @@ Spartacus offers some configuration options that are encapsulated in `anonymousC
 
 ### Changing UI Labels
 
-You can customize any UI message on the banner or in the dialog by overriding the existing translation keys. For more information, see [{% assign linkedpage = site.pages | where: "name", "i18n.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/i18n.md %}).
+You can customize any UI message on the banner or in the dialog by overriding the existing translation keys. For more information, see [Internationalization (i18n)](../i18n.md).
 
 ## Extending Anonymous Consent
 

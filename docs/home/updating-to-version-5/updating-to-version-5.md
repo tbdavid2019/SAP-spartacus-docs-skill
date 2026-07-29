@@ -2,6 +2,8 @@
 title: Updating to Spartacus Version 5.0
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 ***
 
 **Table of Contents**
@@ -159,9 +161,9 @@ handleClick(event: UIEvent): void {
   }
 }
 ```
-  
+
 To pass data to the modal, call the data as a parameter of the function, as shown in the following example:
-  
+
 ```ts
 const dialog = this.launchDialogService.openDialog(
     LAUNCH_CALLER.COUPON,
@@ -175,6 +177,6 @@ const dialog = this.launchDialogService.openDialog(
 
 In addition to breaking changes, the following details are important to be aware of when upgrading to Spartacus 5.0:
 
-- New entry points have been introduced for the `@spartacus/cart` library. For more information, see [{% assign linkedpage = site.pages | where: "name", "cart-library-release-notes.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/home/updating-to-version-5/cart-library-release-notes.md %}).
-- New entry points have been introduced for the `@spartacus/checkout` library. For more information, see [{% assign linkedpage = site.pages | where: "name", "checkout-libraries-release-notes.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/home/updating-to-version-5/checkout-libraries-release-notes.md %}).
+- New entry points have been introduced for the `@spartacus/cart` library. For more information, see [Cart Library Release Notes](cart-library-release-notes.md).
+- New entry points have been introduced for the `@spartacus/checkout` library. For more information, see [Checkout Library Release Notes](checkout-libraries-release-notes.md).
 - Spartacus provides a `webApplicationInjector.js` file that is required for working with SmartEdit. In Spartacus 5.0, the `webApplicationInjector.js` file has been updated to work with SAP Commerce Cloud 2211. If you are using an older version of SAP Commerce Cloud, you need to replace the `webApplicationInjector.js` file in your Spartacus application with the `webApplicationInjector.js` file that is shipped with your version of SAP Commerce Cloud. For more information, see [Web Application Injector](https://help.sap.com/docs/SAP_COMMERCE_CLOUD_PUBLIC_CLOUD/e1391e5265574bfbb56ca4c0573ba1dc/e9340d1d3d3249849ff154731277069a.html).

@@ -6,11 +6,9 @@ feature:
   cx_version: n/a
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.1 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.1 of the Spartacus libraries.
 
 Each minor version of the Spartacus libraries includes new features, which are often improvements to existing components. These features are usually expected by users, but in some cases, these updates could be considered breaking changes, especially when you have built your own customizations on top of specific behaviors, or on top of the DOM structure.
 

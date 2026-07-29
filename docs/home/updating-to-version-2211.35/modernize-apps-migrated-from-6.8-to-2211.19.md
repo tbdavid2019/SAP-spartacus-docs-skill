@@ -2,6 +2,8 @@
 title: Modernizing Your Storefront App That Was Upgraded to Version 2211.19
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Angular 17 introduced a new Angular CLI configuration format, which was not initially recommended for use with Spartacus apps that were updated to version 2211.19 because there were compatibility issues at the time.
 
 Now that you are preparing to update to Angular 19 and Spartacus 2211.36, it is recommended that you use the new Angular CLI configuration format. The benefits of using the new Angular configuration format are that application builds are quicker, and it makes your app "future proof" in the sense that, in the future, any new Angular or Spartacus features might require you to use the new configuration format as a prerequisite.
@@ -381,12 +383,12 @@ The following steps apply to all storefront apps that were previously updated fr
 
    ```ts
    import 'zone.js/node';
-   
+
    import { ngExpressEngine as engine } from - '@spartacus/setup/ssr';
    import { NgExpressEngineDecorator } from - '@spartacus/setup/ssr';
    import * as express from 'express';
    import { join } from 'path';
-   
+
    import { AppServerModule } from './src/main.- server';
    import { APP_BASE_HREF } from '@angular/common';
    import { existsSync } from 'fs';

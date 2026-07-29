@@ -6,11 +6,9 @@ feature:
     cx_version: 2211.28
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.5 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.5 of the Spartacus libraries.
 
 Multi-dimensional products are products that are different from one another in two or more ways, but are based on the same core model. An example of a multi-dimensional product is a T-shirt that varies in both color and size.
 

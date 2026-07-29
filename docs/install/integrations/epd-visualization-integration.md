@@ -6,11 +6,9 @@ feature:
   cx_version: 2105
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 4.3 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 4.3 of the Spartacus libraries.
 
 The SAP Enterprise Product Development Visualization integration is deprecated and will be removed in a future version.
 
@@ -45,7 +43,7 @@ The following sections describe how to [configure Spartacus with schematics](#co
 
 ## Configuring Spartacus Using Schematics
 
-You can install and configure the SAP Enterprise Product Development Visualization integration using Spartacus schematics. To take advantage of the automatic setup provided by Spartacus schematics, you need to ensure that your storefront application adheres to the app structure introduced with Spartacus 3.2. For more information, see [{% assign linkedpage = site.pages | where: "name", "reference-app-structure.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/reference-app-structure.md %}).
+You can install and configure the SAP Enterprise Product Development Visualization integration using Spartacus schematics. To take advantage of the automatic setup provided by Spartacus schematics, you need to ensure that your storefront application adheres to the app structure introduced with Spartacus 3.2. For more information, see [Reference App Structure](../reference-app-structure.md).
 
 To use schematics to perform a full configuration, run the following command from within the root directory of your storefront application:
 
@@ -307,7 +305,7 @@ To create a database that includes the required sample data, add the `epdvisuali
 
 The following steps describe how to configure SAP Commerce Cloud with sample data for the SAP Enterprise Product Development Visualization integration.
 
-1. Follow the steps for [{% assign linkedpage = site.pages | where: "name", "installing-sap-commerce-cloud.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/backend/installing-sap-commerce-cloud.md %}). As previously noted, ensure that you are using SAP Commerce Cloud 2105 or newer.
+1. Follow the steps for [Installing SAP Commerce Cloud for use with Spartacus](../backend/installing-sap-commerce-cloud.md). As previously noted, ensure that you are using SAP Commerce Cloud 2105 or newer.
 1. Add the `epdvisualizationspartacussampledata` extension to the `localextensions.xml` file of your Commerce Cloud server.
 1. Install the `epdvisualizationspartacussampledata` to your storefront as described in [Installing the epdvisualizationspartacussampledata Extension](#installing-the-epdvisualizationspartacussampledata-extension).
 1. Build and deploy, which includes initializing the database. This will create a new database (destroying the existing one), which contains the sample data for the SAP Enterprise Product Development Visualization integration.

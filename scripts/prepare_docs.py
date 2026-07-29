@@ -14,6 +14,11 @@ from pathlib import Path
 
 
 OFFICIAL_SITE = "https://sap.github.io/spartacus-docs"
+TRANSFORMATION_NOTICE = (
+    "<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; "
+    "Jekyll directives and links were normalized. See docs/SOURCE.json and "
+    "docs/UPSTREAM_LICENSE.txt in the skill root. -->"
+)
 CAPTURED_VERSION_NOTE = re.compile(
     r"{%\s*capture\s+version_note\s*%}\s*"
     r"(.*?)"
@@ -27,6 +32,9 @@ LINKED_PAGE_TITLE = re.compile(
 )
 JEKYLL_PAGE_LINK = re.compile(
     r"{{\s*site\.baseurl\s*}}{%\s*link\s+_pages/([^%]+?)\s*%}"
+)
+LOCAL_MARKDOWN_LINK = re.compile(
+    r"(\[[^\]]*\]\()([^) \t]+\.md(?:#[^)]*)?)(\))"
 )
 FRONTMATTER = re.compile(r"\A---\s*\n(.*?)\n---\s*(?:\n|\Z)", re.DOTALL)
 
@@ -155,15 +163,63 @@ def _relative_page_link(current_path: Path, pages_dir: Path, target: str) -> str
     return Path(os.path.relpath(target_path, start=current_path.parent)).as_posix()
 
 
+def _repair_local_markdown_link(
+    match: re.Match[str],
+    current_path: Path,
+    pages_dir: Path,
+    page_paths_by_name: dict[str, list[Path]],
+) -> str:
+    target_with_anchor = match.group(2)
+    if target_with_anchor.startswith(("http://", "https://")):
+        return match.group(0)
+    target, separator, anchor = target_with_anchor.partition("#")
+    candidate = (
+        pages_dir / target.lstrip("/")
+        if target.startswith("/")
+        else current_path.parent / target
+    )
+    if candidate.is_file():
+        return match.group(0)
+
+    root_candidate = pages_dir / target.lstrip("./")
+    if root_candidate.is_file():
+        repaired = _relative_page_link(
+            current_path, pages_dir, root_candidate.relative_to(pages_dir).as_posix()
+        )
+    else:
+        matches = page_paths_by_name.get(Path(target).name, [])
+        if len(matches) == 1:
+            repaired = _relative_page_link(
+                current_path, pages_dir, matches[0].relative_to(pages_dir).as_posix()
+            )
+        else:
+            repaired = f"{OFFICIAL_SITE}/{Path(target).stem}/"
+    if separator:
+        repaired = f"{repaired}#{anchor}"
+    return f"{match.group(1)}{repaired}{match.group(3)}"
+
+
 def _render_page(
     source_path: Path,
     pages_dir: Path,
     titles_by_filename: dict[str, str],
+    page_paths_by_name: dict[str, list[Path]],
     frontend_requirements: str,
     features: list[Feature],
     events_table: str,
 ) -> str:
     content = source_path.read_text(encoding="utf-8")
+    frontmatter = FRONTMATTER.search(content)
+    if frontmatter:
+        content = (
+            content[: frontmatter.end()]
+            + "\n"
+            + TRANSFORMATION_NOTICE
+            + "\n"
+            + content[frontmatter.end() :]
+        )
+    else:
+        content = TRANSFORMATION_NOTICE + "\n\n" + content
     content = CAPTURED_VERSION_NOTE.sub(_render_version_note, content)
     content = content.replace(
         "{% include docs/frontend_requirements.html %}",
@@ -182,10 +238,17 @@ def _render_page(
         lambda match: _relative_page_link(source_path, pages_dir, match.group(1)),
         content,
     )
+    content = LOCAL_MARKDOWN_LINK.sub(
+        lambda match: _repair_local_markdown_link(
+            match, source_path, pages_dir, page_paths_by_name
+        ),
+        content,
+    )
     content = re.sub(r"{%\s*(?:raw|endraw)\s*%}", "", content)
     content = content.replace("{{ site.baseurl }}", OFFICIAL_SITE)
     content = content.replace("{{ site.product_name }}", "Spartacus Storefront")
-    return content
+    normalized = "\n".join(line.rstrip() for line in content.splitlines())
+    return normalized + ("\n" if content.endswith("\n") else "")
 
 
 def prepare_snapshot(
@@ -215,11 +278,13 @@ def prepare_snapshot(
     frontend_requirements = frontend_path.read_text(encoding="utf-8")
 
     titles_by_filename: dict[str, str] = {}
+    page_paths_by_name: dict[str, list[Path]] = {}
     features: list[Feature] = []
     for page in source_pages:
         content = page.read_text(encoding="utf-8")
         relative = page.relative_to(pages_dir).as_posix()
         titles_by_filename[page.name] = _extract_title(content, page)
+        page_paths_by_name.setdefault(page.name, []).append(page)
         features.extend(_extract_features(content, relative))
 
     events_table = _events_table(data_dir / "events.csv")
@@ -232,6 +297,7 @@ def prepare_snapshot(
                 page,
                 pages_dir,
                 titles_by_filename,
+                page_paths_by_name,
                 frontend_requirements,
                 features,
                 events_table,

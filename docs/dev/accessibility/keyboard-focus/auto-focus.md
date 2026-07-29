@@ -2,11 +2,9 @@
 title: Auto Focus
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 2.0 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 2.0 of the Spartacus libraries.
 
 The `cxFocus` directive provides auto focus capabilities for a single-page experience. The native HTML5 `autofocus` attribute falls short in a single-page application experience, since this attribute is only applied when a page is loaded in the browser. In a single-page application, pages are built dynamically, and elements with an `autofocus` attribute are not focused automatically. Moreover, there are scenarios where the focus of an element should be driven dynamically. For example, when a dialog is opened, or a group of elements is "unlocked".
 
@@ -26,7 +24,7 @@ The auto focus feature of the `cxFocus` directive focuses an element when the ho
 The default configuration (`autofocus: true`) selects the first focusable element of the inner DOM of the host element. Focusable elements are elements that receive focus when you tab through the DOM. The focus is primarily driven by the semantic nature of the element, but can also be forced by using the `tabindex` attribute. In the below example, the first focusable element is the close button:
 
 ```html
-<div [cx-focus]="{ autofocus: true }"> 
+<div [cx-focus]="{ autofocus: true }">
   <button class="close"></button>
   <input class="value" />
 </div>

@@ -6,11 +6,9 @@ feature:
   cx_version: n/a
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 4.2 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 4.2 of the Spartacus libraries.
 
 The Spartacus scroll position restoration feature uses the same mechanism that is used by the `scrollPositionRestoration` configuration option from the `RouterModule` of the `@angular/router`. However, Spartacus provides additional configuration options to make the scroll position restoration functionality more flexible. For example, you can configure scroll position restoration so that users do not have their scroll position set to the top of the page when they visit child routes, or when query strings are appended to the URL.
 

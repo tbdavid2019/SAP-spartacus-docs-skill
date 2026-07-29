@@ -2,6 +2,8 @@
 title: FSA Spartacus FAQ
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 This document compiles frequently asked questions related to Financial Services Accelerator for project “Spartacus” (FSA Spartacus) as a product, as well as questions related to FSA Spartacus development and FSA Spartacus library development.
 
 If you have technical questions and want to contribute to this document, you can get in touch with us on [Stack Overflow](https://stackoverflow.com/questions/tagged/spartacus-storefront). For non-technical questions, you can reach us on our *#help-fsa* channel of [Slack workspace](https://join.slack.com/t/spartacus-storefront/shared_invite/zt-jekftqo0-HP6xt6IF~ffVB2cGG66fcQ). We are looking forward to hearing your feedback!

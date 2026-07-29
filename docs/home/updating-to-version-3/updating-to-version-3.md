@@ -2,11 +2,13 @@
 title: Updating to Version 3.0
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 ## Prerequisites
 
 Before upgrading your Spartacus libraries to version 3.0, you must address the following prerequisites:
 
-- You must first upgrade all of your `@spartacus` libraries to the latest 2.1.x release before you begin upgrading to Spartacus 3.0. For more information, see [Upgrading Spartacus Libraries to a New Minor Version]({{ site.baseurl }}/release-information/#upgrading-spartacus-libraries-to-a-new-minor-version).
+- You must first upgrade all of your `@spartacus` libraries to the latest 2.1.x release before you begin upgrading to Spartacus 3.0. For more information, see [Upgrading Spartacus Libraries to a New Minor Version](https://sap.github.io/spartacus-docs/release-information/#upgrading-spartacus-libraries-to-a-new-minor-version).
 
 - Your `@spartacus` libraries must include the `@spartacus/schematics` library. If you do not have the `@spartacus/schematics` library, add it to your `package.json` file in the `devDependencies` section, and set it to the same version as your other `@spartacus` libraries. Then run `yarn install`.
 
@@ -29,11 +31,11 @@ ng update @spartacus/schematics
 
 **Note:** If you do not have `@spartacus/schematics` installed, you will get the following error: `Package '@spartacus/schematics' is not a dependency.` For more information, see [Prerequisites](#prerequisites).
 
-When the update has finished running, inspect your code for comments that begin with `// TODO:Spartacus`. For detailed information about each injected comment, see [{% assign linkedpage = site.pages | where: "name", "technical-changes-version-3.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/home/updating-to-version-3/technical-changes-version-3.md %}).
+When the update has finished running, inspect your code for comments that begin with `// TODO:Spartacus`. For detailed information about each injected comment, see [Technical Changes in Spartacus 3.0](technical-changes-version-3.md).
 
 For more information about schematics, see the schematics project [README](https://github.com/SAP/spartacus/tree/develop/projects/schematics).
 
-For more information about the deprecated styles from Spartacus version 2.x, see [{% assign linkedpage = site.pages | where: "name", "css-changes-in-version-3.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/home/updating-to-version-3/css-changes-in-version-3.md %}).
+For more information about the deprecated styles from Spartacus version 2.x, see [Changes to Styles in 3.0](css-changes-in-version-3.md).
 
 ## Migrating from Accelerator to Spartacus
 

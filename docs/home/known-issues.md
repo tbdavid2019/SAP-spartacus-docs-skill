@@ -2,6 +2,8 @@
 title: Known Issues
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Updated March 18th, 2022
 
 ## An update in the hamburgers npm package causes build failure in Spartacus

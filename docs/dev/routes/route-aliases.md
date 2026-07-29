@@ -2,6 +2,8 @@
 title: Route Aliases
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Multiple route aliases can be configured in the `paths` array. Spartacus then generates router links using the first configured alias that can satisfy the parameters of the `paths` array with the `params` object. As a result, you need to order aliases from those that require the most specific parameters to those having the least parameters.
 
 In the following example, the configuration has the route aliases in the correct order:
@@ -60,7 +62,7 @@ ConfigModule.withConfig({
                     /* WRONG: */
 
                     /* will always be used */
-                    'p/:productCode', 
+                    'p/:productCode',
 
                     /* will never be used, because (among others) it contains the same parameters as above */
                     ':campaignName/p/:productCode'

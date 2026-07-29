@@ -2,11 +2,9 @@
 title: Customer Product Inventory
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.1 {{ site.version_note_forTUA }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.1 of the TUA Spartacus libraries.
 
 Customers use the Customer Product Inventory (CPI) feature to view their existing subscriptions and subscribed products information.  Customers can manage their subscriptions with proper authorization.  Entries in the Customer Product Inventory are created and updated from backend systems once the product offerings have been provisioned.
 
@@ -27,7 +25,7 @@ From the **Account** drop-down menu, click **Subscriptions**. All subscriptions 
 
 ### Usage Consumption
 
-If enabled, consumption information for each subscribed product can be viewed in either grid format, pie chart format or both. 
+If enabled, consumption information for each subscribed product can be viewed in either grid format, pie chart format or both.
 
 
 ## Frontend and Backend Dependencies

@@ -2,13 +2,15 @@
 title: Pre-Release Information
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 This document describes what is included in the latest pre-release of Spartacus libraries, such as `next` and `rc` libraries.
 
 No pre-releases are available at this time.
 
-- For an overview of what is included in a specific release, see [{% assign linkedpage = site.pages | where: "name", "release-information.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/home/release-information.md %}).
+- For an overview of what is included in a specific release, see [Release Information for All Versions of Spartacus Libraries](release-information.md).
 - For detailed release notes, see the Spartacus repository [Releases page](https://github.com/SAP/spartacus/releases).
-  
+
 
 ## Questions
 

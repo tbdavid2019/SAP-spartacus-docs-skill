@@ -6,11 +6,9 @@ feature:
   cx_version: 2011
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 4.2 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 4.2 of the Spartacus libraries.
 
 The cart validation feature allows Spartacus to verify a user's cart at every step during checkout to ensure that the requested quantity of each item is available. If the quantity of an item is reduced, or an item is out of stock and no longer available, the user is redirected to the cart page, and Spartacus displays a global message about the change to the user's cart.
 

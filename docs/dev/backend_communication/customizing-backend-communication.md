@@ -2,7 +2,9 @@
 title: Customizing Back End Communication
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 This is a landing page for backend communication-related topics. This includes the following topics:
 
-- [{% assign linkedpage = site.pages | where: "name", "connecting-to-other-systems.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/backend_communication/connecting-to-other-systems.md %})
-- [{% assign linkedpage = site.pages | where: "name", "loading-scopes.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/backend_communication/loading-scopes.md %})
+- [Connecting to Other Systems](connecting-to-other-systems.md)
+- [Loading Scopes](loading-scopes.md)

@@ -2,28 +2,26 @@
 title: B2B Commerce Organization Tutorial
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 3.0 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 3.0 of the Spartacus libraries.
 
-**Note:** B2B Commerce Organization requires the Organization feature library. For more information, see [Installing Additional Spartacus Libraries]({{ site.baseurl }}/schematics/#installing-additional-spartacus-libraries).
+**Note:** B2B Commerce Organization requires the Organization feature library. For more information, see [Installing Additional Spartacus Libraries](https://sap.github.io/spartacus-docs/schematics/#installing-additional-spartacus-libraries).
 
-For information about customizing the Spartacus Organization feature library, see [{% assign linkedpage = site.pages | where: "name", "b2b-commerce-organization.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/b2b-commerce-organization.md %}).
+For information about customizing the Spartacus Organization feature library, see [B2B Commerce Organization](../../../dev/features/b2b-commerce-organization.md).
 
 This tutorial introduces the B2B Commerce Organization feature. It is important to follow the tutorial in the order presented, as the information on each page builds upon the steps from the previous pages.
 
-- [{% assign linkedpage = site.pages | where: "name", "b2b-commerce-organization-overview.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/using/commerceorg/b2b-commerce-organization-overview.md %})
-- [{% assign linkedpage = site.pages | where: "name", "purchase-flow-example.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/using/commerceorg/purchase-flow-example.md %})
-- [{% assign linkedpage = site.pages | where: "name", "creating-a-new-organization-and-administrator.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/using/commerceorg/creating-a-new-organization-and-administrator.md %})
-- [{% assign linkedpage = site.pages | where: "name", "b2b-units.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/using/commerceorg/b2b-units.md %})
-- [{% assign linkedpage = site.pages | where: "name", "b2b-users.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/using/commerceorg/b2b-users.md %})
-  - [{% assign linkedpage = site.pages | where: "name", "b2b-buyers.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/using/commerceorg/b2b-buyers.md %})
-  - [{% assign linkedpage = site.pages | where: "name", "b2b-approvers.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/using/commerceorg/b2b-approvers.md %})
-- [{% assign linkedpage = site.pages | where: "name", "b2b-purchasing-limits.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/using/commerceorg/b2b-purchasing-limits.md %})
-- [{% assign linkedpage = site.pages | where: "name", "b2b-cost-centers.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/using/commerceorg/b2b-cost-centers.md %})
-- [{% assign linkedpage = site.pages | where: "name", "b2b-budgets.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/using/commerceorg/b2b-budgets.md %})
-- [{% assign linkedpage = site.pages | where: "name", "b2b-shipping-addresses.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/using/commerceorg/b2b-shipping-addresses.md %})
-- [{% assign linkedpage = site.pages | where: "name", "purchase-and-approval-flow-example.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/using/commerceorg/purchase-and-approval-flow-example.md %})
-- [{% assign linkedpage = site.pages | where: "name", "disabling-commerce-organization-entities.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/using/commerceorg/disabling-commerce-organization-entities.md %})
+- [B2B Commerce Organization Overview](../b2b-commerce-organization-overview.md)
+- [Purchase Flow Example](../purchase-flow-example.md)
+- [Creating a New Organization and Administrator](../creating-a-new-organization-and-administrator.md)
+- [Units](../b2b-units.md)
+- [Users](../b2b-users.md)
+  - [Buyers](../b2b-buyers.md)
+  - [Approvers](../b2b-approvers.md)
+- [Purchasing Limits](../b2b-purchasing-limits.md)
+- [Cost Centers](../b2b-cost-centers.md)
+- [Budgets](../b2b-budgets.md)
+- [Shipping Addresses](../b2b-shipping-addresses.md)
+- [Purchase and Approval Flow Example](../purchase-and-approval-flow-example.md)
+- [Disabling and Deleting Commerce Organization Entities](../disabling-commerce-organization-entities.md)

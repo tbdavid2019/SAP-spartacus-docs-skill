@@ -2,11 +2,9 @@
 title: Pricing - Subscription Rate Plan
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.0 {{ site.version_note_forTUA }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.0 of the TUA Spartacus libraries.
 
 A price could also encompass many different components. A typical introductory wireless offering, for example, will have an activation cost, a monthly cost, a number of free minutes, a cost for extra minutes, and some sort of promotional component. The offering might also include a corporate discount for business users. Each of these elements must be described in order to paint an accurate picture of the overall price charged for any Product Offering.
 
@@ -26,9 +24,9 @@ A price could also encompass many different components. A typical introductory w
       - `<billing event>: <currency> <sum of the prices>`
       - If the Product Offering has no pay now prices 0 will be displayed for the value. If the price has no billingEvent 'Pay Now' will be displayed.
     - not main area display: displays the price list provided in the input in the following format:
-      - `<currency><sum of cancellation fees> - <billing event>` 
+      - `<currency><sum of cancellation fees> - <billing event>`
 - `TmaRecurringChargeComponent` displays recurring charges as:
-    - In case of one recurring charge for the entire contract term: 
+    - In case of one recurring charge for the entire contract term:
       - Recurring Charges: `<currency> <value> /<billingFrequency>`
     - In case of multiple recurring charges:
       - Recurring Charges: `<currency> <value> /<mo/yr/qr> <for first/for next/for last> <duration> <month/months>`

@@ -2,9 +2,11 @@
 title: FSA User Request Framework
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 **Note**: This feature is introduced with version 1.0 of the FSA Spartacus libraries.
 
-The User Request Framework is a flexible, lightweight framework for implementing various types of user requests, originating from the customer towards the company. 
+The User Request Framework is a flexible, lightweight framework for implementing various types of user requests, originating from the customer towards the company.
 
 
 ***
@@ -23,22 +25,22 @@ For more information, see [User Request Framework](https://help.sap.com/docs/FIN
 
 ## Use Cases
 
-The framework is implemented on the FSA Spartacus storefront as part of the following processes: 
+The framework is implemented on the FSA Spartacus storefront as part of the following processes:
 
 Financial Service Accelerator offers two use cases where the User Request Framework is used:
 
-- **First Notice of Loss** - a process in which the user reports a claim directly on the insurance storefront. 
-  The claim reporting process includes four sample steps that capture all the relevant information required for recording a loss event. 
-  For more information on how the FNOL process is implemented on the FSA Spartacus storefront, see [Claims]({{ site.baseurl }}{% link _pages/fsa/features/claims/claims.md %}).
-- **Policy Change** - a process in which the user modifies their existing insurance policy online. 
-  Financial Service Accelerator provides several sample policy change processes out of the box, all of them based on the sample Auto Insurance product. 
-  Users can easily change mileage, add or remove coverages, and/or add additional drivers to their policies through a guided step-by-step procedure. 
-  For more information on how this feature is implemented in FSA Spartacus, see [Policy Change]({{ site.baseurl }}{% link _pages/fsa/features/fsa-policy-change.md %}).
- 
-Although the current implementation of the Financial Services Accelerator uses the User Request Framework for changing policies and reporting claims, it can be extended and reused for other request types (contact request, service request, etc.). 
-All user request processes are fully configurable in the Backoffice. 
+- **First Notice of Loss** - a process in which the user reports a claim directly on the insurance storefront.
+  The claim reporting process includes four sample steps that capture all the relevant information required for recording a loss event.
+  For more information on how the FNOL process is implemented on the FSA Spartacus storefront, see [Claims](../claims/claims.md).
+- **Policy Change** - a process in which the user modifies their existing insurance policy online.
+  Financial Service Accelerator provides several sample policy change processes out of the box, all of them based on the sample Auto Insurance product.
+  Users can easily change mileage, add or remove coverages, and/or add additional drivers to their policies through a guided step-by-step procedure.
+  For more information on how this feature is implemented in FSA Spartacus, see [Policy Change](../fsa-policy-change.md).
 
-## Financial Services Accelerator Trail - Customized FNOL Process 
+Although the current implementation of the Financial Services Accelerator uses the User Request Framework for changing policies and reporting claims, it can be extended and reused for other request types (contact request, service request, etc.).
+All user request processes are fully configurable in the Backoffice.
+
+## Financial Services Accelerator Trail - Customized FNOL Process
 
 The Financial Services Accelerator Customized FNOL Process Trail demonstrates how to create a new user request process in Financial Services Accelerator, using as an example the First Notice of Loss process for Travel Insurance.
-For more information, see [Configurable FNOL Process]({{ site.baseurl }}{% link _pages/fsa/features/user-request-framework/fsa-configurable-fnol-process.md %}).
+For more information, see [Configurable FNOL Process](fsa-configurable-fnol-process.md).

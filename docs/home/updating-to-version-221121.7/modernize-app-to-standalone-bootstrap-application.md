@@ -2,6 +2,8 @@
 title: Modernizing Your Storefront (Manual Fallback Steps Only)
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 If you wish to run the automated Spartacus schematics that modernize your app to use the Angular `bootstrapApplication()` API and convert your root `AppComponent` to a standalone component, see [Modernizing Your Storefront to Use the Standalone Bootstrap Application](migration.md#modernizing-your-storefront-to-use-the-standalone-bootstrap-application).
 
 The procedures on this page are provided only in case you encountered an issue while running the Spartacus schematics for [Modernizing Your Storefront to Use the Standalone Bootstrap Application](migration.md#modernizing-your-storefront-to-use-the-standalone-bootstrap-application). If you have already successfully run those schematics, you can ignore the steps below.
@@ -12,7 +14,7 @@ The procedures on this page are provided only in case you encountered an issue w
 
    ```ts
    import { StorefrontComponent } from '@spartacus/storefront';
-   
+
     @Component({
      selector: 'app-root',
      imports: [StorefrontComponent],
@@ -75,13 +77,13 @@ The procedures on this page are provided only in case you encountered an issue w
      withNoHttpTransferCache,
    } from '@angular/platform-browser';
    import { AppModule } from './app.module';
-   
+
    export const appConfig: ApplicationConfig = {
      providers: [
        provideBrowserGlobalErrorListeners(),
        provideZoneChangeDetection({ eventCoalescing: true }),
        provideHttpClient(withFetch(), withInterceptorsFromDi()),
-   
+
        importProvidersFrom(AppModule),
      ],
    };
@@ -106,7 +108,7 @@ The procedures on this page are provided only in case you encountered an issue w
    import { bootstrapApplication } from '@angular/platform-browser';
    import { appConfig } from './app/app.config';
    import { AppComponent } from './app/app.component';
-   
+
    bootstrapApplication(AppComponent, appConfig)
      .catch((err) => console.error(err));
    ```
@@ -146,11 +148,11 @@ If your storefront app does not use server-side rendering (SSR), you can ignore 
    import { provideServerRendering } from '@angular/ssr';
    import { appConfig } from './app.config';
    import { AppServerModule } from './app.module.server';
-   
+
    const serverConfig: ApplicationConfig = {
      providers: [provideServerRendering(), importProvidersFrom(AppServerModule)],
    };
-   
+
    export const config = mergeApplicationConfig(appConfig, serverConfig);
    ```
 
@@ -164,7 +166,7 @@ If your storefront app does not use server-side rendering (SSR), you can ignore 
    ```ts
     import { NgModule } from '@angular/core';
     import { provideServer } from '@spartacus/setup/ssr';
-   
+
     @NgModule({
      providers: [
        ...provideServer({
@@ -183,10 +185,10 @@ If your storefront app does not use server-side rendering (SSR), you can ignore 
    import { BootstrapContext, bootstrapApplication } from '@angular/platform-browser';
    import { AppComponent } from './app/app.component';
    import { config } from './app/app.config.server';
-   
+
    const bootstrap = (context: BootstrapContext) =>
      bootstrapApplication(AppComponent, config, context);
-   
+
    export default bootstrap;
    ```
 
@@ -196,9 +198,9 @@ If your storefront app does not use server-side rendering (SSR), you can ignore 
 
    ```ts
    import bootstrap from './main.server';
-   
+
     /* ... */
-   
+
        ngExpressEngine({
         bootstrap,
        })
@@ -234,4 +236,4 @@ If your storefront app does not use server-side rendering (SSR), you can ignore 
 
    You have now modernized your app to use Angular's `bootstrapApplication()` API and converted your root `AppComponent` to a standalone component, aligning it with current Angular best practices.
 
-   It is also strongly recommended that you migrate your custom components to standalone components. For more information, see [Migrating to Standalone Components in Spartacus](standalone-components-in-spartacus.md).
+   It is also strongly recommended that you migrate your custom components to standalone components. For more information, see [Migrating to Standalone Components in Spartacus](https://sap.github.io/spartacus-docs/standalone-components-in-spartacus/).

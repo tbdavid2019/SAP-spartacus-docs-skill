@@ -6,6 +6,8 @@ feature:
     cx_version: n/a
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Server-side rendering error handling in Spartacus provides functionality that is missing from the error handling done by the Angular engine when pages are rendered on the server. Spartacus SSR error handling ensures that your storefront application reacts to errors that it encounters by providing a default set of tools to handle the errors. SSR error handling also provides the option to customize the experience. SSR error handling is essential for the SEO of your storefront pages, and for the overall user experience.
 
 ## Solution Overview
@@ -275,7 +277,7 @@ To handle HTTP errors, Spartacus provides `HttpErrorHandlerInterceptor`, which c
 
 When these kinds of semantic errors are propagated to ExpressJS and handled there by the `defaultExpressErrorHandlers` middleware, it can distinguish the errors and return an appropriate status code to the client (such as `404` or `500`).
 
-**Note:** Ensure that your custom Angular HTTP interceptors are provided after `HttpErrorHandlerInterceptor`, so that they are the next to run in the sequence. If they catch any error, make sure to rethrow the error to the next interceptors downstream. Otherwise, the Spartacus `HttpErrorHandlerInterceptor` will not capture the error, and as a result, it will not be able to propagate the error to the ExpressJS layer, which in turn will prevent sending the appropriate HTTP error status code to the client of the server-side rendering.  
+**Note:** Ensure that your custom Angular HTTP interceptors are provided after `HttpErrorHandlerInterceptor`, so that they are the next to run in the sequence. If they catch any error, make sure to rethrow the error to the next interceptors downstream. Otherwise, the Spartacus `HttpErrorHandlerInterceptor` will not capture the error, and as a result, it will not be able to propagate the error to the ExpressJS layer, which in turn will prevent sending the appropriate HTTP error status code to the client of the server-side rendering.
 
 The Spartacus `HttpErrorHandlerInterceptor` treats all outbound HTTP as a reason to make SSR fail.
 

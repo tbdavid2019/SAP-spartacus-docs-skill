@@ -2,11 +2,9 @@
 title: Product Offering Search
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.0 {{ site.version_note_forTUA }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.0 of the TUA Spartacus libraries.
 
 To support the commercial product catalog of product offerings, changes were required in the way "searches" are technically conducted to search for and find simple product offerings.  Changes were made in the areas of free text search, facets and top level category menu navigation.   The use of product specifications, which are used to create product offerings, are leveraged in search.
 

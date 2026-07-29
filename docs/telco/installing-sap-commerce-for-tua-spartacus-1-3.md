@@ -2,6 +2,8 @@
 title: Installing SAP  Cloud for use with TUA Spartacus 1.3
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The following instructions describe how to install and configure SAP Commerce Cloud (release 1905) with Telco & Utilities Accelerator (release 2003, latest patch) for use with a TUA Spartacus storefront. In these instructions, SAP Commerce and Telco & Utilities Accelerator are installed on your local computer, so `localhost` is used in the browser URLs.
 
 The installation procedure includes steps for creating and using a `b2c_telco_spa` recipe that makes use of the TUA Spartacus Sample Data (`b2ctelcospastore`), but you can use your own sample data or recipe as long as it includes the `cmsoccaddon`, `ycommercewebservices`, `acceleratorwebservicesaddon` extensions and TUA module.
@@ -35,11 +37,11 @@ Some of the steps in this procedure are derived from the documentation for insta
 
 1. [Download](https://github.com/SAP/spartacus-tua/releases) the TUA Spartacus Sample Data Store Extension.
 
-    The TUA Spartacus Sample Data Store Extension is the extension provided in the following zip file: `b2ctelcospastore.zip`.    
+    The TUA Spartacus Sample Data Store Extension is the extension provided in the following zip file: `b2ctelcospastore.zip`.
 
 1. Unzip the sample data.
 
-   **Note:** You can use both the store extensions, or only one of them, depending on your needs (specific to Telco or Utilities). 
+   **Note:** You can use both the store extensions, or only one of them, depending on your needs (specific to Telco or Utilities).
    - The sample data for Telco is stored in the `b2ctelcospastore.zip` archive.
    - The sample data for Utilities is stored in the `utilitiesspastore.zip` archive.
 
@@ -75,8 +77,8 @@ Some of the steps in this procedure are derived from the documentation for insta
       }
       afterSetup {
          ensureAdminPasswordSet()
-      }   
-      
+      }
+
          extensions {
             extName 'acceleratorcms'
             extName 'adaptivesearchbackoffice'
@@ -91,7 +93,7 @@ Some of the steps in this procedure are derived from the documentation for insta
             extName 'b2ctelcoaddon'
             extName 'b2ctelcotmfwebservices'
             extName 'b2ctelcowebservices'
-         
+
             extName 'b2ctelcooccaddon'
             extName 'commerceservicesbackoffice'
             extName 'solrfacetsearchbackoffice'
@@ -113,7 +115,7 @@ Some of the steps in this procedure are derived from the documentation for insta
             extName 'cmsoccaddon'
             extName 'customerticketingaddon'
             extName 'customersupportbackoffice'
-            
+
             extName 'personalizationwebservices'
             extName 'previewpersonalizationweb'
             extName 'personalizationcmsweb'
@@ -122,7 +124,7 @@ Some of the steps in this procedure are derived from the documentation for insta
             extName 'personalizationcmsbackoffice'
             extName 'personalizationservices'
             extName 'personalizationfacades'
-            
+
             extName 'acceleratorservices'
             extName 'assistedservicefacades'
             extName 'assistedservicestorefront'
@@ -132,13 +134,13 @@ Some of the steps in this procedure are derived from the documentation for insta
             extName 'couponbackoffice'
             extName 'droolsruleengineservices'
             extName 'couponfacades'
-            extName 'couponservices' 
+            extName 'couponservices'
             extName 'promotionenginesamplesaddon'
             extName 'acceleratorwebservicesaddon'
 
       }
    addons {
-         forStoreFronts('yacceleratorstorefront') { 
+         forStoreFronts('yacceleratorstorefront') {
             names('b2ctelcoaddon', 'smarteditaddon', 'customerticketingaddon', 'assistedservicestorefront', 'assistedservicecustomerinterestsaddon', 'pcmbackofficesamplesaddon', 'promotionenginesamplesaddon')
             template 'yacceleratorstorefront'
          }
@@ -146,15 +148,15 @@ Some of the steps in this procedure are derived from the documentation for insta
          forStoreFronts('ycommercewebservices') {
             names('b2ctelcooccaddon','cmsoccaddon','acceleratorwebservicesaddon',b2ctelcocmsaddon')
             template 'ycommercewebservices'
-            
+
          }
-         
+
       }
    }
 
    task setup () {
       doLast {
-         
+
          pl.setup()
 
          copy {
@@ -265,7 +267,7 @@ For Unix:
 
    - To access the Admin Console, use: https://localhost:9002
    - To access the Backoffice, use: https://localhost:9002/backoffice
-   
+
 
    **Note:** When setting up your TUA Spartacus storefront, set the base site in `app.module.ts` to `telcospa` and/or `utilitiesspa` (depending on the sample data that you chose to use). The following is an example:
 
@@ -286,7 +288,7 @@ For Unix:
    ```
 
    **Telco and Utilities**
-   
+
    ```ts
    context: {
    baseSite: ['telcospa', ‘utilitiesspa’]
@@ -301,7 +303,7 @@ By default, SAP Commerce Cloud replies to OCC REST API calls that do not require
 - Display information about the `telcospa` base store: https://localhost:9002/rest/v2/telcospa/basestores/telcospa
 - Display information about the `utilitiesspa` base store: https://localhost:9002/rest/v2/utilitiesspa/basestores/utilitiesspa
 
-To register users and check out, SAP Commerce Cloud must be configured with a client ID and password. When required, your TUA Spartacus storefront sends this client ID and password when communicating with the backend. 
+To register users and check out, SAP Commerce Cloud must be configured with a client ID and password. When required, your TUA Spartacus storefront sends this client ID and password when communicating with the backend.
 For more information about OCC configuration, see [Defining OAuth Clients in an Impex File](https://help.sap.com/viewer/d0224eca81e249cb821f2cdf45a82ace/latest/en-US/627c92db29ce4fce8b01ffbe478a8b3b.html#loio4079b4327ac243b6b3bd507cda6d74ff) in the SAP Help Portal.
 
 To configure SAP Commerce Cloud to accept OCC REST API calls, follow the steps:
@@ -346,7 +348,7 @@ To configure SAP Commerce Cloud to accept OCC REST API calls, follow the steps:
    }
    ```
 
-**You can now start TUA Spartacus!** After you have configured SAP Commerce Cloud to accept OCC REST API calls, you can set up and start your storefront. See [Building the TUA Spartacus Storefront Using 1.3 Libraries]({{ site.baseurl }}{% link _pages/telco/building-the-tua-storefront-from-libraries-1-3.md %}) for more information.
+**You can now start TUA Spartacus!** After you have configured SAP Commerce Cloud to accept OCC REST API calls, you can set up and start your storefront. See [Building the TUA Spartacus Storefront Using 1.3 Libraries](building-the-tua-storefront-from-libraries-1-3.md) for more information.
 
 ## Configuring CORS
 
@@ -374,7 +376,7 @@ corsfilter.acceleratorservices.allowedMethods=GET HEAD OPTIONS PATCH PUT POST DE
 corsfilter.acceleratorservices.allowedHeaders=origin content-type accept authorization cache-control
 ```
 
-**Note:** The `x-anonymous-consents` custom header is included in the above example, but it can be removed if you plan to disable the anonymous consent feature. However, do not remove this header if you do not plan to disable the anonymous consent feature. For more information, see [Anonymous Consent]({{ site.baseurl }}{% link _pages/dev/features/anonymous-consent.md %}).
+**Note:** The `x-anonymous-consents` custom header is included in the above example, but it can be removed if you plan to disable the anonymous consent feature. However, do not remove this header if you do not plan to disable the anonymous consent feature. For more information, see [Anonymous Consent](../dev/features/anonymous-consent.md).
 
 For more information about CORS, see [ycommercewebservices Extension](https://help.sap.com/viewer/9d346683b0084da2938be8a285c0c27a/latest/en-US/8c91f3a486691014b085fb11c44412ff.html) in the SAP Help Portal.
 

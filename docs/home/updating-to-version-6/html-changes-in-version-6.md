@@ -2,6 +2,8 @@
 title: Changes to HTML in Spartacus 6.0
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The following HTML changes were made in Spartacus 6.0.
 
 ## CheckoutTranslations
@@ -57,7 +59,7 @@ Changed line 9 classes from `'btn btn-block btn-action'` to `'btn btn-block btn-
 
 ### AnonymousConsentManagementBannerComponent
 
-- Changed bootstrap class on buttons from `col-lg-8` to `col-lg-7` and `col-lg-4` to `col-lg-5`. 
+- Changed bootstrap class on buttons from `col-lg-8` to `col-lg-7` and `col-lg-4` to `col-lg-5`.
 - Changed bootstrap class `col-lg-4 col-xs-12 cx-banner-buttons` to `col-lg-5 col-xs-12 cx-banner-buttons`.
 - Changed `btn btn-action` to `btn btn-secondary`.
 
@@ -302,9 +304,9 @@ Changed line 3 `btn btn-action btn-block dialog-trigger` to `btn btn-secondary b
 ### QuickOrderComponent
 
 - Replaced h3 tag with h2 tag `header` for accessibility improvements.
-- Changed line 195 classes from `col-xs-12 col-md-5 col-lg-4` to `col-xs-12 col-md-5 col-lg-3` 
-- Changed line 201 classes from `btn btn-block btn-action clear-button` to `btn btn-block btn-secondary clear-button` 
-- Changed line 208 classes from `col-xs-12 col-md-5 col-lg-4` to `col-xs-12 col-md-5 col-lg-3` 
+- Changed line 195 classes from `col-xs-12 col-md-5 col-lg-4` to `col-xs-12 col-md-5 col-lg-3`
+- Changed line 201 classes from `btn btn-block btn-action clear-button` to `btn btn-block btn-secondary clear-button`
+- Changed line 208 classes from `col-xs-12 col-md-5 col-lg-4` to `col-xs-12 col-md-5 col-lg-3`
 
 ### QuickOrderFormComponent
 

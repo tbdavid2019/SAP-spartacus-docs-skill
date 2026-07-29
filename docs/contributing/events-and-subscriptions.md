@@ -2,6 +2,8 @@
 title: Events and Subscriptions
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 In Spartacus, at the application start, you can subscribe to event streams that continue to be active for the whole application lifetime.
 
 When working with these kinds of event streams, it is important to subscribe only to the ones you need at the time, and nothing else. This is because streams can often cause side effects, such as loading data. Subscribing needlessly to streams can cause redundant calls, and add extra computations that result in reduced application performance.

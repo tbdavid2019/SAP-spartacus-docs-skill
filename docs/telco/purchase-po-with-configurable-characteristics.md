@@ -2,11 +2,9 @@
 title: Purchase PO with Configurable Characteristics
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 3.2.0 {{ site.version_note_forTUA }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 3.2.0 of the TUA Spartacus libraries.
 
 This feature provides the ability for service providers to sell products that are more complex in nature. These products have a significant number of product specification characteristics with a number product specification characteristic values that can be configurable or static; and can also have dependencies between them.
 
@@ -48,7 +46,7 @@ For configurable options:
 
 **Satellite Service Definition**
 
-<p align="center"><img src="{{ site.baseurl }}/assets/images/telco/satellite-service-example.png" alt="Satellite Service"></p>
+<p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/satellite-service-example.png" alt="Satellite Service"></p>
 
 The above image represents a Satellite Service product offering that has the following product specification characteristics and values assigned:
 

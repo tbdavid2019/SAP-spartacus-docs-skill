@@ -2,6 +2,8 @@
 title: Optimizing Cumulative Layout Shift in Spartacus
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The Cumulative Layout Shift (CLS) metric is a Core Web Vitals metric that measures how much the content on a page moves around while the page is loading, which can lead to a poor user experience. Spartacus provides a set of features to achieve a good CLS metric.
 
 For more general information on CLS, see [Cumulative Layout Shift (CLS)](https://web.dev/articles/cls) in the official Google web.dev documentation.

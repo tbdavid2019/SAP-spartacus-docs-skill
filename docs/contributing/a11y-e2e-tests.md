@@ -2,6 +2,8 @@
 title: Accessibility E2E Tests
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Accessibility in Spartacus has its own set of end-to-end tests, which are located in `projects/storefrontapp-e2e-cypress/cypress/integration/accessibility/tabbing-order.e2e-spec.ts`.
 
 These include tests that require a user to be logged in (for the My Account pages and the cart, for example), as well as tests that do not require a user to be logged in (for the Home page and Login page, for example).

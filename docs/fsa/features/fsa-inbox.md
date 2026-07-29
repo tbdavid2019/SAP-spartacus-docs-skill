@@ -2,6 +2,8 @@
 title: FSA Inbox
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 **Note**: This feature is introduced with version 1.0 of the FSA Spartacus libraries.
 
 ***
@@ -19,9 +21,9 @@ The Inbox feature enables your customers to see all notifications in one place, 
 
 In addition to that, messages in Inbox can have attachments. The customer will see the paper-clip icon in the message preview as an indicator that the message contains attachments. By clicking on the attachment link, the customer will be redirected to the attachment's URL.
 
-![inbox overview]({{ site.baseurl }}/assets/images/fsa/inbox_attachment.png)
+![inbox overview](https://sap.github.io/spartacus-docs/assets/images/fsa/inbox_attachment.png)
 
-![inbox message open]({{ site.baseurl }}/assets/images/fsa/inbox_attachment_open.png)
+![inbox message open](https://sap.github.io/spartacus-docs/assets/images/fsa/inbox_attachment_open.png)
 
 More details regarding the Inbox feature from Financial Services Accelerator can be found on the
  [SAP Help Portal](https://help.sap.com/viewer/4c33bf189ab9409e84e589295c36d96e/latest/en-US/abe842cac00a4f34a756cd720d4c2288.html).
@@ -46,7 +48,7 @@ The inbox component has inbox-tab at the top and inbox-messages at the bottom.
 <li class="tab"
     *ngFor="let tab of tabs; let i = index"
     (click)="activeTabIndex = i" >
-    <cx-fs-inbox-tab 
+    <cx-fs-inbox-tab
           [currentTab]="i === activeTabIndex" [tabId]="tab">
     </cx-fs-inbox-tab>
 </li>

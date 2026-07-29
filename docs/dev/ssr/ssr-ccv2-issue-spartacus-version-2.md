@@ -2,6 +2,8 @@
 title: Solution for Issue with Server-Side Rendering in Spartacus 2.0 or later and SAP Commerce Cloud for Public Cloud
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 This document describes how to resolve a problem with running Spartacus 2.0 or later with Server-Side Rendering (SSR) on SAP Commerce Cloud in the Public Cloud.
 
 The problem has been resolved with a new `manifest.json` format that is described below. It is strongly recommended that you update your `manifest.json` so that you no longer need to use the workaround.

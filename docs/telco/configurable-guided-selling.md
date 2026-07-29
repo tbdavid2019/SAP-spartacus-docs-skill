@@ -2,11 +2,9 @@
 title: Configurable Guided Selling Journey
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.0 {{ site.version_note_forTUA }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.0 of the TUA Spartacus libraries.
 
 Configurable Guided Selling (CGS) is the process in which a customer is taken through a step-by-step guided selling journey to purchase a complex product bundle.
 

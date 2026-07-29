@@ -10,11 +10,9 @@ feature:
   anchor: "#automatic-theme-configuration"
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.3 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.3 of the Spartacus libraries.
 
 Every site that is defined in the CMS has its own context, which includes a base site ID, language properties, and currency properties. The context also defines how these attributes are persisted in the URL. You can allow Spartacus to automatically determine the context based on the URL patterns of your sites, as defined in the CMS. You can enable this automatic context configuration by simply not defining the `context.baseSite` property in `app.module.ts`.
 
@@ -176,7 +174,7 @@ If you are using automatic site configuration, can set up the Spartacus configur
         const config =  {
             context: {...siteContextConfig.context, custom}
         }
-    
+
         return config;
       }
     }
@@ -235,11 +233,7 @@ You should now be able to see your URL with an uppercase ISO language code (for 
 
 ## Theme Configuration
 
-{% capture version_note %}
-{{ site.version_note_part1a }} 3.2 {{ site.version_note_part2 }}
-{% endcapture %}
-
-{% include docs/feature_version.html content=version_note %}
+> **Note:** This functionality is introduced with version 3.2 of the Spartacus libraries.
 
 You can add a `theme` to your `SiteContextConfig`, either automatically or statically.
 

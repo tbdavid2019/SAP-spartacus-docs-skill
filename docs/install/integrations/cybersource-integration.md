@@ -2,6 +2,8 @@
 title: Payment Integration with CyberSource Example
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 You can integrate Spartacus with a CyberSource payment subscription in a PCI-compliant scenario, where no card information is sent through SAP Commerce Cloud.
 
 On a default installation of Spartacus, the checkout process uses the Accelerator mocked configuration mechanism for payments. The structure and behavior of the mocked payment is very similar to CyberSource in terms of functionality, in that it uses Silent Post Order, it does the field mappings for payment details, and so on.
@@ -66,4 +68,4 @@ export class CybersourceCheckoutModule {}
 
 **Note:** If your checkout process has been heavily customized, you might also have to override other members of Spartacus, including the checkout process steps and orchestration.
 
-For more information, see [{% assign linkedpage = site.pages | where: "name", "extending-checkout.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/extending-checkout.md %}).
+For more information, see [Extending Checkout](../../dev/extending-checkout.md).

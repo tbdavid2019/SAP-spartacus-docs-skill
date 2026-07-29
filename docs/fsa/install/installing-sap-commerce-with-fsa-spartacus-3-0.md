@@ -2,6 +2,8 @@
 title: Installing SAP Commerce Cloud for Use with FSA Spartacus 3.0
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The following instructions describe how to install and configure SAP Commerce (release 2105) with Financial Services Accelerator (release 2108) for use with FSA Spartacus storefront. In these instructions, SAP Commerce and Financial Services Accelerator are installed on your local computer, so localhost is used in the browser URLs.
 
 The installation procedure includes steps for installing and using a financial_spa and financial_spa_integrations recipes that make use of the FSA Spartacus Sample Data (*financialspastore*), but you can use your own sample data or recipe as long as it includes the *cmsocc*, *commercewebservices*, *acceleratorocc* extensions and the FSA module.
@@ -41,24 +43,24 @@ Some steps in this procedure derive from the documentation for installing SAP Co
     ```typescript
     apply plugin: 'installer-platform-plugin'
     apply plugin: 'installer-addon2-plugin'
-    
+
     def pl = platform {
         localProperties {
             property 'storefront.show.debug.info', 'false'
         }
-    
+
         extensions {
             extName 'financialspastore'
             extName 'financialprocess'
             extName 'financialwebservices'
             extName 'financialb2bocc'
             extName 'financialb2bbackoffice'
-    
+
             extName 'backofficesolrsearch'
             extName 'configurablebundlebackoffice'
             extName 'solrfacetsearchbackoffice'
             extName 'solrserver'
-    
+
             extName 'xyformsbackoffice'
             extName 'adaptivesearchsolr'
             extName 'adaptivesearchbackoffice'
@@ -67,14 +69,14 @@ Some steps in this procedure derive from the documentation for installing SAP Co
             extName 'promotionenginebackoffice'
             extName 'rulebuilderbackoffice'
             extName 'customercouponbackoffice'
-    
+
             extName 'assistedservicewebservices'
-    
+
             extName 'yacceleratorfulfilmentprocess'
             extName 'yacceleratorcore'
-   
+
             extName 'promotionengineservices'
-    
+
             extName 'cmsocc'
             extName 'customercouponocc'
             extName 'acceleratorocc'
@@ -89,41 +91,41 @@ Some steps in this procedure derive from the documentation for installing SAP Co
             extName 'pcmbackoffice'
             extName 'subscriptionbackoffice'
         }
-    
+
         addons {
         }
     }
-    
+
     task setup {
         doLast {
             pl.setup()
         }
     }
-    
+
     task buildSystem(dependsOn: setup) {
         doLast {
             pl.build()
         }
     }
-    
+
     task initialize(dependsOn: buildSystem) {
         doLast {
             pl.initialize()
         }
     }
-    
+
     task start {
         doLast {
             pl.start()
         }
     }
-    
+
     task startInBackground {
         doLast {
             pl.startInBackground()
         }
     }
-    
+
     task stopInBackground {
         doLast {
             pl.stopInBackground()
@@ -239,7 +241,7 @@ corsfilter.acceleratorservices.allowedHeaders=origin content-type accept authori
 corsfilter.acceleratorservices.exposedHeaders=x-anonymous-consents
 ```
 
-**Note**: The x-anonymous-consents custom header is included in the above example, but it can be removed if you plan to disable the anonymous consent feature. However, do not remove this header if you do not plan to disable the anonymous consent feature. For more information, see [Anonymous Consent]({{ site.baseurl }}{% link _pages/dev/features/anonymous-consent.md %}).
+**Note**: The x-anonymous-consents custom header is included in the above example, but it can be removed if you plan to disable the anonymous consent feature. However, do not remove this header if you do not plan to disable the anonymous consent feature. For more information, see [Anonymous Consent](../../dev/features/anonymous-consent.md).
 
 ### Step 4: Update system and user credentials (optional)
 
@@ -249,7 +251,7 @@ For more information, see [Setting Passwords for Default Users](https://help.sap
 
 **All Done! You can now start FSA Spartacus!**
 
-After you have configured SAP Commerce to accept OCC REST API calls, you can set up and start your storefront. See [Building FSA Spartacus storefront from 3.0 libraries]({{ site.baseurl }}{% link _pages/fsa/install/building-the-fsa-storefront-from-libraries-3-0.md %}) for more information.
+After you have configured SAP Commerce to accept OCC REST API calls, you can set up and start your storefront. See [Building FSA Spartacus storefront from 3.0 libraries](building-the-fsa-storefront-from-libraries-3-0.md) for more information.
 
 ## Alternate Method for Setting the SAP Commerce Admin Password
 
@@ -266,7 +268,7 @@ Next time you run the recipe install command, the settings inside custom.propert
 - CORS settings **are very important for security**. We strongly recommend that a professional SAP Commerce Cloud administrator reviews these settings to suit your requirements, as the sample properties should not be used for production servers.
 - CORS (Cross-Origin Resource Sharing) defines a way for a browser and a server to decide which cross-origin requests for restricted resources can or cannot be allowed. Certain Spartacus functionalities, such as checkout and consent management, may not work properly if the CORS OCC REST API settings are not configured properly in SAP Commerce Cloud.
 - You can add these settings using the Hybris Administration Console. Hover your mouse over the **Platform** tab, click **Configuration**, then update the CORS settings.
-- For information on Spartacus and CORS settings, see [Cross-Origin Resource Sharing]({{ site.baseurl }}{% link _pages/install/cors.md %}).
+- For information on Spartacus and CORS settings, see [Cross-Origin Resource Sharing](../../install/cors.md).
 - Several other Spartacus features also require additional CORS settings. For more information about CORS, see the [ycommercewebservices Extension](https://help.sap.com/viewer/9d346683b0084da2938be8a285c0c27a/latest/en-US/8c91f3a486691014b085fb11c44412ff.html) on the SAP Help Portal.
 
 ## Troubleshooting

@@ -6,11 +6,9 @@ feature:
   cx_version: 1905
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 3.0 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 3.0 of the Spartacus libraries.
 
 Spartacus 3.0 introduces a new way to manage user sessions, handle tokens, and perform authorizations. The following sections are intended to help you understand how session management works under the hood, how can you extend the underlying mechanism, and how you can interact with the auth module from outside of Spartacus.
 
@@ -45,7 +43,7 @@ This section takes a detailed look at the `UserAuthModule`, where most of the ch
 
 The following diagram shows how the `UserAuthModule` works under the hood:
 
-![UserAuthModule]({{ site.baseurl }}/assets/images/session-management/all.svg)
+![UserAuthModule](https://sap.github.io/spartacus-docs/assets/images/session-management/all.svg)
 
 The `UserAuthModule` module is responsible for the following:
 
@@ -63,7 +61,7 @@ Authenticating users is the main responsibility of this module. Previous version
 
 The services that are involved in authenticating users are highlighted in the following diagram:
 
-![Authentication flow]({{ site.baseurl }}/assets/images/session-management/auth.svg)
+![Authentication flow](https://sap.github.io/spartacus-docs/assets/images/session-management/auth.svg)
 
 Authentication starts from the `AuthService` facade, where you initialize the process by calling one of the following login methods:
 
@@ -86,7 +84,7 @@ You can learn more about advanced configuration of the authentication flow by lo
 
 After authentication, the tokens received from the library methods need to be stored somewhere. Previously, these tokens were kept in NgRx Store, but in Spartacus 3.0, there are dedicated services to keep the data. The library requires a storage mechanism with an API similar to `localStorage` or `sessionStorage`, and that was the main reason to switch from NgRx to services with a stream for keeping the data.
 
-![Storing auth data]({{ site.baseurl }}/assets/images/session-management/store.svg)
+![Storing auth data](https://sap.github.io/spartacus-docs/assets/images/session-management/store.svg)
 
 For authentication, it is normally sufficient to store only tokens and their metadata (such as expiration time and scope). However, with OCC, there is also the tightly-coupled user ID that needs to be set after login or logout, as well as being required for user emulation when working with the Assisted Service Module (ASM). Prior to Spartacus 3.0, the user ID was kept in the same place as the tokens in NgRx, and because of that previous association, the user ID remains in the `UserAuthModule`. However, the tokens have now been separated from the user identifier in this module. Tokens and their metadata are now stored with the `AuthStorageService`, while user IDs have their own, dedicated `UserIdService`.
 
@@ -104,7 +102,7 @@ The `UserIdService` is part of a facade, because almost all services that intera
 
 After logging in a user, and storing their access token and user ID, it is then possible to request some of the user's resources. To do so, it is necessary to pass an access token as a header in the request. In Spartacus, this is achieved with HTTP interceptors, as shown in the following diagram:
 
-![Auth interceptors]({{ site.baseurl }}/assets/images/session-management/interceptors.svg)
+![Auth interceptors](https://sap.github.io/spartacus-docs/assets/images/session-management/interceptors.svg)
 
 To enrich a request with an access token, you do not need to mark the request in any way. The `AuthInterceptor` recognizes the request to the API based on the URL. If the request does not have the `Authorization` header, and does match the API path, the interceptor adds the header to the request. To make it easier to extend the interceptor, Spartacus has its own `AuthHttpHeaderService` helper service. In most cases, extending this one service should be enough.
 
@@ -116,7 +114,7 @@ A second `TokenRevocationInterceptor` interceptor has a very specific role. For 
 
 After you log in, and your token has been stored and used for API calls, you refresh the page and suddenly you are no longer logged in. To avoid this problem, the `AuthStatePersistenceService` synchronizes the authentication data (such as tokens and user ID) in the browser storage, as shown in the following diagram.
 
-![Storing auth data in browser]({{ site.baseurl }}/assets/images/session-management/storage.svg)
+![Storing auth data in browser](https://sap.github.io/spartacus-docs/assets/images/session-management/storage.svg)
 
 The `AuthStatePersistenceService` uses the `StatePersistenceService` to synchronize data to and from the browser storage. The user ID from the `UserIdService`, the tokens from the `AuthStorageService`, and the redirect URL from the `AuthRedirectStorageService` are all synchronized to the `localStorage`. Every time data changes, it is saved in the browser storage, and when the application starts, it is read from the storage into services.
 
@@ -128,7 +126,7 @@ Since version 1.3, Spartacus supports the Assisted Service Module (ASM), which a
 
 One of the goals of the Session Management refactor was to make the `AuthModule` not aware of ASM at all. As a result, removing ASM from your application should be as simple as not including the `AsmModule`. No code should be left in different modules. With the new `AuthModule` structure, the ASM feature is now isolated.
 
-![Asm integration with UserAuthModule]({{ site.baseurl }}/assets/images/session-management/asm.svg)
+![Asm integration with UserAuthModule](https://sap.github.io/spartacus-docs/assets/images/session-management/asm.svg)
 
 To integrate ASM with the `UserAuthModule`, the mechanism for providing your own services was used, along with inheritance.
 
@@ -208,7 +206,7 @@ Spartacus runs `AuthService.checkOAuthParamsInUrl` with `APP_INITIALIZER` on any
 
 **Note:** The default OAuth server that is provided with SAP Commerce Cloud has functional but simplistic support for the Authorization Code Flow and the Implicit Flow (there is no way to log out a user from an external application, and no way to customize the login page). If you are using a 2211.xx version of SAP Commerce Cloud (such as 2211.44, as opposed to 2211-jdk21.1), and you are using the OAuth server provided with SAP Commerce Cloud, it is expected that you will continue to work with the Resource Owner Password Flow. However, if you use a different OAuth server (such as `Auth0`), you can switch to either the Authorization Code Flow or the Implicit Flow. If instead, you are using a 2211-jdk21.x version of SAP Commerce Cloud (such as 2211-jdk21.1), and you are using the OAuth server provided with SAP Commerce Cloud, the Authorization Code Flow is the only flow that is available, and it is expected that you will use the Custom Login Page feature (described in the next section) to cover the shortcomings of the authorization server login form.
 
-**Note:** If you are using a version of Spartacus that is older than 221121.1 (in other words, 2211.43 or older), ASM login only works with the Resource Owner Password Flow for customer support agents.  
+**Note:** If you are using a version of Spartacus that is older than 221121.1 (in other words, 2211.43 or older), ASM login only works with the Resource Owner Password Flow for customer support agents.
 
 ## Custom Login Page in Spartacus
 

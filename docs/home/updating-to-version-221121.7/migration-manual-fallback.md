@@ -2,6 +2,8 @@
 title: Manually Updating Spartacus to Version 221121.7 (Fallback Steps Only)
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The procedures on this page are provided only in case you encounter an issue while running the Spartacus update schematics described in [Updating Spartacus to 221121.7](migration.md#updating-spartacus-to-2211217). If you have already successfully run the update schematics, you can ignore the steps on this page.
 
 This page describes the changes that the Spartacus update schematics perform automatically. If you have run the update schematics and encountered an issue, proceed with the following manual steps to upgrade your storefront app to version 221121.7.
@@ -67,14 +69,14 @@ This page describes the changes that the Spartacus update schematics perform aut
    ```ts
    import { NgModule, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
    import { BrowserModule } from '@angular/platform-browser';
-   
+
    import { provideHttpClient, withFetch, withInterceptorsFromDi } from "@angular/common/http";
    import { EffectsModule } from "@ngrx/effects";
    import { StoreModule } from "@ngrx/store";
    import { AppRoutingModule } from "@spartacus/storefront";
    import { App } from './app.component';
    import { SpartacusModule } from './spartacus/spartacus.module';
-   
+
    @NgModule({
      declarations: [
        App
@@ -161,7 +163,7 @@ This page describes the changes that the Spartacus update schematics perform aut
          maxAge: '1y',
        })
      );
-   
+
      // All regular routes use the Universal engine
      server.get(/.*/, (req, res) => {
        res.render(indexHtml, {

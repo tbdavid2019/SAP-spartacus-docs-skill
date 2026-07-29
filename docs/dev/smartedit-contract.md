@@ -2,9 +2,11 @@
 title: SmartEdit Contract in Spartacus
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The following sections describe how the SmartEdit Contract is implemented in Spartacus.
 
-For information on setting up SmartEdit in Spartacus, see [{% assign linkedpage = site.pages | where: "name", "smartEdit-setup-instructions-for-spartacus.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/smartEdit-setup-instructions-for-spartacus.md %}).
+For information on setting up SmartEdit in Spartacus, see [SmartEdit Integration](../install/smartEdit-setup-instructions-for-spartacus.md).
 
 For general information on SmartEdit Contracts, see [SmartEdit Contract for Storefronts](https://help.sap.com/viewer/9d346683b0084da2938be8a285c0c27a/latest/en-US/622cebcb444b42e18de2147775430b9d.html).
 
@@ -25,7 +27,7 @@ To make Spartacus work with SmartEdit, you need to implement the SmartEdit Contr
 - A preview ticket API mechanism
 - An HTML Markup Contract
 
- For information on how to include the `webApplicationInjector.js` file in your app, see [{% assign linkedpage = site.pages | where: "name", "smartEdit-setup-instructions-for-spartacus.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/smartEdit-setup-instructions-for-spartacus.md %}).
+ For information on how to include the `webApplicationInjector.js` file in your app, see [SmartEdit Integration](../install/smartEdit-setup-instructions-for-spartacus.md).
 
 ## Preview Ticket API Mechanism
 

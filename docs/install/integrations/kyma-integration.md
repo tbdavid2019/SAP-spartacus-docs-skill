@@ -2,6 +2,8 @@
 title: Kyma Integration
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The following steps describe how to integrate [Kyma](https://kyma-project.io) into your Spartacus storefront.
 
 ***
@@ -38,4 +40,4 @@ INSERT_UPDATE OpenIDClientDetails;clientId[unique=true] ;resourceIds   ;scope   
 
 ## Spartacus Configuration
 
-You can integrate Kyma functionality in Spartacus by providing an appropriate `authentication` configuration, as described in [Configuring OpenID]({{ site.baseurl }}/session-management/#configuring-openid).
+You can integrate Kyma functionality in Spartacus by providing an appropriate `authentication` configuration, as described in [Configuring OpenID](https://sap.github.io/spartacus-docs/session-management/#configuring-openid).

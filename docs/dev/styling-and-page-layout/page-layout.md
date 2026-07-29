@@ -2,6 +2,8 @@
 title: Page Layout
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Spartacus is based on a single-page application design pattern, but there are still pages that are rendered in the storefront. The concept of a "page" is key to the web and cannot be avoided: pages are identified by URLs, indexed by search engines, shared through social media, stored in browser history, and so on. Pages are fundamental to end users, and to the content creation process as well.
 
 ***
@@ -83,14 +85,14 @@ Outlets contain a context which is an object containing various attributes that 
 
 The following example demonstrates how to use the context to get the list of components within a slot:
 
-{% raw %}
+
 ```html
 <ng-template cxOutletRef="Section1" let-model>
   "Section1" position
   <pre>{{ model.components$ | async | json }}</pre>
 </ng-template>
 ```
-{% endraw %}
+
 
 ### Outlet Position
 

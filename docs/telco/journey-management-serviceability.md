@@ -2,11 +2,9 @@
 title: Journey Management - Serviceability (Premise Details)
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.3 {{ site.version_note_forTUA }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.3 of the TUA Spartacus libraries.
 
 With this feature, customers are able to purchase Product Offerings that require a serviceability check to validate if the product offering is available for service at a given premise. As part of the purchase flow, customers will need to provide premise details including the premise address and meter id. The serviceability API performs the availability check of the offering at the premise location provided by the customer.
 
@@ -35,7 +33,7 @@ For demonstration purposes, you can perform the following steps to start the moc
 
 ## Specific Business Use Case
 
-A company wants to bring a new product offering to market and is rolling-out the product logistically as it requires installation. A customer lands on the storefront and is interested in purchasing this new product offering. The customer clicks the product offering to learn more. The customer wants to see if the product is available for purchase at his home. The customer proceeds to check the availability and provides his premise details including premise address and meter id. A serviceability check is executed to validate the information. 
+A company wants to bring a new product offering to market and is rolling-out the product logistically as it requires installation. A customer lands on the storefront and is interested in purchasing this new product offering. The customer clicks the product offering to learn more. The customer wants to see if the product is available for purchase at his home. The customer proceeds to check the availability and provides his premise details including premise address and meter id. A serviceability check is executed to validate the information.
 
 If successful, the customer needs to indicate whether moving in or switching suppliers. If the customer is moving in, a desired contract start date is needed. If the customer is switching suppliers, the customer will need to provide the name of the previous service provider along with their desired contract start date. Once this is completed, the product offering can be added to the cart. The premise details, contract start date, and previous service provider information can be edited from the cart, and validations will be executed again.
 
@@ -77,7 +75,7 @@ productSpecificationForViewDetails: {
         'gas'
 }
 ```
--   Configure check availability URL: 
+-   Configure check availability URL:
  ```typescript
 backend: {
         premiseLookup: {
@@ -122,8 +120,8 @@ Cart components are updated to accommodate display and selection of purchase flo
     -   Installation Address
     -   Meter ID
     -   Desired Contract start date
-    -   Previous Service Provider   
--   Additional customer indicators: 
+    -   Previous Service Provider
+-   Additional customer indicators:
     -   Moving In - Default purchase option for this type of commodity product offering in the cart
     -   Switch supplier - Selection of switch supplier option displays an additional text input field for customers to enter name of the supplier they are switching from
 -   Update of premise details for a cart item: Premise details include installation address and meter Id. This information can be updated for each cart item directly from the shopping cart. If the customer decides to update this information, the new premise details will be validated first and then updated for the cart item.

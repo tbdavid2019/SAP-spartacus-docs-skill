@@ -2,6 +2,8 @@
 title: Changes to Styles in 4.0
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 ## Changes in the storefrontstyles Components
 
 - The `$page-template-blacklist` SCSS variable name has been renamed to `$page-template-blocklist` in `_page-template.scss`.

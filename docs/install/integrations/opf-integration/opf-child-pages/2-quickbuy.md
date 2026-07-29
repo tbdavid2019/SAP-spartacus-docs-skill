@@ -2,6 +2,8 @@
 title: Quick Buy
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Quick Buy is a CMS-based feature that can display Google Pay and Apple Pay buttons on the cart page. Quick Buy allows users to easily purchase items in their cart, whether they are logged in or checking out as a guest.
 
 Starting with Spartacus version 221121.10, Quick Buy now also supports services such as PayPal. This functionality is described in [CTA Quick Buy](#cta-quick-buy), below.
@@ -10,7 +12,7 @@ Before enabling Quick Buy in Spartacus, you must first enable the Quick Buy func
 
 ## Enabling Quick Buy in Spartacus
 
-Quick Buy functionality is added to your storefront app when you install the open payment framework library, as described in [Enabling Open Payment Framework in Spartacus](link-to-section-in-1-open-payment-framework-in-spartacus.md).
+Quick Buy functionality is added to your storefront app when you install the open payment framework library, as described in [Enabling Open Payment Framework in Spartacus](https://sap.github.io/spartacus-docs/link-to-section-in-1-open-payment-framework-in-spartacus/).
 
 ### CMS Components
 
@@ -145,19 +147,19 @@ To ensure the CTA script location matches where the CTA Quick Buy component is r
 2. Select **Payment Integrations**.
 3. Select the integration that you want to configure, and then choose **Show Details**.
 
-   ![OPF Workbench - Payment Integrations]({{ site.baseurl }}/assets/images/opf/quickbuy/workbench-quickbuy-cta-step-1.png)
+   ![OPF Workbench - Payment Integrations](https://sap.github.io/spartacus-docs/assets/images/opf/quickbuy/workbench-quickbuy-cta-step-1.png)
 
 4. In the **Authorization** panel, select **Edit**.
 
-   ![OPF Workbench - Integration details]({{ site.baseurl }}/assets/images/opf/quickbuy/workbench-quickbuy-cta-step-2.png)
+   ![OPF Workbench - Integration details](https://sap.github.io/spartacus-docs/assets/images/opf/quickbuy/workbench-quickbuy-cta-step-2.png)
 
 5. In the **Authorization** tab, select **Payment Call-to-Action Configuration** from the dropdown menu.
 
-   ![OPF Workbench - Edit authorization]({{ site.baseurl }}/assets/images/opf/quickbuy/workbench-quickbuy-cta-step-3.png)
+   ![OPF Workbench - Edit authorization](https://sap.github.io/spartacus-docs/assets/images/opf/quickbuy/workbench-quickbuy-cta-step-3.png)
 
 6. In the **Consumer Facing Component Assignment** field, select **Cart Button** to display the script in the Quick Buy component on the cart page, and then click **Save**.
 
-   ![OPF Workbench - Payment Call-to-Action Configuration]({{ site.baseurl }}/assets/images/opf/quickbuy/workbench-quickbuy-cta-step-4.png)
+   ![OPF Workbench - Payment Call-to-Action Configuration](https://sap.github.io/spartacus-docs/assets/images/opf/quickbuy/workbench-quickbuy-cta-step-4.png)
 
 7. Ensure that your CTA configuration is enabled in the **Enablement** section.
 

@@ -2,6 +2,8 @@
 title: Type Safety in Spartacus
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The entire Spartacus codebase has type safe methods, parameters, objects, and so on, with a few minor exceptions.
 
 Use type safety everywhere that you can, including in all pull requests.

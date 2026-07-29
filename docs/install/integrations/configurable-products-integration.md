@@ -6,11 +6,9 @@ feature:
   cx_version: 2005
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 3.1 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 3.1 of the Spartacus libraries.
 
 The Configurable Products integration provides a user interface for configuring and selling configurable products in Spartacus. The integration makes use of the *Product Configuration with SAP Variant Configuration and Pricing* AddOn, which is part of SAP Commerce Cloud. This AddOn is not included in the Spartacus libraries.
 
@@ -51,7 +49,7 @@ You can either [install the product configurator library during initial setup of
 
 ### Installing the Product Configurator Library During the Initial Setup of Spartacus
 
-1. Follow the steps for setting up your Spartacus project, as described in [{% assign linkedpage = site.pages | where: "name", "building-the-spartacus-storefront-from-libraries.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/frontend/building-the-spartacus-storefront-from-libraries.md %}).
+1. Follow the steps for setting up your Spartacus project, as described in [Building the Spartacus Storefront From Libraries](../frontend/building-the-spartacus-storefront-from-libraries.md).
 1. While setting up your project using schematics, when you are asked which Spartacus features you would like to set up, choose `Product Configurator - Variant Configurator`.
 
 **Note:** At runtime, most of the configurator library is lazy loaded when the configurator is first loaded. This is done for performance reasons.
@@ -72,7 +70,7 @@ After running this command, you are asked which product configurator features yo
 
 ## Early Login
 
-You must have early login enabled to be able to use the configurable products integration with Spartacus. For more information, see [{% assign linkedpage = site.pages | where: "name", "early-login.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/routes/early-login.md %}).
+You must have early login enabled to be able to use the configurable products integration with Spartacus. For more information, see [Early Login](../../dev/routes/early-login.md).
 
 ## Supported Attribute Types
 
@@ -99,8 +97,8 @@ For complicated user entries, it is possible that the system starts validating t
 ```ts
 provideConfig(<Config>{
     productConfigurator: {
-      updateDebounceTime: {        
-        input: 2500         
+      updateDebounceTime: {
+        input: 2500
       }
     },
   }),
@@ -108,11 +106,7 @@ provideConfig(<Config>{
 
 ## Product Variants
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 4.3 {{ site.version_note_part2 }}
-{% endcapture %}
-
-{% include docs/feature_version.html content=version_note %}
+> **Note:** This feature is introduced with version 4.3 of the Spartacus libraries.
 
 With Commerce Cloud 2205, the Spartacus UI supports the display and configuration of product variants, both fully and partially specified.
 
@@ -125,26 +119,22 @@ In addition, when a web shop customer configures a product, the system simultane
 
 To activate this feature, set the configuration setting `productConfigurator.enableVariantSearch` to `true`, as shown in the example:
 
-```ts  
+```ts
 providers: [
-  ... 
+  ...
     provideConfig(<Config>{
       productConfigurator: {
         enableVariantSearch: true,
       },
     }),
-  ...]  
+  ...]
 ```
 
 For more information on how to set up the search to find matching variants, see [Creating Index Properties for Feature Values](https://help.sap.com/docs/SAP_COMMERCE_INTEGRATIONS/80c3212d1d4646c5b91db43b84e9db47/197021f2a8bd4175acbaaab4b551fb84.html?version=2205)
 
 ## Saved Cart
 
-{% capture version_note %}
-{{ site.version_note_part1a }} 3.3 {{ site.version_note_part2 }}
-{% endcapture %}
-
-{% include docs/feature_version.html content=version_note %}
+> **Note:** This functionality is introduced with version 3.3 of the Spartacus libraries.
 
 The saved cart feature is generally supported with the Configurable Products integration. A saved cart can contain a configurable product and can be activated. After the cart is activated, the configuration can be accessed and edited. Note, however, that as long as the saved cart is not activated, the configuration of the configurable product cannot be displayed.
 
@@ -154,7 +144,7 @@ When cart validation is enabled, it ensures that users cannot check out a cart t
 
 If you are using SAP Commerce Cloud 2005 or older, you should consider disabling the checkout button in `cart-proceed-to-checkout.component.html` if `ConfiguratorCartService#activeCartHasIssues` emits `true`.
 
-To enable cart validation, see [{% assign linkedpage = site.pages | where: "name", "cart-validation.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/cart-validation.md %}).
+To enable cart validation, see [Cart Validation](../../dev/features/cart-validation.md).
 
 **Note:** Cart validation requires SAP Commerce Cloud 2011 or newer.
 
@@ -183,7 +173,7 @@ For now, there is no navigation mode that guides the user from issue to issue un
 
 ## RTL Support
 
-Right-to-left (RTL) orientation is supported for product configuration in Spartacus. For more information on RTL support in Spartacus, see [{% assign linkedpage = site.pages | where: "name", "directionality.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/styling-and-page-layout/directionality.md %}).
+Right-to-left (RTL) orientation is supported for product configuration in Spartacus. For more information on RTL support in Spartacus, see [Directionality](../../dev/styling-and-page-layout/directionality.md).
 
 ## Retract Option for Single-Select Characteristics
 
@@ -194,9 +184,9 @@ This feature is valuable if your product modeling relies on VC/AVC automatically
 You can activate the retract feature as follows:
 
 ```ts
-productConfigurator: { 
+productConfigurator: {
     addRetractOption: true,
-  } 
+  }
 ```
 
 **Note:** You can customize the `No option selected` label of this entry, just as you can with any UI text in Spartacus.
@@ -220,7 +210,7 @@ Group statuses are interpreted as follows:
 
 The following is an example of the configuration menu showing visited sections, missing mandatory selections, and conflicts:
 
-![Spartacus group status icon alignment]({{ site.baseurl }}/assets/images/ccp/spartacus-group-status-icon-alignment.png)
+![Spartacus group status icon alignment](https://sap.github.io/spartacus-docs/assets/images/ccp/spartacus-group-status-icon-alignment.png)
 
 ## Browser Refresh
 

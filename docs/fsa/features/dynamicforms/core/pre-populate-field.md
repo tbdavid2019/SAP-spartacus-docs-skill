@@ -1,8 +1,10 @@
 ---
-title: Configurable prefillValue Form Field 
+title: Configurable prefillValue Form Field
 ---
 
-This page explains how to use the configurable *prefillValue* form field in the dynamicforms library. 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+This page explains how to use the configurable *prefillValue* form field in the dynamicforms library.
 
 
 ***
@@ -22,7 +24,7 @@ The *prefillValue* form field allows you to:
 - Populate the field with any available SPA asset which is exposed for that purpose (user, cart, claim, etc.)
 - Adjust/override an already provided mechanism and add new logic on top of that.
 
-Let's assume you want to prepopulate the "Title" field on the Personal Details form. You want to use the existing user data, located in the "User" state in FSA SPA. 
+Let's assume you want to prepopulate the "Title" field on the Personal Details form. You want to use the existing user data, located in the "User" state in FSA SPA.
 
 First, you need to adjust the Personal Details form, and add JSON configuration to the "Title" field. The following JSON example illustrates this:
 
@@ -34,7 +36,7 @@ First, you need to adjust the Personal Details form, and add JSON configuration 
     "prefillValue": {
         "targetObject": "user",
         "targetValue": "firstName"
- 
+
     },
     "name": "firstName",
     "type": "input",
@@ -57,7 +59,7 @@ In the example above, the `targetObject` signalizes that the asset from the SPA 
    },
 ```
 
-For every object that you want to offer for the prepopulate functionality, you need to define one service that will take the field name from the JSON definition and return the field value from the state object. 
+For every object that you want to offer for the prepopulate functionality, you need to define one service that will take the field name from the JSON definition and return the field value from the state object.
 All services will implement the same interface with the dedicated method for value extraction, so they can be invoked in a generic way.
 
 User resolver
@@ -68,7 +70,7 @@ User resolver
 })
 export class UserPrefillResolver implements PrefillResolver {
   constructor(protected userService: UserService) {}
- 
+
   getFieldValue(fieldPath: string) {
     const attributes = fieldPath.split('.');
     let currentValue;
@@ -103,9 +105,9 @@ export interface PrefillResolver {
 }
 ```
 
-## Overriding the Resolver 
+## Overriding the Resolver
 
-With this approach, you can redefine some of the prefill resolvers by specifying a new service instance for the same key. Also, in case you decide you need to access some other object, you can easily inject that in the configuration. 
+With this approach, you can redefine some of the prefill resolvers by specifying a new service instance for the same key. Also, in case you decide you need to access some other object, you can easily inject that in the configuration.
 
 config.ts
 
@@ -116,7 +118,7 @@ config.ts
     I18nModule,
     DynamicFormModule,
     SpinnerModule,
-    ConfigModule.withConfig(<DynamicFormsConfig>{ 
+    ConfigModule.withConfig(<DynamicFormsConfig>{
       dynamicForms: {
         prefill: {
           user: {

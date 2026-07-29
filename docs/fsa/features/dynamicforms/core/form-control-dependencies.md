@@ -2,6 +2,8 @@
 title: Form Controls Dependencies
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 This page explains how to show/hide form controls that have a dependency on different form fields and how changes on the "parent" fields affect their visibility.
 
 ***
@@ -31,19 +33,19 @@ export interface DynamicFormGroup {
   ...;
   dependsOn?: ControlDependency[];
 }
- 
+
 export interface FieldConfig {
   ...;
   dependsOn?: ControlDependency[];
 }
- 
+
 export interface ControlDependency {
   controlName?: string;
   conditions?: ValidatorFunction[];
 }
 ```
 
-It is necessary to constantly track value and validity of parent form controls and based on it, show/hide some form controls (group or specific field). For tracking validity, dynamicforms library uses already defined validator functions. For more information, see [Basic Form Validations]({{ site.baseurl }}{% link _pages/fsa/features/dynamicforms/core/basic-form-validations.md%}).
+It is necessary to constantly track value and validity of parent form controls and based on it, show/hide some form controls (group or specific field). For tracking validity, dynamicforms library uses already defined validator functions. For more information, see [Basic Form Validations](basic-form-validations.md).
 
 ## Examples
 

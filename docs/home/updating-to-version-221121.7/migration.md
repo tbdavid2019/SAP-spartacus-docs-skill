@@ -2,6 +2,8 @@
 title: Update Release 221121.7
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 To update your Spartacus app to version 221121.7, you must carry out the following steps:
 
 1. Update your Spartacus app to version 221121.5 (with Angular 19). For more information, see [Update Release 221121.5](link-added-post-conversion).
@@ -97,8 +99,8 @@ You can update your application to use Angular 21 as follows:
    You might also be offered the option to run the following migrations when updating to Angular 20:
 
    ```bash
-   Select the migrations that you'd like to run  
-   ❯◯ [control-flow-migration] Converts the entire application to block control flow syntax.  
+   Select the migrations that you'd like to run
+   ❯◯ [control-flow-migration] Converts the entire application to block control flow syntax.
     ◯ [router-current-navigation] Replaces usages of the deprecated Router getCurrentNavigation method with the Router.currentNavigation signal.
    ```
 
@@ -250,7 +252,7 @@ The `withEventReplay()` and `withNoHttpTransferCache()` options are required for
 After enabling hydration, you may see the following warning in your console in dev-mode build:
 
 ```text
-NG05001: Configuration error: found both hydration and enabledBlocking initial navigation 
+NG05001: Configuration error: found both hydration and enabledBlocking initial navigation
 in the same application, which is a contradiction.
 ```
 

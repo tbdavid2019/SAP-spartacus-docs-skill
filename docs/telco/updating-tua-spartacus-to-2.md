@@ -2,6 +2,8 @@
 title: Updating to Version 2.0
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 ***
 
 **Table of Contents**
@@ -41,7 +43,7 @@ You can upgrade your TUA Spartacus libraries to a new minor version, as follows:
 1. Make sure other entries in `package.json` match with the following configuration (Add the entries if not available).
 
     ```bash
-   "@angular/localize":"^9.1.0",    
+   "@angular/localize":"^9.1.0",
     "@angular/service-worker": "~9.1.0",
     "@ng-bootstrap/ng-bootstrap": "6.0.0",
     "@ng-select/ng-select": "^4.0.0",
@@ -65,21 +67,21 @@ You can upgrade your TUA Spartacus libraries to a new minor version, as follows:
     - Remove `saveForLater: false` from features section if present.
     - Remove the `utilitiesspa` entry from the `baseSite` list under the section context.
     - Update level under the features section to 2.0.0.
-  
+
 1. Add the following import `/mystore/src/polyfills.ts` in the file:
 
     ```bash
-    import '@angular/localize/init';    
-    import 'zone.js/dist/zone';    
+    import '@angular/localize/init';
+    import 'zone.js/dist/zone';
     ```
 
 1. Add the following entry `/mystore/tsconfig.json` in the `mystore/src/app/app.module.ts` file if not already available:
 
     ```bash
-    “enableIvy”: false        
+    “enableIvy”: false
     ```
 
 1. Delete your `node_modules` folder.
 1. Run `yarn install`.
 
-For more information, see [Technical Changes in TUA Spartacus 2.0]({{ site.baseurl }}{% link _pages/telco/technical-changes-tua-version-2.md %}).
+For more information, see [Technical Changes in TUA Spartacus 2.0](technical-changes-tua-version-2.md).

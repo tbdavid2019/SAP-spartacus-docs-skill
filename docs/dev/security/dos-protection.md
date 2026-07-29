@@ -2,6 +2,8 @@
 title: Protection Against Denial of Service Attacks
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Spartacus libraries do not offer any protection again Denial of Service (DOS) attacks. It is out of scope.
 
 Third-party libraries that are used by Spartacus are scanned regularly. If vulnerabilities are found, library versions are updated, or their usage goes through an internal security review process.

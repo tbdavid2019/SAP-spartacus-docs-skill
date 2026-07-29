@@ -6,11 +6,9 @@ feature:
   cx_version: 1905
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.5 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.5 of the Spartacus libraries.
 
 Variants are products that differ in some aspect from one another, but are based on the same basic model. An example for variants is color and size for t-shirts. When the variants feature is enabled in Spartacus, and products have been configured in SAP Commerce Cloud, then customers can select products in the storefront with the variant (or variants) of their choice.
 

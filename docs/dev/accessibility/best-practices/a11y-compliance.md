@@ -2,6 +2,8 @@
 title: Accessibility Compliance
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Spartacus ensures accessibility by adhering to the success criteria of the the [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/). The following sections describe the extent to which Spartacus complies with the WCAG criteria.
 
 ***

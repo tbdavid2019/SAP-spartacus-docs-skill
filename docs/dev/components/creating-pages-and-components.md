@@ -2,11 +2,13 @@
 title: Creating New Pages and Components
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Spartacus is a single-page application, but it still uses the concept of pages to distinguish the different views within the app. Spartacus pages come from the CMS, and are constructed with slots and components. A page contains slots, and slots contain components. To organize common slots and components, Spartacus supports page templates. A page template contains a layout, as well as components that can be used globally, such as header and footer sections.
 
 Spartacus receives each page from the CMS with a list of slots and components, and this list is used to render the appropriate components.
 
-**Note:** For information on replacing an existing component, see [Configuring Custom Components]({{ site.baseurl }}/customizing-cms-components/#configuring-custom-components).
+**Note:** For information on replacing an existing component, see [Configuring Custom Components](https://sap.github.io/spartacus-docs/customizing-cms-components/#configuring-custom-components).
 
 ***
 
@@ -54,7 +56,7 @@ imports: [
 ]
 ```
 
-This logic injects the `WishlistComponent` wherever it is placed in the CMS. For more details on working with CMS components, see [{% assign linkedpage = site.pages | where: "name", "customizing-cms-components.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/components/customizing-cms-components.md %}).
+This logic injects the `WishlistComponent` wherever it is placed in the CMS. For more details on working with CMS components, see [Customizing CMS Components](customizing-cms-components.md).
 
 ## Static Pages
 

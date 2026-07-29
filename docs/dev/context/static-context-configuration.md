@@ -2,6 +2,8 @@
 title: Static Multi-Site Configuration
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 You can configure your application by defining `context` properties, such as base site, language, and currency. When you append the values of these properties to the storefront URL, the storefront is configured based on these values.
 
 For example, when you access `https://localhost:4200/electronics-spa/en/USD/`, the application loads the `electronics-spa` base site, sets the site language to English (`en`), and sets the currency to US dollars (`USD`).

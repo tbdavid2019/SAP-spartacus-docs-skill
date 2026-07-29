@@ -2,6 +2,8 @@
 title: Launch Dialog Service
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The `LaunchDialogService` facilitates the opening and rendering of dialog components within your storefront application. It provides methods for launching dialogs, managing the dialog lifecycle, and passing data to the rendered components.
 
 Before using the `LaunchDialogService`, you need to import it into your component or service, as shown in the following example:

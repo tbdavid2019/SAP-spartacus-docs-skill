@@ -2,11 +2,9 @@
 title: Cart
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.0 {{ site.version_note_forTUA }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.0 of the TUA Spartacus libraries.
 
 The cart works differently in TUA Spartacus than in core Commerce Spartacus and needs to support product offerings as well as the complex pricing structure to support multiple types of charges including one-time charges, recurring charges, and usage-based charges.   Amongst various charges, for the cart, Customers need to be aware of the pay now charges upon checkout as well as the monthly recurring charge commitment.
 
@@ -24,7 +22,7 @@ The cart works differently in TUA Spartacus than in core Commerce Spartacus and 
 ## Components
 
 - `TmaAddedToCartDialogComponent` extends `AddedToCartDialogComponent` to display Pay on Checkout price of the Product Offering and Cart total price in add to cart pop-up when the product is added to cart.
-    - Pay On Checkout: pay on checkout price is displayed as a sum of the total pay now one-time charge prices. 
+    - Pay On Checkout: pay on checkout price is displayed as a sum of the total pay now one-time charge prices.
     - Cart Total: price displayed is the subtotal cart price, which is a sum of each product Pay On Checkout price.
 - `TmaCartItemListComponent` extends `CartItemListComponent` to display Pay on Checkout label in the Cart.
     - Pay On Checkout: column label respective to the pay on checkout price.
@@ -39,7 +37,7 @@ The cart works differently in TUA Spartacus than in core Commerce Spartacus and 
         - price and currency
         - billing frequency
     - One-time charges: prices are displayed on different rows and each price contains:
-        - price and currency 
+        - price and currency
         - billing time description
     - Usage Charges: prices are displayed on different rows and each price contains:
         - Tiers: the tier start and end

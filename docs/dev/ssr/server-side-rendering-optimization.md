@@ -6,11 +6,9 @@ feature:
   cx_version: n/a
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 3.0 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 3.0 of the Spartacus libraries.
 
 Server-side rendering optimization allows you to fine tune your SSR setup, and gives you more ways to resolve potential issues related to memory and failover.
 
@@ -31,7 +29,7 @@ The SSR optimization engine addresses these issues as follows:
 - If the render is taking too long to finish, the engine will release its concurrency slot and provide a warning about the hanging render.
 
    **Caution:** Notifications about hanging renders should be taken seriously because the optimization engine does not release the resources related to a hanging render. If the root of the problem is not addressed in the application code, the server's resources can quickly become depleted.
-- The rendered SSR pages *should* be cached (for example, using a CDN) to ensure subsequent requests do not hit the SSR server. This reduces the server load and reduces CSR fallbacks to the least amount possible. For more information, see [Recommended Setup for Server-Side Rendering]({{ site.baseurl }}{% link _pages/dev/ssr/recommended-server-side-rendering-setup.md %}).
+- The rendered SSR pages *should* be cached (for example, using a CDN) to ensure subsequent requests do not hit the SSR server. This reduces the server load and reduces CSR fallbacks to the least amount possible. For more information, see [Recommended Setup for Server-Side Rendering](recommended-server-side-rendering-setup.md).
 
 ***
 
@@ -109,7 +107,7 @@ A `timeout` value of `0` will instantly return the CSR page.
 
 The default value is `3000` milliseconds.
 
-**Note:** It is strongly recommended that you use an additional layer, such as a CDN, to cache pages externally. For more information, see [Recommended Setup for Server-Side Rendering]({{ site.baseurl }}{% link _pages/dev/ssr/recommended-server-side-rendering-setup.md %}).
+**Note:** It is strongly recommended that you use an additional layer, such as a CDN, to cache pages externally. For more information, see [Recommended Setup for Server-Side Rendering](recommended-server-side-rendering-setup.md).
 
 ### cache
 
@@ -226,7 +224,7 @@ Instead of requiring the `debug` flag, now all of the following information abou
 
 The `logger` setting is an `ExpressServerLogger` implementation that improves logged messages by providing context and by structuring the messages in JSON format. For example, SSR logs include the request's details, which are structured in JSON format.
 
-The logger property is optional. By default, the `DefaultExpressServerLogger` is used. For more information, see [{% assign linkedpage = site.pages | where: "name", "server-side-rendering-contextual-logging.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/ssr/server-side-rendering-contextual-logging.md %})
+The logger property is optional. By default, the `DefaultExpressServerLogger` is used. For more information, see [Standardized SSR Logging](server-side-rendering-contextual-logging.md)
 
 ### shouldCacheRenderingResult
 
@@ -277,7 +275,7 @@ You can use your web browser's network tool to check if your storefront is rende
    [...]
    </app-root>
    ```
-  
+
    If the `<app-root>` in your response is empty, it means SSR is not working correctly.
 
 ### Troubleshooting a Storefront That Is Not Running in SSR Mode
@@ -299,7 +297,7 @@ If adjusting these values does not resolve the issue, it means the server cannot
 - Ensure your server has a valid certificate. For more information, see [Testing SSR With a Self-Signed or Untrusted SSL Certificate](#testing-ssr-with-a-self-signed-or-untrusted-ssl-certificate).
 - If your storefront is on hosted on SAP Commerce Cloud, check the IP restriction of your API. It is possible that the SSR server's IP is being blocked. If this is the case, you can try changing the configuration on the API to "Allow All" and see if that resolves the issue. If using a caching layer (such as a CDN), check if it blocked the SSR server's IP address due to possibly many requests coming from it.
 
-If these solutions do not fix the SSR rendering issue, there may be a problem in the code. Review the [{% assign linkedpage = site.pages | where: "name", "server-side-rendering-coding-guidelines.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/ssr/server-side-rendering-coding-guidelines.md %}), and review your custom code to ensure you are not using any browser functions that are not available with SSR.
+If these solutions do not fix the SSR rendering issue, there may be a problem in the code. Review the [Server-Side Rendering Coding Guidelines](server-side-rendering-coding-guidelines.md), and review your custom code to ensure you are not using any browser functions that are not available with SSR.
 
 ### SSR Issues with SAP Commerce Cloud in the Public Cloud
 
@@ -320,13 +318,13 @@ If SSR is not functioning on your hosted SAP Commerce Cloud, you can try running
 
    If you think certificate validity could be an issue, see [Testing SSR With a Self-Signed or Untrusted SSL Certificate](#testing-ssr-with-a-self-signed-or-untrusted-ssl-certificate).
 
-   **Note**: At the end of these steps, before committing any code, make sure to undo the change in this step so that SAP Commerce Cloud can use the `occ-backend-base-url` from the `index.html`. For more information, see [{% assign linkedpage = site.pages | where: "name", "configuring-base-url.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/configuring-base-url.md %}).
+   **Note**: At the end of these steps, before committing any code, make sure to undo the change in this step so that SAP Commerce Cloud can use the `occ-backend-base-url` from the `index.html`. For more information, see [Configuring the Base URL](../configuring-base-url.md).
 
 2. Run `npm run dev:ssr`.
 
    This allows you to run a "development" SSR server that will pick up the changes you make in your source code.
 
-   Refer to [{% assign linkedpage = site.pages | where: "name", "how-to-debug-server-side-rendered-storefront.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/ssr/how-to-debug-server-side-rendered-storefront.md %}) for more information on debugging an SSR application.
+   Refer to [Debugging a Server–Side Rendered Storefront](how-to-debug-server-side-rendered-storefront.md) for more information on debugging an SSR application.
 
 ### Testing SSR With a Self-Signed or Untrusted SSL Certificate
 
@@ -495,26 +493,26 @@ For example, in your local environment, spikes can be estimated by periodically 
    ```ts
    const MEMORY_LOG_INTERVAL = 10; // 10ms
    const MEMORY_LOG_FILE = 'memory-usage.csv';
-   
+
    if (!existsSync(MEMORY_LOG_FILE)) {
      writeFileSync(
        MEMORY_LOG_FILE,
        'timestamp,heapUsed,heapTotal,rss,external,arrayBuffers\n'
      );
    }
-   
+
    function logMemoryUsage() {
      const usage = process.memoryUsage();
      const timestamp = new Date().toISOString();
      const logEntry = `${timestamp},${usage.heapUsed},${usage.heapTotal},${usage.rss},${usage.external},${usage.arrayBuffers}\n`;
-   
+
      try {
        writeFileSync(MEMORY_LOG_FILE, logEntry, { flag: 'a' });
      } catch (error) {
        console.error('Failed to write memory usage log:', error);
      }
    }
-   
+
    // Start memory monitoring
    setInterval(logMemoryUsage, MEMORY_LOG_INTERVAL);
    ```

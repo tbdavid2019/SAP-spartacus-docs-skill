@@ -2,11 +2,9 @@
 title: Feature Flags and Code Deprecation
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.1 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.1 of the Spartacus libraries.
 
 ***
 
@@ -40,7 +38,7 @@ Often, to accommodate backwards compatibility, some indirectly related code need
 
 The following is an example of a `TODO` comment:
 
- 
+
 ```typescript
 // TODO(issue:3313) Deprecated since 1.1.1
 ```
@@ -140,7 +138,7 @@ In this way, you can also add a description to the flag, and even deprecation an
 #### Linking the Feature Flag to the Feature Level
 
 By linking your feature flag to the feature level, your flag will be enabled by default for that feature level, and all higher levels. To do this, provide the default value for a feature flag as a string representing the feature level. You can add this config to your module configuration, as show in the following example:
-  
+
 ```typescript
 ConfigModule.withConfig({
   // ...
@@ -151,7 +149,7 @@ ConfigModule.withConfig({
 ```
 
 In this example, the consignment tracking feature is enabled by default if the feature level is set to at least `'1.1'`.
-  
+
 **Note:** If you want your feature level to always be set to the most recent version, you can use the latest flag `'*'`, as follows:
 
 ```typescript

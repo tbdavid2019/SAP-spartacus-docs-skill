@@ -2,6 +2,8 @@
 title: Schematics
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Spartacus schematics allow you to install Spartacus libraries in your project. The following sections describe what the Spartacus schematics do, and also provide information about the various options and commands you can use with the schematics. If you are a developer and are looking for more technical information, see the [README](https://github.com/SAP/spartacus/blob/develop/projects/schematics/README.md) in the Spartacus schematics project.
 
 ***
@@ -17,7 +19,12 @@ Spartacus schematics allow you to install Spartacus libraries in your project. T
 
 Before using Spartacus schematics, ensure that you have all of the necessary prerequisites.
 
-{% include docs/frontend_requirements.html %}
+<p>Your Angular development environment should include the following:</p>
+<ul>
+    <li><a href="https://angular.io/">Angular CLI:</a> Version <strong>14.2.3</strong> or newer.</li>
+    <li><a href="https://nodejs.org/">Node.js:</a> Version <strong>14.15</strong> or newer (but <strong>less than</strong> version 15), or <strong>16.10</strong> or newer.</li>
+    <li><a href="https://npmjs.org/">npm:</a> Version <strong>8.0</strong> or newer.</li>
+</ul>
 
 ## Adding Spartacus Core Libraries and Features to Your Angular Project
 
@@ -27,7 +34,7 @@ You can add Spartacus core libraries and features to your Angular project by run
 ng add @spartacus/schematics@latest
 ```
 
-**Note:** If you are using schematics to set up your Spartacus project for the first time, there are important considerations to be aware of. For example, Spartacus does not support B2C and B2B storefronts running together in a single storefront application. For more information, see [Setting Up Your Project Using Schematics]({{ site.baseurl }}{% link _pages/install/frontend/building-the-spartacus-storefront-from-libraries-5-x.md %}#setting-up-your-project-using-schematics).
+**Note:** If you are using schematics to set up your Spartacus project for the first time, there are important considerations to be aware of. For example, Spartacus does not support B2C and B2B storefronts running together in a single storefront application. For more information, see [Setting Up Your Project Using Schematics](frontend/building-the-spartacus-storefront-from-libraries-5-x.md#setting-up-your-project-using-schematics).
 
 The following is a description of the various options you can use with the `ng add @spartacus/schematics@latest` command:
 
@@ -80,7 +87,7 @@ By default, the `ng add @spartacus/schematics` command adds only a basic configu
 When you run `ng add @spartacus/schematics`, the command does the following:
 
 1. Adds the required dependencies.
-2. Sets up Spartacus modules in the project and provides the default configuration. For more information, see [{% assign linkedpage = site.pages | where: "name", "reference-app-structure.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/reference-app-structure.md %}).
+2. Sets up Spartacus modules in the project and provides the default configuration. For more information, see [Reference App Structure](reference-app-structure.md).
 3. Imports Spartacus styles to `main.scss`.
 4. Adds the `cx-storefront` component to your `app.component`.
 5. Optionally updates `index.html` with the Spartacus URL endpoints in meta tags.
@@ -118,24 +125,24 @@ The following are some examples of how the `add-cms-component` schematic can be 
 
 You need to first install the Spartacus core libraries before you can install additional Spartacus libraries. For more information, see [Adding Spartacus Core Libraries and Features to Your Angular Project](#adding-spartacus-core-libraries-and-features-to-your-angular-project), above.
 
-**Note:** To install additional Spartacus libraries using schematics, your app structure needs to match the Spartacus reference app structure. For more information, see [{% assign linkedpage = site.pages | where: "name", "reference-app-structure.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/reference-app-structure.md %}).
+**Note:** To install additional Spartacus libraries using schematics, your app structure needs to match the Spartacus reference app structure. For more information, see [Reference App Structure](reference-app-structure.md).
 
 ### Integration Libraries and Feature Libraries
 
 During the initial set up of your storefront using schematics, you have the option to install a number of Spartacus features, which is done by installing the relevant integration or feature libraries. The following is a list of the integration libraries and feature libraries that you can install, along with information about what is included in each package.
 
-- `@spartacus/asm` includes the [{% assign linkedpage = site.pages | where: "name", "asm.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/asm.md %}).
-- `@spartacus/cart` includes the [{% assign linkedpage = site.pages | where: "name", "saved-cart.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/saved-cart.md %}), [{% assign linkedpage = site.pages | where: "name", "quick-order.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/quick-order.md %}), and [{% assign linkedpage = site.pages | where: "name", "cart-import-export.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/cart-import-export.md %}) features.
-- `@spartacus/cdc` includes the [{% assign linkedpage = site.pages | where: "name", "cdc-integration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/integrations/cdc-integration.md %}).
-- `@spartacus/cds` includes the [{% assign linkedpage = site.pages | where: "name", "cds-integration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/integrations/cds-integration.md %}).
-- `@spartacus/order` includes the Order History, Replenishment Order History, [{% assign linkedpage = site.pages | where: "name", "cancellations-and-returns.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/cancellations-and-returns.md %}), and the business logic to placing or scheduling an oder features.
-- `@spartacus/organization` includes the Organization Administration and Order Approval features. Both are required for [{% assign linkedpage = site.pages | where: "name", "b2b-commerce-organization.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/b2b-commerce-organization.md %}) to work.
-- `@spartacus/product` includes the [{% assign linkedpage = site.pages | where: "name", "bulk-pricing.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/bulk-pricing.md %}), [{% assign linkedpage = site.pages | where: "name", "variants.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/variants.md %}) and [{% assign linkedpage = site.pages | where: "name", "image-zoom.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/image-zoom.md %}) features.
-- `@spartacus/product-configurator` includes the [{% assign linkedpage = site.pages | where: "name", "configurable-products-integration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/integrations/configurable-products-integration.md %}).
-- `@spartacus/qualtrics` includes the [{% assign linkedpage = site.pages | where: "name", "qualtrics-integration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/integrations/qualtrics-integration.md %}).
-- `@spartacus/smartedit` includes the [{% assign linkedpage = site.pages | where: "name", "smartEdit-setup-instructions-for-spartacus.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/smartEdit-setup-instructions-for-spartacus.md %}).
-- `@spartacus/storefinder` includes the [{% assign linkedpage = site.pages | where: "name", "store-locator.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/store-locator.md %}) feature.
-- `@spartacus/tracking` includes the [{% assign linkedpage = site.pages | where: "name", "tag-management-system.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/tag-management-system.md %}) feature and the [{% assign linkedpage = site.pages | where: "name", "personalization-setup-instructions-for-spartacus.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/personalization-setup-instructions-for-spartacus.md %}).
+- `@spartacus/asm` includes the [Assisted Service Module](../dev/features/asm.md).
+- `@spartacus/cart` includes the [Saved Cart](../dev/features/saved-cart.md), [Quick Order](../dev/features/quick-order.md), and [Cart Import and Export](../dev/features/cart-import-export.md) features.
+- `@spartacus/cdc` includes the [SAP Customer Data Cloud Integration](integrations/cdc-integration.md).
+- `@spartacus/cds` includes the [Intelligent Selling Services for SAP Commerce Cloud Integration](integrations/cds-integration.md).
+- `@spartacus/order` includes the Order History, Replenishment Order History, [Cancellations and Returns](../dev/features/cancellations-and-returns.md), and the business logic to placing or scheduling an oder features.
+- `@spartacus/organization` includes the Organization Administration and Order Approval features. Both are required for [B2B Commerce Organization](../dev/features/b2b-commerce-organization.md) to work.
+- `@spartacus/product` includes the [Bulk Pricing](../dev/features/bulk-pricing.md), [Variants](../dev/features/variants.md) and [Image Zoom](../dev/features/image-zoom.md) features.
+- `@spartacus/product-configurator` includes the [Configurable Products Integration](integrations/configurable-products-integration.md).
+- `@spartacus/qualtrics` includes the [Qualtrics Integration](integrations/qualtrics-integration.md).
+- `@spartacus/smartedit` includes the [SmartEdit Integration](smartEdit-setup-instructions-for-spartacus.md).
+- `@spartacus/storefinder` includes the [Store Locator](../dev/features/store-locator.md) feature.
+- `@spartacus/tracking` includes the [Tag Management System](../dev/features/tag-management-system.md) feature and the [Personalization Integration](personalization-setup-instructions-for-spartacus.md).
 - `@spartacus/user` includes the Account and Profile features. The Account feature contains components such as the login form, and also exposes the general method for getting user details. The Profile feature is responsible for functionality such as closing an account, updating a profile, updating an email, updating a password, resetting a password, and registering. It is highly recommended to install both of these features.
 - `@spartacus/checkout` - includes basic checkout, b2b checkout, and b2b scheduled replenishment checkout functionalities.
 

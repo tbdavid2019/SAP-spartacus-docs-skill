@@ -6,11 +6,9 @@ feature:
   cx_version: n/a
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 3.2 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 3.2 of the Spartacus libraries.
 
 Proxy facades are a flexible mechanism that can abstract functionality from lazy-loadable feature modules, and this can be done for any part of the application, such as components, services, directives, and so on.
 
@@ -60,7 +58,7 @@ This kind of module is part of an eager-loaded bundle (usually the `root` entry 
 @Injectable()
 export class UserAccountService implements UserAccountFacade {
   // ...
-    
+
   get(): Observable<User | undefined> {
     // ...
   }

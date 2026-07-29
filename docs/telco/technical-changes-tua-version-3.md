@@ -2,6 +2,8 @@
 title: Technical Changes in TUA Spartacus 3.0
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 ## Components and Methods-related Changes Introduced in 3.0
 
 ### TmfEndpointsService
@@ -92,11 +94,11 @@ An input `hasError` is added. This *Boolean* field controls the visibility of th
 
 ### TmaAddedToCartDialogComponent
 
-A public methods `entryHaveInstallationDetails` and `AppointmentDetailsComponent` are removed. 
+A public methods `entryHaveInstallationDetails` and `AppointmentDetailsComponent` are removed.
 
 ### TmaCartItemListComponent
 
-The attribute `cartPage` is renamed to `showEdit`. 
+The attribute `cartPage` is renamed to `showEdit`.
 
 **Note:** The *Boolean* attributes decide if an `edit` icon should be displayed or not. For example, the `installation address` is editable on the cart page, but not on the review order page.
 
@@ -168,7 +170,7 @@ When Serviceability check is successful then the `ProductDetailsDialogComponent`
 This component is handled from the backend by the `CMSFlexComponent` and `ServiceabilityButtonComponent`. It is placed on the header slot of the `BroadBandCategoryPage`.
 
 - If the installation address is not specified then the user can click the **Check offerings available in your area** button and specify the installation address. This action opens the `ServiceabilityCategoryFormComponent` component.
- 
+
 - If the installation address is specified, the user can click the **Change Address** button that opens the `ServiceabilityCategoryFormComponent` with prepopulated existing address. The use can update a new address to check the serviceability of the selected product offering at the new installation address.
 
 ### ServiceabilityCategoryFormComponent
@@ -214,7 +216,7 @@ The banner displays the following:
 
 - The media attached with the web component
 - All eligible terms for retention process type in a drop-down.
-- The highest priority price is displayed on the banner after selecting a particular subscription term. 
+- The highest priority price is displayed on the banner after selecting a particular subscription term.
 - The Renewal button to renew the subscription is displayed (see `RenewSubscriptionComponent` for more information)
 
 ### SubscriptionDetailComponent
@@ -222,8 +224,8 @@ The banner displays the following:
 This component displays all subscribed products and there details. The Angular web component is mapped with the `AccountSubscriptionDetailsComponent` of Hybris.
 
 The component displays:
- 
-The Renew banner (See `RenewSubscriptionBannerComponent` for more information) 
+
+The Renew banner (See `RenewSubscriptionBannerComponent` for more information)
 All subscribed products information will be displayed as play cards (See `TmfProductComponent` for more details)
 
 ## Renamed Components
@@ -282,4 +284,4 @@ This component prompts a customer to select an appointment and open the `Journey
 1. AppointmentDetailsComponent
 2. JourneyChecklistStepComponent
 
-For more information, see [Updating to Version 2.0]({{ site.baseurl }}{% link _pages/telco/updating-tua-spartacus-to-3.md %}).
+For more information, see [Updating to Version 2.0](updating-tua-spartacus-to-3.md).

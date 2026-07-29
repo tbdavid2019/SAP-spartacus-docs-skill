@@ -2,6 +2,8 @@
 title: Maintaining Public APIs
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The Spartacus public APIs are developed and maintained according to a set of best practices and procedures that are described in the following sections.
 
 ***
@@ -42,7 +44,7 @@ Spartacus releases follow semantic versioning, which means breaking changes are 
   **Note:** Adding new translation keys and values is not considered a breaking change.
 - Changing default configurations.
 - Changing any CSS or SCSS attributes, classes or selectors.
-- Changing anything that affects the rendering of the existing DOM. 
+- Changing anything that affects the rendering of the existing DOM.
 
   **Note:** Additions, changes, or deletions of `aria` attributes (for screen readers) are not considered breaking changes.
 

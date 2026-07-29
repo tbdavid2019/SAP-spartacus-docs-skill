@@ -2,6 +2,8 @@
 title: Purchase Flow Example
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The following example highlights the differences between a B2C and a B2B checkout. The purchase flow is done with Mark Rivers (who is a "buyer"), and demonstrates how the checkout flow is influenced by B2B Commerce Organization settings.
 
 ***
@@ -17,19 +19,19 @@ The following example highlights the differences between a B2C and a B2B checkou
 
 1. Mark has products in his cart, as shown in the following example:
 
-   <img src="{{ site.baseurl }}/assets/images/commerceorg/mark1_0-cart.png" alt="Cart with one item" width="600" border="1px" />
+   <img src="https://sap.github.io/spartacus-docs/assets/images/commerceorg/mark1_0-cart.png" alt="Cart with one item" width="600" border="1px" />
 
 2. Mark clicks **Proceed to Checkout**.
 
    In the B2B Powertools storefront, the buyer can enter a purchase order number (PO number), as shown in the following example:
 
-   <img src="{{ site.baseurl }}/assets/images/commerceorg/mark1_1a-methodofpayment-cc.png" alt="Method of Payment step, Credit Card selected" width="400" border="1px" />
-  
+   <img src="https://sap.github.io/spartacus-docs/assets/images/commerceorg/mark1_1a-methodofpayment-cc.png" alt="Method of Payment step, Credit Card selected" width="400" border="1px" />
+
    The default payment method is credit card, in which case the payment process is the same as with a standard B2C storefront (such as the Electronics storefront).
 
 3. Mark selects the **Account** payment method, as shown in the following example:
 
-   <img src="{{ site.baseurl }}/assets/images/commerceorg/mark1_1b-methodofpayment-account.png" alt="Method of Payment step, Account selected" width="400" border="1px" />
+   <img src="https://sap.github.io/spartacus-docs/assets/images/commerceorg/mark1_1b-methodofpayment-account.png" alt="Method of Payment step, Account selected" width="400" border="1px" />
 
     With the **Account** payment method selected, the checkout steps change and the **Payment Details** step is removed. This is because there is no need to supply a credit card when paying by account. Invoicing is done separately, through an arrangement between the seller and buyer companies.
 
@@ -37,7 +39,7 @@ The following example highlights the differences between a B2C and a B2B checkou
 
    The **Shipping Address** screen is displayed, as shown in the following example:
 
-   <img src="{{ site.baseurl }}/assets/images/commerceorg/mark1_2a-shippingaddress.png" alt="Shipping Address step" width="400" border="1px" />
+   <img src="https://sap.github.io/spartacus-docs/assets/images/commerceorg/mark1_2a-shippingaddress.png" alt="Shipping Address step" width="400" border="1px" />
 
    In order to continue, Mark must select a cost center. Mark can access all cost centers in the unit he is assigned to, and any cost centers belonging to child units of his unit.
 
@@ -45,13 +47,13 @@ The following example highlights the differences between a B2C and a B2B checkou
 
    **Note:** In the following example, a second cost center was added to the sample data to show that there are multiple cost centers available:
 
-   <img src="{{ site.baseurl }}/assets/images/commerceorg/mark1_2b-costcentermenu.png" alt="Cost Center menu, 2 cost centers shown" width="400" border="1px" />
+   <img src="https://sap.github.io/spartacus-docs/assets/images/commerceorg/mark1_2b-costcentermenu.png" alt="Cost Center menu, 2 cost centers shown" width="400" border="1px" />
 
 5. After selecting a cost center and shipping address, Mark clicks **Continue**.
 
    The **Delivery Mode** screen is displayed, as shown in the following example:
 
-   <img src="{{ site.baseurl }}/assets/images/commerceorg/mark1_3-deliverymode.png" alt="Delivery mode step" width="400" border="1px" />
+   <img src="https://sap.github.io/spartacus-docs/assets/images/commerceorg/mark1_3-deliverymode.png" alt="Delivery mode step" width="400" border="1px" />
 
    This screen is the same as with the standard B2C storefront, with the delivery cost depending on the shipping address.
 
@@ -59,7 +61,7 @@ The following example highlights the differences between a B2C and a B2B checkou
 
    The **Review Order** screen is displayed, as shown in the following example:
 
-   <img src="{{ site.baseurl }}/assets/images/commerceorg/mark1_4-review.png" alt="Review step" width="600" border="1px" />
+   <img src="https://sap.github.io/spartacus-docs/assets/images/commerceorg/mark1_4-review.png" alt="Review step" width="600" border="1px" />
 
    A summary of the order is displayed for Mark. There is also an option to schedule an automatic replenishment of the order (on the right side, below the **Order Summary**).
 

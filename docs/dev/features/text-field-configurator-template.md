@@ -6,11 +6,9 @@ feature:
   cx_version: 2005
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 3.1 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 3.1 of the Spartacus libraries.
 
 The Text Field Configurator Template allows you to add simple, text field-based configuration forms to your products. For example, you can use this feature to allow your customers to enter a text for engraving.
 

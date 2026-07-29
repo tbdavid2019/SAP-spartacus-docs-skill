@@ -2,6 +2,8 @@
 title: TUA Spartacus FAQ
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 This document compiles frequently-asked or interesting questions related to telco and utilities accelerator for project "Spartacus" (TUA Spartacus) as a product, TUA Spartacus development, and TUA Spartacus library development we’ve received from you.
 
 This document also cover a wide array of questions as a service to customers, stakeholders, and others who are seeking information regarding TUA Spartacus. We hope you find what you’re looking for.

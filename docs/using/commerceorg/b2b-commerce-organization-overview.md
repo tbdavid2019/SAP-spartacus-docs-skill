@@ -2,11 +2,13 @@
 title: B2B Commerce Organization Overview
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 B2B Commerce Organization for Spartacus allows companies to manage purchases made through a Spartacus commerce web site.
 
 A company's purchasing manager can be set up as an administrator for the commerce organization. The administrator can create units representing organizations, regions, cities, departments, or any other organizational entity in their company. The units are then associated with buyers, shipping addresses, and cost centers, all for the purpose of allowing, controlling and tracking spending.
 
-The following pages in this section describe how to use B2B Commerce Organization. For more technical information, see [{% assign linkedpage = site.pages | where: "name", "b2b-commerce-organization.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/b2b-commerce-organization.md%}).
+The following pages in this section describe how to use B2B Commerce Organization. For more technical information, see [B2B Commerce Organization](../../dev/features/b2b-commerce-organization.md).
 
 For in-depth information on this feature, see [Commerce Organization](https://help.sap.com/viewer/4c33bf189ab9409e84e589295c36d96e/latest/en-US/8ac27d4d86691014a47588e9126fdf21.html) on the SAP Help Portal.
 

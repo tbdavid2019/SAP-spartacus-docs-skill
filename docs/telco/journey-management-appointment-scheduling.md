@@ -1,12 +1,10 @@
 ---
-title: Journey Management - Appointment Scheduling 
+title: Journey Management - Appointment Scheduling
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 2.0 {{ site.version_note_forTUA }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 2.0 of the TUA Spartacus libraries.
 
 As a result of Journey Management configuration, a product offerings may be defined with the requirement of an appointment to be scheduled. This means that an appointment reservation is required before the order can be successfully placed. The Journey Management appointment feature enables customers to make this reservation during the "Add to Cart" process.
 

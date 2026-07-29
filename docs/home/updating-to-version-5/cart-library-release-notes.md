@@ -2,6 +2,8 @@
 title: Cart Library Release Notes
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 In Spartacus 5.0, the code for the base cart and wish list features has been extracted from the `@spartacus/core` and `@spartacus/storefrontlib` libraries and moved into the cart library. The cart library already existed before the release of Spartacus 5.0, and was already split into separate features.
 
 ## Base Cart Functionality

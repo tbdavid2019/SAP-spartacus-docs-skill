@@ -6,13 +6,11 @@ feature:
   cx_version: n/a
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.2 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.2 of the Spartacus libraries.
 
-Infinite scroll is a web-design technique that loads content continuously as the user scrolls down the page, removing the need for [pagination]({{ site.baseurl }}{% link _pages/dev/components/shared-components/pagination.md %}).
+Infinite scroll is a web-design technique that loads content continuously as the user scrolls down the page, removing the need for [pagination](../components/shared-components/pagination.md).
 
 When infinite scroll is enabled in Spartacus, it applies to the product search page, as well as the category pages in both the list and grid views. When infinite scroll is disabled, Spartacus uses pagination instead. By default, infinite scroll is disabled in Spartacus.
 
@@ -33,7 +31,7 @@ The `view` container contains all of the configurations that affect the display 
 
 Use the `active` property to enable and disable infinite scroll. Infinite scroll is enabled when `active` is set to `true`. If the value for `active` is empty, or set to `false`, all other `infiniteScroll` settings are ignored, and Spartacus uses pagination instead.
 
-Use the `productLimit` property to control the number of products a user can scroll through before they are prompted to load more items. For example, if the value for `productLimit` is set to `50`, then a **Show More** button appears after the user has scrolled through 50 items. When the user presses the **Show More** button, the user can scroll through another 50 items before the button appears again. 
+Use the `productLimit` property to control the number of products a user can scroll through before they are prompted to load more items. For example, if the value for `productLimit` is set to `50`, then a **Show More** button appears after the user has scrolled through 50 items. When the user presses the **Show More** button, the user can scroll through another 50 items before the button appears again.
 
 By limiting the number of products that are shown, you can prevent users from experiencing degraded browser performance, which could occur when displaying very large lists of products. Note that if the value for `productLimit` is empty, or set to `0`, then the `productLimit` property is disabled.
 

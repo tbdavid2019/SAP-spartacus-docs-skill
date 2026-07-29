@@ -2,6 +2,8 @@
 title: Adding and Customizing Routes
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Spartacus includes default routes for accessing different views within your storefront app, but you can also add or customize any route that you want in Spartacus.
 
 ***
@@ -25,7 +27,7 @@ Spartacus defines the following Angular `Routes` by default:
 - Routes that contain the `:categoryCode` parameter or the `:brandCode` parameter are for Category pages
 - Routes that contain the `**` wildcard are for Content pages (in other words, the wildcard is for all pages that are not Product or Category pages)
 
-Content pages have a configurable URL in the CMS, called a page label. However, the URLs for product, category, and brand pages can only be configured in Spartacus. For more information, see [{% assign linkedpage = site.pages | where: "name", "route-configuration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/routes/route-configuration.md %}).
+Content pages have a configurable URL in the CMS, called a page label. However, the URLs for product, category, and brand pages can only be configured in Spartacus. For more information, see [Route Configuration](route-configuration.md).
 
 ## Adding a Content Page Route
 
@@ -47,7 +49,7 @@ routing: {
 }
 ```
 
-**Note:** The optional `paramsMapping` configuration can be used for properties that have a different name than the route parameter. For example, you may wish to map from `product.code` to `:productCode`. For more information, see [{% assign linkedpage = site.pages | where: "name", "configurable-router-links.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/routes/configurable-router-links.md %}).
+**Note:** The optional `paramsMapping` configuration can be used for properties that have a different name than the route parameter. For example, you may wish to map from `product.code` to `:productCode`. For more information, see [Configurable Router Links](configurable-router-links.md).
 
 ## Adding a Content Page with Dynamic Parameters
 
@@ -169,7 +171,7 @@ The following procedure describes how to create this mapping in the `PRODUCT_NOR
     routing: {
         routes: {
             product: {
-                paths: ['product/:category/:name/:productCode', 'product/:name/:productCode'] 
+                paths: ['product/:category/:name/:productCode', 'product/:name/:productCode']
             }
         }
     }
@@ -195,7 +197,7 @@ To give your parameters more semantic names, you can configure a route alias in 
 routing: {
     routes: {
         product: {
-            paths: ['product/:name/:productCode', ':catalogue/:category/p/:productCode'] 
+            paths: ['product/:name/:productCode', ':catalogue/:category/p/:productCode']
         }
     }
 }

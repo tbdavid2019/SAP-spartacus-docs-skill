@@ -2,6 +2,8 @@
 title: SSR Transfer State
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 On the server, Spartacus runs HTTP requests to SAP Commerce Cloud while the storefront application is server-side rendered, and then again, the same HTTP requests to the back end are made on the client-side when the application bootstraps in the browser. To prevent unnecessary calls to the back end for the state that was already populated on the server, Spartacus includes part of the NgRx state with the server-side rendered HTML through the `TransferState` mechanism.
 
 You can configure the transfer of state for CMS and products (from NgRx store), as shown in the following example:

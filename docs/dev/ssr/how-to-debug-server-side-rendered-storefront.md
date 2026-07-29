@@ -2,6 +2,8 @@
 title: Debugging a Server–Side Rendered Storefront
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 If a runtime error occurs in your server-side rendered Spartacus storefront application, the application only outputs a stacktrace in the console of the Node.js process, not in the browser, and it can sometimes be difficult to determine the cause of the error. Fortunately, you can use Node.js debugging to take advantage of standard debugging techniques, such as inspecting variables in the code, inspecting breakpoints, and so on.
 
 ## Debugging Node.js in VS Code

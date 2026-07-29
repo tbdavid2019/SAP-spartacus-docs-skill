@@ -96,6 +96,77 @@ class ShellContractTests(unittest.TestCase):
             self.assertEqual(sentinel.read_text(encoding="utf-8"), "existing snapshot")
             self.assertFalse(any(skill_root.glob(".sync-work.*")))
 
+    def test_installer_clones_and_updates_a_git_checkout(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            origin = root / "origin"
+            target = root / "installed" / "spartacus-docs"
+            (origin / "docs").mkdir(parents=True)
+            (origin / "SKILL.md").write_text(
+                "---\nname: spartacus-docs\ndescription: Test.\n---\n",
+                encoding="utf-8",
+            )
+            (origin / "docs" / "SKILL_INDEX.md").write_text(
+                "# Index\n", encoding="utf-8"
+            )
+            subprocess.run(["git", "init", "-b", "main"], cwd=origin, check=True)
+            subprocess.run(
+                ["git", "config", "user.name", "Test"], cwd=origin, check=True
+            )
+            subprocess.run(
+                ["git", "config", "user.email", "test@example.com"],
+                cwd=origin,
+                check=True,
+            )
+            subprocess.run(["git", "add", "."], cwd=origin, check=True)
+            subprocess.run(
+                ["git", "commit", "-m", "initial"],
+                cwd=origin,
+                check=True,
+                capture_output=True,
+            )
+            environment = os.environ.copy()
+            environment["SPARTACUS_SKILL_REPO"] = str(origin)
+
+            install = subprocess.run(
+                [
+                    "bash",
+                    str(REPO_ROOT / "scripts" / "install-skill.sh"),
+                    str(target),
+                ],
+                text=True,
+                capture_output=True,
+                check=False,
+                env=environment,
+            )
+            self.assertEqual(install.returncode, 0, install.stderr)
+            self.assertTrue((target / ".git").is_dir())
+
+            (origin / "updated.txt").write_text("updated", encoding="utf-8")
+            subprocess.run(["git", "add", "updated.txt"], cwd=origin, check=True)
+            subprocess.run(
+                ["git", "commit", "-m", "update"],
+                cwd=origin,
+                check=True,
+                capture_output=True,
+            )
+            update = subprocess.run(
+                [
+                    "bash",
+                    str(REPO_ROOT / "scripts" / "install-skill.sh"),
+                    str(target),
+                ],
+                text=True,
+                capture_output=True,
+                check=False,
+                env=environment,
+            )
+
+            self.assertEqual(update.returncode, 0, update.stderr)
+            self.assertEqual(
+                (target / "updated.txt").read_text(encoding="utf-8"), "updated"
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

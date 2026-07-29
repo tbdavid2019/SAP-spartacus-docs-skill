@@ -2,6 +2,8 @@
 title: Core Web Vitals Optimization
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Core Web Vitals are the key metrics for measuring the user experience of your web application. Spartacus provides a set of features to help you achieve good Core Web Vitals in your application.
 
 The following information is provided to help you optimize the Core Web Vitals of your storefront application, with details specific to Spartacus, as well as Google's general guidelines for optimizing Core Web Vitals.

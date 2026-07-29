@@ -2,6 +2,8 @@
 title: Technical Changes in Spartacus 3.0
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 ***
 
 **Table of Contents**
@@ -158,7 +160,7 @@ The `CheckoutState` interface has the following new, required properties:
 
 - `paymentTypes: PaymentTypesState;`
 - `orderType: OrderTypesState;`
-  
+
 ### OutletRefDirective unregisters template on destroy
 
 The directive's template in unregistered from the outlet on directive destroy.

@@ -2,6 +2,8 @@
 title: Changes to HTML in Spartacus 2211.19
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The following HTML changes were made in Spartacus 2211..
 
 ## Changes in the Product Configurator Feature Library

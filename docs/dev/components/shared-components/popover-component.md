@@ -6,11 +6,9 @@ feature:
     cx_version: n/a
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 3.2 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 3.2 of the Spartacus libraries.
 
 The popover component allows you to display a transient view that contains additional content, such as a note, whenever a user clicks on a control element.
 
@@ -47,7 +45,7 @@ The popover component can be used by any UI element that needs to display some a
 
     It is also possible to pass an `<ng-template>` reference into a popover instead of a string. The following example shows how to make template content render inside the popover:
 
-    {% raw %}
+
 
     ```html
     <ng-template #myTemplate>
@@ -59,7 +57,7 @@ The popover component can be used by any UI element that needs to display some a
     </button>
     ```
 
-{% endraw %}
+
 
 ## Configuration
 

@@ -1,11 +1,13 @@
 ---
 title: Pre-Release Information
 ---
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 This document describes what is included in the latest pre-release of TUA Spartacus libraries, such as `next` and `rc` libraries.
 
 _Last updated March 17, 2021 by Deborah Cholmeley-Jones, Solution Owner, TUA Spartacus_
 
-For an overview of what is included in a specific release, see [Release Information]({{ site.baseurl }}{% link _pages/telco/telco-release-information.md %}).
+For an overview of what is included in a specific release, see [Release Information](telco-release-information.md).
 
 For detailed release notes, see the [TUA Spartacus repository
 ](https://github.com/SAP/spartacus-tua/releases).
@@ -41,7 +43,7 @@ To set up Spartacus 3.0.0-next.2 and build the TUA Spartacus Storefront using 3.
 
 ## Installing SAP Commerce Cloud for use with TUA Spartacus
 
-Installation instructions are very similar to [Installing SAP Commerce Cloud for use with TUA Spartacus]({{ site.baseurl }}{% link _pages/telco/installing-sap-commerce-for-tua-spartacus.md %}), except the following instructions that describe how to install and configure SAP Commerce Cloud (release 2011) with Telco and Utilities Accelerator (supports release 2102, latest patch) for use with a Spartacus storefront. In these instructions, SAP Commerce Cloud with TUA is installed on your local computer, so `localhost` is used in the browser URLs.
+Installation instructions are very similar to [Installing SAP Commerce Cloud for use with TUA Spartacus](installing-sap-commerce-for-tua-spartacus.md), except the following instructions that describe how to install and configure SAP Commerce Cloud (release 2011) with Telco and Utilities Accelerator (supports release 2102, latest patch) for use with a Spartacus storefront. In these instructions, SAP Commerce Cloud with TUA is installed on your local computer, so `localhost` is used in the browser URLs.
 
 The installation procedure includes steps for creating and using a `b2c_telco_spa` recipe that makes use of the TUA Spartacus Sample Data (`b2ctelcospastore`), but you can use your own sample data or recipe as long as it includes the `cmsocc`, `commercewebservices`, `acceleratorocc` extensions and TUA module.
 
@@ -113,7 +115,7 @@ Some of the steps in this procedure are derived from the documentation for insta
 
         extName 'b2ctelcocommercewebservicescommons'
         extName 'b2ctelcoocc'
-        extName 'b2ctelcoserviceabilityclient'	
+        extName 'b2ctelcoserviceabilityclient'
         extName 'commerceservicesbackoffice'
         extName 'solrfacetsearchbackoffice'
         extName 'solrserver'
@@ -211,8 +213,8 @@ Some of the steps in this procedure are derived from the documentation for insta
 
 1. Open a terminal or command prompt window inside the `sap-commerce-folder>/installer` folder.
 
-1. Set up the recipe using the following commands: 
-    
+1. Set up the recipe using the following commands:
+
     For Windows:
 
     ```bash
@@ -238,7 +240,7 @@ Some of the steps in this procedure are derived from the documentation for insta
    ```bash
    ./install.sh -r b2c_telco_spa -A local_property:initialpassword.admin=Y0urFav0r!tePassw0rd initialize
    ```
-1. Start SAP Commerce Cloud with the following command. From the `sap-commerce-folder>/installer` folder, run the following commands 
+1. Start SAP Commerce Cloud with the following command. From the `sap-commerce-folder>/installer` folder, run the following commands
 
    For Windows:
 
@@ -254,7 +256,7 @@ Some of the steps in this procedure are derived from the documentation for insta
 
    - Access Admin Console: https://localhost:9002
    - Access Backoffice: https://localhost:9002/backoffice
-   
+
 
    **Note:** When setting up your Spartacus storefront, set the base site in `app.module.ts` to telcospa and/or utilitiesspa depending on which sample data you want to use. Following are the samples:
 
@@ -424,7 +426,7 @@ The dependencies in this procedure are required by the TUA Spartacus storefront.
    ```html
    <cx-storefront>Loading...</cx-storefront>
    ```
-  
+
 3. Open `mystore/package.json` using a text editor.
 
 4. Add the following dependencies to the end of the `dependencies` section of `package.json`.
@@ -464,7 +466,7 @@ The dependencies in this procedure are required by the TUA Spartacus storefront.
    @import '~@spartacus/tua-spa/storefrontstyles/index';
    @import '~material-design-icons/iconfont/material-icons.css';
     ```
-  
+
 6. Add the following import in the `/mystore/src/polyfills.ts` file:
 
    ```bash
@@ -477,13 +479,13 @@ The dependencies in this procedure are required by the TUA Spartacus storefront.
    ```bash
    yarn install
    ```
-  
+
 8. Start the angular client app. From the terminal window, within `mystore` start the application by running the following command:
 
    ```bash
    yarn start
    ```
-  
+
 9. Make sure your backend server is up and running (SAP Commerce with TUA). When the backend server is properly started, point your browser to http://localhost:4200/telcospa/en/USD/.
 
 10. Your client application is accessible at the following locations in your local environment:
@@ -497,7 +499,7 @@ The dependencies in this procedure are required by the TUA Spartacus storefront.
 
 (2) If you are updating an existing app, and changing dependencies, it is recommended to delete the `node_modules` folder before running the install command.
 
-For more information on setting up TUA Spartacus 2.0.0-next.2, see [Building the TUA Spartacus Storefront Using Libraries]({{ site.baseurl }}{% link _pages/telco/building-the-tua-storefront-from-libraries-2.md %}).
+For more information on setting up TUA Spartacus 2.0.0-next.2, see [Building the TUA Spartacus Storefront Using Libraries](building-the-tua-storefront-from-libraries-2.md).
 
 As always, feedback appreciated! Contact us through Slack or submit an [issue](https://github.com/SAP/spartacus/issues/new/choose).
 
@@ -521,17 +523,17 @@ A contract renewal is the stage in the contract lifecycle where the contract is 
 
 ## Release 2.0.0-next.2 - November 25, 2020
 
-The `2.0.0-next.2` library has been published! We are happy to announce our second Spartacus for TUA pre-release. 
+The `2.0.0-next.2` library has been published! We are happy to announce our second Spartacus for TUA pre-release.
 
 In the `2.0.0-next.2` pre-release version, support for both - TUA 2007 and TUA 2011 is provided. In addition to supporting composite pricing and price alteration discounts, priority pricing is now available, as well as support for 1.x spartacus features that were delivered in previous releases, with the exception of 1.3 features.
 
 ## Release 2.0.0-next.1 - October 28, 2020
 
-The `2.0.0-next.1` library has been published! For more information, see [Release Information]({{ site.baseurl }}{% link _pages/telco/telco-release-information.md %}).
+The `2.0.0-next.1` library has been published! For more information, see [Release Information](telco-release-information.md).
 
 We are happy to announce support for the TUA 2007 release.
 
-You can set up TUA Spartacus 2.0.0-next.1 by following the instructions from [Building the TUA Spartacus Storefront Using Libraries]({{ site.baseurl }}{% link _pages/telco/building-the-tua-storefront-from-libraries-2.md %}).
+You can set up TUA Spartacus 2.0.0-next.1 by following the instructions from [Building the TUA Spartacus Storefront Using Libraries](building-the-tua-storefront-from-libraries-2.md).
 
 The following features are included as part of this pre-release:
 

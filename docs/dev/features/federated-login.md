@@ -6,6 +6,8 @@ feature:
   cx_version: 2211-jdk21.11
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Federated login is an enhancement to the [custom login page](../authentication.md#enabling-a-custom-login-page-in-spartacus) in Spartacus. Federated login allows you to use a single Spartacus app to provide the login page functionality for multiple different domains.
 
 ## Overview
@@ -130,7 +132,7 @@ For more details about placeholder configuration and behavior, see [Extensible P
 
 It is recommended that you simplify the CMS structure for the login page as much as possible. The main reasons for doing so are that relative links do not contain the correct base URL, and also lack cart data. By reducing the login page to only the necessary components and links, you can reduce the challenges with CMS configuration when using the federated login feature.
 
-For example, it could be confusing to the customer to suddenly see an incorrect cart counter on the login page, so removing cart counters and mini-carts is recommended.  
+For example, it could be confusing to the customer to suddenly see an incorrect cart counter on the login page, so removing cart counters and mini-carts is recommended.
 
 As for relative links, if these are not tied to the Angular router (such as anchor tags in the text of a paragraph component, for example), the links are not guaranteed to resolve properly to the originating domain. As a result, relative links should be replaced with absolute links, where possible.
 

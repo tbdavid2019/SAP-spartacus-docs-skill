@@ -2,6 +2,8 @@
 title: Units
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 A unit is the basic building block of the organization. A unit represents a department, location, region, or any other entity that makes sense to you.
 
 Units are the parents of, or are associated with, the following Commerce Organization entities:
@@ -29,7 +31,7 @@ There must be one root unit, and accordingly, all new units are child units of a
 
    All units are displayed, as shown in the following example:
 
-   <img src="{{ site.baseurl }}/assets/images/commerceorg/allunits-rootonly.png" alt="All Units" width="500" border="1px" />
+   <img src="https://sap.github.io/spartacus-docs/assets/images/commerceorg/allunits-rootonly.png" alt="All Units" width="500" border="1px" />
 
 2. Click **Add**, and then fill in the following required fields:
 
@@ -40,4 +42,4 @@ There must be one root unit, and accordingly, all new units are child units of a
 
    In the following example, two new child units were created:
 
-   <img src="{{ site.baseurl }}/assets/images/commerceorg/allunits-2unitscreated.png" alt="New Child Units" width="500" border="1px" />
+   <img src="https://sap.github.io/spartacus-docs/assets/images/commerceorg/allunits-2unitscreated.png" alt="New Child Units" width="500" border="1px" />

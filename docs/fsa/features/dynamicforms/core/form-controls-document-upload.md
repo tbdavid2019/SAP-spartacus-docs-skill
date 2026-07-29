@@ -2,6 +2,8 @@
 title: Document Upload
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 **Note**: This dynamicforms library feature is introduced with version 2.0 of the FSA Spartacus libraries.
 
 Document upload feature enables users to upload one or multiple images, documents, audio, video, and other file types to a server.
@@ -25,7 +27,7 @@ Financial Services Accelerator offers insurance customers the possibility to upl
 
 Dynamic Forms is a library for creating forms, designed to work with the Spartacus application. It allows customers to define forms metadata in a JSON configuration and render them on the UI.
 
-The following example shows a JSON representation of the document upload form control:  
+The following example shows a JSON representation of the document upload form control:
 
 ```json
 {
@@ -66,11 +68,11 @@ The following table describes the properties used in the document upload form co
 
 The example above illustrates how to upload files to the server. Users have the possibility to upload images, Microsoft Office, PDF, and plain text files that are up to 5.0 MB in size. This sample limits the maximum number of files that can be uploaded to 4. The cx-upload component allows you to validate the file type and limit the file size using the maxFileSize property.
 
-![document upload]({{ site.baseurl }}/assets/images/fsa/document-upload.png)
+![document upload](https://sap.github.io/spartacus-docs/assets/images/fsa/document-upload.png)
 
 The component displays a built-in progress bar (progress indicator) showing progress percentage during each file upload. When the upload is finished, the file is marked with a check icon and the user can download it.
 
-![progress bar during document upload]({{ site.baseurl }}/assets/images/fsa/document-upload-progress-bar.png)
+![progress bar during document upload](https://sap.github.io/spartacus-docs/assets/images/fsa/document-upload-progress-bar.png)
 
 When a user clicks the **UPLOAD** button, a new instance of DocumentModel is created in CommerceSuite. Relevant information during document upload is:
 
@@ -79,6 +81,6 @@ When a user clicks the **UPLOAD** button, a new instance of DocumentModel is cre
 - document object identifier
 - customer external id
 
-In the Backoffice, the uploaded file can be found under Document itemtype.  
+In the Backoffice, the uploaded file can be found under Document itemtype.
 
-![uploaded document in backoffice]({{ site.baseurl }}/assets/images/fsa/document-upload-backoffice.png)
+![uploaded document in backoffice](https://sap.github.io/spartacus-docs/assets/images/fsa/document-upload-backoffice.png)

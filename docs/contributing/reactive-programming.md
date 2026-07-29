@@ -2,6 +2,8 @@
 title: Reactive Programming in Spartacus
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 There are many ways to write asynchronous code in JS, such as callbacks and promises, as well as observables in the case of RxJS. As much as possible, Spartacus uses observables as the main mechanism for asynchronous code.
 
 When interacting with external dependencies, it is sometimes necessary to follow the same pattern that is used by those dependencies. However, if you are working with methods that use a different pattern, always try to return an `Observable` if you can. By consistently using the same patterns across the entire codebase, we make our code easier to follow, and simplify the analysis of data flow.

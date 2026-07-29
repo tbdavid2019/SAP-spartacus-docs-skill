@@ -6,11 +6,13 @@ feature:
   cx_version: n/a
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Spartacus includes two storefront themes, Sparta and Santorini. Each theme features distinct font sizes and colours. The Sparta theme features red colors and fonts, while the Santorini theme features blue colors and fonts. The Sparta theme is enabled by default, but you can dynamically switch to the Santorini theme at any time, as described in the procedure below.
 
 The following is an example of a Spartacus product page with the Santorini theme enabled:
 
-<img src="{{ site.baseurl }}/assets/images/santorini-product-page.png" alt="Santorini Theme Spartacus Home Page" width="750" border="1px" />
+<img src="https://sap.github.io/spartacus-docs/assets/images/santorini-product-page.png" alt="Santorini Theme Spartacus Home Page" width="750" border="1px" />
 
 ## Changing the Storefront Theme Dynamically
 

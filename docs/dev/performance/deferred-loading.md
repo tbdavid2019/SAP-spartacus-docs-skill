@@ -6,11 +6,9 @@ feature:
   cx_version: n/a
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.4 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.4 of the Spartacus libraries.
 
 Deferred loading is a technique that is used to postpone the rendering of CMS components. Any component that is outside the viewport (that is, the area that is visible to the user) is not rendered in advance. This improves the initial rendering of the complete page. Deferred loading not only defers the creation of components, it also defers the loading of any component-specific data, such as media or back end calls.
 
@@ -81,6 +79,6 @@ There are a number of related techniques to be aware of:
 
 - Lazy loading of JS chunks: Deferred loading does not lazy-load the component JS bundles. Deferred loading is only concerned with the creation or rendering of components.
 
-- Above-the-fold loading: Deferred loading is tightly coupled to so-called "above-the-fold loading". For more information, see [{% assign linkedpage = site.pages | where: "name", "above-the-fold.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/performance/above-the-fold.md %}).
+- Above-the-fold loading: Deferred loading is tightly coupled to so-called "above-the-fold loading". For more information, see [Above-the-Fold Loading](above-the-fold.md).
 
 - Native lazy loading of images: Deferred loading is not related to the native lazy loading of images that has recently been implemented in some browsers. This new API is not yet fully supported, but could be used in combination with deferred loading for CMS components.

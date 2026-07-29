@@ -2,6 +2,8 @@
 title: Changes to Styles in 5.0
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 ## Changes in the Configurator Tab Bar Component
 
 - Styling is now applied only if the content is not empty. Therefore, the styling is wrapped with an `&:not(:empty) {` expression.
@@ -81,7 +83,7 @@ Changed `justify-content` to `center` for `.cx-address-form-btns` in `%cx-addres
 
 ### NavigationUIComponent, NavigationComponent, FooterNavigationComponent, CategoryNavigationComponent
 
-The styles has been aligned to the new structure of navigation. For more information, see the template changes of the [NavigationUIComponent](./5_0.md#NavigationUIComponent).
+The styles has been aligned to the new structure of navigation. For more information, see the template changes of the [NavigationUIComponent](https://sap.github.io/spartacus-docs/5_0/#NavigationUIComponent).
 
 ### CartItemComponent
 

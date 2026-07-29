@@ -6,11 +6,9 @@ feature:
     cx_version: 2005
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 3.0 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 3.0 of the Spartacus libraries.
 
 The scheduled replenishment feature allows you to set up orders that are fulfilled automatically on a recurring basis. For example, you might choose to set up an order that is fulfilled on the 15th day of every month. Each time a scheduled replenishment order is placed, the order shows up in the order history.
 
@@ -41,7 +39,7 @@ Once you have scheduled your order, it will be fulfilled automatically starting 
 
 To view your scheduled orders, choose **Replenishment Orders** under the **My Account** menu. On the **Replenishment Orders** page, you can see a list of all of your scheduled replenishment orders. The following is an example:
 
-![Replenishment Orders]({{ site.baseurl }}/assets/images/replenishment-orders-1.png)
+![Replenishment Orders](https://sap.github.io/spartacus-docs/assets/images/replenishment-orders-1.png)
 
 When you select a replenishment, you open the **Replenishment Order Details** page, which provides all the details about the replenishment order, including what items are in the replenishment, and how often the replenishment has been fulfilled.
 

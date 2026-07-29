@@ -6,11 +6,9 @@ feature:
     cx_version: n/a
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 3.0 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 3.0 of the Spartacus libraries.
 
 The table component is a low-level component for rendering tabular data, using the standard HTML `<table>` element. While HTML tables can have very complex structures, the table component implementation is fairly limited.
 
@@ -53,7 +51,7 @@ The table can be rendered in the following different layout orientations:
 - `HORIZONTAL` renders the table horizontally, with the header on the left side of the table.
 - `VERTICAL_STACKED` renders multiple tables with a horizontal layout, each table containing a single item, and each stacked one on top of the other. The following is an example:
 
-  <img src="{{ site.baseurl }}/assets/images/vertical-stacked-table.png" alt="A table with a vertical-stacked layout" width="400" border="1px" />
+  <img src="https://sap.github.io/spartacus-docs/assets/images/vertical-stacked-table.png" alt="A table with a vertical-stacked layout" width="400" border="1px" />
 
 
 The vertical layout is the default layout.
@@ -127,7 +125,7 @@ provideConfig({
 
 ## Cell Outlets
 
-Aside from configuration, the table component can be customized with [outlets]({{ site.baseurl }}{% link _pages/dev/outlets.md %}). Outlets are used to customize existing UI elements without changing existing component logic or templates.
+Aside from configuration, the table component can be customized with [outlets](../../outlets.md). Outlets are used to customize existing UI elements without changing existing component logic or templates.
 
 The table component generates an outlet for each cell, so that customizations can be done by both outlet templates and components. Outlet references are concatenated from the table `type` and header `key`. The following snippet shows an outlet generated for the table header name of the budget table:
 

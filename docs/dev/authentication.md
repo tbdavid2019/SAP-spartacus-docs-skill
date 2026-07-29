@@ -6,6 +6,8 @@ feature:
   cx_version: 2211-jdk21.0
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 SAP Commerce Cloud uses the OAuth Authorization Framework as the default authorization protocol for enabling seamless integration between different services, and allowing third-party applications to access user data without exposing login credentials. SAP Commerce Cloud supports the OAuth 2.1 specification, which consolidates OAuth 2.0 and its later updates into a simplified, modern feature set providing enhanced security. Spartacus provides out-of-the-box support for OAuth 2.1 authentication methods. The default configuration for authentication is set to the authorization code grant with Proof Key for Code Exchange (PKCE), which is the recommended grant type in OAuth 2.1.
 
 For Spartacus to work with an authorization server, set the following feature toggles to `true` in the `spartacus-features.module.ts` file:
@@ -66,7 +68,7 @@ When enabled, the `asyncAuthConfigInitializer` feature toggle introduces a `Conf
 The newly added `AuthConfigInitializer` implementation introduces the following new behaviors:
 
 - Changes the default redirect URL to include the base site URL context parameter
-- Adds the base site as a suffix to the configured client ID.  
+- Adds the base site as a suffix to the configured client ID.
 
 These behaviors are set to auto-activate by default, but may require additional configuration in SAP Commerce Cloud. For more information, see [Auth Config Initializer](features/auth-config-initializer.md). If you are working with a Spartacus app that has been upgraded to version 221121.15, see also [Activating Async Auth Config Initializer](link-to-doc-in-portal).
 

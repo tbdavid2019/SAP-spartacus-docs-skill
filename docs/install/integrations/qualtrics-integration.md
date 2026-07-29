@@ -6,11 +6,9 @@ feature:
     cx_version: n/a
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.3 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.3 of the Spartacus libraries.
 
 The Qualtrics integration in Spartacus allows you to set up Qualtrics to work seamlessly in a single-page application. This integration is based on a JavaScript API that intercepts events in the storefront. The API is called Qualtrics Site Intercept (QSI), and is provided by Qualtrics. To import and use the API, Qualtrics provides a simple deployment code for your Qualtrics project, which you can integrate in Spartacus.
 
@@ -31,7 +29,7 @@ For more information about Qualtrics, see [Getting Started with Website Feedback
 
 ## Installing the Qualtrics Library
 
-To integrate Qualtrics with your Spartacus storefront, you need to first install the `@spartacus/qualtrics` feature library. For more information, see [Installing Additional Spartacus Libraries]({{ site.baseurl }}/schematics/#installing-additional-spartacus-libraries).
+To integrate Qualtrics with your Spartacus storefront, you need to first install the `@spartacus/qualtrics` feature library. For more information, see [Installing Additional Spartacus Libraries](https://sap.github.io/spartacus-docs/schematics/#installing-additional-spartacus-libraries).
 
 ## Qualtrics Projects
 
@@ -152,11 +150,7 @@ export class DemoQualtricsLoaderService extends QualtricsLoaderService {
 
 ## Spartacus Support for Qualtrics Embedded Feedback
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 3.1 {{ site.version_note_part2 }}
-{% endcapture %}
-
-{% include docs/feature_version.html content=version_note %}
+> **Note:** This feature is introduced with version 3.1 of the Spartacus libraries.
 
 The Qualtrics Embedded Feedback feature relies on CSS selectors to display the Embedded Feedback component in a page. For more information, see [Embedded Feedback](https://www.qualtrics.com/support/website-app-feedback/creatives-tab/creative-types/embedded-feedback/) in the Qualtrics documentation.
 

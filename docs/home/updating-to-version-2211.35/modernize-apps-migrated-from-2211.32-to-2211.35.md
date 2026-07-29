@@ -2,6 +2,8 @@
 title: Modernizing Your Storefront App After Upgrading to Version 2211.36
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 New Angular 19 apps are configured a bit differently than Angular 17 apps that have been migrated to version 19. This applies to all Spartacus apps that have updated from version 2211.32.1 to version 2211.36. It is highly recommended that you modernize your Angular 19 app to be as similar as possible to a new Angular 19 app. This will help with updating to new versions of Angular and Spartacus in the future.
 
 ## Automatic Migration

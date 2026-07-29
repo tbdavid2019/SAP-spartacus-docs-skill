@@ -6,6 +6,8 @@ feature:
   cx_version: n/a
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 HTML tags, and meta tags in particular, allow search engines, social platforms, and bots to use page meta data in their platforms. By carefully preparing meta tags, and evaluating their values on a regular basis, you can improve the page ranking, click-through-rate, and usability of a page. All of this can affect SEO and the user experience.
 
 Page meta tags are written into the head of the HTML. In HTML5, you can use a variety of meta tag properties, such as `title` and `description`. These meta tags are used by search engines, social platforms and crawlers. Some social platforms have introduced their own sets of properties that are specific to their platforms. For example, Facebook uses the Open Graph protocol, which enables any web page to become a rich object in a social graph. Specific meta tags can be used to describe the experience on the social platform. The code snippet below shows a custom page description for Facebook:
@@ -28,7 +30,7 @@ Page meta tags are written into the head of the HTML. In HTML5, you can use a va
 
 While page meta tags can be of great help to describe the page content, crawlers have started to leverage an alternative technique to better understand the content. This technique is called "structured data", and is also supported in Spartacus. You can use structured data and meta tags together on the same page. Each technique has its own specific purpose and use, with a fair amount of overlap. Crawlers use both techniques when they evaluate the page content.
 
-For more information on structured data in Spartacus, see [{% assign linkedpage = site.pages | where: "name", "structured-data.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/seo/structured-data.md %}).
+For more information on structured data in Spartacus, see [Structured Data](structured-data.md).
 
 ## Supported Meta Tags
 
@@ -118,11 +120,7 @@ The `CheckoutPageMetaResolver` demonstrates the usage of the `PageRobotsResolver
 
 ### Canonical URLs
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 3.2 {{ site.version_note_part2 }}
-{% endcapture %}
-
-{% include docs/feature_version.html content=version_note %}
+> **Note:** This feature is introduced with version 3.2 of the Spartacus libraries.
 
 Using the Spartacus canonical URLs feature could result in a breaking change if you already have a custom canonical URL in place. Accordingly, this feature will only be part of the default configuration starting from Spartacus 4.0. However, you can use this feature in 3.2 (or newer) by adding the following resolver configuration:
 

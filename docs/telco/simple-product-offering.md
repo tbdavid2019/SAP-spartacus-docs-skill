@@ -2,11 +2,9 @@
 title: Simple Product Offering (SPO)
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.0 {{ site.version_note_forTUA }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.0 of the TUA Spartacus libraries.
 
 In TUA, there is a need to differentiate between a product and a product offering.  A Product Offering is a commercial representation of what can be sold to a customer in contrast to a product which is what a customer has purchased - essentially what they already own.  A Product Offering is created based on product specifications, their characteristics and values; as well as defining all the applicable charges including one-time charges, recurring charges and usage-based charges.
 

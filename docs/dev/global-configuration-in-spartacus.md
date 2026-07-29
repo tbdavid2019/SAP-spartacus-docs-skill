@@ -2,6 +2,8 @@
 title: Global Configuration in Spartacus
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Spartacus uses a mechanism that provides global configuration during app initialization (that is, when the application is bootstrapped). This configuration does not change while the application is running. Each storefront module that uses this configuration usually provides typing with some defaults for its part of the configuration.
 
 **Note:** The configuration in the main app module takes precedence over other configurations, and can be used to override any configuration that has been provided elsewhere.
@@ -116,7 +118,7 @@ Using the techniques describes in the previous sections, you can use the Spartac
 
 - Define defaults.
 
-  Export the default configuration, preferably as a `const`-typed plain object value.  
+  Export the default configuration, preferably as a `const`-typed plain object value.
 
   By convention, all Spartacus modules use the `config` folder for this purpose, such as `my-module/config/default-my-module-config.ts`.
 

@@ -2,6 +2,8 @@
 title: Spartacus Sample Data Extension
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The `spartacussampledata` extension creates new WCMS base sites for Spartacus that share the same product catalog with the default `electronics`, `apparel`, and `powertools` sites, but with content catalogs that have been modified specifically for Spartacus requirements.
 
 ***
@@ -21,13 +23,13 @@ The Spartacus Sample Data extension is versioned and released with the Spartacus
 
 Of course, previous versions are also available. For example, to download the Spartacus Sample Data extension for the `3.0.0-RC.1` release, you can access the **Assets** section of the `@spartacus/storefront@3.0.0-rc.1` library [here](https://github.com/SAP/spartacus/releases/tag/storefront-3.0.0-rc.1).
 
-For more information about installing the `spartacussampledata` extension, see [{% assign linkedpage = site.pages | where: "name", "installing-sap-commerce-cloud.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/backend/installing-sap-commerce-cloud.md %}).
+For more information about installing the `spartacussampledata` extension, see [Installing SAP Commerce Cloud for use with Spartacus](backend/installing-sap-commerce-cloud.md).
 
 ## Overview
 
 The following diagram demonstrates how the `Electronics-Spa` base site is created. The process is similar for all sample stores.
 
-![spartacussampledata]({{ site.baseurl }}/assets/images/spartacussampledata.png)
+![spartacussampledata](https://sap.github.io/spartacus-docs/assets/images/spartacussampledata.png)
 
 **Note:** The ImpEx file paths in the following sections are to a `spartacussampledata` extension that has been installed with SAP Commerce Cloud.
 
@@ -51,7 +53,7 @@ The `spartacussampledata` extension includes the `SpaSampleAddOnSampleDataImport
 
 **Note:** To ensure these actions are performed during a system update, you must check the box next to the relevant storefront(s) you wish to update before pressing **Update** in the *hybris administration console*, as shown in the following example:
 
-<img src="{{ site.baseurl }}/assets/images/system-update-button.png" alt="System Update Button" width="400" border="1px" />
+<img src="https://sap.github.io/spartacus-docs/assets/images/system-update-button.png" alt="System Update Button" width="400" border="1px" />
 
 ## CMS Changes Specific to the Spartacus Project
 
@@ -98,13 +100,13 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
 
 The `MiniCartSlot` in the `electronicsContentCatalog` contains two components: the `OrderComponent` and the `MiniCart`. In Spartacus, the `OrderComponent` is not used anymore, so it was removed from the `MiniCartSlot`. The following image shows the `MiniCart` component in the `MiniCartSlot`:
 
-![Mini Cart Slot]({{ site.baseurl }}/assets/images/mini-cart-slot.png)
+![Mini Cart Slot](https://sap.github.io/spartacus-docs/assets/images/mini-cart-slot.png)
 
 ### Adding CMSlink Components to a New SiteLinks Slot
 
 The Spartacus header now contains `HelpLink`, `ContactUsLink` and `SaleLink` CMSlink components, which have been added to a new `SiteLinks` slot. Because this slot has been added in the header, the new `SiteLinks` slot has been added to every template. The following image shows the newly added CMSlink components:
 
-![Site Links Slots]({{ site.baseurl }}/assets/images/site-links-slot.png)
+![Site Links Slots](https://sap.github.io/spartacus-docs/assets/images/site-links-slot.png)
 
 ### Creating New CMS Pages
 
@@ -123,7 +125,7 @@ The `spartacussampledata` extension also creates the necessary content slots and
 
 Along with a banner image, the "Not Found" page now also includes links and text, as shown in the following image:
 
-!["Not Found" Page]({{ site.baseurl }}/assets/images/page-not-found.png)
+!["Not Found" Page](https://sap.github.io/spartacus-docs/assets/images/page-not-found.png)
 
 ### Adding a SignOutLink in My Account
 
@@ -153,7 +155,7 @@ INSERT_UPDATE SearchBoxComponent;uid;minCharactersBeforeRequest;maxProducts;maxS
 
 ### Making CMS Changes Related to Checkout
 
-The `spartacussampledata` extension makes a number of CMS changes that are related to checkout. For more information, see [{% assign linkedpage = site.pages | where: "name", "extending-checkout.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/extending-checkout.md %}).
+The `spartacussampledata` extension makes a number of CMS changes that are related to checkout. For more information, see [Extending Checkout](../dev/extending-checkout.md).
 
 ### Making the Product Details Page CMS-Driven
 

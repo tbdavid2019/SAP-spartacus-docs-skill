@@ -2,6 +2,8 @@
 title: Reference App Structure
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 **Note:** The reference app structure is introduced with version 3.1 of the Spartacus libraries.
 
 This recommended Spartacus app structure is intended to act as a reference for when you are setting up your own Spartacus application.
@@ -12,7 +14,7 @@ Spartacus itself comes with several layers and concepts, as well as a number of 
 
 This can be solved by defining and adhering to a standardized structure, such as the Spartacus reference app structure. Having a standardized structure also makes it easier to onboard new developers to your project, to handle external support cases, and to take care of audits.
 
-By using the Spartacus reference app structure, you benefit the most from the automatic migrations that are available with each major Spartacus release, while also maintaining the flexibility to add customizations, and to build new features on top of those customizations. Using the reference app structure also makes it possible to take advantage of code splitting for features that are moved into separate libraries after the 3.0 release.  
+By using the Spartacus reference app structure, you benefit the most from the automatic migrations that are available with each major Spartacus release, while also maintaining the flexibility to add customizations, and to build new features on top of those customizations. Using the reference app structure also makes it possible to take advantage of code splitting for features that are moved into separate libraries after the 3.0 release.
 
 To see a working example that makes use of the reference app structure, see [this repository](https://github.com/dunqan/spartacus-reference-structure).
 

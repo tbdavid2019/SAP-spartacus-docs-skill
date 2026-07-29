@@ -2,6 +2,8 @@
 title: Personalization Integration
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 For the following steps, the Electronics sample site is used along with the Spartacus Sample Data extension.
 
 ***
@@ -160,18 +162,18 @@ Sample personalization context :
 
     You can run the ImpEx below to add PersonalizationScriptComponent to your content catalog.
     Remember to set **$contentCatalog** parameter to the proper content catalog value.
-  
+
    ```text
    $contentCatalog = electronics-spaContentCatalog
    $stageContentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
-  
+
    # -----------------------------------------------------------------------
    # Component needed for personalization context visible in storefront
    # -----------------------------------------------------------------------
-  
+
    INSERT_UPDATE PersonalizationScriptComponent; $stageContentCV[unique = true]; uid[unique = true]             ; name                  ;
                                                ;                          ; PersonalizationScriptComponent ; PersonalizationScript ; PersonalizationScript ; ;
-  
+
    INSERT_UPDATE ContentSlot; $stageContentCV[unique = true]; uid[unique = true]     ; active; cmsComponents(uid, $stageContentCV)[mode = append]
                             ;                          ; PlaceholderContentSlot ; true  ; PersonalizationScriptComponent
 
@@ -220,7 +222,7 @@ Below you can find a sample test service, which displays personalization context
 ```ts
 import { Injectable } from '@angular/core';
 import {PersonalizationContextService} from "./personalization-context.service";
-  
+
 @Injectable({
   providedIn: 'root',
 })
@@ -228,11 +230,11 @@ export class PersonalizationTestService {
   constructor(
     protected service : PersonalizationContextService
   ) {
-  
+
     this.service.getPersonalizationContext().subscribe(evt => console.log(evt));
-  
+
   }
-  
+
   getServiceName(): String {
     return 'PersonalizationTestService';
   }

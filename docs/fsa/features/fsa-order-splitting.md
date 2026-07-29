@@ -2,6 +2,8 @@
 title: FSA Order Splitting
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 **Note**: This feature is introduced with version 2.0 of the FSA Spartacus libraries.
 
 Order splitting offers a possibility for insurance carriers to sell third-party products together with insurance products.
@@ -9,4 +11,4 @@ After an order is submitted, the splitting starts in the back end within the ord
 
 On the Order History page, the customer can see all the details related to that specific order, and the third-party products will have the 'Track package' link available.
 
-![third party product]({{ site.baseurl }}/assets/images/fsa/third_party_product.png)
+![third party product](https://sap.github.io/spartacus-docs/assets/images/fsa/third_party_product.png)

@@ -6,11 +6,9 @@ feature:
   cx_version: 1905.9
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.5 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.5 of the Spartacus libraries.
 
 The Intelligent Selling Services for SAP Commerce Cloud solution provides real-time customer experience personalization for SAP Commerce Cloud. You can integrate Intelligent Selling Services for SAP Commerce Cloud with your Spartacus Storefront, including the Profile Tag and the Merchandising Carousel features.
 
@@ -29,7 +27,7 @@ For more information, see [Intelligent Selling Services for SAP Commerce Cloud](
 
 To integrate Intelligent Selling Services for SAP Commerce Cloud with Spartacus, release **2105** of Commerce Cloud is required.
 
-Also, the Anonymous Consent feature in Spartacus needs to be enabled. For more information, see [{% assign linkedpage = site.pages | where: "name", "anonymous-consent.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/anonymous-consent.md %}).
+Also, the Anonymous Consent feature in Spartacus needs to be enabled. For more information, see [Anonymous Consent](../../dev/features/anonymous-consent.md).
 
 ## Enabling Intelligent Selling Services for SAP Commerce Cloud in Spartacus
 
@@ -37,7 +35,7 @@ To enable Intelligent Selling Services for SAP Commerce Cloud in Spartacus, you 
 
 ### Configuring Spartacus for Intelligent Selling Services for SAP Commerce Cloud
 
-You can install and configure the Intelligent Selling Services integration using Spartacus schematics. To take advantage of the automatic setup provided by Spartacus schematics, you need to ensure that your storefront app adheres to the app structure introduced with Spartacus 3.2. For more information, see [{% assign linkedpage = site.pages | where: "name", "reference-app-structure.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/reference-app-structure.md %}).
+You can install and configure the Intelligent Selling Services integration using Spartacus schematics. To take advantage of the automatic setup provided by Spartacus schematics, you need to ensure that your storefront app adheres to the app structure introduced with Spartacus 3.2. For more information, see [Reference App Structure](../reference-app-structure.md).
 
 After you have met these prerequisites, you can install the Intelligent Selling Services integration by running the following command:
 
@@ -126,7 +124,7 @@ The following steps describe how to add custom headers to your CORS settings, as
 
     **Note:** The `corsfilter.commercewebservices.allowedHeaders` setting is for SAP Commerce Cloud version 2005 or newer. For SAP Commerce Cloud version 1905 or older, use `corsfilter.ycommercewebservices.allowedHeaders` instead.
 
-    For more information, see [Cross-Origin Resource Sharing (CORS)]({{ site.baseurl }}{% link _pages/install/cors.md %}).
+    For more information, see [Cross-Origin Resource Sharing (CORS)](../cors.md).
 
 2. Define a consent template with an ID of `PROFILE`, which will allow events to be sent.
 
@@ -208,7 +206,7 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
 
 ### Adding a Merchandising Carousel with SmartEdit
 
-If you have followed the [{% assign linkedpage = site.pages | where: "name", "smartEdit-setup-instructions-for-spartacus.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/smartEdit-setup-instructions-for-spartacus.md %}), you can use SmartEdit to add a Merchandising carousel to a page, as follows:
+If you have followed the [SmartEdit Integration](../smartEdit-setup-instructions-for-spartacus.md), you can use SmartEdit to add a Merchandising carousel to a page, as follows:
 
 1. Launch SmartEdit.
 
@@ -238,7 +236,7 @@ If you have followed the [{% assign linkedpage = site.pages | where: "name", "sm
 
 ## Intelligent Selling Services for SAP Commerce Cloud Shell Application
 
-**Note:** The Intelligent Selling Services Shell Application is for developers who are contributing to the Spartacus library sources. In other words, it is only available if you have cloned the Spartacus library sources and are working with a contributor set-up of Spartacus. For more information, see [{% assign linkedpage = site.pages | where: "name", "contributor-setup.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/contributing/contributor-setup.md %})
+**Note:** The Intelligent Selling Services Shell Application is for developers who are contributing to the Spartacus library sources. In other words, it is only available if you have cloned the Spartacus library sources and are working with a contributor set-up of Spartacus. For more information, see [Contributor Setup](../../contributing/contributor-setup.md)
 
 The following steps describe how to run the Intelligent Selling Services Shell Application:
 

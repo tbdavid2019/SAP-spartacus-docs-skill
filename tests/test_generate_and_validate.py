@@ -80,3 +80,14 @@ class GenerateAndValidateTests(unittest.TestCase):
 
         with self.assertRaisesRegex(ValidationError, "unresolved Jekyll"):
             validate_docs(self.docs, minimum_markdown_files=3, required_paths=())
+
+    def test_validation_rejects_broken_local_markdown_links(self):
+        (self.docs / "dev" / "authentication.md").write_text(
+            "[Missing](missing-page.md)\n", encoding="utf-8"
+        )
+        (self.docs / "SKILL_INDEX.md").write_text(
+            generate_index(self.docs), encoding="utf-8"
+        )
+
+        with self.assertRaisesRegex(ValidationError, "broken local Markdown"):
+            validate_docs(self.docs, minimum_markdown_files=3, required_paths=())

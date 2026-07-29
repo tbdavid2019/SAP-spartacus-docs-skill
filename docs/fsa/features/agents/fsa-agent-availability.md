@@ -2,9 +2,11 @@
 title: FSA Agent Availability
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 **Note**: This feature is introduced with version 3.0 of and enhanced in version 4.0 of the FSA Spartacus libraries.
 
-The integration with Live Contract enables another enhancement of the insurance agent capabilities - besides agent data, customers can also see if a certain agent is currently available. 
+The integration with Live Contract enables another enhancement of the insurance agent capabilities - besides agent data, customers can also see if a certain agent is currently available.
 
 ***
 
@@ -17,7 +19,7 @@ The integration with Live Contract enables another enhancement of the insurance 
 
 ## Prerequisites
 
-To enable this feature, you need to integrate your project with Live Contract. For more information, see [Speak to an Agent]({{ site.baseurl }}{% link _pages/fsa/features/agents/fsa-speak-to-agent.md %}).
+To enable this feature, you need to integrate your project with Live Contract. For more information, see [Speak to an Agent](fsa-speak-to-agent.md).
 
 ## Integration
 
@@ -37,17 +39,17 @@ Note that the integration server link is specific for each integration. In the I
 
 ## User Interface
 
-With this functionality enabled, logged-in customers can see the agent availability on both the Map and the List View of the **Find an Agent** page. 
+With this functionality enabled, logged-in customers can see the agent availability on both the Map and the List View of the **Find an Agent** page.
 Based on this, customers will know which agent they can contact.
 
-![Agent Availability on the Map View]({{ site.baseurl }}/assets/images/fsa/agents/find-agent-map-view-agent-availability-2202.png) 
+![Agent Availability on the Map View](https://sap.github.io/spartacus-docs/assets/images/fsa/agents/find-agent-map-view-agent-availability-2202.png)
 
-When the agent is online, on the Map view, their profile image is circled with a blue line with a green dot. 
+When the agent is online, on the Map view, their profile image is circled with a blue line with a green dot.
 Also, the phone icon indicates that the agent is available for a call.
 
-![Online Agent on Map View]({{ site.baseurl }}/assets/images/fsa/agents/online-agent-card-map-2202.png) 
+![Online Agent on Map View](https://sap.github.io/spartacus-docs/assets/images/fsa/agents/online-agent-card-map-2202.png)
 
 On the List view, the phone icon inside the agent card shows that the agent is online.
 
-![Online Agent on the List View]({{ site.baseurl }}/assets/images/fsa/agents/online-agent-list-view-2202.png)  
- 
+![Online Agent on the List View](https://sap.github.io/spartacus-docs/assets/images/fsa/agents/online-agent-list-view-2202.png)
+

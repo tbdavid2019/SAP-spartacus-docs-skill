@@ -10,17 +10,15 @@ feature:
   anchor: "#image-lazy-loading"
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 2.0 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 2.0 of the Spartacus libraries.
 
 The media component is a low-level component that is used to render a single media item. Although the back end could provide any type of media for a media item, the media component is currently limited to render images only. The type of image is not limited to a technical format, such as `png` or `jpg`. Every image format that can be rendered in an image element is supported, including `svg`. The media component renders specific images for different screen sizes and resolutions, so that each user has an optimized version of the image.
 
 There are two main types of images that are rendered in Spartacus: product images and content images. Both types use the same technical implementation, but the semantics of the content is slightly different for each.
 
-**Note:** Icons are a special type of image and are not rendered with the media component. For more information, see [{% assign linkedpage = site.pages | where: "name", "icon-library.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/styling-and-page-layout/icon-library.md %}).
+**Note:** Icons are a special type of image and are not rendered with the media component. For more information, see [Icon Library](../../styling-and-page-layout/icon-library.md).
 
 ***
 
@@ -59,7 +57,7 @@ Content images are driven by CMS component data. Media items are used in differe
 - desktop
 - widescreen
 
-For more information, see [{% assign linkedpage = site.pages | where: "name", "banner-component.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/components/banner-component.md %}).
+For more information, see [Banner Component](../banner-component.md).
 
 ## Localized Media
 
@@ -290,11 +288,7 @@ If no matching image format is available in the media container, nor in the medi
 
 ## Image Lazy Loading
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 3.0 {{ site.version_note_part2 }}
-{% endcapture %}
-
-{% include docs/feature_version.html content=version_note %}
+> **Note:** This feature is introduced with version 3.0 of the Spartacus libraries.
 
 Images can be created with a lazy loading strategy, as follows:
 
@@ -314,7 +308,7 @@ provideConfig({
 } as MediaConfig);
 ```
 
-For more information, see [{% assign linkedpage = site.pages | where: "name", "deferred-loading.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/performance/deferred-loading.md %}) and [{% assign linkedpage = site.pages | where: "name", "above-the-fold.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/performance/above-the-fold.md %}).
+For more information, see [Deferred Loading](../../performance/deferred-loading.md) and [Above-the-Fold Loading](../../performance/above-the-fold.md).
 
 **Note:** When SSR is enabled, image lazy loading does not always work on initial page load. This only affects certain browsers, and is fixed in composable storefront version 2211.23.
 
@@ -322,7 +316,7 @@ For more information, see [{% assign linkedpage = site.pages | where: "name", "d
 
 To ensure that crawlers get an optimized image from the `img` element, the main `src` of the `img` element is provided with the largest image available. This is done in `MediaService.resolveBestFormat()`, and you can further customize this behavior if needed.
 
-Note that the actual image for the page is not driven by the `img` element, because crawlers will use other sources to indicate the image. Spartacus supports both page meta tags (for example, `'og:image'`) and structural data (`json-ld`) to provide that data to crawlers. For more information, see [{% assign linkedpage = site.pages | where: "name", "html-tags.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/seo/html-tags.md %}) and [{% assign linkedpage = site.pages | where: "name", "structured-data.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/seo/structured-data.md %}).
+Note that the actual image for the page is not driven by the `img` element, because crawlers will use other sources to indicate the image. Spartacus supports both page meta tags (for example, `'og:image'`) and structural data (`json-ld`) to provide that data to crawlers. For more information, see [HTML Tags](../../seo/html-tags.md) and [Structured Data](../../seo/structured-data.md).
 
 Another important aspect for SEO is the usage of the alternative (`alt`) text for images. The `alt` text is automatically selected by the `MediaService` if it is available in the media container data. However, you can also input a custom `alt` text through the component input.
 

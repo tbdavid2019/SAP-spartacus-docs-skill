@@ -2,11 +2,9 @@
 title: Contract Renewals
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 3.0 {{ site.version_note_forTUA }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 3.0 of the TUA Spartacus libraries.
 
 To increase retention and customer loyalty, Operators or Service Providers offer eligible customers the ability to renew their contract (subscriptions) to avail benefit of special and discounted prices. Eligible customers are typically incentivized to renew with special promotional offers and price discounts.
 
@@ -33,22 +31,22 @@ A customer wants to renew an existing subscription that is eligible for renewal.
 
     **Note:** The banner is displayed only if your subscription is eligible for renewal as per the [eligibility](https://help.sap.com/viewer/c762d9007c5c4f38bafbe4788446983e/latest/en-US/602fadbbb42c40a68750d0dac7deba8a.html) rule.
 
-    <p align="center"><img src="{{ site.baseurl }}/assets/images/telco/renew-subscription-button.png" alt="Renew Subscription Button"></p>
+    <p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/renew-subscription-button.png" alt="Renew Subscription Button"></p>
 
 1. Navigate to **Account** -> **Subscriptions**. All subscriptions of the logged in customer are displayed.
 1. Click on the header of the subscription that you want to renew. For example, *internet_22341 (Fiber Internet)*. The banner shows the default 12 months monthly billing subscription.
 
-    <p align="center"><img src="{{ site.baseurl }}/assets/images/telco/my-subscriptions.png" alt="My Subscriptions"></p>
+    <p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/my-subscriptions.png" alt="My Subscriptions"></p>
 
 1. Select the monthly billing cycle from the drop-down to renew your subscription. For example, 18 months - monthly billing. The monthly renewal price and the discount offer is displayed.
 
-    <p align="center"><img src="{{ site.baseurl }}/assets/images/telco/renew-banner.png" alt="Renew Banner"></p>
+    <p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/renew-banner.png" alt="Renew Banner"></p>
 
 1. Click **Renew Subscription** on the banner to renew your subscription. The cart shows your subscription renewal information. For example, *Renew 18 months - monthly billing*.
 1. Click **View Cart**. The cart displays all relevant information about your new subscription, such as the new monthly billing cycle, product offering, and the price details.
 1. Click **Proceed to Checkout**. The *Shipping Address* screen is displayed. Confirm your shipping address, or you can even add a new shipping address.
 1. Click **Continue**. The *Delivery Mode* screen is displayed. Select the shipping method from the options.
-1. Click **Continue**. The *Payment Details* screen is displayed. Check the payment details. 
+1. Click **Continue**. The *Payment Details* screen is displayed. Check the payment details.
 1. Click **Continue**. The *Review Order* screen is displayed. Review the order details, including the subscription renewal details.
 
     **Tip:** To edit or update your order details, click the pencil icon.
@@ -64,7 +62,7 @@ The banner shows the contractual terms with prices and discount offers. After se
 
 **Note** The [eligibility](https://help.sap.com/viewer/c762d9007c5c4f38bafbe4788446983e/latest/en-US/602fadbbb42c40a68750d0dac7deba8a.html) rules automatically determine if you are eligible for a renewal of one or more of your existing subscriptions. If you are not eligible, the banner does not display as depicted in the following figure:
 
- <p align="center"><img src="{{ site.baseurl }}/assets/images/telco/No-renewal-eligibility.png" alt="No Renewal Eligibility"></p>
+ <p align="center"><img src="https://sap.github.io/spartacus-docs/assets/images/telco/No-renewal-eligibility.png" alt="No Renewal Eligibility"></p>
 
 ## Frontend and Backend Dependencies
 

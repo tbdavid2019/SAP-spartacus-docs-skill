@@ -2,6 +2,8 @@
 title: Connecting to Other Systems
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The system landscape of a Commerce Cloud solution is made up of various systems, which are typically orchestrated on various application layers, including the front end. Spartacus connects to SAP Commerce Cloud APIs by default, but the underlying framework can be used to work with other systems as well. This is done by so-called "connectors", which can be added to connect to other systems.
 
 ***
@@ -30,7 +32,7 @@ This data binding design involves multiple layers, as follows:
 - **In-memory store:** Spartacus uses NgRx Store for state management. NgRx is considered complex, and it is recommended that you use the facade layer.
 - **Back-end connector:** The back-end connector is called by NgRx effects, and returns the response from the back end in the required UI model. The connector delegates to an adapter, which interacts with a back-end system.
 
-![component data binding]({{ site.baseurl }}/assets/images/data-binding-architecture.png)
+![component data binding](https://sap.github.io/spartacus-docs/assets/images/data-binding-architecture.png)
 
 Although this is a fairly complex setup, you do not need to worry about most layers. When you want to connect a UI component to an alternative data source, you can customize some low-level layers without being concerned with the facade layer or the data store. Only if alternative client-side business logic is required would you then provide additional logic (most likely, close to the UI layer).
 
@@ -54,7 +56,7 @@ The main task of the connector is to delegate the loading and conversion of back
 
 The adapter layer is responsible for loading and submitting data to a source system. By default, Spartacus works with OCC, the standard REST API of SAP Commerce Cloud. The adapters (and converters) are shipped and provided in separate modules, so that they become optional in the final build, in case you wish to work with an alternative system.
 
-The endpoints used in OCC adapters can be configured, so that the customization of Spartacus can be very light-weight. Only if you work with another system might it be necessary to provide a custom adapter. 
+The endpoints used in OCC adapters can be configured, so that the customization of Spartacus can be very light-weight. Only if you work with another system might it be necessary to provide a custom adapter.
 
 For more information on OCC endpoint configuration, see [Configuring Endpoints](#configuring-endpoints), below.
 

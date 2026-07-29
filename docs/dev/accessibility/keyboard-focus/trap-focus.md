@@ -2,11 +2,9 @@
 title: Trap Focus
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 2.0 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 2.0 of the Spartacus libraries.
 
 The `cxFocus` directive provides functionality to trap the focus of a group of focusable elements. Trap focus (that is, focus-trap) is often required in dialogs, such as modals. As long as the dialog is open, the focus should not leave the dialog when the user keeps tabbing through the focusable elements. Typically, when the focus leaves the last element, the focus should move to the first element. And vice versa, when `SHIFT + TAB` is pressed, when the focus leaves the first element, the last element should be focused.
 

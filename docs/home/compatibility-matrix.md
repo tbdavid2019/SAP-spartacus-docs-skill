@@ -2,6 +2,8 @@
 title: Compatibility Matrix
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The following table lists the Spartacus libraries release version for each feature, as well as the relevant version of SAP Commerce Cloud that is required.
 
 Spartacus requires SAP Commerce Cloud version 2105 or newer. In the table below, you can see which Spartacus features require API endpoints that are only available in newer versions of SAP Commerce Cloud.

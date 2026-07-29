@@ -2,6 +2,8 @@
 title: Optimizing Largest Contentful Paint in Spartacus
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The Largest Contentful Paint (LCP) is a Core Web Vitals metric that measures the render time of the largest image, text block, or video that is visible in the viewport, relative to when a user first navigates to the page. Spartacus provides a set of features to achieve a good LCP metric.
 
 For more general information on LCP, see [Largest Contentful Paint (LCP)](https://web.dev/articles/lcp) in the official Google web.dev documentation.
@@ -51,10 +53,10 @@ Otherwise, in the absence of SSR, the browser first downloads nearly-empty HTML 
 
 For more information on how to enable SSR in your Spartacus app, see [Server-Side Rendering](../../../dev/ssr/server-side-rendering-in-spartacus.md).
 
-For more information on Spartacus CDN recommendations, see [Performance Best Practices](./performance-best-practices.md#Caching-Recommendations).
+For more information on Spartacus CDN recommendations, see [Performance Best Practices](../performance-best-practices.md#Caching-Recommendations).
 
 ## Using Optimized Images
 
 The smaller and more optimized your images are, the faster they can be downloaded and displayed in the browser. This in turn improves the LCP metric.
 
-For more information, see [Image Format Recommendations](./performance-best-practices.md#Image-Format-Recommendations).
+For more information, see [Image Format Recommendations](../performance-best-practices.md#Image-Format-Recommendations).

@@ -6,15 +6,13 @@ feature:
   cx_version: 2005
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 3.0 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 3.0 of the Spartacus libraries.
 
 B2B Commerce Organization for Spartacus allows companies to manage purchases made through a Spartacus commerce web site.
 
-The following sections describe how to customize and configure the Spartacus Organization feature library. For information about using B2B Commerce Organization in Spartacus, see [{% assign linkedpage = site.pages | where: "name", "b2b-commerce-organization-tutorial.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/using/commerceorg/landing-page/b2b-commerce-organization-tutorial.md%}).
+The following sections describe how to customize and configure the Spartacus Organization feature library. For information about using B2B Commerce Organization in Spartacus, see [B2B Commerce Organization Tutorial](../../using/commerceorg/landing-page/b2b-commerce-organization-tutorial.md).
 
 For in-depth information on this feature, see [Commerce Organization](https://help.sap.com/viewer/4c33bf189ab9409e84e589295c36d96e/latest/en-US/8ac27d4d86691014a47588e9126fdf21.html) on the SAP Help Portal.
 
@@ -29,7 +27,7 @@ For in-depth information on this feature, see [Commerce Organization](https://he
 
 ## Prerequisites
 
-B2B Commerce Organization requires the Organization feature library. For more information, see [Installing Additional Spartacus Libraries]({{ site.baseurl }}/schematics/#installing-additional-spartacus-libraries).
+B2B Commerce Organization requires the Organization feature library. For more information, see [Installing Additional Spartacus Libraries](https://sap.github.io/spartacus-docs/schematics/#installing-additional-spartacus-libraries).
 
 ## Customizing Routes
 
@@ -57,13 +55,13 @@ imports: [
           paths: ['organization/budgets/custom-create'],
         },
       },
-    },    
+    },
   )},
   // ...
 ]
 ```
 
-For more information on overriding routes, see [{% assign linkedpage = site.pages | where: "name", "route-configuration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/routes/route-configuration.md%}).
+For more information on overriding routes, see [Route Configuration](../routes/route-configuration.md).
 
 ## Customizing CMS Components
 
@@ -97,14 +95,14 @@ imports: [
         },
         // ...
       },
-    },    
+    },
   )},
 ]
 ```
 
-All of the list components in the Organization library use split view, which means all the components inside the split view component are ordered in a nested hierarchy. As a result, even small changes require overwriting the entire configuration. For more information, see [{% assign linkedpage = site.pages | where: "name", "split-view.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/components/shared-components/split-view.md%}).
+All of the list components in the Organization library use split view, which means all the components inside the split view component are ordered in a nested hierarchy. As a result, even small changes require overwriting the entire configuration. For more information, see [Split View Component](../components/shared-components/split-view.md).
 
-For more information on overriding CMS configurations, see [{% assign linkedpage = site.pages | where: "name", "customizing-cms-components.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/components/customizing-cms-components.md%}).
+For more information on overriding CMS configurations, see [Customizing CMS Components](../components/customizing-cms-components.md).
 
 ## Customizing Table Configurations
 
@@ -137,7 +135,7 @@ providers: [
 ],
 ```
 
-For more information, see [{% assign linkedpage = site.pages | where: "name", "table-component.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/components/shared-components/table-component.md %}).
+For more information, see [Table Component](../components/shared-components/table-component.md).
 
 ### Cell Components
 
@@ -163,7 +161,7 @@ Messages in the Organization library similarly to global messages, but are displ
 
 Spartacus provides an `AdminGuard` that verifies that a logged-in user has permissions to see the commerce organization pages. By default, the guard redirects to the organization home page and displays a warning message.
 
-For more information on guards, see [Guarding Components]({{ site.baseurl }}/customizing-cms-components/#guarding-components).
+For more information on guards, see [Guarding Components](https://sap.github.io/spartacus-docs/customizing-cms-components/#guarding-components).
 
 ## Models
 
@@ -179,7 +177,7 @@ The following core models are used for structure:
 
 - `ListModel`
 - `SearchConfig`
-- `StateUtils`  
+- `StateUtils`
 
 The models are augmented from core models:
 
@@ -208,7 +206,7 @@ The following model is used for components:
 
 You can see all the endpoints that the Organization library makes use of in `feature-libs/organization/administration/occ/config/default-occ-organization-config.ts`.
 
-For more information, see [Configuring Endpoints]({{ site.baseurl }}/connecting-to-other-systems/#configuring-endpoints).
+For more information, see [Configuring Endpoints](https://sap.github.io/spartacus-docs/connecting-to-other-systems/#configuring-endpoints).
 
 ## Adapters
 
@@ -221,7 +219,7 @@ The following adapters are used in the Organization library:
 - `CostCenterAdapter`
 - `B2BUserAdapter`
 
-For more information, see [Adapter]({{ site.baseurl }}/connecting-to-other-systems/#adapter)
+For more information, see [Adapter](https://sap.github.io/spartacus-docs/connecting-to-other-systems/#adapter)
 
 ## Converters
 
@@ -260,7 +258,7 @@ The following are normalizers in the Organization library:
 - `B2B_USER_NORMALIZER`
 - `B2B_USERS_NORMALIZER`
 
-For more information, see [Converter]({{ site.baseurl }}/connecting-to-other-systems/#converter).
+For more information, see [Converter](https://sap.github.io/spartacus-docs/connecting-to-other-systems/#converter).
 
 ## Store
 
@@ -311,7 +309,7 @@ The various elements in the structure are described as follows:
 - `permisions` stores IDs for a subsection, with keys based on the ID of the user group and query parameters
 - `pageSize=2147483647` indicates that Spartacus fetches all possible items, up to the maximum safe Java integer
 
-For more information, see [{% assign linkedpage = site.pages | where: "name", "loader-meta-reducer.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/state_management/loader-meta-reducer.md %}).
+For more information, see [Loader Meta Reducer](../state_management/loader-meta-reducer.md).
 
 ## Homepage
 
@@ -345,7 +343,7 @@ The easiest way to add new links to the Organization homepage is to create a new
 
    - **Headline** is the title of the link.
    - **Content** is the text displayed below the link title.
-   - **Media** is a reference to a specific media object that has been added to the media library. In this case, it is used to define a banner icon. For more information, see [Adding a Custom Icon]({{ site.baseurl }}#adding-a-custom-icon), below.
+   - **Media** is a reference to a specific media object that has been added to the media library. In this case, it is used to define a banner icon. For more information, see [Adding a Custom Icon](https://sap.github.io/spartacus-docs#adding-a-custom-icon), below.
    - **URL link** is the target URL address.
 
 1. Click the **Content Slots** tab and select **My Company Slot**.
@@ -384,7 +382,7 @@ You can upload any image file and use it as an icon in the banner link, as follo
 
 1. Upload the image you want to use, click **Next** if you want to define additional properties, then click **Done**.
 
-    When you are creating a new banner, you can now select this image in the **Media** field to use as an icon in the banner link, as described in [Adding a New Banner]({{ site.baseurl }}#adding-a-new-banner), above.
+    When you are creating a new banner, you can now select this image in the **Media** field to use as an icon in the banner link, as described in [Adding a New Banner](https://sap.github.io/spartacus-docs#adding-a-new-banner), above.
 
 ## Styles
 
@@ -412,13 +410,13 @@ In `src/styles/spartacus/organization.scss`, you should import the Organization 
 }
 ```
 
-For more information, see [Component Styles]({{ site.baseurl }}/css-architecture/#component-styles).
+For more information, see [Component Styles](https://sap.github.io/spartacus-docs/css-architecture/#component-styles).
 
 ## Translations
 
 Organization translation resources can be overridden following the same rules as for other Spartacus chunks. The following is an example:
 
-{% raw %}
+
 
 ```ts
 provideConfig({
@@ -446,6 +444,6 @@ provideConfig({
 }),
 ```
 
-{% endraw %}
 
-For more information, see [Extending Translations]({{ site.baseurl }}/i18n/#extending-translations).
+
+For more information, see [Extending Translations](https://sap.github.io/spartacus-docs/i18n/#extending-translations).

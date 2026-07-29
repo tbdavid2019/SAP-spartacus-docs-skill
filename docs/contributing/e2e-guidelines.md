@@ -2,6 +2,8 @@
 title: End-to-End Test Guidelines
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 It is a good practice to write end-to-end tests for both desktop and mobile experiences. By using the `viewportContext()` and `cy.onMobile()` utils, you can avoid having to write duplicate code for both the mobile and desktop tests.
 
 The `viewportContext()` allows you to easily run the same e2e tests for a given set of viewports, whether it is both viewports (`['desktop', 'mobile']`), only `['mobile']`, or only `['desktop']`.

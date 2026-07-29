@@ -2,6 +2,8 @@
 title: Updating to Version 4.0
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 **NOTE:**  We strongly recommend you upgrade your FSA Spartacus libraries to version 3.0.1 first, and then upgrade to version 4.x.
 
 ***
@@ -26,11 +28,11 @@ Patch version 3.0.1 of FSA Spartacus Libraries contains a fix related to missing
 
 Before upgrading your FSA Spartacus libraries to version 3.0.1, you must address the following prerequisites:
 
-- Make sure all of your `@spartacus` libraries are upgraded to **Spartacus 3.4.0**. 
-- Note that this version of Spartacus requires **Angular version 10.2.4**. 
-If your Angular version is <10.2.4, you must update it before updating Spartacus. 
+- Make sure all of your `@spartacus` libraries are upgraded to **Spartacus 3.4.0**.
+- Note that this version of Spartacus requires **Angular version 10.2.4**.
+If your Angular version is <10.2.4, you must update it before updating Spartacus.
 For more information, see the official [Angular Update Guide](https://update.angular.io/).
-  
+
 
 ### Updating FSA Spartacus
 
@@ -47,9 +49,9 @@ For more information, see the official [Angular Update Guide](https://update.ang
     "@spartacus/user": "3.4.0",
     "@spartacus/styles": "^3.4.0",
     ```
-   
-3. Upgrade FSA Spartacus libraries:  
-   
+
+3. Upgrade FSA Spartacus libraries:
+
      ```shell
      "@spartacus/dynamicforms": "^3.0.1",
      "@spartacus/fsa-storefront": "^3.0.1",
@@ -64,7 +66,7 @@ For more information, see the official [Angular Update Guide](https://update.ang
     ```
 
 ***
-   
+
 **NOTE**: If you get errors related to font-icons, perform the following steps:
 
 1. Run the following command:
@@ -77,7 +79,7 @@ For more information, see the official [Angular Update Guide](https://update.ang
 
 ***
 
-   
+
 ## Upgrading FSA Spartacus Libraries from Version 3.0.1 to 4.x
 
 
@@ -156,16 +158,16 @@ Before upgrading your FSA Spartacus libraries to version 4.x, you must address t
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
     ```
-   
-   **NOTE:** Make sure that all Angular packages that you already have under `devDependencies` in your `package.json` file match the version of the `@angular/corelibrary`, which is **~12.0.5**.  
-   
+
+   **NOTE:** Make sure that all Angular packages that you already have under `devDependencies` in your `package.json` file match the version of the `@angular/corelibrary`, which is **~12.0.5**.
+
 3. Next, install dependencies with the following command:
 
     ```shell
     yarn install
     ```
-   
-4. After the installation is completed, your app structure needs to be updated to meet new Spartacus requirements. 
+
+4. After the installation is completed, your app structure needs to be updated to meet new Spartacus requirements.
    To do that, you need to replace the existing `app` folder with the one that contains the required structure.
    You can download a ready-made `app` folder with the new structure on the link provided below.
    Perform the following steps:
@@ -173,7 +175,7 @@ Before upgrading your FSA Spartacus libraries to version 4.x, you must address t
     - Navigate to `mystore/src/`.
     - Delete the existing `app` folder.
     - Unpack the downloaded `app.zip` folder to that same location (`mystore/src/`).
-   
+
  5. Now that you have the new app structure, you need to set the `baseUrl`:
      - Navigate to `app/spartacus`.
      - Find and open `fs-configuration.module.ts`, which holds the configuration necessary for the FSA to function correctly.

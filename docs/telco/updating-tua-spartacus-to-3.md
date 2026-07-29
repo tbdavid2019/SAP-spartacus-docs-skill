@@ -2,6 +2,8 @@
 title: Updating to Version 3.0
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 ## Prerequisites
 
 Before updating your TUA Spartacus libraries to version 3.0, you must address the following prerequisites:
@@ -150,10 +152,10 @@ You can upgrade your TUA Spartacus libraries to a new minor version, as follows:
 1. Add the following import `/mystore/src/polyfills.ts` in the file:
 
     ```bash
-    import '@angular/localize/init';    
-    import 'zone.js/dist/zone';    
+    import '@angular/localize/init';
+    import 'zone.js/dist/zone';
     ```
 1. Delete your `node_modules` folder.
 1. Run `yarn install`.
 
-For more information, see [Technical Changes in TUA Spartacus 3.0]({{ site.baseurl }}{% link _pages/telco/technical-changes-tua-version-3.md %}).
+For more information, see [Technical Changes in TUA Spartacus 3.0](technical-changes-tua-version-3.md).

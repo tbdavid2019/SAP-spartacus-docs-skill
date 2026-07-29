@@ -2,6 +2,8 @@
 title: Prioritizing the Largest Contentful Paint Image
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 After you have analyzed each page in your storefront (such as the Homepage, Product Details Page, and Product Listing Page), and you have determined which CMS components contain the Largest Contentful Paint (LCP) image for each page (the LCP image may be in a different CMS component for each page), you can then provide information to the browser that prioritizes the loading of the LCP images. This can improve the LCP metric.
 
 ## Setting the `fetchPriority` Input on the `<cx-media>` Component
@@ -21,7 +23,7 @@ The following out-of-the-box Spartacus component implementations can be controll
 - `BannerComponent`
 - `ProductCarouselComponent`
 - `ProductImageComponent` (and the related `ProductImageZoomProductImagesComponent`)
-  
+
 If you need the `lcpCmsComponents` configuration in other components, you can implement a custom component, or request it as a new feature in Spartacus.
 
 ### Configuring lcpCmsComponents

@@ -6,6 +6,8 @@ feature:
     cx_version: n/a
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Standardized SSR logging enhances the debugging experience by letting you see the source of your log messages, as well as the context of the logs in the printed output. Furthermore, the content is formatted so that logs are easier to read and easier to parse for monitoring tools. Standardized SSR logging also provides tools that allow you to customize the logging experience.
 
 To benefit from all aspects of standardized SSR logging, you must do the following:

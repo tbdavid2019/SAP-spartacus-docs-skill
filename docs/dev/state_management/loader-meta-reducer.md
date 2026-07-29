@@ -6,6 +6,8 @@ feature:
   cx_version: n/a
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 When a user interacts with a Spartacus storefront, the storefront application often provides feedback, such as "Cart is loading", or "Fetching the user address failed", and so on. Spartacus handles this kind of meta data for every separate application state, as well as for each relevant aspect of the application, such as cart, user information, product data, and so on. To handle this requirement efficiently across the codebase, Spartacus uses the `loaderReducer`. This reducer standardizes the handling of meta data across the whole state tree. You can use it at any depth of the tree, wherever you need it. In addition to the reducer, Spartacus also provides utilities for actions and selectors.
 
 ***

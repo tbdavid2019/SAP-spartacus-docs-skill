@@ -2,6 +2,8 @@
 title: Installing SAP Commerce Cloud 2205 for use with Spartacus
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 **Note:** SAP Commerce Cloud 2205 requires version 3.3 or newer of the Spartacus libraries.
 
 **Note:** SAP Commerce Cloud 2205 requires Java 17  or newer.
@@ -24,7 +26,7 @@ The following instructions describe how to install and configure SAP Commerce Cl
 - Starting with release 1905, SAP Commerce Cloud ships without a default admin password. You must specify a password when running recipe commands, or you can specify a password in a file named `custom.properties` that is stored in `CXCOMM*\installer\customconfig`. The sample `custom.properties` file included in these instructions contains the default password `nimda`. We strongly recommend you change this password to suit your requirements, as it should not be used for production servers.
 
 - The sample custom properties file and OCC credentials supplied here are for evaluation purposes only. Aside from a default password, for example, the CORS settings are permissive to prevent access issues. We strongly recommend that a professional SAP Commerce Cloud administrator review these settings to suit your requirements, as they should not be used for production servers.
-  
+
 ## Installation and Configuration Instructions
 
 Summary:
@@ -33,7 +35,7 @@ Summary:
 - Step 2: Build and initialize the recipe
 - Step 3: Import OCC credentials
 - Step 4: Update system and user credentials (optional)
-  
+
 ### Step 1: Downloading, Unzipping, and Creating the New Recipe
 
 1. Download and unzip the following files:
@@ -60,7 +62,7 @@ Summary:
    - Open `build.gradle` with a text editor.
    - Uncomment `//  extName 'spartacussampledata'` in the list of extensions.
    - Save and close the file.
-  
+
 ### Step 2: Building and Initialize the New Recipe
 
 1. Open a terminal or command prompt window inside the `installer` folder.
@@ -68,11 +70,11 @@ Summary:
 1. Set up the recipe using the following command:
 
    `./install.sh -r cx-for-spa`
-  
+
    If you are using Windows, change `./install.sh` to `install.bat`.
 
 1. Initialize the system using the following command:
-  
+
    `./install.sh -r cx-for-spa initialize`
 
 1. Start SAP Commerce Cloud using the following command:
@@ -89,12 +91,12 @@ Summary:
 1. Verify that the Spartacus versions of the sample stores were created.
    - Display Backoffice.
    - Go to WCMS > Website. You should see "-spa" versions of the sample stores.
-  
+
 ### Step 3: Importing OCC Credentials
 
 Spartacus uses OCC REST API calls to get information from and make changes to the backend. To do this, the backend must be configured with certain credentials.
 
-1. Open the Hybris Administration Console for your local SAP Commerce Cloud, in a web browser at the following address: 
+1. Open the Hybris Administration Console for your local SAP Commerce Cloud, in a web browser at the following address:
 
    `https://localhost:9002`
 
@@ -132,10 +134,10 @@ The curl command sends a POST request for an access token, using the client ID a
 You may need to enable users and passwords for certain functionality to work.
 
 See [this help topic](https://help.sap.com/viewer/9433604f14ac4ed98908c6d4e7d8c1cc/latest/en-US/c5d463ec2fbb45b2a7aef664df42d2dc.html) for more information.
-  
+
 ### All Done
 
-You can now start Spartacus. After you have configured SAP Commerce Cloud to accept OCC REST API calls, you can set up and start your storefront. See [{% assign linkedpage = site.pages | where: "name", "building-the-spartacus-storefront-from-libraries.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/frontend/building-the-spartacus-storefront-from-libraries.md %}) for more information.
+You can now start Spartacus. After you have configured SAP Commerce Cloud to accept OCC REST API calls, you can set up and start your storefront. See [Building the Spartacus Storefront From Libraries](../frontend/building-the-spartacus-storefront-from-libraries.md) for more information.
 
 ## Notes
 
@@ -148,7 +150,7 @@ You can now start Spartacus. After you have configured SAP Commerce Cloud to acc
 
 - The Spartacus Sample Data extension contains sample data modifications used by the composable storefront and by the project "Spartacus" open source software. The extension makes a copy of any existing sample stores, if present. You can also use you own sample data as long as it includes extensions that support OCC APIs like `commercewebservices`.
 - The Spartacus Sample Data extension copies data from the `electronicsstore`, `apparelstore`, or `powertoolstore` extensions. Note that the time to initialize is longer because SAP Commerce Cloud first builds the standard stores, then the stores for composable storefront. If you do not need all sample stores, you can comment them out in your recipe's `build.gradle` file. At a minimum, one sample store is required.
-- For more information about the changes that are implemented with the Spartacus Sample Data extension, see [{% assign linkedpage = site.pages | where: "name", "spartacussampledata-extension.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/spartacussampledata-extension.md %}).
+- For more information about the changes that are implemented with the Spartacus Sample Data extension, see [Spartacus Sample Data Extension](../spartacussampledata-extension.md).
 
 ### Sample Configuration Properties
 
@@ -187,10 +189,10 @@ To be able to register users and check out, SAP Commerce Cloud must be configure
 - CORS settings **are very important for security**. We strongly recommend that a professional SAP Commerce Cloud administrator review these settings to suit your requirements, as the sample properties should not be used for production servers.
 - CORS (Cross-Origin Resource Sharing) defines a way for a browser and a server to decide which cross-origin requests for restricted resources can or cannot be allowed. Certain Spartacus functionality, such as checkout and consent management, may not work properly if the CORS OCC REST API settings are not configured properly in SAP Commerce Cloud.
 - You can add these settings using the Hybris Administration Console. Hover your mouse over the **Platform** tab, click **Configuration**, then update the CORS settings.
-- For information on Spartacus and CORS settings, see [{% assign linkedpage = site.pages | where: "name", "cors.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/cors.md %}).
+- For information on Spartacus and CORS settings, see [Cross-Origin Resource Sharing (CORS)](../cors.md).
 - There are a number of other Spartacus features that also require additional CORS settings. For more information about CORS, see [ycommercewebservices Extension](https://help.sap.com/viewer/9d346683b0084da2938be8a285c0c27a/latest/en-US/8c91f3a486691014b085fb11c44412ff.html) in the SAP Help Portal.
 
 ## Troubleshooting
 
 - If SAP Commerce Cloud installer doesn't work, make sure there are no spaces in the path to the SAP Commerce Cloud folder.
-- If Spartacus starts or partially starts, check all CORS settings. For more information, see [{% assign linkedpage = site.pages | where: "name", "cors.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/cors.md %}).
+- If Spartacus starts or partially starts, check all CORS settings. For more information, see [Cross-Origin Resource Sharing (CORS)](../cors.md).

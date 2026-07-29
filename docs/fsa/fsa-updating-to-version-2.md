@@ -2,17 +2,19 @@
 title: Updating to Version 2.0
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 ## Prerequisites
 
 Before upgrading your FSA Spartacus libraries to version 2.0, you must address the following prerequisites:
 
 - Spartacus 3.0 requires Angular version 10. You must update Angular before updating Spartacus. For more information, see [Updating to Angular version 10](https://update.angular.io/).
 
-- You must first upgrade all of your `@spartacus` libraries to Spartacus 3.0.  
+- You must first upgrade all of your `@spartacus` libraries to Spartacus 3.0.
 
 ## Updating FSA Spartacus
 
-1. Go to the `package.json` at the root of your project and upgrade FSA SPA versions:  
+1. Go to the `package.json` at the root of your project and upgrade FSA SPA versions:
 
     ```shell
     "@spartacus/fsa-schematics": "^2.0.0",

@@ -2,6 +2,8 @@
 title: Basic Form Validations
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Dynamicforms library provides some basic form validation functions out of the box. This page explains how to use, override or add validations in dynamicforms library for end customers.
 
 ***
@@ -99,8 +101,8 @@ JSON example:
 
 - `dateOfBirth` - Accepts argument of type number. Triggers validation if the input date is less than the provided argument.
 - `compareDOBtoAge` - Compares date from another field with the input date. Accepts two arguments:
-  - Name of the field to compare (string). 
-  - Operator which can be 'shouldBeGreater' or 'shouldBeLess' (string). 
+  - Name of the field to compare (string).
+  - Operator which can be 'shouldBeGreater' or 'shouldBeLess' (string).
 
 The following JSON example compares input to the value of the `retirementAge` field:
 
@@ -123,8 +125,8 @@ The following JSON example compares input to the value of the `retirementAge` fi
 - `maxValue`, `minValue`, `maxLength`, `minLength` - Default Angular validators.
 - `number` - Triggers error message if the input type is not a number.
 - `compareDates` - Compares input date with the value of another field. Accepts two arguments:
-  - Name of the field to compare (string). 
-  - Operator which can be 'shouldBeGreater' or 'shouldBeLess' (string). 
+  - Name of the field to compare (string).
+  - Operator which can be 'shouldBeGreater' or 'shouldBeLess' (string).
 
 The following JSON example compares input to the value of the `vehiclePurchaseDate` field:
 
@@ -177,12 +179,12 @@ JSON example:
         }
     ]
     }
-]       
+]
 ```
 
 - `compareNumbers` - Compares input value with another field. Accepts two arguments:
-  - Name of the field to compare (string). 
-  - Operator which can be 'shouldBeGreater' or 'shouldBeLess' (string). 
+  - Name of the field to compare (string).
+  - Operator which can be 'shouldBeGreater' or 'shouldBeLess' (string).
 
 JSON example:
 
@@ -203,11 +205,11 @@ JSON example:
 ```
 
 - `email` - Checks if the input data is a valid email.
-- `alphanumeric` - Allows only numbers and letters as input data. 
+- `alphanumeric` - Allows only numbers and letters as input data.
 
 ## How Validations Work
 
-Before the form is rendered, all validations from the JSON are processed and, in case they have a corresponding implementation defined in the configuration, they are transferred to the mapped **`ValidationFn`**. Name from the validation object corresponds to the name defined in the form configuration on the SPA application. 
+Before the form is rendered, all validations from the JSON are processed and, in case they have a corresponding implementation defined in the configuration, they are transferred to the mapped **`ValidationFn`**. Name from the validation object corresponds to the name defined in the form configuration on the SPA application.
 In this particular case, it will be the validation with the name `compareToCurrentDate`:
 
 ```typescript
@@ -221,7 +223,7 @@ validators: {
 }
 ```
 
-All arguments defined in the JSON file represent input parameters for `compareToCurrentDate` function from `DefaultFormValidators`, and they are added to the function in run-time. 
+All arguments defined in the JSON file represent input parameters for `compareToCurrentDate` function from `DefaultFormValidators`, and they are added to the function in run-time.
 In our example, based on the mapping defined in the configuration, we will find the following validation function:
 
 ```typescript
@@ -247,7 +249,7 @@ and assign that function with the input parameter `shouldBeGreater` (operator in
 
 ## Overriding Existing Validation in Custom Application
 
-To override a predefined validation, in your modules you need to reference your custom functions with the same name as the existing ones. 
+To override a predefined validation, in your modules you need to reference your custom functions with the same name as the existing ones.
 
 Let's try to override `compareToCurrentDate` function, so that it just logs a customized message and returns always `true` for validation.  We will start in one of our modules by specifying the following configuration:
 

@@ -2,11 +2,13 @@
 title: Recommended Setup for Server-Side Rendering
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 There are a number of recommendations and best practices you can consider when using server-side rendering with Spartacus. Although there will always be exceptions, these recommendations should cover the most common implementation scenarios.
 
 The following diagram focuses only on the SSR aspect of a SAP Commerce Cloud setup, and illustrates the typical, high-level flow from a user's request at one end, all the way to the OCC API server at the other end.
 
-<img src="{{ site.baseurl }}/assets/images/ssr-setup-diagram.png" alt="SSR Setup Diagram" width="400" border="1px" />
+<img src="https://sap.github.io/spartacus-docs/assets/images/ssr-setup-diagram.png" alt="SSR Setup Diagram" width="400" border="1px" />
 
 The details of this flow are described as follows:
 

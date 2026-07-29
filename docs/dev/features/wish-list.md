@@ -6,11 +6,9 @@ feature:
   cx_version: 1905
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.4 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.4 of the Spartacus libraries.
 
 The Wish List feature lets you save products for later viewing.
 
@@ -22,7 +20,7 @@ Once you have added items to the wish list, you can view the contents of your wi
 
 ## Customizing
 
-The wish list feature consists of the `AddToWishListComponent` and the `WishListService` component. Both of these components are CMS driven and can be configured in SmartEdit. You can also customize these components in Spartacus using CMS component mapping. For more information, see [{% assign linkedpage = site.pages | where: "name", "customizing-cms-components.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/components/customizing-cms-components.md %}).
+The wish list feature consists of the `AddToWishListComponent` and the `WishListService` component. Both of these components are CMS driven and can be configured in SmartEdit. You can also customize these components in Spartacus using CMS component mapping. For more information, see [Customizing CMS Components](../components/customizing-cms-components.md).
 
 ## Limitations
 

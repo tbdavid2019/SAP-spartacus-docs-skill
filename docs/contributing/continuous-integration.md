@@ -2,6 +2,8 @@
 title: Continuous Integration
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Before code is integrated to our main line of development, a continuous integration process runs to certify that the changes can be safely integrated.
 
 We use [GitHub Actions](https://github.com/features/actions) for our continuous integration service.

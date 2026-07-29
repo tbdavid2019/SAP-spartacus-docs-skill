@@ -6,6 +6,8 @@ feature:
     cx_version: 2211.29
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Starting with Spartacus version 2211.29, a new theming mechanism and site theme switcher UI component have been added to enhance site theming flexibility. Previously, site themes could be configured either statically or through CMS using the `config.context.theme` property. It is now possible to define optional themes, which provides more customization options for site theming.
 
 Spartacus now provides two high-contrast themes (High Contrast Light and High Contrast Dark), which improve accessibility for users with visual impairments. These themes dynamically alter global CSS properties to ensure seamless adaptation for UI components.

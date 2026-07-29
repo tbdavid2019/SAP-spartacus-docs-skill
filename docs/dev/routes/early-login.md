@@ -6,11 +6,9 @@ feature:
   cx_version: n/a
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.2 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.2 of the Spartacus libraries.
 
 It is common practice for B2B stores to be password-protected, meaning that users need to log in before they can access the site. At the very least, a login page must be publicly accessible, and there can be other public pages as well, such as registration, help, and support pages. Other than these public pages, the rest of the B2B site requires authentication for the user to access it. The Spartacus early login feature allows you to make one or more pages of your site public, and to set the rest of the site as password-protected.
 
@@ -71,4 +69,4 @@ In the above example, the global configuration is set to `protected: true`, so a
 
 ## Protecting Individual Routes
 
-The early login feature is not recommended for protecting individual routes, because it only allows you to allowlist public pages. If you want to protect only a small number of routes, it is better to use CMS guarded components instead. For more information, see [Guarding Components]({{ site.baseurl }}/customizing-cms-components/#guarding-components).
+The early login feature is not recommended for protecting individual routes, because it only allows you to allowlist public pages. If you want to protect only a small number of routes, it is better to use CMS guarded components instead. For more information, see [Guarding Components](https://sap.github.io/spartacus-docs/customizing-cms-components/#guarding-components).

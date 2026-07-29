@@ -2,17 +2,19 @@
 title: Integrations
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 You can extend the Spartacus storefront with various SAP solutions. For more information, see the following:
 
-- [{% assign linkedpage = site.pages | where: "name", "configurable-products-integration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/integrations/configurable-products-integration.md %})
-- [{% assign linkedpage = site.pages | where: "name", "cpq-configurable-products-integration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/integrations/cpq-configurable-products-integration.md %})
-- [{% assign linkedpage = site.pages | where: "name", "digital-payments-integration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/integrations/digital-payments-integration.md %})
-- [{% assign linkedpage = site.pages | where: "name", "cds-integration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/integrations/cds-integration.md %})
-- [{% assign linkedpage = site.pages | where: "name", "kyma-integration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/integrations/kyma-integration.md %})
-- [{% assign linkedpage = site.pages | where: "name", "cybersource-integration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/integrations/cybersource-integration.md %})
-- [{% assign linkedpage = site.pages | where: "name", "personalization-setup-instructions-for-spartacus.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/personalization-setup-instructions-for-spartacus.md %})
-- [{% assign linkedpage = site.pages | where: "name", "qualtrics-integration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/integrations/qualtrics-integration.md %})
-- [{% assign linkedpage = site.pages | where: "name", "cdc-integration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/integrations/cdc-integration.md %})
-- [{% assign linkedpage = site.pages | where: "name", "epd-visualization-integration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/integrations/epd-visualization-integration.md %})
-- [{% assign linkedpage = site.pages | where: "name", "smartEdit-setup-instructions-for-spartacus.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/smartEdit-setup-instructions-for-spartacus.md %})
-- [{% assign linkedpage = site.pages | where: "name", "open-payment-framework-integration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/integrations/open-payment-framework-integration.md %})
+- [Configurable Products Integration](configurable-products-integration.md)
+- [CPQ Configurable Products Integration](cpq-configurable-products-integration.md)
+- [SAP Digital Payments Integration](digital-payments-integration.md)
+- [Intelligent Selling Services for SAP Commerce Cloud Integration](cds-integration.md)
+- [Kyma Integration](kyma-integration.md)
+- [Payment Integration with CyberSource Example](cybersource-integration.md)
+- [Personalization Integration](../personalization-setup-instructions-for-spartacus.md)
+- [Qualtrics Integration](qualtrics-integration.md)
+- [SAP Customer Data Cloud Integration](cdc-integration.md)
+- [DEPRECATED - SAP Enterprise Product Development Visualization Integration](epd-visualization-integration.md)
+- [SmartEdit Integration](../smartEdit-setup-instructions-for-spartacus.md)
+- [SAP Open Payment Framework Integration](opf-integration/open-payment-framework-integration.md)

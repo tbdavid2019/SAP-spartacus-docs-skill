@@ -2,6 +2,8 @@
 title: Form Definition - JSON Structure
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 In Dynamicforms, the content, behavior and styling of a form is defined by JSON definition. To create a form, you need to add form controls and define its properties such as control type, name, labels, etc.
 
 ***
@@ -22,7 +24,7 @@ export interface FormDefinition {
   formGroups: DynamicFormGroup[];
   formId: string;
   cssClass?: string;
-}   
+}
 
 export interface DynamicFormGroup {
   groupCode?: string;
@@ -108,7 +110,7 @@ The FormDefinition contains the following properties:
 
 - [formGroups](#dynamicformgroup) - Defines an array of form groups.
 - formId - Attaches ID to the form.
-- cssClass - Enables adding unique CSS class to the form wrapper. For more information, see [Dynamicforms Styling]({{ site.baseurl }}{% link _pages/fsa/features/dynamicforms/styling.md %}).
+- cssClass - Enables adding unique CSS class to the form wrapper. For more information, see [Dynamicforms Styling](styling.md).
 
 ### DynamicFormGroup
 
@@ -119,15 +121,15 @@ The DynamicFormGroup contains the following properties:
 - groupCode - Adds the name to the form group which can be found in the payload on form submit. In this example of submitted form data object, form controls are wrapped in two form groups:
 
 ```typescript
-groupOne: 
+groupOne:
     control1: "0"
-groupTwo: 
+groupTwo:
     control2: "2020-12-31"
     control3: "YEARLY"
 ```
 
 - fieldConfigs - Array of controls in this form group.
-- cssClass - Enables adding unique CSS class to the form group wrapper. For more information, see [Dynamicforms Styling]({{ site.baseurl }}{% link _pages/fsa/features/dynamicforms/styling.md %}).
+- cssClass - Enables adding unique CSS class to the form group wrapper. For more information, see [Dynamicforms Styling](styling.md).
 - dependsOn - With this property, you can define the visibility of the whole group by defining control name which the group depends on.
 
 ### FieldConfig
@@ -141,8 +143,8 @@ The FieldConfig contains the following properties:
 - disabled - Defines if control is disabled (disabled fields are not submitted to the back end).
 - [label](#localizedstring) - Defines control label (supports localization).
 - options - Defines available options for the following input types: dropdown, radio button, checkbox.
-- cssClass - Enables adding unique CSS class to the form control. For more information, see [Dynamicforms Styling]({{ site.baseurl }}{% link _pages/fsa/features/dynamicforms/styling.md %}).
-- gridClass - Enables adding Bootstrap class to the form control to create a grid behaviour in the form. For more information, see [Dynamicforms Styling]({{ site.baseurl }}{% link _pages/fsa/features/dynamicforms/styling.md %}).
+- cssClass - Enables adding unique CSS class to the form control. For more information, see [Dynamicforms Styling](styling.md).
+- gridClass - Enables adding Bootstrap class to the form control to create a grid behaviour in the form. For more information, see [Dynamicforms Styling](styling.md).
 - apiValue - Used with 'dynamicSelect' control type, to fetch options dynamically from a defined URL.
 - placeholder - Sets control placeholder text (if applicable).
 - fieldType - Defines type of the field (input, select, radio button, checkbox, datepicker, separator, etc.).
@@ -204,7 +206,7 @@ Let's assume that the current user's first name is required for control prefill.
     "targetValue": "firstName"
 },
 ```
-For more information, see [Configurable Prepopulate Form Field]({{ site.baseurl }}{% link _pages/fsa/features/dynamicforms/core/pre-populate-field.md %}).
+For more information, see [Configurable Prepopulate Form Field](core/pre-populate-field.md).
 
 ### ApiConfig
 
@@ -537,4 +539,4 @@ The following example illustrates a form definition used to collect user informa
 
 This is how the form looks like when rendered on the user interface:
 
-![rendered form on ui]({{ site.baseurl }}/assets/images/fsa/dynamicforms_ui_form.png)
+![rendered form on ui](https://sap.github.io/spartacus-docs/assets/images/fsa/dynamicforms_ui_form.png)

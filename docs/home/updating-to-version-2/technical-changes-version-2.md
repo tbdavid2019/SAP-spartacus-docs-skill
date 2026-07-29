@@ -2,6 +2,8 @@
 title: Technical Changes in Spartacus 2.0
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 ***
 
 **Table of Contents**
@@ -82,7 +84,7 @@ The public API of this component has not been changed, but the behavior is now m
 
 ### Removal of cmsPageLoadOnce feature flag
 
-The `cmsPageLoadOnce` feature flag has been removed. The same behavior is now achievable by configuring `routing.loadStrategy` as `RouteLoadStrategy.ONCE`.  
+The `cmsPageLoadOnce` feature flag has been removed. The same behavior is now achievable by configuring `routing.loadStrategy` as `RouteLoadStrategy.ONCE`.
 
 ### Products endpoint configuration
 
@@ -244,7 +246,7 @@ To enable Web Components support for CMS components, you have to provide the sup
 - `ofLoaderLoad`, `ofLoaderFail`, `ofLoaderSuccess` methods were removed and are no longer available.
 - `entityStateSelector` was renamed to `entityLoaderStateSelector`.
 - `EntityResetAction` was renamed to `EntityLoaderResetAction`.
-  
+
 ### Automated migrations of page meta resolvers
 
 The implementation of page meta data resolvers has been changed with 2.0. Previously, each meta resolver implementation had been responsible for resolving all page data, by implementing the abstract `resolve` method from the abstract `PageMetaResolver`. To allow for more flexibility and to simplify customizations, the individual implementations no longer implement the `resolve` method. Only a specific *resolver* is required, such as the `PageTitleResolver`. The `PageMetaService` will invoke the specific resolvers when available. This is done by the registered `resolverMethods`. You can further extend the list of `resolverMethods` without changing the implementation of `PageMetaService.resolve`.
@@ -253,27 +255,27 @@ These changes were introduced under a feature flag in version 1.3, and are stand
 
 The individual changes per class for 2.0 are the following:
 
-- `PageMetaService`  
+- `PageMetaService`
   The `resolverMethods` access modifier changed from *public* to *protected*. The `resolve` method will invoke individual resolvers by iterating over the `resolverMethods`.
-- `ContentPageMetaResolver`  
+- `ContentPageMetaResolver`
   The deprecated method `resolve` is removed in 2.0. This method is no longer supported because individual resolve methods (`resolveTitle` and `resolveBreadcrumbs`) are invoked by the `PageMetaService` directly. The individual resolvers no longer receive arguments, but use the local `cms$` observable to resolve the required data.
-- `ProductPageMetaResolver`  
+- `ProductPageMetaResolver`
   The deprecated method `resolve` is removed in 2.0. This method is no longer supported because individual resolve methods (`resolveHeading`, `resolveTitle`, `resolveDescription`, `resolveBreadcrumbs`, `resolveImage` and `resolveRobots`) are invoked by the `PageMetaService` directly. The individual resolvers no longer receive arguments, but use the local `product$` observable to resolve the required data.
 - `CategoryPageMetaResolver`
   The deprecated method `resolve` is removed in 2.0. This method is no longer supported because individual resolve methods (`resolveTitle` and `resolveBreadcrumbs`) are invoked by the `PageMetaService` directly. The individual resolvers (`resolveTitle`, `resolveBreadcrumbs`) no longer receive arguments, but use the local `searchPage$` observable to resolve the required data.
 - `SearchPageMetaResolver`
   The deprecated method `resolve` is removed in 2.0. This method is no longer supported because the individual resolve method (`resolveTitle`) is invoked by the `PageMetaService` directly. The individual resolver (`resolveTitle`) no longer receives arguments, but uses the local `query$` observable to resolve the required data.
-- `CartPageMetaResolver`  
+- `CartPageMetaResolver`
   The deprecated method `resolve` is removed in 2.0. This method is no longer supported because individual resolve methods (`resolveTitle`, `resolveRobots`) are invoked by the `PageMetaService` directly. The individual resolvers (`resolveTitle`, `resolveRobots`) no longer receive arguments, but use the local `cms$` observable to resolve the required data.
-- `CheckoutPageMetaResolver`  
+- `CheckoutPageMetaResolver`
   The deprecated method `resolve` is removed in 2.0. This method is no longer supported because individual resolve methods (`resolveTitle`, `resolveRobots`) are invoked by the `PageMetaService` directly. The individual resolvers (`resolveTitle`, `resolveRobots`) no longer receive arguments, but use the local `cart$` observable to resolve the required data.
-- `CouponSearchPageResolver` ~~`FindProductPageMetaResolver`~~  
+- `CouponSearchPageResolver` ~~`FindProductPageMetaResolver`~~
   The ~~`FindProductPageMetaResolver`~~ was introduced in version 1.5, and has been renamed to `CouponSearchPageResolver` in version 2.0.
-  
+
   The deprecated `resolve` method is removed in 2.0. This method is no longer supported because individual resolve methods (`resolveTitle`, `resolveBreadcrumbs`) are invoked by the `PageMetaService` directly. The individual resolvers (`resolveTitle`, `resolveBreadcrumbs`) no longer receive arguments, but use the local `total$` observable to resolve the required data.
 
   The `score` method was refactored heavily to better cope with synchronize router state. This resulted in a change in the constructor which should be migrated automatically.
-  
+
 ## Larger Refactoring for 2.0
 
 ### Pagination Component
@@ -285,7 +287,7 @@ The HTML and accompanying CSS is refactored as well. A clean DOM consists of onl
 
 Using anchor links is the preferred action for pagination links, but action links (using `click` events) are still supported and used in various areas in Spartacus. The product listing page, however, is using anchor links.
 
-For more information, see [{% assign linkedpage = site.pages | where: "name", "pagination.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/components/shared-components/pagination.md %}).
+For more information, see [Pagination Component](../../dev/components/shared-components/pagination.md).
 
 If you have used the pagination component directly, you should refactor the implementation, as the inputs have changed.
 
@@ -301,7 +303,7 @@ The component `AddressCardComponent` has been completely removed and is replaced
 
 The storage synchronization mechanism previously used to persist the active cart id had some limitations that caused bugs on multi-site stores (issue: [https://github.com/SAP/spartacus/issues/6215](https://github.com/SAP/spartacus/issues/6215)).
 
-The default storage sync configuration was removed from `MultiCartStoreModule`. Instead, a state persistence mechanism has been added for multi-cart to provide the same behavior and to support multi-site stores. It is build on top of `StatePersistenceService`. This is a new and recommended way to synchronize state to browser storage. For more information, see [{% assign linkedpage = site.pages | where: "name", "state-persistence.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/state_management/state-persistence.md %}).
+The default storage sync configuration was removed from `MultiCartStoreModule`. Instead, a state persistence mechanism has been added for multi-cart to provide the same behavior and to support multi-site stores. It is build on top of `StatePersistenceService`. This is a new and recommended way to synchronize state to browser storage. For more information, see [State Persistence](../../dev/state_management/state-persistence.md).
 
 ### Cart state and selectors removed
 
@@ -319,13 +321,13 @@ The following are renamed actions: `ClearMultiCartState` -> `ClearCartState`
 
 The following are new actions:
 
-- `LoadWishListFail`  
+- `LoadWishListFail`
     A dedicated `LoadWishListFail` action was added to maintain consistency in the wishlist. It is dispatched in the wishlist effects instead of the `LoadCartFail` action.
 
-- `DeleteCartSuccess`  
+- `DeleteCartSuccess`
     The `DeleteCartSuccess` action was added to maintain consistency in the delete cart effect. It will be dispatched after DeleteCart action will successfully delete cart in backend.
 
-- `SetActiveCartId`  
+- `SetActiveCartId`
     The `SetActiveCartId` action was added to set the active cart id from the state persistence service.
 
 ### Services changes

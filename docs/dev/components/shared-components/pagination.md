@@ -6,13 +6,15 @@ feature:
   cx_version: n/a
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 **Note:** Improvements to this feature are introduced with version 2.0 of the Spartacus libraries.
 
 The pagination component is a low-level component that is used to navigate through page results. It is used in various other components, including the Product List, Order History, and Store Finder components.
 
 Each customer has different pagination requirements, especially with regards to the precise navigation options that you use. The pagination component is very flexible and can be adjusted to meet your needs, either through configuration, or by using custom styles.
 
-For the Product List in particular, the pagination component can be replaced by the infinite scroll feature. For more information, see [{% assign linkedpage = site.pages | where: "name", "infinite-scroll.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/infinite-scroll.md %}).
+For the Product List in particular, the pagination component can be replaced by the infinite scroll feature. For more information, see [Infinite Scroll](../../features/infinite-scroll.md).
 
 ***
 

@@ -6,11 +6,9 @@ feature:
   cx_version: 2011* or 2105*
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 4.1 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 4.1 of the Spartacus libraries.
 
 SAP Digital Payments integration is an out-of-the-box alternative to current custom payment service provider (PSP) integrations. This integration uses SAP Digital Payments with ready-to-use PSP connectivity.
 
@@ -40,7 +38,7 @@ To enable SAP Digital Payments Integration in Spartacus, you need to configure b
 
 The following steps describe how to configure the Commerce Cloud back end for integration with SAP Digital Payments.
 
-1. Follow the steps for [{% assign linkedpage = site.pages | where: "name", "installing-sap-commerce-cloud.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/backend/installing-sap-commerce-cloud.md %}).
+1. Follow the steps for [Installing SAP Commerce Cloud for use with Spartacus](../backend/installing-sap-commerce-cloud.md).
 1. Enable the SAP Digital Payments Extensions.
 For more information, see [SAP Digital Payments Integration](https://help.sap.com/viewer/5c14e3b8bb034c6eb641a71627210557/v1808/en-US/1431af6defa14619a8eeccffe45bad7f.html) on the SAP Help Portal.
 1. Build and update the system so that the new functionality provided by the SAP Digital Payments integration extensions is available.
@@ -50,7 +48,7 @@ This step also creates sample CMS data for the `electronics-spaContentCatalog` c
 
 **Note:** The following procedure requires Spartacus 5.0 or newer. Spartacus 5.0 includes an entry point for Digital Payments assets that allows the Digital Payments feature to be lazy loaded.
 
-Perform the following steps after you have set up your Spartacus Storefront. For more information, see [{% assign linkedpage = site.pages | where: "name", "building-the-spartacus-storefront-from-libraries.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/frontend/building-the-spartacus-storefront-from-libraries.md %}).
+Perform the following steps after you have set up your Spartacus Storefront. For more information, see [Building the Spartacus Storefront From Libraries](../frontend/building-the-spartacus-storefront-from-libraries.md).
 
 1. Install the SAP Digital Payments integration library by running the following command from within the root directory of your storefront application:
 
@@ -60,7 +58,7 @@ Perform the following steps after you have set up your Spartacus Storefront. For
 
    When you run this command, the schematics create a module for the Digital Payments integration that includes all of the required imports and configuration.
 
-   **Note:** To install the Digital Payments integration library using schematics, your app structure needs to match the Spartacus reference app structure. For more information, see [{% assign linkedpage = site.pages | where: "name", "reference-app-structure.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/reference-app-structure.md %}).
+   **Note:** To install the Digital Payments integration library using schematics, your app structure needs to match the Spartacus reference app structure. For more information, see [Reference App Structure](../reference-app-structure.md).
 
    Alternatively, you can create the module manually and import it into your application, as shown in the following example:
 
@@ -166,7 +164,7 @@ provideConfig(<CmsConfig>{
 
 **Note:** The following procedure is for Spartacus 4.x. If you are using Spartacus 5.0 or newer, see [Configuring Spartacus 5.0 or Newer](#configuring-spartacus-50-or-newer).
 
-Perform the following steps after you have set up your Spartacus Storefront. For more information, see [{% assign linkedpage = site.pages | where: "name", "building-the-spartacus-storefront-from-libraries.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/frontend/building-the-spartacus-storefront-from-libraries.md %}).
+Perform the following steps after you have set up your Spartacus Storefront. For more information, see [Building the Spartacus Storefront From Libraries](../frontend/building-the-spartacus-storefront-from-libraries.md).
 
 1. Install the SAP Digital Payments integration library by running the following command from within the root directory of your storefront application:
 
@@ -176,7 +174,7 @@ Perform the following steps after you have set up your Spartacus Storefront. For
 
    When you run this command, the schematics create a module for the Digital Payments integration that includes all of the required imports and configuration.
 
-   **Note:** To install the Digital Payments integration library using schematics, your app structure needs to match the Spartacus reference app structure. For more information, see [{% assign linkedpage = site.pages | where: "name", "reference-app-structure.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/reference-app-structure.md %}).
+   **Note:** To install the Digital Payments integration library using schematics, your app structure needs to match the Spartacus reference app structure. For more information, see [Reference App Structure](../reference-app-structure.md).
 
    Alternatively, you can create the module manually and import it into your application, as shown in the following example:
 
@@ -185,7 +183,7 @@ Perform the following steps after you have set up your Spartacus Storefront. For
    import { I18nConfig, provideConfig } from "@spartacus/core";
    import { DigitalPaymentsModule, dpTranslationChunksConfig, dpTranslationsEn } from "@spartacus/digital-payments"; // Use with version 2211.35 or newer
    // import { DigitalPaymentsModule, dpTranslationChunksConfig, dpTranslations } from "@spartacus/digital-payments"; // Use with version 2211.32.1 or older
-   
+
    @NgModule({
      declarations: [],
      imports: [

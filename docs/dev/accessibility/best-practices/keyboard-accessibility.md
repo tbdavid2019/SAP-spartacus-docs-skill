@@ -6,11 +6,9 @@ feature:
   cx_version: n/a
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 2.0 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 2.0 of the Spartacus libraries.
 
 You can make your storefront website keyboard accessible by following correct HTML semantics and general "best practices" in your code. Good keyboard accessibility means that a user can navigate your website with a keyboard, from top to bottom (and back), from the first interactable element to the last. You can achieve this by implementing consistent navigation, a correct tabbing order, a visual focus indicator that is easily seen, and by avoiding focus traps.
 
@@ -34,7 +32,7 @@ The following are examples of HTML attributes and elements that should be avoide
 
 ## Focus Management
 
-Proper focus management is essential to providing an uninterrupted and consistent keyboard flow. For more information, see [{% assign linkedpage = site.pages | where: "name", "keyboard-focus.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/accessibility/keyboard-focus/keyboard-focus.md %}).
+Proper focus management is essential to providing an uninterrupted and consistent keyboard flow. For more information, see [Keyboard Focus](../keyboard-focus/keyboard-focus.md).
 
 ## CSS Styles
 

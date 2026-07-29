@@ -2,6 +2,8 @@
 title: Spartacus API
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The Spartacus API documentation is hosted here: [https://sap.github.io/spartacus/](https://sap.github.io/spartacus/)
 
 If you wish to see the API documentation for a specific version of Spartacus, you can check out the relevant release branch in your cloned Spartacus GitHub repository (for example, `release/5.0.x`), and then run `npm run generate:docs`.

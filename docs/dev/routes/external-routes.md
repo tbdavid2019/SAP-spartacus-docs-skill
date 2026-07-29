@@ -6,11 +6,9 @@ feature:
   cx_version: n/a
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.2 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.2 of the Spartacus libraries.
 
 As a single-page application (SPA), Spartacus makes use of the Angular `routerLink` directive that, by design, does not load pages from the back end. As a result, Spartacus typically allows you to navigate only within the application itself. In other words, Spartacus typically only loads views that are within the single-page application.
 
@@ -89,7 +87,7 @@ ConfigModule.withConfig({
 
 **Note:** You only need to configure the Angular service worker if PWA is enabled.
 
-To bypass the service worker cache and let the back end serve the response after a full page load (or a full page reload), you need to define the `navigationUrls` property of your service worker's `ngsw-config.json` configuration, and you need to specify the URL patterns for the internal routes. The service worker configuration uses the same glob-like syntax as Spartacus, but the URL patterns for the service worker configuration also take into account the site context aspect of the URL, such as `/electronics/en/USD/...`. For more information on site context, see [{% assign linkedpage = site.pages | where: "name", "context-configuration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/context/context-configuration.md %}).
+To bypass the service worker cache and let the back end serve the response after a full page load (or a full page reload), you need to define the `navigationUrls` property of your service worker's `ngsw-config.json` configuration, and you need to specify the URL patterns for the internal routes. The service worker configuration uses the same glob-like syntax as Spartacus, but the URL patterns for the service worker configuration also take into account the site context aspect of the URL, such as `/electronics/en/USD/...`. For more information on site context, see [Multi-Site Configuration](../context/context-configuration.md).
 
 In the following examples, the URL patterns start with three configured segments for the site context.
 
@@ -122,7 +120,7 @@ In the following example, any route can be rendered in the SPA, except for the h
   '!/*/*/*/product/*/*',
   '!/*/*/*/**/p/**',
 
-  // re-define Angular's default exceptions: 
+  // re-define Angular's default exceptions:
   "!/**/*.*",       // files with extensions
   "!/**/*__*",      // paths containing `__`
   "!/**/*__*/**",

@@ -6,11 +6,9 @@ feature:
   cx_version: n/a
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 5.0 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 5.0 of the Spartacus libraries.
 
 The scroll to top feature provides a button that lets users quickly return to the top of the page they are viewing. Using CMS content slots, you can add the button to any page of your Spartacus storefront.
 
@@ -38,7 +36,7 @@ $contentCatalog=powertools-spaContentCatalog
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
 ```
 
-For more information about the `spartacussampledata` extension, see [{% assign linkedpage = site.pages | where: "name", "spartacussampledata-extension.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/spartacussampledata-extension.md %}).
+For more information about the `spartacussampledata` extension, see [Spartacus Sample Data Extension](../../install/spartacussampledata-extension.md).
 
 ### Adding the Scroll to Top CMS Component Manually
 
@@ -57,7 +55,7 @@ You can add the `ScrollToTopComponent` CMS component to Spartacus using ImpEx.
 
    ```text
    INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(uid, $contentCV)
-   ;;FooterSlot;FooterNavigationComponent,AnonymousConsentOpenDialogComponent,NoticeTextParagraph,AnonymousConsentManagementBannerComponent,ProfileTagComponent,ScrollToTopComponent 
+   ;;FooterSlot;FooterNavigationComponent,AnonymousConsentOpenDialogComponent,NoticeTextParagraph,AnonymousConsentManagementBannerComponent,ProfileTagComponent,ScrollToTopComponent
    ```
 
 ## Configuring Scroll to Top
@@ -153,7 +151,7 @@ You can customize the scroll to top feature by modifying the action it performs.
       ```scss
       :host {
           width: 82px;
-      
+
           button > span {
               display: flex;
               justify-content: space-evenly;
@@ -228,7 +226,7 @@ You can customize the scroll to top feature by modifying the action it performs.
 
       The following example demonstrates these changes to the template in `scroll-to-top.component.html`:
 
-      {% raw %}
+
 
       ```html
       <button
@@ -245,7 +243,7 @@ You can customize the scroll to top feature by modifying the action it performs.
       </button>
       ```
 
-      {% endraw %}
+
 
 1. Replace the existing component.
    1. Remove the following import statement from `src/app/spartacus/spartacus-features.module.ts`:

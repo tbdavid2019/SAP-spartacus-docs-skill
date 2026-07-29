@@ -2,6 +2,8 @@
 title: Form Controls
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 ***
 
 **Table of Contents**
@@ -79,8 +81,8 @@ In the example above example, you can see the control of a type **input**, which
 
 ## Overriding existing controls
 
-To show you how to override the default component for an existing type, we will take the "input" type as an example. 
-As mentioned before, "input" type is mapped to a "InputComponent". To override this component, you have to create a custom component and include it in some module. In this example, we call it "CustomInputComponent". 
+To show you how to override the default component for an existing type, we will take the "input" type as an example.
+As mentioned before, "input" type is mapped to a "InputComponent". To override this component, you have to create a custom component and include it in some module. In this example, we call it "CustomInputComponent".
 The configuration needed for this override must be done inside the module where "CustomInputComponent" resides.
 
 Example of custom input component
@@ -92,7 +94,7 @@ import { ConfigModule, I18nModule } from '@spartacus/core';
 import { CustomInputComponent } from './custom-input-component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DynamicFormModule, DynamicFormsConfig } from '@spartacus/dynamicforms';
- 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -123,7 +125,7 @@ custom-input.component.ts
 ```typescript
 import { Component } from '@angular/core';
 import { AbstractFormComponent } from '@spartacus/dynamicforms';
- 
+
 @Component({
   selector: 'cx-fs-custom-input',
   templateUrl: './custom-input.component.html',
@@ -170,7 +172,7 @@ import { CommonModule } from '@angular/common';
 import { ConfigModule, I18nModule } from '@spartacus/core';
 import { CustomInputComponent } from './custom-input-component';
 import { DynamicFormModule, DynamicFormsConfig } from '@spartacus/dynamicforms';
- 
+
 @NgModule({
   imports: [
     CommonModule,

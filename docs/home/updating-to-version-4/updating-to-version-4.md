@@ -2,6 +2,8 @@
 title: Updating to Version 4.0
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Before you migrate to version 4.0 of the Spartacus libraries, it is highly recommend that you update your app structure to match the Spartacus reference app structure, and that you also make the move to using feature libraries. It is easier to perform the migration in multiple, small steps (migrating to the new app structure, switching to the extracted feature libraries, and then migrating to 4.0), where you can make sure that everything still works as before after each step.
 
 **Note:** The procedures below are listed in the order they should be performed, which is to say, migrate to the reference app structure first, then upgrade your Angular libraries, then upgrade to Spartacus 3.4.x, and finally, upgrade to Spartacus 4.0.
@@ -19,7 +21,7 @@ To accommodate these changes, it was necessary to also modify a few of the bigge
 
 For these reasons, it is strongly recommended to switch to the new app structure, which does not use these modules, and to switch to the new feature libraries if they exist for the features you are using.
 
-For more information on the Spartacus reference app structure, see [{% assign linkedpage = site.pages | where: "name", "reference-app-structure.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/reference-app-structure.md %}).
+For more information on the Spartacus reference app structure, see [Reference App Structure](../../install/reference-app-structure.md).
 
 ## Migrating to the Reference App Structure
 
@@ -243,7 +245,7 @@ For more information, see the official[Angular Update Guide](https://update.angu
 
 ## Upgrading Spartacus to 3.4.x
 
-You must first upgrade all of your `@spartacus` libraries to the latest 3.4.x release before you begin upgrading to Spartacus 4.0. For more information, see [Upgrading Spartacus Libraries to a New Minor Version]({{ site.baseurl }}/release-information/#upgrading-spartacus-libraries-to-a-new-minor-version).
+You must first upgrade all of your `@spartacus` libraries to the latest 3.4.x release before you begin upgrading to Spartacus 4.0. For more information, see [Upgrading Spartacus Libraries to a New Minor Version](https://sap.github.io/spartacus-docs/release-information/#upgrading-spartacus-libraries-to-a-new-minor-version).
 
 ## Upgrading Spartacus to 4.0
 
@@ -255,7 +257,7 @@ To update to version 4.0 of Spartacus, run the following command in the workspac
 ng update @spartacus/schematics@4
 ```
 
-When the update has finished running, inspect your code for comments that begin with `// TODO:Spartacus`. For detailed information about each added comment, see the [Detailed List of Changes]({{ site.baseurl }}/technical-changes-version-4/#detailed-list-of-changes).
+When the update has finished running, inspect your code for comments that begin with `// TODO:Spartacus`. For detailed information about each added comment, see the [Detailed List of Changes](https://sap.github.io/spartacus-docs/technical-changes-version-4/#detailed-list-of-changes).
 
 ### Importing the App Routing Module from the Storefront Library
 

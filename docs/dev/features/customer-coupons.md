@@ -6,11 +6,9 @@ feature:
   cx_version: 1905
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.5 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.5 of the Spartacus libraries.
 
 The Customer Coupons feature provides a range of functionality for promotion campaigns, such as allowing customers to claim a coupon using the coupon's campaign URL, turning on status notifications for a coupon, allowing users to view their coupons in the **My Coupons** section, and applying usable coupons during checkout.
 

@@ -2,6 +2,8 @@
 title: Technical Changes in Spartacus 221121.7
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The Spartacus update schematics scan your codebase and inject code comments whenever you use a reference to a Spartacus class or function that has changed its behavior in version 221121.7, or where your class or function has been replaced by a different class or function, or where the API has changed (for example, where a required parameter has been added or removed). After the update schematics have finished running, inspect your code for comments that begin with `// TODO:Spartacus` to see the areas of your code that have been identified as possibly needing further work to complete your update to version 221121.7.
 
 ## Removed Constants
@@ -26,7 +28,7 @@ The following sections describe constants that were removed, along with actions 
 ## Removal of Deprecated Translation Chunks
 
 The following members of public APIs have been removed:
-  
+
 | Constant name                                | From                                                   |
 |----------------------------------------------|--------------------------------------------------------|
 | `asmTranslations`                            | `@spartacus/asm/assets`                                |

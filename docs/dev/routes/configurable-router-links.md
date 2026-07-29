@@ -2,6 +2,8 @@
 title: Configurable Router Links
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 When you configure routes, the links to those routes must be configured accordingly. Configured router links can be automatically generated in HTML templates using the `cxUrl` pipe. This allows you to transform the name of the route and the `params` object into the configured path.
 
 To make use of the `cxUrl` pipe, you need to import `UrlModule` into every module that uses configurable router links.
@@ -85,12 +87,12 @@ The following is an example that adds a new `:productName` parameter:
 ConfigModule.withConfig({
     routing: {
         routes: {
-            product: { 
+            product: {
                 paths: [
                     // :productCode is an obligatory parameter because it is present in default URL
                     // :productName is a new parameter
                     ':productCode/custom/product-path/:productName'
-                ] 
+                ]
             }
         }
     }

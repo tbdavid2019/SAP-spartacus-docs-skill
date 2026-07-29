@@ -6,11 +6,9 @@ feature:
     cx_version: 2211
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} [NOT_SPECIFIED_YET] {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version [NOT_SPECIFIED_YET] of the Spartacus libraries.
 
 The SAP Commerce Open Payment Framework, which is delivered as an enrichment to the SAP Commerce Cloud payment toolkit, is a SaaS solution for managing your payment integrations in an intuitive and effective way. The Open Payment Framework allows you to integrate your preferred digital payment service providers faster than before, and removes the need to code, integrate and deploy extensions to the Commerce codebase.
 
@@ -125,8 +123,8 @@ provideConfig(<RoutingConfig>{
 }),
 ```
 
-For more information about routing in Spartacus, see [{% assign linkedpage = site.pages | where: "name", "route-configuration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/routes/route-configuration.md %}).
+For more information about routing in Spartacus, see [Route Configuration](../../dev/routes/route-configuration.md).
 
 ### Open Payment Framework Checkout Configuration
 
-The Open Payment Framework library supports run-time adjustment of the checkout flow based on the `paymentProvider` property. For more information, see [Multiple Checkout Flows]({{ site.baseurl }}{% link _pages/dev/extending-checkout.md %}#multiple-checkout-flows).
+The Open Payment Framework library supports run-time adjustment of the checkout flow based on the `paymentProvider` property. For more information, see [Multiple Checkout Flows](../../dev/extending-checkout.md#multiple-checkout-flows).

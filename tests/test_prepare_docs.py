@@ -49,6 +49,8 @@ feature:
 {% include docs/frontend_requirements.html %}
 
 [Target]({{ site.baseurl }}{% link _pages/guide/target.md %})
+[Target from stale path](wrong/target.md)
+[Removed page](missing.md#old-section)
 
 ![Diagram]({{ site.baseurl }}/assets/images/diagram.png)
 """,
@@ -92,8 +94,17 @@ feature:
             "of the Spartacus libraries.",
             source,
         )
+        self.assertIn(
+            "<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0;",
+            source,
+        )
         self.assertIn("Use supported Node.js and Angular versions.", source)
         self.assertIn("[Target](target.md)", source)
+        self.assertIn("[Target from stale path](target.md)", source)
+        self.assertIn(
+            "[Removed page](https://sap.github.io/spartacus-docs/missing/#old-section)",
+            source,
+        )
         self.assertIn(
             "https://sap.github.io/spartacus-docs/assets/images/diagram.png",
             source,
@@ -101,6 +112,9 @@ feature:
         self.assertNotIn("{% include", source)
         self.assertNotIn("{% link", source)
         self.assertNotIn("{{ site.", source)
+        self.assertFalse(
+            any(line.endswith((" ", "\t")) for line in source.splitlines())
+        )
 
         features = (self.output / "home" / "feature-release-versions.md").read_text(
             encoding="utf-8"

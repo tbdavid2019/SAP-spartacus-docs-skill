@@ -7,17 +7,15 @@ feature:
 ---
 
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 3.2 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 3.2 of the Spartacus libraries.
 
 The Spartacus tag management system (TMS) allows you to set up a tag manager, and to specify which Spartacus events should be passed to the configured TMS. Both Google Tag Manager (GTM) and Adobe Experience Platform Launch (AEPL) are supported by Spartacus out-of-the-box, while other tag managers can easily be plugged in.
 
 Spartacus supports running multiple tag manager integrations in parallel, and you can decide which events should be collected by each of the supported tag management solutions.
 
-**Note:** To work with the Spartacus tag management system, you should also be familiar with the Spartacus events service, which the TMS relies on. For more information, see [{% assign linkedpage = site.pages | where: "name", "event-service.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/event-service.md %}).
+**Note:** To work with the Spartacus tag management system, you should also be familiar with the Spartacus events service, which the TMS relies on. For more information, see [Event Service](event-service.md).
 
 **Disclaimer**
 
@@ -61,7 +59,7 @@ Although it is not possible to cover the set up instructions for every existing 
 <!-- End Google Tag Manager -->
 ```
 
-For see additional setup examples with Google Analytics and AEPL, see [{% assign linkedpage = site.pages | where: "name", "tag-management-system-examples.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/tag-management-system-examples.md %}).
+For see additional setup examples with Google Analytics and AEPL, see [Tag Management System Examples](tag-management-system-examples.md).
 
 ## Configuration
 
@@ -206,7 +204,7 @@ In the `map` method, you can use the `instanceof` check to indicate which events
 
 #### Creating Custom Events
 
-You can create a custom event in Spartacus and re-map the data to fit your data structure requirements simply by registering a new event source, as described in [Registering Event Sources]({{ site.baseurl }}/event-service/#registering-event-sources). The following is an example:
+You can create a custom event in Spartacus and re-map the data to fit your data structure requirements simply by registering a new event source, as described in [Registering Event Sources](https://sap.github.io/spartacus-docs/event-service/#registering-event-sources). The following is an example:
 
 ```typescript
 const eventSource = this.eventService.get(NavigationEvent).pipe(
@@ -222,7 +220,7 @@ const eventSource = this.eventService.get(NavigationEvent).pipe(
 eventService.register(CustomEvent, eventSource);
 ```
 
-In the example above, the Spartacus `NavigationEvent` is re-mapped to a `CustomNavigationEvent`. If you need to pull additional data, see [Pulling Additional Data From Facades]({{ site.baseurl }}/event-service/#pulling-additional-data-from-facades) for more information.
+In the example above, the Spartacus `NavigationEvent` is re-mapped to a `CustomNavigationEvent`. If you need to pull additional data, see [Pulling Additional Data From Facades](https://sap.github.io/spartacus-docs/event-service/#pulling-additional-data-from-facades) for more information.
 
 **Note:** To bootstrap the logic, you need to inject your `CustomNavigationEventBuilder` somewhere, such as in a dummy module that is being imported, for example, to the `AppModule`.
 

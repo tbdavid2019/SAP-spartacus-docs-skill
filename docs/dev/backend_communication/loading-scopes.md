@@ -6,11 +6,9 @@ feature:
   cx_version: n/a
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.4 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.4 of the Spartacus libraries.
 
 When Spartacus requests product data from the back end, the payload that is returned is often very large, and may be required in multiple places, such as in product carousels, the product details page, and so on. However, the complete payload is not necessarily required in all of these places. By breaking the payload into pieces, which we call *scopes*, you can specify which part of the payload is actually needed for each particular case.
 
@@ -223,7 +221,7 @@ The following is an example of how scopes can be added to the `productSearch` en
         },
       },
     },
-  }    
+  }
 }
 ```
 

@@ -6,11 +6,9 @@ feature:
   cx_version: 1905
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 2.1 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 2.1 of the Spartacus libraries.
 
 TypeScript gives developers a lot of confidence and safety, and speeds up development and library discovery. Where possible, Spartacus leverages the possibilities offered by TypeScript to provide a better developer experience. With Spartacus 2.1, you can take advantage of TypeScript's type augmentation capabilities.
 

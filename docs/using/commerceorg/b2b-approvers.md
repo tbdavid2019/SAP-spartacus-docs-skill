@@ -2,6 +2,8 @@
 title: Approvers
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The term approver is used in the following different contexts in B2B Commerce Organization for SAP Commerce Cloud:
 
 - The role of approver is a user who is designated as someone who can approve orders, and who cannot make purchases. A user with the role of approver is not necessarily the approver for the unit he or she is assigned to. That is a separate assignment, which is described in the next bullet point.
@@ -42,7 +44,7 @@ The choice of approval is a bubble-up method: when approval is required, SAP Com
 
    The following is an example:
 
-   <img src="{{ site.baseurl }}/assets/images/commerceorg/unit_hh-1c1-createapprover.png" alt="Create Approver" width="200" border="1px" />
+   <img src="https://sap.github.io/spartacus-docs/assets/images/commerceorg/unit_hh-1c1-createapprover.png" alt="Create Approver" width="200" border="1px" />
 
    **Note:** For this example, the unit is not selectable because a user is being created within a unit.
 
@@ -52,7 +54,7 @@ The choice of approval is a bubble-up method: when approval is required, SAP Com
 
 6. Click **Save**.
 
-For the moment, this approver cannot approve anything. This is because no spending permissions have been created yet. We'll do that later, in the step for setting [{% assign linkedpage = site.pages | where: "name", "b2b-purchasing-limits.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/using/commerceorg/b2b-purchasing-limits.md %}).
+For the moment, this approver cannot approve anything. This is because no spending permissions have been created yet. We'll do that later, in the step for setting [Purchasing Limits](b2b-purchasing-limits.md).
 
 Don't forget to assign the new user a password.
 
@@ -62,4 +64,4 @@ Remember that when you created the approver, you selected the check box **Add th
 
 If you go back and click **Approvers** for the unit, you will see that, indeed, this is the case. The following is an example:
 
-<img src="{{ site.baseurl }}/assets/images/commerceorg/unit_hh-1c2-approverlist.png" alt="Approver List" width="500" border="1px" />
+<img src="https://sap.github.io/spartacus-docs/assets/images/commerceorg/unit_hh-1c2-approverlist.png" alt="Approver List" width="500" border="1px" />

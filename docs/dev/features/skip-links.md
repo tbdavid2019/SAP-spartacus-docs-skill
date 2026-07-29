@@ -6,11 +6,9 @@ feature:
   cx_version: n/a
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.5 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.5 of the Spartacus libraries.
 
 Skip links allow users to quickly navigate to important areas of a page using the keyboard. You activate skip links by pressing the tab key when a page is loaded, and before any other user interaction takes place.
 
@@ -41,7 +39,7 @@ const exampleSkipLinkConfig: SkipLinkConfig = {
       position: SkipLinkScrollPosition.AFTER,
       i18nKey: 'skipLink.labels.main',
     },
-    { 
+    {
       key: 'Footer',
       i18nKey: 'skipLink.labels.footer'
     },

@@ -6,11 +6,9 @@ feature:
   cx_version: n/a
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 2.0 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 2.0 of the Spartacus libraries.
 
 Prior to Spartacus version 2.0, the only way to achieve state persistence was by using a simple, declarative mechanism called `storageSync`, which allowed you to provide properties keys to persist in the store. When you started your application, these persisted keys were used to set the initial state in the store. With Spartacus version 2.0 or newer, you can persist the state of your storefront application by using the `StatePersistenceService`, and specifically, its `syncWithStorage` method. It is not as simple as `storageSync`, but it provides a lot more control using context and dedicated `onRead` callback.
 
@@ -167,7 +165,7 @@ The following describes an example flow of the state synchronization:
 3. Switch from the `electronics` to the `apparel` site, where there are a few items already added to the cart.
 
     The `onRead` callback is invoked with the active cart id for this site, which is read from the `spartacus⚿apparel⚿cart` key in storage. In this example implementation, the `onRead` clears the state and sets the active cart id. Then, `ActiveCartService` selects this id and loads the cart that was created in a previous session.
-  
+
 4. Return to the `electronics` site.
 
     The same steps repeat. The `onRead` is invoked with the cart id from the `electronics` site, the `apparel` ngrx state is cleared, and the correct cart is loaded.

@@ -6,11 +6,9 @@ feature:
   cx_version: 1905
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 1.0 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 1.0 of the Spartacus libraries.
 
 ***
 
@@ -35,7 +33,7 @@ The following steps are for configuring SmartEdit to work using the SmartEdit fe
 
 1. Build your Angular app, adding Spartacus libraries as normal.
 
-   If you are using schematics to build your app, you have the option to install the SmartEdit library at the same time as the core libraries. For more information, see [{% assign linkedpage = site.pages | where: "name", "building-the-spartacus-storefront-from-libraries.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/frontend/building-the-spartacus-storefront-from-libraries.md %}).
+   If you are using schematics to build your app, you have the option to install the SmartEdit library at the same time as the core libraries. For more information, see [Building the Spartacus Storefront From Libraries](frontend/building-the-spartacus-storefront-from-libraries.md).
 
 1. If you did not install the SmartEdit feature library in the previous step, make sure the app is working before continuing. You can then install the SmartEdit library by running the following schematics command:
 
@@ -83,13 +81,13 @@ The following steps are for configuring SmartEdit to work using the SmartEdit fe
 1. Ensure that the Spartacus site is allowlisted in SmartEdit. The following is one example of how you can do this:
 
    - Sign in to SmartEdit as the admin user.
-  
+
    - Click the Settings icon in the top right.
-  
+
    - In the Configuration Editor, scroll down to `whiteListedStorefronts` and add the exact URL of your Spartacus storefront. For this example, it is `["https://localhost:4200"]`.
 
    For more information, see [Adding Storefronts to the Allowlist of Permitted Domains in the Configuration Editor](https://help.sap.com/viewer/9d346683b0084da2938be8a285c0c27a/latest/en-US/e954737efc4d4d72b090d7e27b005191.html) on the SAP Help Portal.
-  
+
 1. Start your Angular app in SSL mode, as follows:
 
    ```plaintext
@@ -110,7 +108,7 @@ The perspective toolbar will be missing if `webApplicationInjector.js` is not lo
 
 The following example shows the perspective toolbar not appearing when `webApplicationInjector.js` is not loaded.
 
-![webApplicationInjector.js]({{ site.baseurl }}/assets/images/webApplicationInjector.png)
+![webApplicationInjector.js](https://sap.github.io/spartacus-docs/assets/images/webApplicationInjector.png)
 
 ### The Preview URL Does Not Match Your Website URL
 

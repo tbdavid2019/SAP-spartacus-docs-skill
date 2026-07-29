@@ -6,11 +6,9 @@ feature:
   cx_version: 2011
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 4.2 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 4.2 of the Spartacus libraries.
 
 Cart import allows you to create a saved cart, or to update an active cart, by importing a CSV file that contains product codes and product quantities.
 
@@ -29,7 +27,7 @@ Cart export allows you to download a CSV file that contains a list of all the it
 
 ## Enabling Cart Import and Export
 
-You can enable cart import and export by installing the `@spartacus/cart` feature library. For more information, see [Installing Additional Spartacus Libraries]({{ site.baseurl }}/schematics/#installing-additional-spartacus-libraries).
+You can enable cart import and export by installing the `@spartacus/cart` feature library. For more information, see [Installing Additional Spartacus Libraries](https://sap.github.io/spartacus-docs/schematics/#installing-additional-spartacus-libraries).
 
 Cart import and export is CMS-driven and consists of the following components:
 
@@ -37,7 +35,7 @@ Cart import and export is CMS-driven and consists of the following components:
 - `ExportOrderEntriesComponent`, which allows the link for exporting order entries to be rendered.
 - `ImportExportOrderEntriesComponent`, which allows both import and export links to be rendered in a row.
 
-If you are using the [{% assign linkedpage = site.pages | where: "name", "spartacussampledata-extension.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/spartacussampledata-extension.md %}), the cart import and export components are already enabled. However, if you decide not to use the `spartacussampledata` extension, you can enable the cart import and export components through ImpEx.
+If you are using the [Spartacus Sample Data Extension](../../install/spartacussampledata-extension.md), the cart import and export components are already enabled. However, if you decide not to use the `spartacussampledata` extension, you can enable the cart import and export components through ImpEx.
 
 ### Adding Cart Import and Export Components Through ImpEx
 
@@ -300,7 +298,7 @@ You can use the following values to define the context:
 - `NewSavedCartOrderEntriesContext` is used for creating a new saved cart.
 - `SavedCartOrderEntriesContext` is used for adding more products to an existing saved cart. It is based on the routing parameters of the `savedCartId`.
 - `ActiveCartOrderEntriesContext` is used for importing and export products to and from the active cart. This context can be used on any page where the cart is active. For example, if you wanted to add an export link to the Review Order checkout page, you can simply provide the `ActiveCartOrderEntriesContext` context for the `checkoutReviewOrder` route.
-- `QuickOrderOrderEntriesContext` is used to provide the context when using import or export functionality with [{% assign linkedpage = site.pages | where: "name", "quick-order.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/quick-order.md %}).
+- `QuickOrderOrderEntriesContext` is used to provide the context when using import or export functionality with [Quick Order](quick-order.md).
 - `OrderConfirmationOrderEntriesContext` is used for exporting order entries from the order confirmation page.
 - `OrderDetailsOrderEntriesContext` is used for exporting products from an existing order on the order details page. It is based on the routing parameters of the `orderCode`.
 
@@ -329,7 +327,7 @@ If you are setting up a custom page and want to include cart import or cart expo
 
 - `AddOrderEntriesContext` is a context interface that determines the destination of the imported products. The implementation must include the `addEntries` method and the `type` property.
 - `GetOrderEntriesContext` is a context interface that determines the source of the product entries to be exported. The implementation must include the `getEntries` method.
-  
+
 By default, if only one of the interfaces is implemented, the other function link is not displayed. Also note, the *Export to CSV* link is hidden if the order entries list is empty.
 
 ## Using Cart Import and Export in the Storefront
@@ -368,7 +366,7 @@ The following steps require you to be logged in to the Spartacus storefront.
 
    You can now see your newly added saved cart in the **Saved Carts** list.
 
-For more information about saved carts, see [{% assign linkedpage = site.pages | where: "name", "saved-cart.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/saved-cart.md %}).
+For more information about saved carts, see [Saved Cart](saved-cart.md).
 
 ### Importing to an Active Cart
 
@@ -390,7 +388,7 @@ The **Import Products** link appears below the product entries in the cart page,
 
 The quick order feature supports cart import and export. By default, cart import is enabled. The process for importing products with quick order is the same as [importing products to an active cart](#importing-to-an-active-cart).
 
-**Note:** The `quickOrderListLimit` attribute affects the number of items you can add to the **Quick Order** page. If there are more products in the CSV file than are permitted by the limit, any products that exceed the limit are not added. For more information, see [{% assign linkedpage = site.pages | where: "name", "quick-order.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/quick-order.md %}).
+**Note:** The `quickOrderListLimit` attribute affects the number of items you can add to the **Quick Order** page. If there are more products in the CSV file than are permitted by the limit, any products that exceed the limit are not added. For more information, see [Quick Order](quick-order.md).
 
 ### Exporting from the Order Confirmation and Order Details Pages
 
@@ -402,4 +400,4 @@ For more information, see [Defining the Route and Context for Custom Configurati
 
 ## Limitations
 
-Cart import and export works with most products, but is not supported by the [{% assign linkedpage = site.pages | where: "name", "configurable-products-integration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/integrations/configurable-products-integration.md %}), nor the [{% assign linkedpage = site.pages | where: "name", "cpq-configurable-products-integration.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/install/integrations/cpq-configurable-products-integration.md %}).
+Cart import and export works with most products, but is not supported by the [Configurable Products Integration](../../install/integrations/configurable-products-integration.md), nor the [CPQ Configurable Products Integration](../../install/integrations/cpq-configurable-products-integration.md).

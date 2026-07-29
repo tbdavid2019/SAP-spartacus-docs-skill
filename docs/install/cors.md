@@ -2,6 +2,8 @@
 title: Cross-Origin Resource Sharing (CORS)
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 CORS is a standard mechanism on the web that enables cross-domain requests from web applications to reach servers on different domains. Cross-origin requests could also be thought of as "cross-domain requests". Browsers block cross-origin requests whenever the required HTTP headers are not available in the response.
 
 The response headers are dictated by the server, which is why the server must be set up to generate the correct headers. In the SAP Commerce Cloud back end, these headers can be [configured in a generic fashion](https://help.sap.com/viewer/d0224eca81e249cb821f2cdf45a82ace/latest/en-US/b27d995150a74be08869e60e3fbc7395.html?q=authorization%20CORS) by using a CorsFilter. Project properties can be used to configure this for each node, or an ImpEx installation script can be used to install to each node.
@@ -80,7 +82,7 @@ The various CORS configurations that are required by the back end can be install
 For each installation, it is important to note the following:
 
 - OCC is installed by a template extension with the name `commercewebservices`. However, you can rename the extension web application path, or generate a custom extension out of this. In the examples in the next sections, we assume the name is `commercewebservices`, but you should replace this if you have a custom name.
-- Most configurations apply to OCC only, but in case you use other APIs (such as the Assisted Service Module), you also need to configure CORS for these APIs as well. For more information, see [{% assign linkedpage = site.pages | where: "name", "asm.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/features/asm.md %})
+- Most configurations apply to OCC only, but in case you use other APIs (such as the Assisted Service Module), you also need to configure CORS for these APIs as well. For more information, see [Assisted Service Module](../dev/features/asm.md)
 
 ### Local Properties File
 
@@ -148,17 +150,17 @@ When troubleshooting a possible CORS issue, the first step is to determine if a 
 
 To determine if a problem is caused by a CORS issue, you can open the **Network** tab in your browser's development tools and try to reproduce the problem with the **Network** tab open. In the following example, there are two requests that are highlighted in red, and in the **Status** column, one of the requests is listed as having a `CORS error`:
 
-<img src="{{ site.baseurl }}/assets/images/cors/cors-error-01.png" alt="Network tab: request with cors error" width="950" border="1px" />
+<img src="https://sap.github.io/spartacus-docs/assets/images/cors/cors-error-01.png" alt="Network tab: request with cors error" width="950" border="1px" />
 
 ### Determining the Cause of a CORS Error
 
 To support CORS, your browser makes a preflight request to the server to verify that the server will allow the real request to go through. It is often the case that the CORS issue is the result of an error with the preflight request. The preflight request has the same URL as the real request, but the HTTP method is `OPTIONS`. Google Chrome offers a convenient **Preflight** link in the **Method** column of the **Network** tab. When you click on the **Preflight** link of a request, the associated preflight request is highlighted, as show in the following example:
 
-<img src="{{ site.baseurl }}/assets/images/cors/cors-error-02.png" alt="Network tab: request with cors error" width="950" border="1px" />
+<img src="https://sap.github.io/spartacus-docs/assets/images/cors/cors-error-02.png" alt="Network tab: request with cors error" width="950" border="1px" />
 
 When you select the preflight request, you can see detailed information about the headers. In the request header info, look for headers that start with `Access-Control-Request-*`, such as in the following example:
 
-<img src="{{ site.baseurl }}/assets/images/cors/cors-error-03.png" alt="Network tab: request with cors error" width="950" border="1px" />
+<img src="https://sap.github.io/spartacus-docs/assets/images/cors/cors-error-03.png" alt="Network tab: request with cors error" width="950" border="1px" />
 
 The error is often caused by the back end server not being configured to allow one of the elements that is listed in one of the `Access-Control-Request-*` headers.
 

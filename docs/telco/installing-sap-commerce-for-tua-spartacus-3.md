@@ -2,6 +2,8 @@
 title: Installing SAP Commerce Cloud for use with TUA Spartacus 3.x
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The following instructions describe how to install and configure SAP Commerce Cloud (release 2011) with Telco & Utilities Accelerator (supports both release 2102, latest patch) for use with a TUA Spartacus storefront. In these instructions, SAP Commerce and Telco & Utilities Accelerator are installed on your local computer, so `localhost` is used in the browser URLs.
 
 The installation procedure includes steps for creating and using a `b2c_telco_spa` recipe that makes use of the TUA Spartacus Sample Data (`b2ctelcospastore`), but you can use your own sample data or recipe as long as it includes the `cmsocc`, `commercewebservices`, `acceleratorocc` extensions and TUA module.
@@ -48,7 +50,7 @@ Some of the steps in this procedure are derived from the documentation for insta
         - `utilitiesspastore.zip`.
 
     - Sample data for Media is stored in the following archive files:
-        - `mediaspastore.zip`. (available from 3.1)   
+        - `mediaspastore.zip`. (available from 3.1)
 
 1. Move:
     - the `b2ctelcospastore` folder from extracted `b2ctelcospastore` folder to `<sap-commerce-folder>/hybris/bin/modules/b2c-telco-accelerator`.
@@ -62,7 +64,7 @@ Some of the steps in this procedure are derived from the documentation for insta
 1. Unzip TUA cms extension for utilities:
 
     - If you want to use utilities sample data then also unzip the `b2ctelcocms.zip`.
-     
+
     - Move the `b2ctelcocms` folder in the same location with `utilitiesspastore` folder.
 
 1. In the `sap-commerce-folder>/installer/recipes` folder, create a copy of the `b2c_telco` folder.
@@ -76,7 +78,7 @@ Some of the steps in this procedure are derived from the documentation for insta
    ```java
     apply plugin: 'installer-platform-plugin'
     apply plugin: 'installer-addon2-plugin'
-	
+
 
 	def pl = platform {
 	localProperties {
@@ -89,7 +91,7 @@ Some of the steps in this procedure are derived from the documentation for insta
 	afterSetup {
 	    ensureAdminPasswordSet()
 	}
-	
+
 
 	extensions {
 	    extName 'acceleratorcms'
@@ -104,18 +106,18 @@ Some of the steps in this procedure are derived from the documentation for insta
 	    extName 'mediaspastore'
 	    extName 'b2ctelcotmfwebservices'
 	    extName 'b2ctelcowebservices'
-	
+
 
 	    extName 'b2ctelcocommercewebservicescommons'
 	    extName 'b2ctelcoocc'
-	    extName 'b2ctelcoserviceabilityclient'	
+	    extName 'b2ctelcoserviceabilityclient'
 	    extName 'commerceservicesbackoffice'
 	    extName 'solrfacetsearchbackoffice'
 	    extName 'solrserver'
 	    extName 'subscriptionbackoffice'
 	    extName 'yacceleratorcore'
 	    extName 'commercewebservices'
-	
+
 
 	    extName 'cmsbackoffice'
 	    extName 'cmswebservices'
@@ -127,7 +129,7 @@ Some of the steps in this procedure are derived from the documentation for insta
 	    extName 'cmsocc'
 		extName 'acceleratorocc'
 	    extName 'customersupportbackoffice'
-	
+
 
 	    extName 'personalizationwebservices'
 	    extName 'previewpersonalizationweb'
@@ -137,11 +139,11 @@ Some of the steps in this procedure are derived from the documentation for insta
 	    extName 'personalizationcmsbackoffice'
 	    extName 'personalizationservices'
 	    extName 'personalizationfacades'
-	
+
 
 	    extName 'acceleratorservices'
 	    extName 'assistedservicefacades'
-	
+
 
 	    extName 'rulebuilderbackoffice'
 	    extName 'couponbackoffice'
@@ -151,14 +153,14 @@ Some of the steps in this procedure are derived from the documentation for insta
 	    extName 'b2ctelcoserviceabilityclient'
 	}
 	}
-	
+
 
 	task setup () {
 	doLast {
-	
+
 
 	    pl.setup()
-	
+
 
 	    copy {
 	    from "${installerHome}/recipes/b2c_telco_spa/logback.xml"
@@ -171,35 +173,35 @@ Some of the steps in this procedure are derived from the documentation for insta
 	    }
 	}
 	}
-	
+
 
 	task buildSystem(dependsOn: setup) {
 	doLast {
 	    pl.build()
 	}
 	}
-	
+
 
 	task initialize (dependsOn: buildSystem) {
 	doLast {
 	    pl.initialize()
 	}
 	}
-	
+
 
 	task start () {
 	doLast {
 	    pl.start()
 	}
 	}
-	
+
 
 	task startInBackground () {
 	doLast {
 	    pl.startInBackground()
 	}
 	}
-	
+
 
 	task stopInBackground {
 	doLast {
@@ -217,7 +219,7 @@ Some of the steps in this procedure are derived from the documentation for insta
 1. Open a terminal or command prompt window inside the `sap-commerce-folder>/installer` folder.
 
 1. Set up the recipe using the following commands:
-    
+
     For Windows:
 
     ```bash
@@ -246,7 +248,7 @@ Some of the steps in this procedure are derived from the documentation for insta
 
    Initialization of the `b2c_telco_spa` recipe can take about 20 minutes. Sample data for this recipe includes telco-specific data and content.
 
-1. Start SAP Commerce Cloud with the following command. From the `sap-commerce-folder>/installer` folder, run the following commands 
+1. Start SAP Commerce Cloud with the following command. From the `sap-commerce-folder>/installer` folder, run the following commands
 
    For Windows:
 
@@ -263,7 +265,7 @@ Some of the steps in this procedure are derived from the documentation for insta
 
    - Access Admin Console: https://localhost:9002
    - Access Backoffice: https://localhost:9002/backoffice
-   
+
 
    **Note:** When setting up your Spartacus storefront, set the base site in `app.module.ts` to `telcospa` and/or `utilitiesspa` and/or `mediaspa` depending on which sample data you want to use. Following are the samples:
 
@@ -308,7 +310,7 @@ By default, SAP  Cloud replies to OCC REST API calls that do not require authent
 - Display information about the `utilitiesspa` base store: https://localhost:9002/occ/v2/utilitiesspa/basestores/utilitiesspa
 - Display information about the `mediaspa` base store: https://localhost:9002/occ/v2/mediaspa/basestores/mediaspa
 
-To register users and check out, SAP Commerce Cloud must be configured with a client ID and password. When required, your TUA Spartacus storefront sends this client ID and password when communicating with the backend. 
+To register users and check out, SAP Commerce Cloud must be configured with a client ID and password. When required, your TUA Spartacus storefront sends this client ID and password when communicating with the backend.
 For more information about OCC configuration, see [Defining OAuth Clients in an Impex File](https://help.sap.com/viewer/d0224eca81e249cb821f2cdf45a82ace/latest/en-US/627c92db29ce4fce8b01ffbe478a8b3b.html#loio4079b4327ac243b6b3bd507cda6d74ff) in the SAP Help Portal.
 
 The following procedure describes how to configure SAP Commerce Cloud to accept OCC REST API calls.
@@ -353,7 +355,7 @@ The following procedure describes how to configure SAP Commerce Cloud to accept 
    }
    ```
 
-   **You can now start TUA Spartacus!** After you have configured SAP Commerce Cloud to accept OCC REST API calls, you can set up and start your storefront. See [Building the TUA Spartacus Storefront from Libraries]({{ site.baseurl }}{% link _pages/telco/building-the-tua-storefront-from-libraries.md %}) for more information.
+   **You can now start TUA Spartacus!** After you have configured SAP Commerce Cloud to accept OCC REST API calls, you can set up and start your storefront. See [Building the TUA Spartacus Storefront from Libraries](building-the-tua-storefront-from-libraries.md) for more information.
 
 ## Updating System and User Credentials
 
@@ -361,7 +363,7 @@ The following procedure describes how to configure SAP Commerce Cloud to accept 
 
 If you are using SAP Commerce Cloud 2005, you may need to enable users and passwords for certain functionality to work. For more information, see [Setting Passwords for Default Users](https://help.sap.com/viewer/9433604f14ac4ed98908c6d4e7d8c1cc/2005/en-US/c5d463ec2fbb45b2a7aef664df42d2dc.html).
 
-You can now start Spartacus! After you have configured SAP Commerce Cloud to accept OCC REST API calls, you can set up and start your storefront. [Building the TUA Spartacus Storefront from Libraries]({{ site.baseurl }}{% link _pages/telco/building-the-tua-storefront-from-libraries.md %}) for more information.
+You can now start Spartacus! After you have configured SAP Commerce Cloud to accept OCC REST API calls, you can set up and start your storefront. [Building the TUA Spartacus Storefront from Libraries](building-the-tua-storefront-from-libraries.md) for more information.
 
 ## Configuring CORS
 
@@ -389,7 +391,7 @@ corsfilter.acceleratorservices.allowedMethods=GET HEAD OPTIONS PATCH PUT POST DE
 corsfilter.acceleratorservices.allowedHeaders=origin content-type accept authorization cache-control
 ```
 
-**Note:** The `x-anonymous-consents` custom header is included in the above example, but it can be removed if you plan to disable the anonymous consent feature. However, do not remove this header if you do not plan to disable the anonymous consent feature. For more information, see [Anonymous Consent]({{ site.baseurl }}{% link _pages/dev/features/anonymous-consent.md %}).
+**Note:** The `x-anonymous-consents` custom header is included in the above example, but it can be removed if you plan to disable the anonymous consent feature. However, do not remove this header if you do not plan to disable the anonymous consent feature. For more information, see [Anonymous Consent](../dev/features/anonymous-consent.md).
 
 For more information about CORS, see [commerceservices Extension](https://help.sap.com/viewer/9d346683b0084da2938be8a285c0c27a/2005/en-US/8b85a20586691014bacda05068f9c842.html) in the SAP Help Portal.
 
@@ -441,10 +443,10 @@ This issue is caused by an incorrect configuration of the `sop.post.url` propert
 
 Make sure this property is set to `sop.post.url=https://localhost:9002/acceleratorservices/sop-mock/process`.
 
-**Note:** Please make sure that you have the website properties properly set for your `telcospa` base site to point to your environment. For your **localhost** environment, they should have the following values: 
+**Note:** Please make sure that you have the website properties properly set for your `telcospa` base site to point to your environment. For your **localhost** environment, they should have the following values:
 - `website.telcospa.http=http://localhost:9001`
 - `website.telcospa.https= https://localhost:9002`
-- `website.utilitiesspa.http=http://localhost:9001`  
+- `website.utilitiesspa.http=http://localhost:9001`
 - `website.utilitiesspa.https=https://localhost:9002`
-- `website.mediaspa.http=http://localhost:9001`  
+- `website.mediaspa.http=http://localhost:9001`
 - `website.mediaspa.https=https://localhost:9002`

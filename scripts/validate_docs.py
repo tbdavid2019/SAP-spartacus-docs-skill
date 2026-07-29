@@ -9,6 +9,7 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Sequence
+from urllib.parse import unquote
 
 
 DEFAULT_REQUIRED_PATHS = (
@@ -19,6 +20,7 @@ DEFAULT_REQUIRED_PATHS = (
     "dev/session-management.md",
 )
 INDEX_LINK = re.compile(r"^- \[.*\]\((.+\.md(?:#[^)]+)?)\)\s*$")
+MARKDOWN_LINK = re.compile(r"\[[^\]]*\]\(([^)\s]+\.md(?:#[^)]*)?)\)")
 UNRESOLVED_JEKYLL = (
     "{% include",
     "{% link",
@@ -77,13 +79,38 @@ def validate_docs(
         raise ValidationError(f"missing required documentation: {', '.join(missing)}")
 
     unresolved: list[str] = []
+    trailing_whitespace: list[str] = []
+    broken_links: list[str] = []
     for path in markdown_files:
         content = path.read_text(encoding="utf-8")
         if any(token in content for token in UNRESOLVED_JEKYLL):
             unresolved.append(path.relative_to(root).as_posix())
+        if any(line.endswith((" ", "\t")) for line in content.splitlines()):
+            trailing_whitespace.append(path.relative_to(root).as_posix())
+        for match in MARKDOWN_LINK.finditer(content):
+            target = unquote(match.group(1).split("#", 1)[0])
+            if target.startswith(("http://", "https://")):
+                continue
+            destination = (
+                root / target.lstrip("/")
+                if target.startswith("/")
+                else path.parent / target
+            ).resolve()
+            if not destination.is_relative_to(root.resolve()) or not destination.is_file():
+                broken_links.append(
+                    f"{path.relative_to(root).as_posix()} -> {match.group(1)}"
+                )
     if unresolved:
         raise ValidationError(
             "unresolved Jekyll instructions remain in: " + ", ".join(unresolved[:10])
+        )
+    if trailing_whitespace:
+        raise ValidationError(
+            "trailing whitespace remains in: " + ", ".join(trailing_whitespace[:10])
+        )
+    if broken_links:
+        raise ValidationError(
+            "broken local Markdown links: " + ", ".join(broken_links[:10])
         )
 
     indexed_paths: set[str] = set()

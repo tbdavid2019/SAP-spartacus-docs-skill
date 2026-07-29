@@ -6,6 +6,8 @@ feature:
   cx_version: n/a
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 There are several types of global messages that you can display in your storefront app. Each type of global message has its own default duration, which you can customize.
 
 Spartacus has the following predefined global message types, which are defined in `projects/core/src/global-message/models/global-message.model.ts`:

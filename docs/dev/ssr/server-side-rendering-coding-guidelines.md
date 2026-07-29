@@ -2,6 +2,8 @@
 title: Server-Side Rendering Coding Guidelines
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The following guidelines are highly recommended when working with server-side rendering (SSR).
 
 ***
@@ -39,7 +41,7 @@ Using transfer state functionality is recommended. The application runs XHR requ
 
 Use a cache that is transferred from the server to the client.
 
-For more information, see [{% assign linkedpage = site.pages | where: "name", "ssr-transfer-state.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/state_management/ssr-transfer-state.md %}).
+For more information, see [SSR Transfer State](../state_management/ssr-transfer-state.md).
 
 ## Getting the Request URL and Origin
 

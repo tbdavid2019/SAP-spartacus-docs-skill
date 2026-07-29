@@ -2,9 +2,11 @@
 title: Order Library Release Notes
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Spartacus 4.2 introduces the `@spartacus/order` library. This is the latest iteration of the code splitting initiative. The main goal of code splitting is to reduce the initial download size of a Spartacus storefront app, which is achieved through lazy loading of the feature libraries.
 
-The new order library is not backwards compatible. This library is intended to be used with new applications that are created with Spartacus 4.2 libraries. With the version 4.2 libraries, if you generate a new storefront app using schematics, the app will use the new order library by default. For more information, see [Integration Libraries and Feature Libraries]({{ site.baseurl }}/schematics/#integration-libraries-and-feature-libraries).
+The new order library is not backwards compatible. This library is intended to be used with new applications that are created with Spartacus 4.2 libraries. With the version 4.2 libraries, if you generate a new storefront app using schematics, the app will use the new order library by default. For more information, see [Integration Libraries and Feature Libraries](https://sap.github.io/spartacus-docs/schematics/#integration-libraries-and-feature-libraries).
 
 If you upgrade to 4.2 from an older 4.x version, the order library will *not* be used. Instead, your app will continue to use the previous order-related code to preserve backwards compatibility. The non-order library code is still present in Spartacus. This allows Spartacus 4.2 to be backwards compatible with previous 4.x versions.
 

@@ -2,6 +2,8 @@
 title: Technical Changes in Spartacus 2211.36
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The following sections list technical changes that have been made to the Order feature library and the Product Configurator feature library in Spartacus 2211.36.
 
 ## Changes in the Order Feature Library

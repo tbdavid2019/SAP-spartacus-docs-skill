@@ -2,6 +2,8 @@
 title: Installing Spartacus 221121.7 with Angular 21
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 This guide provides step-by-step instructions for creating a fresh Angular 20 application and installing Spartacus 221121.7
 
 ## Prerequisites

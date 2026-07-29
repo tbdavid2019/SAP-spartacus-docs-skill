@@ -2,6 +2,8 @@
 title: Update Release 2211.36
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 To update your Spartacus app to version 2211.36, you must carry out the following steps:
 
 1. Modernize your storefront app to use the new Angular CLI configuration format introduced with Angular 17, but **only if your storefront app was originally created using Spartacus 6.x libraries or older**. Complete the steps in [Modernizing Your Storefront App That Was Upgraded to Version 2211.19](./modernize-apps-migrated-from-6.8-to-2211.19.md), and then continue with the rest of the steps here.
@@ -118,4 +120,4 @@ Spartacus includes specially-prepared schematics to automatically modernize your
 ng g @spartacus/schematics:modernize-app-migrated-from-2211_32-to-2211_36
 ```
 
-If you encounter any issues, you can complete the migration by following the manual migration steps provided in [Modernizing Your Storefront App After Upgrading to Version 2211.36](./modernize-apps-migrated-to-2211.36.md).
+If you encounter any issues, you can complete the migration by following the manual migration steps provided in [Modernizing Your Storefront App After Upgrading to Version 2211.36](https://sap.github.io/spartacus-docs/modernize-apps-migrated-to-2211.36/).

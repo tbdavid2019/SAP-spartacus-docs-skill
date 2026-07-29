@@ -2,6 +2,8 @@
 title: Roadmap 2022 for TUA Spartacus
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 *Last updated April 1, 2022 by Deborah Cholmeley-Jones, Solution Owner, TUA Spartacus*
 
 This document describes what what is planned for Spartacus for Q1 2022 and later.
@@ -33,8 +35,8 @@ Some of the links provided in the following lists point to SAP Commerce Telco an
 
 ### Other Release Documentation
 
-- For an overview of what was included in a specific release, see [TUA Release Information]({{ site.baseurl }}{% link _pages/telco/telco-release-information.md %}).
-- For information about features published in pre-release libraries, see [TUA Pre-Release Information]({{ site.baseurl }}{% link _pages/telco/tua-pre-release-information.md %}).
+- For an overview of what was included in a specific release, see [TUA Release Information](telco-release-information.md).
+- For information about features published in pre-release libraries, see [TUA Pre-Release Information](tua-pre-release-information.md).
 
 ### Questions?
 

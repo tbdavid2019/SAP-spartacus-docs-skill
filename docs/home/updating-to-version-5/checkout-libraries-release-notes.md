@@ -2,6 +2,8 @@
 title: Checkout Library Release Notes
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The release of Spartacus 5.0 introduces three different entry points for the `@spartacus/checkout` library.
 
 The new entry points for the `@spartacus/checkout` library are the following:
@@ -81,7 +83,7 @@ The following is a list of sample data changes in the checkout libraries:
 - The BodyContentSlot-checkoutShippingAddress `ContentSlot` has been renamed to `BodyContentSlot-checkoutDeliveryAddress`
 - The SideContent-checkoutShippingAddress `ContentSlot` has been renamed to `SideContent-checkoutDeliveryAddress`
 
-**Note:** The new checkout library is not backwards compatible. This library is intended to be used with new applications that are created with other Spartacus 5.0 libraries. If you generate a new storefront app using schematics, the app will use the new checkout library by default. For more information, see [Integration Libraries and Feature Libraries]({{ site.baseurl }}/schematics/#integration-libraries-and-feature-libraries).
+**Note:** The new checkout library is not backwards compatible. This library is intended to be used with new applications that are created with other Spartacus 5.0 libraries. If you generate a new storefront app using schematics, the app will use the new checkout library by default. For more information, see [Integration Libraries and Feature Libraries](https://sap.github.io/spartacus-docs/schematics/#integration-libraries-and-feature-libraries).
 
 ## Events
 

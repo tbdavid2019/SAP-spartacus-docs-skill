@@ -2,6 +2,8 @@
 title: Development Tools for Spartacus
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The Spartacus team works with a number of development tools that are recommended if you are contributing to the Spartacus project.
 
 ## Code Editor

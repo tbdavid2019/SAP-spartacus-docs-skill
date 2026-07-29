@@ -2,9 +2,11 @@
 title: Building the TUA Spartacus Storefront Using 1.3 Libraries
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The following instructions describe how to build a TUA storefront application using published TUA Spartacus 1.3 libraries.
 
-**Note:** If you are building TUA Spartacus from source, see [Contributor Setup]({{ site.baseurl }}{% link _pages/contributing/contributor-setup.md %}).
+**Note:** If you are building TUA Spartacus from source, see [Contributor Setup](../contributing/contributor-setup.md).
 
 ***
 
@@ -39,9 +41,9 @@ brew install angular-cli
 
 To update existing installations, use `brew upgrade` instead of `brew install`.
 
-**Note:** 
+**Note:**
 
-- If you have a later version of node.js installed in addition to v10, you can set v10 to be used with the following command: 
+- If you have a later version of node.js installed in addition to v10, you can set v10 to be used with the following command:
 `brew link --force --overwrite node@10`.
 - Installing Homebrew and the prerequisites is beyond the scope of this document. You can also install the prerequisites using their individual installers.
 
@@ -52,7 +54,7 @@ TUA Spartacus uses SAP Commerce Cloud and Telco & Utilities Accelerator for its 
 - SAP Commerce Cloud version: Release 1905 (latest patch is recommended).
 - Telco & Utilities Accelerator version: Release 2003 (latest patch) is required.
 
-For more information, see [Installing SAP Commerce Cloud for use with TUA Spartacus]({{ site.baseurl }}{% link _pages/telco/installing-sap-commerce-for-tua-spartacus.md %}).
+For more information, see [Installing SAP Commerce Cloud for use with TUA Spartacus](installing-sap-commerce-for-tua-spartacus.md).
 
 ## Creating a New Angular App
 
@@ -82,7 +84,7 @@ The easiest way to start a new project and to quickly set up your application:
 
 Run `yarn start`.
 
-For a full list of available parameters, see the Spartacus [schematics documentation]({{ site.baseurl }}{% link _pages/install/schematics.md %}).
+For a full list of available parameters, see the Spartacus [schematics documentation](../install/schematics.md).
 
 ## Setting up a Storefront Manually
 
@@ -177,7 +179,7 @@ The dependencies in this procedure are required by the TUA Spartacus storefront.
    ```html
    <cx-storefront>Loading...</cx-storefront>
    ```
-  
+
 3. Open `mystore/package.json` using a text editor.
 
 4. Add the following dependencies to the end of the `dependencies` section of `package.json`.
@@ -217,19 +219,19 @@ The dependencies in this procedure are required by the TUA Spartacus storefront.
    @import '~@spartacus/styles/index';
    @import '~@spartacus/tua-spa/storefrontstyles/index';
     ```
-  
+
 6. From the terminal window, within `mystore`, install the dependencies by running the following command:
 
    ```bash
    yarn install
    ```
-  
+
 7. Start the angular client app. From the terminal window, within `mystore` start the application by running the following command:
 
    ```bash
    yarn start
    ```
-  
+
 8. Make sure your backend server is up and running (SAP Commerce with TUA).
 
 9. Your client application is accessible at the following locations in your local environment:
@@ -277,7 +279,7 @@ To start your TUA Spartacus storefront, enter the following command from `mystor
    ```bash
 yarn start
    ```
-  
+
    When the app server is properly started, point your browser to http://localhost:4200.
 
 Or, to start your TUA Spartacus storefront securely, enter the following command:
@@ -285,5 +287,5 @@ Or, to start your TUA Spartacus storefront securely, enter the following command
    ```bash
 yarn start --ssl
    ```
-  
+
 Then point your browser to `https://localhost:4200`.

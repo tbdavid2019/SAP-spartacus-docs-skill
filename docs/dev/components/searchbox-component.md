@@ -6,6 +6,8 @@ feature:
   cx_version: n/a
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The searchbox component allows you to search the product catalog using typeahead search (also known as autocomplete or autosuggest search).
 
 The searchbox component allows you to search through the product catalog without leaving the page. Search results are fetch-as-you-type, and persist once you navigate to a product details page or a listing page.
@@ -57,7 +59,7 @@ To keep the component clean, a component-specific `SearchBoxComponentService` is
 
 This service is responsible for executing the search for products and suggestions, unless the search is configured to not search for products and suggestions at all.
 
-The `SearchBoxComponentService` uses the `SearchboxService`, which is a facade on top of the state management layer. 
+The `SearchBoxComponentService` uses the `SearchboxService`, which is a facade on top of the state management layer.
 
 ## Component Styling
 

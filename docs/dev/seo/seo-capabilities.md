@@ -2,6 +2,8 @@
 title: SEO Capabilities
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Search engine optimization (SEO) is an important element of the Spartacus storefront framework. The implementation of SEO in Spartacus is focused on the architecture, rather than on features, so that a solid foundation exists for adding a wide range of SEO capabilities.
 
 The SEO implementation in Spartacus includes the following:
@@ -37,12 +39,12 @@ Server-side rendering (SSR) is a technique that renders the JavaScript logic on 
 
 SSR is provided by Spartacus, and is planned to be a default deployment option in Commerce Cloud.
 
-For more information on SSR, see [{% assign linkedpage = site.pages | where: "name", "server-side-rendering-coding-guidelines.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/ssr/server-side-rendering-coding-guidelines.md %}) and [Controlling Server-Side Rendering]({{ site.baseurl }}/customizing-cms-components/#controlling-server-side-rendering-ssr).
+For more information on SSR, see [Server-Side Rendering Coding Guidelines](../ssr/server-side-rendering-coding-guidelines.md) and [Controlling Server-Side Rendering](https://sap.github.io/spartacus-docs/customizing-cms-components/#controlling-server-side-rendering-ssr).
 
 ## Structured Data (schema.org)
 
-Structured data is a standardized way of describing the page content of a website to make it easier for web crawlers and search engines to understand. Spartacus supports various schemas natively. For more information, see [{% assign linkedpage = site.pages | where: "name", "structured-data.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/seo/structured-data.md %}).
+Structured data is a standardized way of describing the page content of a website to make it easier for web crawlers and search engines to understand. Spartacus supports various schemas natively. For more information, see [Structured Data](structured-data.md).
 
 ## HTML Tags
 
-HTML tags, and meta tags in particular, are used by search engines, social platforms, and crawlers to index page meta data into their platforms. Spartacus provides various ways to resolve meta tags. For more information, see [{% assign linkedpage = site.pages | where: "name", "html-tags.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/seo/html-tags.md %}).
+HTML tags, and meta tags in particular, are used by search engines, social platforms, and crawlers to index page meta data into their platforms. Spartacus provides various ways to resolve meta tags. For more information, see [HTML Tags](html-tags.md).

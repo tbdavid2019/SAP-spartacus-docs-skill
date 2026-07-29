@@ -2,14 +2,16 @@
 title: Spartacus Components
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 This is a landing page for Spartacus components topics. This includes the following topics:
 
-- [{% assign linkedpage = site.pages | where: "name", "banner-component.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/components/banner-component.md %})
-- [{% assign linkedpage = site.pages | where: "name", "carousel-component.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/components/carousel-component.md %})
-- [{% assign linkedpage = site.pages | where: "name", "media-component.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/components/shared-components/media-component.md %})
-- [{% assign linkedpage = site.pages | where: "name", "pagination.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/components/shared-components/pagination.md %})
-- [{% assign linkedpage = site.pages | where: "name", "password-visibility-component.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/components/shared-components/password-visibility-component.md %})
-- [{% assign linkedpage = site.pages | where: "name", "popover-component.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/components/shared-components/popover-component.md %})
-- [{% assign linkedpage = site.pages | where: "name", "searchbox-component.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/components/searchbox-component.md %})
-- [{% assign linkedpage = site.pages | where: "name", "split-view.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/components/shared-components/split-view.md %})
-- [{% assign linkedpage = site.pages | where: "name", "table-component.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/components/shared-components/table-component.md %})
+- [Banner Component](banner-component.md)
+- [Carousel Component](carousel-component.md)
+- [Media Component](shared-components/media-component.md)
+- [Pagination Component](shared-components/pagination.md)
+- [Password Visibility Component](shared-components/password-visibility-component.md)
+- [Popover Component](shared-components/popover-component.md)
+- [Searchbox Component](searchbox-component.md)
+- [Split View Component](shared-components/split-view.md)
+- [Table Component](shared-components/table-component.md)

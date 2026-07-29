@@ -6,6 +6,8 @@ feature:
   cx_version: 2211-jdk21.1
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The `AuthConfigInitializer` is a `ConfigInitializer` that allows you to adjust the runtime configuration of the Spartacus auth configuration. The default implementation handles the following two runtime adjustments to the static auth configuration:
 
 - Changes the default redirect URL to include the base site URL context parameter
@@ -26,7 +28,7 @@ The following is an example of the default configuration:
     })
 ```
 
-Relevance is determined by the presence of the base site in the URL context parameters. For more information about URL context parameters, see [Static Multi-Site Configuration](context/static-context-configuration.md) and [Automatic Multi-Site Configuration](context/automatic-context-configuration.md).
+Relevance is determined by the presence of the base site in the URL context parameters. For more information about URL context parameters, see [Static Multi-Site Configuration](../context/static-context-configuration.md) and [Automatic Multi-Site Configuration](../context/automatic-context-configuration.md).
 
 The purpose of initializing the redirect URL and client ID is to handle base site resolution during the Authorization Code Flow. When the base site is in the URL context parameter list, Spartacus assumes that multiple sites are being hosted on the same domain (for example, `https://example.com/electronics-spa` and `https://example.com/powertools-spa`). In this case, the Authorization Code Flow process needs to be configured with a return URI that includes the base site. Otherwise, when returning from the authorization server, Spartacus is not able to identify which base site the user originated from. This same problem also applies for the Custom Login URI that is set in the SAP Commerce Cloud `OAuthClientDetails`. Since that field is not dynamic enough to read the return URI path, it must be hard-coded with the base site in the path. This means that a client ID will only work for a single base site. With the `AuthConfigInitializer` adjusting the client ID at runtime to have the base site added as a suffix, it creates a unique, predictable client ID that can be pre-configured in SAP Commerce Cloud with the appropriate Custom Login Page URI for each base site.
 

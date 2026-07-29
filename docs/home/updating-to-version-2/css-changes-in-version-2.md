@@ -2,6 +2,8 @@
 title: Changes to Styles in 2.0
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The nature of the changes done in order to set the Calydon theme as the base theme were the following:
 
 1. For all visual changes fixed during the Calydon theme updates (before 2.0), you no longer needed to uncomment `$theme: 'calydon';` in `/storefrontapp/src/styles.scss` for the changes to show up. All of the changes are now defaults in the base theme.
@@ -60,4 +62,4 @@ The nature of the changes done in order to set the Calydon theme as the base the
         /storefrontstyles/scss/cxbase/blocks/forms.scss
          ```
 
-       These files only had conditional statements. By unwrapping the Calydon conditions within the file, they became default code.  
+       These files only had conditional statements. By unwrapping the Calydon conditions within the file, they became default code.

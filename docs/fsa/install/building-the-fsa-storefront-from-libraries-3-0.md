@@ -2,7 +2,9 @@
 title: Building the FSA Spartacus Storefront using 3.0 Libraries
 ---
 
-The following instructions describe how to build an FSA storefront application using published FSA Spartacus 3.x libraries. If you are building Spartacus from the source, see [Contributor Setup]({{ site.baseurl }}{% link _pages/contributing/contributor-setup.md %}).
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+The following instructions describe how to build an FSA storefront application using published FSA Spartacus 3.x libraries. If you are building Spartacus from the source, see [Contributor Setup](../../contributing/contributor-setup.md).
 
 ***
 
@@ -32,7 +34,7 @@ FSA Spartacus uses SAP Commerce and Financial Services Accelerator back end and 
 - SAP Commerce version: Release 2105 (the latest patch is recommended).
 - Financial Services Accelerator version: Release 2108 is required.
 
-For more information, see [Installing SAP Commerce Cloud FSA for use with FSA Spartacus]({{ site.baseurl }}{% link _pages/fsa/install/installing-sap-commerce-with-fsa-spartacus.md %}).
+For more information, see [Installing SAP Commerce Cloud FSA for use with FSA Spartacus](installing-sap-commerce-with-fsa-spartacus.md).
 
 ### Windows Setup
 
@@ -42,8 +44,8 @@ Next, create the .npmrc file at the root of your Angular project.
 The .npmrc file should contain the following:
 
 ```shell
-shell = "{instalation directory}\\Git\\bin\\bash.exe" 
-script-shell = "{instalation directory}\\Git\\bin\\bash.exe" 
+shell = "{instalation directory}\\Git\\bin\\bash.exe"
+script-shell = "{instalation directory}\\Git\\bin\\bash.exe"
 
 
 Example:
@@ -84,7 +86,7 @@ You can add FSA Spartacus libraries to your Spartacus Angular project by running
 ng add @spartacus/fsa-schematics --baseSite=sample-financial-site --currency=usd,eur --language=en,de,fr
 ```
 
-For a detailed explanation, visit [FSA Schematics]({{ site.baseurl }}{% link _pages/fsa/install/fsa-schematics.md %}).
+For a detailed explanation, visit [FSA Schematics](fsa-schematics.md).
 
 For a full list of available parameters, please visit Spartacus schematics [documentation](https://github.com/SAP/spartacus/tree/develop/projects/schematics).
 

@@ -2,6 +2,8 @@
 title: Content Security Policy
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Content Security Policy is a tool that allows you to specify which locations and which types of resources are allowed to be loaded when your storefront is accessed through a web browser. You can use Content Security Policy to lock down your storefront app and mitigate the risk of content injection vulnerabilities, such as cross-site scripting (XSS), code injection, and clickjacking attacks, as well as reducing the privilege with which your storefront app executes.
 
 It is highly recommended that you follow the Content Security Policy best practices described here, as well as in [Backoffice Framework Security](https://help.sap.com/viewer/5c9ea0c629214e42b727bf08800d8dfa/latest/en-US/f7bc40281c2c43479fcd1562b02e63e5.html?q=CSP#loiod0774212b4ae4b8bb3dcf39908ab5832) on the SAP Help Portal.

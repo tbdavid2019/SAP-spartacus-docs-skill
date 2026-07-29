@@ -2,6 +2,8 @@
 title: Server-Side Rendering
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 In Spartacus, server-side rendering allows you to render static versions of pages on the server side. This speeds up response times, assists with search engine optimization (SEO), and allows the application to render more quickly. After Angular has bootstrapped, users of your site will have the full experience.
 
 ***
@@ -222,10 +224,10 @@ For most situations and setups, is is best to add SSR support to your Spartacus 
      ServerModule,
      ServerTransferStateModule,
    } from '@angular/platform-server';
-   
+
    import { AppModule } from './app.module';
    import { AppComponent } from './app.component';
-   
+
    @NgModule({
      imports: [
        // The AppServerModule should import your AppModule followed
@@ -239,7 +241,7 @@ For most situations and setups, is is best to add SSR support to your Spartacus 
    export class AppServerModule {}
    ```
 
-   For more information about caching and transfer state, see [Caching the Site Context with Server-Side Rendering]({{ site.baseurl }}/automatic-context-configuration/#caching-the-site-context-with-server-side-rendering)
+   For more information about caching and transfer state, see [Caching the Site Context with Server-Side Rendering](https://sap.github.io/spartacus-docs/automatic-context-configuration/#caching-the-site-context-with-server-side-rendering)
 
 1. Add the `server.ts` file to your existing shell app. The following is an example:
 
@@ -254,13 +256,13 @@ For most situations and setups, is is best to add SSR support to your Spartacus 
    import { NgExpressEngineDecorator } from '@spartacus/setup/ssr';
    import * as express from 'express';
    import { join } from 'path';
-   
+
    import { AppServerModule } from './src/main.server';
    import { APP_BASE_HREF } from '@angular/common';
    import { existsSync } from 'fs';
-   
+
    const ngExpressEngine = NgExpressEngineDecorator.get(engine);
-   
+
    // The Express app is exported so that it can be used by serverless functions.
    export function app() {
      const server = express();
@@ -268,17 +270,17 @@ For most situations and setups, is is best to add SSR support to your Spartacus 
      const indexHtml = existsSync(join(distFolder, 'index.original.html'))
        ? 'index.original.html'
        : 'index';
-   
+
      server.engine(
        'html',
        ngExpressEngine({
          bootstrap: AppServerModule,
        })
      );
-   
+
      server.set('view engine', 'html');
      server.set('views', distFolder);
-   
+
      // Serve static files from /browser
      server.get(
        '*.*',
@@ -286,7 +288,7 @@ For most situations and setups, is is best to add SSR support to your Spartacus 
          maxAge: '1y',
        })
      );
-   
+
      // All regular routes use the Universal engine
      server.get('*', (req, res) => {
        res.render(indexHtml, {
@@ -294,20 +296,20 @@ For most situations and setups, is is best to add SSR support to your Spartacus 
          providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }],
        });
      });
-   
+
      return server;
    }
-   
+
    function run() {
      const port = process.env.PORT || 4000;
-   
+
      // Start up the Node server
      const server = app();
      server.listen(port, () => {
        console.log(`Node Express server listening on http://localhost:${port}`);
      });
    }
-   
+
    // Webpack replaces 'require' with '__webpack_require__'
    // '__non_webpack_require__' is a proxy to Node 'require'
    // The following code is to ensure that the server is run only when not requiring the bundle.
@@ -317,7 +319,7 @@ For most situations and setups, is is best to add SSR support to your Spartacus 
    if (moduleFilename === __filename || moduleFilename.includes('iisnode')) {
      run();
    }
-   
+
    export * from './src/main.server';
    ```
 

@@ -6,17 +6,15 @@ feature:
   cx_version: 2205
 ---
 
-{% capture version_note %}
-{{ site.version_note_part1 }} 6.0 {{ site.version_note_part2 }}
-{% endcapture %}
 
-{% include docs/feature_version.html content=version_note %}
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
+> **Note:** This feature is introduced with version 6.0 of the Spartacus libraries.
 
 The future stock feature allows you to see the future availability of a product on the product details page. You need to be logged in to see it.  When you click on the `Future availability` button, an accordion expands and displays a list of future availabilities for the product. If the list is not available, the following message is displayed: "The product has no future availability information".
 
 The following is an example of the `Future Availability` dropdown accordion that appears in the product summary:
 
-![Future Stock Example]({{ site.baseurl }}/assets/images/future-stock-feature.png)
+![Future Stock Example](https://sap.github.io/spartacus-docs/assets/images/future-stock-feature.png)
 
 ## Requirements
 

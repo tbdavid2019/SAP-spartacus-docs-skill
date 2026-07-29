@@ -3,6 +3,8 @@ title: Spartacus Videos
 
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 The following Spartacus videos are available on the [openSAP Microlearning Portal](https://microlearning.opensap.com), no login required.
 
 To see a list of all Spartacus videos, [click here](https://microlearning.opensap.com/category/Spartacus/178316081).

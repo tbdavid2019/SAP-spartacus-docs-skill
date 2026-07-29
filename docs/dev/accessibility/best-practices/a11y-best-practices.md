@@ -2,24 +2,26 @@
 title: Accessibility Best Practices
 ---
 
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 This is a landing page for grouping together topics about accessibility (a11y) best practices.
 
 ## Accessibility Compliance
 
 Spartacus ensures accessibility by adhering to the success criteria of the [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/) in the following categories:
 
-- [Core Theme Accessibility]({{ site.baseurl }}{% link _pages/dev/accessibility/best-practices/a11y-compliance.md %}#core-theme-accessibility)
-- [Keyboard Accessibility]({{ site.baseurl }}{% link _pages/dev/accessibility/best-practices/a11y-compliance.md %}#keyboard-accessibility)
-- [Screen Reader Accessibility]({{ site.baseurl }}{% link _pages/dev/accessibility/best-practices/a11y-compliance.md %}#screen-reader-accessibility)
-- [Media Accessibility]({{ site.baseurl }}{% link _pages/dev/accessibility/best-practices/a11y-compliance.md %}#media-accessibility)
-- [Other Accessibility Conformance]({{ site.baseurl }}{% link _pages/dev/accessibility/best-practices/a11y-compliance.md %}#other-accessibility-conformance)
+- [Core Theme Accessibility](a11y-compliance.md#core-theme-accessibility)
+- [Keyboard Accessibility](a11y-compliance.md#keyboard-accessibility)
+- [Screen Reader Accessibility](a11y-compliance.md#screen-reader-accessibility)
+- [Media Accessibility](a11y-compliance.md#media-accessibility)
+- [Other Accessibility Conformance](a11y-compliance.md#other-accessibility-conformance)
 
 When you are developing new features or fixing regressions, it is recommended that you include the following features and best practices in your implementation to continue to comply with the relevant accessibility criteria:
 
-- [{% assign linkedpage = site.pages | where: "name", "keyboard-accessibility.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/accessibility/best-practices/keyboard-accessibility.md %})
-- [{% assign linkedpage = site.pages | where: "name", "keyboard-focus.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/dev/accessibility/keyboard-focus/keyboard-focus.md %})
+- [Keyboard Accessibility](keyboard-accessibility.md)
+- [Keyboard Focus](../keyboard-focus/keyboard-focus.md)
 
-If you are a contributor to the Spartacus project, it is also important to ensure you run end-to-end tests for accessibility. For more information, see [{% assign linkedpage = site.pages | where: "name", "a11y-e2e-tests.md" %}{{ linkedpage[0].title }}]({{ site.baseurl }}{% link _pages/contributing/a11y-e2e-tests.md %}).
+If you are a contributor to the Spartacus project, it is also important to ensure you run end-to-end tests for accessibility. For more information, see [Accessibility E2E Tests](../../../contributing/a11y-e2e-tests.md).
 
 ## Common Keyboard Interactions
 

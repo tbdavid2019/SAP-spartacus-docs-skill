@@ -1,6 +1,8 @@
 ---
 title: Dynamicforms Styling
 ---
+
+<!-- Mechanically prepared from SAP/spartacus-docs under Apache-2.0; Jekyll directives and links were normalized. See docs/SOURCE.json and docs/UPSTREAM_LICENSE.txt in the skill root. -->
 Dynamicforms library is shipped with default Bootstrap 4 CSS classes. These classes can be overridden with the custom JSON configuration through the Backoffice.
 
 ***
@@ -16,7 +18,7 @@ Dynamicforms library is shipped with default Bootstrap 4 CSS classes. These clas
 
 Dynamicforms library uses Bootstrap 4 classes for styling. A custom CSS class can be defined for:
 
-- [Form tag]({{ site.baseurl }}/json-structure/#formdefinition) - By default empty. This class can be used for specific styling of each form. It can be added by defining **"cssClass"** property in the JSON configuration.
+- [Form tag](https://sap.github.io/spartacus-docs/json-structure/#formdefinition) - By default empty. This class can be used for specific styling of each form. It can be added by defining **"cssClass"** property in the JSON configuration.
 
 Example:
 
@@ -30,7 +32,7 @@ Example:
           // controls defined here...
 ```
 
-- [Form group]({{ site.baseurl }}/json-structure/#dynamicformgroup) (section) - By default, dynamicforms library renders "row" Bootstrap class here. Defining cssClass in "formGroups" section of the JSON configuration will **add** class to the default class. It can be added by defining **"cssClass"** property in the JSON.
+- [Form group](https://sap.github.io/spartacus-docs/json-structure/#dynamicformgroup) (section) - By default, dynamicforms library renders "row" Bootstrap class here. Defining cssClass in "formGroups" section of the JSON configuration will **add** class to the default class. It can be added by defining **"cssClass"** property in the JSON.
 
 Example:
 
@@ -47,7 +49,7 @@ Example:
           // controls defined here...
 ```
 
-- [Individual control]({{ site.baseurl }}/json-structure/#fieldconfig) - By default, dynamicforms library renders "col-12" Bootstrap class here, which results in one-column design. Defining a **"cssClass"** property in the control section of the JSON will **add** the default class.
+- [Individual control](https://sap.github.io/spartacus-docs/json-structure/#fieldconfig) - By default, dynamicforms library renders "col-12" Bootstrap class here, which results in one-column design. Defining a **"cssClass"** property in the control section of the JSON will **add** the default class.
 You can also **override** the default Bootstrap "col-12" class by defining a **"gridClass"** property in the same section of the JSON definition.
 
 Example:
@@ -75,12 +77,12 @@ If we consider a form with two sections and one control per section, a basic HTM
 ```typescript
 <form class=""> // Form class, empty by default
     <div class="row"> // Form Group class, "row" by default
-        <cx-input class="col-12"> // Control wrapper class, "col-12" by default  
+        <cx-input class="col-12"> // Control wrapper class, "col-12" by default
             // Input control-1
         <cx-input>
     </div>
    <div class="row">
-        <cx-input class="col-12">   
+        <cx-input class="col-12">
             // Input control-2
         <cx-input>
     </div>
@@ -97,7 +99,7 @@ Adding our classes from examples above would result in the following HTML:
         <cx-input>
     </div>
    <div class="row">
-        <cx-input class="col-6 customControlClass">   
+        <cx-input class="col-6 customControlClass">
             // Input control-2
         <cx-input>
     </div>
@@ -108,8 +110,8 @@ Adding our classes from examples above would result in the following HTML:
 
 Default look of the example form with two sections:
 
-![default form look]({{ site.baseurl }}/assets/images/fsa/dynamicforms_default_look.png)
+![default form look](https://sap.github.io/spartacus-docs/assets/images/fsa/dynamicforms_default_look.png)
 
 Form look when the default "col-12" class is overridden with "col-6" on each form control, to create a two-column design:
 
-![two column design]({{ site.baseurl }}/assets/images/fsa/dynamicforms_two_column_layout.png)
+![two column design](https://sap.github.io/spartacus-docs/assets/images/fsa/dynamicforms_two_column_layout.png)
