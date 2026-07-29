@@ -1,22 +1,27 @@
 #!/bin/bash
-# install-skill.sh - Setup and update script for AI Agent documentation skills
-# This script ensures the skill remains a proper git checkout for easy updates.
+set -euo pipefail
 
-SKILL_DIR="$(cd "$(dirname "$0")/.." && pwd)"
-SKILL_NAME=$(basename "$SKILL_DIR")
-# If a target directory is provided, use it. Otherwise assume the skill is already in its home.
-TARGET_DIR="${1:-$SKILL_DIR}"
+REPO_URL="${SPARTACUS_SKILL_REPO:-https://github.com/tbdavid2019/SAP-spartacus-docs-skill.git}"
+SOURCE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+TARGET_DIR="${1:-$SOURCE_DIR}"
 
-echo "--- Skill Setup: $SKILL_NAME ---"
-
-if [ -d "$TARGET_DIR/.git" ]; then
-    echo "Updating existing installation in $TARGET_DIR..."
-    git -C "$TARGET_DIR" pull origin main --ff-only
-    echo "Update complete."
+if [[ -d "$TARGET_DIR/.git" ]]; then
+    echo "Updating the skill checkout in $TARGET_DIR..."
+    git -C "$TARGET_DIR" pull --ff-only origin main
+elif [[ -e "$TARGET_DIR" ]]; then
+    if find "$TARGET_DIR" -mindepth 1 -maxdepth 1 -print -quit | grep -q .; then
+        echo "Refusing to install: $TARGET_DIR is not an empty directory or git checkout." >&2
+        exit 1
+    fi
+    git clone "$REPO_URL" "$TARGET_DIR"
 else
-    echo "Running in non-git mode or fresh directory."
-    echo "If you want auto-updates, ensure this directory is a git clone."
-    echo "Current location: $SKILL_DIR"
+    mkdir -p "$(dirname "$TARGET_DIR")"
+    git clone "$REPO_URL" "$TARGET_DIR"
 fi
 
-echo "Please refer to $TARGET_DIR/SKILL.md for usage instructions."
+if [[ ! -f "$TARGET_DIR/SKILL.md" ]] || [[ ! -f "$TARGET_DIR/docs/SKILL_INDEX.md" ]]; then
+    echo "Installation validation failed: required skill files are missing." >&2
+    exit 1
+fi
+
+echo "Skill ready in $TARGET_DIR"

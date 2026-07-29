@@ -1,114 +1,95 @@
 #!/usr/bin/env python3
-import os
+"""Generate a deterministic index for a prepared documentation snapshot."""
+
+from __future__ import annotations
+
+import argparse
+import json
 import re
-from datetime import datetime
+from collections import defaultdict
+from pathlib import Path
 
-def extract_title(file_path):
-    """
-    Extracts the title from a markdown file.
-    Priority:
-    1. yaml frontmatter 'title:'
-    2. first H1 header '# Title'
-    3. filename (capitalized)
-    """
-    try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            content = f.read()
-            
-            # 1. Try YAML frontmatter
-            frontmatter_match = re.search(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
-            if frontmatter_match:
-                lines = frontmatter_match.group(1).split('\n')
-                for line in lines:
-                    if line.startswith('title:'):
-                        title = line.replace('title:', '').strip().strip('"').strip("'")
-                        if title:
-                            return title
-            
-            # 2. Try first H1
-            h1_match = re.search(r'^#\s+(.+)$', content, re.MULTILINE)
-            if h1_match:
-                return h1_match.group(1).strip()
-    except Exception:
-        pass
-    
-    # 3. Fallback to filename
-    basename = os.path.basename(file_path)
-    if basename == 'index.md' or basename == 'INDEX.md':
-        return os.path.basename(os.path.dirname(file_path)).capitalize()
-    
-    return os.path.splitext(basename)[0].replace('-', ' ').replace('_', ' ').capitalize()
 
-def generate_index(root_dir):
-    docs = {}
-    
-    for root, dirs, files in os.walk(root_dir):
-        # Skip hidden directories and assets/images
-        dirs[:] = [d for d in dirs if not d.startswith('.') and d not in ['assets', 'images']]
-        
-        md_files = [f for f in files if f.endswith('.md') and f.upper() != 'INDEX.MD' and f.upper() != 'SKILL_INDEX.MD']
-        if not md_files:
+FRONTMATTER = re.compile(r"\A---\s*\n(.*?)\n---\s*(?:\n|\Z)", re.DOTALL)
+
+
+def extract_title(file_path: Path) -> str:
+    content = file_path.read_text(encoding="utf-8")
+    frontmatter = FRONTMATTER.search(content)
+    if frontmatter:
+        for line in frontmatter.group(1).splitlines():
+            key, separator, value = line.partition(":")
+            if separator and key.strip() == "title" and value.strip():
+                return value.strip().strip("\"'")
+    heading = re.search(r"^#\s+(.+)$", content, re.MULTILINE)
+    if heading:
+        return heading.group(1).strip()
+    if file_path.name.lower() == "index.md":
+        return file_path.parent.name.replace("-", " ").replace("_", " ").title()
+    return file_path.stem.replace("-", " ").replace("_", " ").title()
+
+
+def generate_index(root_dir: Path | str) -> str:
+    root = Path(root_dir)
+    metadata_path = root / "SOURCE.json"
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    categories: dict[str, list[str]] = defaultdict(list)
+
+    for file_path in sorted(root.rglob("*.md")):
+        if file_path.name.upper() in {"INDEX.MD", "SKILL_INDEX.MD"}:
             continue
-            
-        rel_path = os.path.relpath(root, root_dir)
-        if rel_path == '.':
-            rel_path = 'General'
-            
-        docs[rel_path] = []
-        for f in sorted(md_files):
-            full_path = os.path.join(root, f)
-            title = extract_title(full_path)
-            # Create a path relative to the docs directory for the link
-            link_path = os.path.relpath(full_path, root_dir)
-            docs[rel_path].append(f"- [{title}]({link_path})")
+        relative = file_path.relative_to(root)
+        category = relative.parent.as_posix()
+        if category == ".":
+            category = "General"
+        categories[category].append(
+            f"- [{extract_title(file_path)}]({relative.as_posix()})"
+        )
 
-    # Build the Markdown content
+    commit = metadata["commit"]
+    commit_url = metadata["source"].removesuffix(".git") + f"/commit/{commit}"
     lines = [
         "# SAP Spartacus Documentation Index",
         "",
-        f"Last Updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
+        f"Source snapshot: [`{commit[:12]}`]({commit_url}) "
+        f"from `{metadata['branch']}`",
         "",
-        "This is a comprehensive index of all available SAP Spartacus documentation, organized by category.",
-        ""
+        f"Synced at: `{metadata['synced_at']}`",
+        "",
+        "Use this index to locate the prepared local Markdown files. "
+        "Confirm version-sensitive guidance against the compatibility and migration pages.",
+        "",
     ]
-    
-    # Sort categories: General first, then alphabetical
-    categories = sorted(docs.keys(), key=lambda x: (x != 'General', x.lower()))
-    
-    for category in categories:
-        lines.append(f"## {category.replace('/', ' > ').capitalize()}")
-        lines.extend(docs[category])
+    for category in sorted(
+        categories, key=lambda item: (item != "General", item.casefold())
+    ):
+        display = " > ".join(
+            part.replace("_", " ").replace("-", " ").title()
+            for part in category.split("/")
+        )
+        lines.append(f"## {display}")
+        lines.extend(categories[category])
         lines.append("")
-
     return "\n".join(lines)
 
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "docs_dir",
+        nargs="?",
+        type=Path,
+        default=Path(__file__).resolve().parents[1] / "docs",
+    )
+    args = parser.parse_args()
+    output = args.docs_dir / "SKILL_INDEX.md"
+    content = generate_index(args.docs_dir)
+    if output.exists() and output.read_text(encoding="utf-8") == content:
+        print(f"Index unchanged: {output}")
+        return
+    output.write_text(content, encoding="utf-8")
+    print(f"Generated {output}")
+
+
 if __name__ == "__main__":
-    base_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'docs')
-    output_file = os.path.join(base_dir, 'SKILL_INDEX.md')
-    
-    print(f"🔍 Scanning {base_dir}...")
-    index_content = generate_index(base_dir)
-    
-    should_write = True
-    if os.path.exists(output_file):
-        try:
-            with open(output_file, 'r', encoding='utf-8') as f:
-                old_content = f.read()
-            
-            # Normalize timestamp lines to compare content
-            pattern = r'Last Updated: \d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}'
-            old_norm = re.sub(pattern, 'Last Updated: TIMESTAMP', old_content)
-            new_norm = re.sub(pattern, 'Last Updated: TIMESTAMP', index_content)
-            
-            if old_norm == new_norm:
-                print("✨ Index content (excluding timestamp) has not changed. Skipping update to preserve file date.")
-                should_write = False
-        except Exception as e:
-            print(f"⚠️ Error reading old index: {e}")
-            
-    if should_write:
-        with open(output_file, 'w', encoding='utf-8') as f:
-            f.write(index_content)
-        print(f"✅ Generated {output_file}")
-    else:
-        print("⏭️ Skipped writing to SKILL_INDEX.md because there were no changes in documentation index.")
+    main()

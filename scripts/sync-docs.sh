@@ -1,50 +1,86 @@
 #!/bin/sh
+set -eu
 
-# Spartacus Docs Sync Script
-# This script pulls the latest documentation from the SAP spartacus-docs repository.
+# Build and promote a validated snapshot of the official SAP documentation.
 
-REPO_URL="https://github.com/SAP/spartacus-docs.git"
-TEMP_DIR=".tmp_repo"
-SOURCE_FOLDER="_pages"
-DEST_FOLDER="docs"
+SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+REPO_ROOT=${SPARTACUS_SKILL_ROOT:-$(dirname "$SCRIPT_DIR")}
+REPO_URL=${SPARTACUS_UPSTREAM_REPO:-https://github.com/SAP/spartacus-docs.git}
+SOURCE_BRANCH=${SPARTACUS_UPSTREAM_BRANCH:-develop}
+MIN_DOC_COUNT=${SPARTACUS_MIN_DOC_COUNT:-300}
+FORCE_SYNC=${SPARTACUS_FORCE_SYNC:-0}
+DEST_DOCS="$REPO_ROOT/docs"
+WORK_DIR=$(mktemp -d "$REPO_ROOT/.sync-work.XXXXXX")
+UPSTREAM_DIR="$WORK_DIR/upstream"
+STAGED_DOCS="$WORK_DIR/docs"
+BACKUP_DOCS="$WORK_DIR/previous-docs"
 
-echo "🚀 Starting Spartacus documentation sync..."
+cleanup() {
+    if [ -d "$BACKUP_DOCS" ] && [ ! -d "$DEST_DOCS" ]; then
+        mv "$BACKUP_DOCS" "$DEST_DOCS"
+    fi
+    rm -rf "$WORK_DIR"
+}
+trap cleanup EXIT HUP INT TERM
 
-# Create temporary directory if it doesn't exist
-mkdir -p "$TEMP_DIR"
-cd "$TEMP_DIR" || exit 1
+echo "Fetching SAP Spartacus documentation from $SOURCE_BRANCH..."
+git clone \
+    --depth 1 \
+    --filter=blob:none \
+    --sparse \
+    --branch "$SOURCE_BRANCH" \
+    "$REPO_URL" \
+    "$UPSTREAM_DIR"
+git -C "$UPSTREAM_DIR" sparse-checkout set --skip-checks \
+    _pages \
+    _includes/docs \
+    _data \
+    LICENSE.txt
 
-# Initialize git if not already initialized
-if [ ! -d ".git" ]; then
-    git init
-    git remote add origin "$REPO_URL"
-    git config core.sparseCheckout true
+SOURCE_COMMIT=$(git -C "$UPSTREAM_DIR" rev-parse HEAD)
+SOURCE_COMMITTED_AT=$(git -C "$UPSTREAM_DIR" show -s --format=%cI HEAD)
+
+if [ "$FORCE_SYNC" != "1" ] && [ -f "$DEST_DOCS/SOURCE.json" ]; then
+    CURRENT_COMMIT=$(
+        python3 -c \
+            'import json,sys; print(json.load(open(sys.argv[1], encoding="utf-8")).get("commit", ""))' \
+            "$DEST_DOCS/SOURCE.json"
+    )
+    if [ "$CURRENT_COMMIT" = "$SOURCE_COMMIT" ]; then
+        echo "Documentation is already at upstream commit ${SOURCE_COMMIT%????????????????????????????}."
+        exit 0
+    fi
 fi
 
-# Set sparse-checkout to only include _pages/
-echo "$SOURCE_FOLDER/*" > .git/info/sparse-checkout
+SYNCED_AT=$(date -u "+%Y-%m-%dT%H:%M:%SZ")
+python3 "$SCRIPT_DIR/prepare_docs.py" \
+    --pages-dir "$UPSTREAM_DIR/_pages" \
+    --includes-dir "$UPSTREAM_DIR/_includes/docs" \
+    --data-dir "$UPSTREAM_DIR/_data" \
+    --output-dir "$STAGED_DOCS" \
+    --source-repo "$REPO_URL" \
+    --source-branch "$SOURCE_BRANCH" \
+    --source-commit "$SOURCE_COMMIT" \
+    --source-committed-at "$SOURCE_COMMITTED_AT" \
+    --synced-at "$SYNCED_AT" \
+    --upstream-license "$UPSTREAM_DIR/LICENSE.txt"
 
-# Pull the latest changes from develop branch (shallow clone for speed)
-echo "📥 Fetching latest documentation (this may take a moment)..."
-git pull --depth 1 origin develop
+python3 "$SCRIPT_DIR/generate_index.py" "$STAGED_DOCS"
+python3 "$SCRIPT_DIR/validate_docs.py" \
+    "$STAGED_DOCS" \
+    --minimum-markdown-files "$MIN_DOC_COUNT"
 
-# Return to parent directory
-cd ..
+if [ -d "$DEST_DOCS" ]; then
+    mv "$DEST_DOCS" "$BACKUP_DOCS"
+fi
 
-# Clear destination folder
-echo "🗑️ Cleaning up old docs..."
-rm -rf "${DEST_FOLDER:?}"/*
+if ! mv "$STAGED_DOCS" "$DEST_DOCS"; then
+    if [ -d "$BACKUP_DOCS" ]; then
+        mv "$BACKUP_DOCS" "$DEST_DOCS"
+    fi
+    echo "Failed to promote the validated documentation snapshot." >&2
+    exit 1
+fi
 
-# Copy new files
-echo "📂 Syncing files to $DEST_FOLDER..."
-cp -R "$TEMP_DIR/$SOURCE_FOLDER/"* "$DEST_FOLDER/"
-
-# Summary
-FILE_COUNT=$(find "$DEST_FOLDER" -name "*.md" | wc -l)
-echo "✅ Sync complete! $FILE_COUNT markdown files synced."
-
-# Generate index
-echo "🗂️ Generating documentation index..."
-python3 scripts/generate_index.py
-
-echo "💡 Tip: Run this script whenever you want to update the documentation."
+FILE_COUNT=$(find "$DEST_DOCS" -type f -name "*.md" ! -name "SKILL_INDEX.md" | wc -l)
+echo "Promoted upstream commit ${SOURCE_COMMIT%????????????????????????????} with $FILE_COUNT Markdown files."
