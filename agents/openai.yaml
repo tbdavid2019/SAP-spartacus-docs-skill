@@ -1,0 +1,4 @@
+interface:
+  display_name: "SAP Spartacus Docs"
+  short_description: "Source-traceable SAP Spartacus guidance"
+  default_prompt: "Use $spartacus-docs to answer this Spartacus question from the synced official documentation."
