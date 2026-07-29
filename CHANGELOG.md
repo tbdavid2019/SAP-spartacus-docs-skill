@@ -9,6 +9,7 @@
 - Removed the invalid `.tmp_repo` gitlink and ignored temporary synchronization directories and generated Python cache files.
 - Changed the installer to clone new targets, update git checkouts, reject occupied non-git directories, and verify required skill files.
 - Eliminated daily timestamp-only commits by recording and comparing the upstream commit.
+- Kept integrity checks active even when the upstream commit is unchanged.
 
 ### Added
 

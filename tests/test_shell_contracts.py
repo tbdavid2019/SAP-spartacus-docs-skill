@@ -16,6 +16,11 @@ class ShellContractTests(unittest.TestCase):
         self.assertIn("mktemp -d", script)
         self.assertNotIn('TEMP_DIR=".tmp_repo"', script)
         self.assertLess(script.index("validate_docs.py"), script.index('mv "$STAGED_DOCS"'))
+        no_change_branch = script[
+            script.index('if [ "$CURRENT_COMMIT" = "$SOURCE_COMMIT" ]')
+            : script.index("exit 0")
+        ]
+        self.assertIn('validate_snapshot "$DEST_DOCS"', no_change_branch)
 
     def test_installer_fails_for_nonempty_non_git_target(self):
         with tempfile.TemporaryDirectory() as temp_dir:

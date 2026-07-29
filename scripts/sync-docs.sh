@@ -23,6 +23,12 @@ cleanup() {
 }
 trap cleanup EXIT HUP INT TERM
 
+validate_snapshot() {
+    python3 "$SCRIPT_DIR/validate_docs.py" \
+        "$1" \
+        --minimum-markdown-files "$MIN_DOC_COUNT"
+}
+
 echo "Fetching SAP Spartacus documentation from $SOURCE_BRANCH..."
 git clone \
     --depth 1 \
@@ -47,6 +53,7 @@ if [ "$FORCE_SYNC" != "1" ] && [ -f "$DEST_DOCS/SOURCE.json" ]; then
             "$DEST_DOCS/SOURCE.json"
     )
     if [ "$CURRENT_COMMIT" = "$SOURCE_COMMIT" ]; then
+        validate_snapshot "$DEST_DOCS"
         echo "Documentation is already at upstream commit ${SOURCE_COMMIT%????????????????????????????}."
         exit 0
     fi
@@ -66,9 +73,7 @@ python3 "$SCRIPT_DIR/prepare_docs.py" \
     --upstream-license "$UPSTREAM_DIR/LICENSE.txt"
 
 python3 "$SCRIPT_DIR/generate_index.py" "$STAGED_DOCS"
-python3 "$SCRIPT_DIR/validate_docs.py" \
-    "$STAGED_DOCS" \
-    --minimum-markdown-files "$MIN_DOC_COUNT"
+validate_snapshot "$STAGED_DOCS"
 
 if [ -d "$DEST_DOCS" ]; then
     mv "$DEST_DOCS" "$BACKUP_DOCS"
