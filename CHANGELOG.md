@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-08-19
+
+### Fixed
+
+- Upgraded `actions/setup-python` from v5 to v7 so the workflow uses the Node.js 24 runtime and no longer emits the Node.js 20 deprecation warning.
+
 ## 2026-07-29
 
 ### Fixed
