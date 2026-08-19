@@ -5,6 +5,7 @@
 ### Fixed
 
 - Upgraded `actions/setup-python` from v5 to v7 so the workflow uses the Node.js 24 runtime and no longer emits the Node.js 20 deprecation warning.
+- Removed the arbitrary default requirement for at least 300 Markdown files; synchronization now relies on required-page, index, link, and metadata validation while retaining an optional explicit minimum for manual checks.
 
 ## 2026-07-29
 

@@ -43,7 +43,7 @@ class ValidationReport:
 def validate_docs(
     docs_dir: Path | str,
     *,
-    minimum_markdown_files: int = 300,
+    minimum_markdown_files: int | None = None,
     required_paths: Sequence[str] = DEFAULT_REQUIRED_PATHS,
 ) -> ValidationReport:
     root = Path(docs_dir)
@@ -64,7 +64,10 @@ def validate_docs(
         for path in root.rglob("*.md")
         if path.name.upper() not in {"INDEX.MD", "SKILL_INDEX.MD"}
     )
-    if len(markdown_files) < minimum_markdown_files:
+    if (
+        minimum_markdown_files is not None
+        and len(markdown_files) < minimum_markdown_files
+    ):
         raise ValidationError(
             f"snapshot has {len(markdown_files)} Markdown files; "
             f"minimum is {minimum_markdown_files}"
@@ -136,7 +139,12 @@ def validate_docs(
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("docs_dir", type=Path)
-    parser.add_argument("--minimum-markdown-files", type=int, default=300)
+    parser.add_argument(
+        "--minimum-markdown-files",
+        type=int,
+        default=None,
+        help="Optionally require at least this many Markdown files",
+    )
     args = parser.parse_args()
     report = validate_docs(
         args.docs_dir, minimum_markdown_files=args.minimum_markdown_files

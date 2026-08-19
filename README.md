@@ -67,7 +67,7 @@ bash <你的-agent-skills目錄>/spartacus-docs/scripts/install-skill.sh
 - Schedule: daily at 04:00 UTC; GitHub may start scheduled jobs later
 - Provenance: `docs/SOURCE.json`
 - Navigation: `docs/SKILL_INDEX.md`
-- Validation: at least 300 Markdown files, required core pages, complete index coverage, valid source SHA, no unresolved Jekyll includes/links, and no trailing whitespace
+- Validation: required core pages, complete index coverage, valid source SHA, no unresolved Jekyll includes/links, no trailing whitespace, and consistent Markdown file metadata
 
 A daily snapshot can lag upstream by up to one synchronization cycle. It is not a real-time mirror.
 

@@ -59,7 +59,6 @@ class GenerateAndValidateTests(unittest.TestCase):
 
         report = validate_docs(
             self.docs,
-            minimum_markdown_files=3,
             required_paths=(
                 "home/compatibility-matrix.md",
                 "install/backend/installing-sap-commerce-cloud.md",
@@ -69,6 +68,14 @@ class GenerateAndValidateTests(unittest.TestCase):
 
         self.assertEqual(report.markdown_file_count, 3)
         self.assertEqual(report.indexed_file_count, 3)
+
+    def test_validation_can_enforce_an_explicit_minimum(self):
+        (self.docs / "SKILL_INDEX.md").write_text(
+            generate_index(self.docs), encoding="utf-8"
+        )
+
+        with self.assertRaisesRegex(ValidationError, "minimum is 4"):
+            validate_docs(self.docs, minimum_markdown_files=4, required_paths=())
 
     def test_validation_rejects_unresolved_jekyll_instructions(self):
         (self.docs / "dev" / "authentication.md").write_text(

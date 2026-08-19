@@ -7,7 +7,6 @@ SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 REPO_ROOT=${SPARTACUS_SKILL_ROOT:-$(dirname "$SCRIPT_DIR")}
 REPO_URL=${SPARTACUS_UPSTREAM_REPO:-https://github.com/SAP/spartacus-docs.git}
 SOURCE_BRANCH=${SPARTACUS_UPSTREAM_BRANCH:-develop}
-MIN_DOC_COUNT=${SPARTACUS_MIN_DOC_COUNT:-300}
 FORCE_SYNC=${SPARTACUS_FORCE_SYNC:-0}
 DEST_DOCS="$REPO_ROOT/docs"
 WORK_DIR=$(mktemp -d "$REPO_ROOT/.sync-work.XXXXXX")
@@ -24,9 +23,7 @@ cleanup() {
 trap cleanup EXIT HUP INT TERM
 
 validate_snapshot() {
-    python3 "$SCRIPT_DIR/validate_docs.py" \
-        "$1" \
-        --minimum-markdown-files "$MIN_DOC_COUNT"
+    python3 "$SCRIPT_DIR/validate_docs.py" "$1"
 }
 
 echo "Fetching SAP Spartacus documentation from $SOURCE_BRANCH..."
