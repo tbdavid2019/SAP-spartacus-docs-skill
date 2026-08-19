@@ -1,8 +1,8 @@
 # SAP Spartacus Documentation Index
 
-Source snapshot: [`6b0a1aaf17e6`](https://github.com/SAP/spartacus-docs/commit/6b0a1aaf17e6eb6443ab861d5bb7db9fa7205aab) from `develop`
+Source snapshot: [`4f07783489c4`](https://github.com/SAP/spartacus-docs/commit/4f07783489c46061ef29ffbb76bcce7553716ed9) from `develop`
 
-Synced at: `2026-07-29T02:00:58Z`
+Synced at: `2026-08-19T02:35:45Z`
 
 Use this index to locate the prepared local Markdown files. Confirm version-sensitive guidance against the compatibility and migration pages.
 
@@ -191,6 +191,7 @@ Use this index to locate the prepared local Markdown files. Confirm version-sens
 - [Server-Side Rendering](dev/ssr/server-side-rendering-in-spartacus.md)
 - [Server-Side Rendering Optimization](dev/ssr/server-side-rendering-optimization.md)
 - [Solution for Issue with Server-Side Rendering in Spartacus 2.0 or later and SAP Commerce Cloud for Public Cloud](dev/ssr/ssr-ccv2-issue-spartacus-version-2.md)
+- [Validating Trusted Origins in SSR](dev/ssr/validating-trusted-origins-in-ssr.md)
 
 ## Dev > State Management
 - [Loader Meta Reducer](dev/state_management/loader-meta-reducer.md)
@@ -207,75 +208,6 @@ Use this index to locate the prepared local Markdown files. Confirm version-sens
 - [Skeleton Design](dev/styling-and-page-layout/skeleton-design.md)
 - [Storefront Themes](dev/styling-and-page-layout/storefront-themes.md)
 - [Styling and Page Layout](dev/styling-and-page-layout/styling-and-page-layout.md)
-
-## Fsa
-- [Financial Services Accelerator for Project "Spartacus](fsa/about-fsa-spartacus.md)
-- [Release Information for All Versions of FSA Spartacus Libraries](fsa/fsa-release-information.md)
-- [FSA Spartacus Roadmap](fsa/fsa-spartacus-roadmap.md)
-- [Updating to Version 2.0](fsa/fsa-updating-to-version-2.md)
-- [Updating to Version 3.0](fsa/fsa-updating-to-version-3.md)
-- [Updating to Version 4.0](fsa/fsa-updating-to-version-4.md)
-- [FSA Spartacus Features](fsa/spartacus-features-for-fsa.md)
-- [FSA Spartacus FAQ](fsa/spartacus-fsa-faq.md)
-
-## Fsa > Features
-- [FSA Agent Enablement](fsa/features/fsa-agent-enablement.md)
-- [FSA Chatbot](fsa/features/fsa-chatbot.md)
-- [FSA Checkout](fsa/features/fsa-checkout.md)
-- [FSA Coupons](fsa/features/fsa-coupons.md)
-- [FSA Inbox](fsa/features/fsa-inbox.md)
-- [FSA Invoice Payment](fsa/features/fsa-invoice-payment.md)
-- [FSA My Dashboard](fsa/features/fsa-my-dashboard.md)
-- [FSA Order Splitting](fsa/features/fsa-order-splitting.md)
-- [FSA Policy Change](fsa/features/fsa-policy-change.md)
-- [FSA Policy Renewal](fsa/features/fsa-policy-renewal.md)
-- [FSA Product Discovery](fsa/features/fsa-product-discovery.md)
-- [FSA Quote Comparison](fsa/features/fsa-quote-comparison.md)
-- [Quote Details Page](fsa/features/fsa-quote-details-page.md)
-
-## Fsa > Features > Agents
-- [FSA Agent Availability](fsa/features/agents/fsa-agent-availability.md)
-- [FSA Find an Agent](fsa/features/agents/fsa-find-agent.md)
-- [FSA Insurance Agent Capabilities](fsa/features/agents/fsa-insurance-agent-capabilities.md)
-- [FSA Speak to an Agent](fsa/features/agents/fsa-speak-to-agent.md)
-
-## Fsa > Features > Claims
-- [Claim Update](fsa/features/claims/claim-update.md)
-- [Claims Details Page](fsa/features/claims/claims-details-page.md)
-- [Claims Integration](fsa/features/claims/claims-integration.md)
-- [FSA Claims (First Notice of Loss)](fsa/features/claims/claims.md)
-
-## Fsa > Features > Dynamicforms
-- [Dynamic Forms](fsa/features/dynamicforms/dynamicforms.md)
-- [Form Definition - JSON Structure](fsa/features/dynamicforms/json-structure.md)
-- [Dynamicforms Styling](fsa/features/dynamicforms/styling.md)
-
-## Fsa > Features > Dynamicforms > Core
-- [Adding Form to a Simple Page](fsa/features/dynamicforms/core/adding-form.md)
-- [Basic Form Validations](fsa/features/dynamicforms/core/basic-form-validations.md)
-- [Form Controls Dependencies](fsa/features/dynamicforms/core/form-control-dependencies.md)
-- [Document Upload](fsa/features/dynamicforms/core/form-controls-document-upload.md)
-- [Form Controls](fsa/features/dynamicforms/core/form-controls.md)
-- [Form Submission](fsa/features/dynamicforms/core/form-submission.md)
-- [Configurable prefillValue Form Field](fsa/features/dynamicforms/core/pre-populate-field.md)
-
-## Fsa > Features > User Request Framework
-- [FSA Configurable FNOL Process (Financial Services Accelerator Trail)](fsa/features/user-request-framework/fsa-configurable-fnol-process.md)
-- [FSA User Request Framework](fsa/features/user-request-framework/fsa-user-request-framework.md)
-
-## Fsa > Install
-- [Building the FSA Spartacus Storefront using 1.0 Libraries](fsa/install/building-the-fsa-storefront-from-libraries-1-0.md)
-- [Building the FSA Spartacus Storefront using 2.0 Libraries](fsa/install/building-the-fsa-storefront-from-libraries-2-0.md)
-- [Building the FSA Spartacus Storefront using 3.0 Libraries](fsa/install/building-the-fsa-storefront-from-libraries-3-0.md)
-- [Building the FSA Spartacus Storefront using 4.0 Libraries](fsa/install/building-the-fsa-storefront-from-libraries-4-0.md)
-- [Building the FSA Spartacus Storefront from Libraries](fsa/install/building-the-fsa-storefront-from-libraries.md)
-- [Schematics](fsa/install/fsa-schematics.md)
-- [Getting Started with FSA Spartacus](fsa/install/getting-started-with-fsa-spartacus.md)
-- [Installing SAP Commerce Cloud for Use with FSA Spartacus 1.0](fsa/install/installing-sap-commerce-with-fsa-spartacus-1-0.md)
-- [Installing SAP Commerce Cloud for Use with FSA Spartacus 2.0](fsa/install/installing-sap-commerce-with-fsa-spartacus-2-0.md)
-- [Installing SAP Commerce Cloud for Use with FSA Spartacus 3.0](fsa/install/installing-sap-commerce-with-fsa-spartacus-3-0.md)
-- [Installing SAP Commerce Cloud for Use with FSA Spartacus 4.0](fsa/install/installing-sap-commerce-with-fsa-spartacus-4-0.md)
-- [Installing SAP Commerce Cloud for Use with FSA Spartacus](fsa/install/installing-sap-commerce-with-fsa-spartacus.md)
 
 ## Home
 - [About Spartacus](home/about.md)
@@ -309,9 +241,6 @@ Use this index to locate the prepared local Markdown files. Confirm version-sens
 - [Modernizing Your Storefront App After Upgrading to Version 2211.36](home/updating-to-version-2211.35/modernize-apps-migrated-from-2211.32-to-2211.35.md)
 - [Modernizing Your Storefront App That Was Upgraded to Version 2211.19](home/updating-to-version-2211.35/modernize-apps-migrated-from-6.8-to-2211.19.md)
 - [Technical Changes in Spartacus 2211.36](home/updating-to-version-2211.35/typescript-manual.doc.md)
-
-## Home > Updating To Version 221121.17
-- [SNOW Fix for 221121.17](home/updating-to-version-221121.17/snow-fix.md)
 
 ## Home > Updating To Version 221121.7
 - [Technical Changes in Spartacus 221121.7](home/updating-to-version-221121.7/221121_7-typescript-manual.doc.md)
@@ -394,67 +323,6 @@ Use this index to locate the prepared local Markdown files. Confirm version-sens
 
 ## Install > Landing Page
 - [Getting Started With Spartacus Libraries](install/landing-page/getting-started.md)
-
-## Telco
-- [Telco and Utilities Accelerator for Project "Spartacus](telco/about-tua-spartacus.md)
-- [B2B Order Approval](telco/b2b-order-approval.md)
-- [B2B Organization Management](telco/b2b-organization-management.md)
-- [B2B Telco Store](telco/b2b-telco-store.md)
-- [Building the TUA Spartacus Storefront Using 1.2 Libraries](telco/building-the-tua-storefront-from-libraries-1-2.md)
-- [Building the TUA Spartacus Storefront Using 1.3 Libraries](telco/building-the-tua-storefront-from-libraries-1-3.md)
-- [Building the TUA Spartacus Storefront Using 2.x Libraries](telco/building-the-tua-storefront-from-libraries-2.md)
-- [Building the TUA Spartacus Storefront Using 3.2 Libraries](telco/building-the-tua-storefront-from-libraries-3-2-0.md)
-- [Building the TUA Spartacus Storefront Using 3.1 Libraries](telco/building-the-tua-storefront-from-libraries-3.1.md)
-- [Building the TUA Spartacus Storefront Using 3.x Libraries](telco/building-the-tua-storefront-from-libraries-3.md)
-- [Building the TUA Spartacus Storefront Using 4.1 Libraries](telco/building-the-tua-storefront-from-libraries-4.1.md)
-- [Building the TUA Spartacus Storefront Using 4.0 Libraries](telco/building-the-tua-storefront-from-libraries-4.md)
-- [Building the TUA Spartacus Storefront from Libraries](telco/building-the-tua-storefront-from-libraries.md)
-- [Cart](telco/cart.md)
-- [Checkout](telco/checkout.md)
-- [Pricing - Composite Pricing](telco/composite-pricing.md)
-- [Configurable Guided Selling Journey](telco/configurable-guided-selling.md)
-- [Consumption](telco/consumption.md)
-- [Contract Termination (Without Assurance)](telco/contract-termination.md)
-- [Cost Estimation](telco/cost-estimation.md)
-- [Customer Product Inventory](telco/customer-product-inventory.md)
-- [Getting Started with TUA Spartacus](telco/getting-started-with-tua-spartacus.md)
-- [Installing SAP Commerce Cloud for use with TUA Spartacus 1.2](telco/installing-sap-commerce-for-tua-spartacus-1-2.md)
-- [Installing SAP  Cloud for use with TUA Spartacus 1.3](telco/installing-sap-commerce-for-tua-spartacus-1-3.md)
-- [Installing SAP Commerce Cloud for use with TUA Spartacus 2.x](telco/installing-sap-commerce-for-tua-spartacus-2.md)
-- [Installing SAP Commerce Cloud for use with TUA Spartacus 3.2](telco/installing-sap-commerce-for-tua-spartacus-3-2.md)
-- [Installing SAP Commerce Cloud for use with TUA Spartacus 3.x](telco/installing-sap-commerce-for-tua-spartacus-3.md)
-- [Installing SAP Commerce Cloud for use with TUA Spartacus 4.1](telco/installing-sap-commerce-for-tua-spartacus-4.1.md)
-- [Installing SAP Commerce Cloud for use with TUA Spartacus 4.0](telco/installing-sap-commerce-for-tua-spartacus-4.md)
-- [Installing SAP Commerce Cloud for use with TUA Spartacus](telco/installing-sap-commerce-for-tua-spartacus.md)
-- [Journey Management - Appointment Scheduling](telco/journey-management-appointment-scheduling.md)
-- [Journey Management - MSISDN](telco/journey-management-msisdn.md)
-- [Journey Management - Serviceability](telco/journey-management-serviceability-check-of-spo.md)
-- [Journey Management (Serviceability)](telco/journey-management-serviceability-page.md)
-- [Journey Management - Serviceability (Premise Details)](telco/journey-management-serviceability.md)
-- [Media Storefront](telco/media-storefront.md)
-- [Order](telco/order.md)
-- [Pricing - Price Alteration Discounts](telco/price-alteration-discounts.md)
-- [Pricing - Subscription Rate Plan](telco/product-offering-prices.md)
-- [Product Offering Search](telco/product-offering-search.md)
-- [Purchase PO with Configurable Characteristics](telco/purchase-po-with-configurable-characteristics.md)
-- [Contract Renewals](telco/renewal-of-standalone-spo.md)
-- [Sales Flow - Cross-Selling](telco/sales-flow-cross-sell-of-an-spo.md)
-- [Selfcare - View Subscriptions, Billing Account, Billing Agreements](telco/selfcare-subscriptions-billingaccount-agreements.md)
-- [Simple Product Offering (SPO)](telco/simple-product-offering.md)
-- [TUA Spartacus Features](telco/spartacus-features-for-tua.md)
-- [TUA Spartacus FAQ](telco/spartacus-tua-faq.md)
-- [Technical Changes in TUA Spartacus 2.0](telco/technical-changes-tua-version-2.md)
-- [Technical Changes in TUA Spartacus 3.0](telco/technical-changes-tua-version-3.md)
-- [Technical Changes in TUA Spartacus 4.0](telco/technical-changes-tua-version-4.md)
-- [Technical Changes in TUA Spartacus](telco/technical-changes.md)
-- [Release Information for TUA Spartacus Libraries](telco/telco-release-information.md)
-- [Feature Compatibility Matrix](telco/tua-feature-release-versions.md)
-- [Pre-Release Information](telco/tua-pre-release-information.md)
-- [Roadmap 2022 for TUA Spartacus](telco/tua-spartacus-roadmap.md)
-- [Updating to Version 2.0](telco/updating-tua-spartacus-to-2.md)
-- [Updating to Version 3.0](telco/updating-tua-spartacus-to-3.md)
-- [Updating to Version 4.0](telco/updating-tua-spartacus-to-4.md)
-- [Updating TUA Spartacus to a New Version](telco/updating-tua-spartacus.md)
 
 ## Using
 - [Using the Spartacus Storefront](using/using-spartacus.md)
