@@ -1,9 +1,9 @@
 {
   "branch": "develop",
-  "commit": "4f07783489c46061ef29ffbb76bcce7553716ed9",
+  "commit": "67c0581cfa182e4a037171d23a241a521c609918",
   "markdown_file_count": 257,
   "source": "https://github.com/SAP/spartacus-docs.git",
-  "source_committed_at": "2026-08-06T14:43:16-04:00",
-  "synced_at": "2026-08-19T02:35:45Z",
+  "source_committed_at": "2026-09-02T16:06:10-04:00",
+  "synced_at": "2026-09-03T08:21:51Z",
   "transform": "Jekyll includes and links normalized for local LLM use"
 }
