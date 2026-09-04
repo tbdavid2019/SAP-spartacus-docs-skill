@@ -1,8 +1,8 @@
 # SAP Spartacus Documentation Index
 
-Source snapshot: [`67c0581cfa18`](https://github.com/SAP/spartacus-docs/commit/67c0581cfa182e4a037171d23a241a521c609918) from `develop`
+Source snapshot: [`02290cf1b821`](https://github.com/SAP/spartacus-docs/commit/02290cf1b8214098a6750b76238a07d1d3bd8358) from `develop`
 
-Synced at: `2026-09-03T08:21:51Z`
+Synced at: `2026-09-04T08:18:04Z`
 
 Use this index to locate the prepared local Markdown files. Confirm version-sensitive guidance against the compatibility and migration pages.
 
