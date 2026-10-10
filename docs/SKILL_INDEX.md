@@ -1,8 +1,8 @@
 # SAP Spartacus Documentation Index
 
-Source snapshot: [`de95b80283a0`](https://github.com/SAP/spartacus-docs/commit/de95b80283a09792d8054591c435b1e63c9ddeab) from `develop`
+Source snapshot: [`dc90af570853`](https://github.com/SAP/spartacus-docs/commit/dc90af570853a2d7112ebd27e10b5ad6bb972a54) from `develop`
 
-Synced at: `2026-09-23T08:54:33Z`
+Synced at: `2026-10-10T10:12:53Z`
 
 Use this index to locate the prepared local Markdown files. Confirm version-sensitive guidance against the compatibility and migration pages.
 
@@ -121,6 +121,7 @@ Use this index to locate the prepared local Markdown files. Confirm version-sens
 - [Inventory Display](dev/features/inventory-display.md)
 - [Launch Dialog Service](dev/features/launch-dialog.md)
 - [Notification Preferences](dev/features/notification-preferences.md)
+- [OAuth Callback Page](dev/features/oauth-callback-page.md)
 - [Multi-Dimensional Products](dev/features/product-multi-dimensional.md)
 - [Quick Order](dev/features/quick-order.md)
 - [Saved Cart](dev/features/saved-cart.md)

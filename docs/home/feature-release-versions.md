@@ -69,6 +69,7 @@ Spartacus is compatible with SAP Commerce Cloud version 1905 or higher, although
 | [Media Component](../dev/components/shared-components/media-component.md) | 2.0 | n/a |
 | [multi-dimensional-products](../dev/features/product-multi-dimensional.md) | 2211.28 | 2211.28 |
 | [Notification Preferences](../dev/features/notification-preferences.md) | 1.4 | 1905 |
+| [OAuth Callback Page](../dev/features/oauth-callback-page.md) | 221121.19.0 | 2211-jdk21.1 |
 | [Open Payment Framework Integration](../install/integrations/open-payment-framework-integration-deprecated.md) | [NOT_SPECIFIED_YET] | 2211 |
 | [Pagination Component](../dev/components/shared-components/pagination.md) | 2.0 | n/a |
 | [Password Visibility Component](../dev/components/shared-components/password-visibility-component.md) | 5.0 | n/a |
