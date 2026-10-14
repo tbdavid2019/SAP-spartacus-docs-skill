@@ -1,8 +1,8 @@
 # SAP Spartacus Documentation Index
 
-Source snapshot: [`dc90af570853`](https://github.com/SAP/spartacus-docs/commit/dc90af570853a2d7112ebd27e10b5ad6bb972a54) from `develop`
+Source snapshot: [`27ec186b04da`](https://github.com/SAP/spartacus-docs/commit/27ec186b04da294fc283bc97ce425a321e5f5823) from `develop`
 
-Synced at: `2026-10-10T10:12:53Z`
+Synced at: `2026-10-14T09:06:48Z`
 
 Use this index to locate the prepared local Markdown files. Confirm version-sensitive guidance against the compatibility and migration pages.
 
@@ -65,6 +65,9 @@ Use this index to locate the prepared local Markdown files. Confirm version-sens
 - [Persist Focus](dev/accessibility/keyboard-focus/persist-focus.md)
 - [Trap Focus](dev/accessibility/keyboard-focus/trap-focus.md)
 - [Visible Focus](dev/accessibility/keyboard-focus/visible-focus.md)
+
+## Dev > Ai Assisted Development
+- [AI-Assisted Development in Spartacus](dev/ai_assisted_development/ai-assisted-development.md)
 
 ## Dev > Backend Communication
 - [Connecting to Other Systems](dev/backend_communication/connecting-to-other-systems.md)
