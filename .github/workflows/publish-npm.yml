@@ -1,0 +1,45 @@
+name: Publish npm installer
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: publish-npm-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+          package-manager-cache: false
+      - name: Validate release tag
+        run: |
+          version=$(node -p 'require("./package.json").version')
+          if [ "$GITHUB_REF_NAME" != "v$version" ]; then
+            echo "Expected release tag v$version, got $GITHUB_REF_NAME" >&2
+            exit 1
+          fi
+      - run: npm ci --ignore-scripts
+      - name: Pack and smoke-test installer
+        run: |
+          archive="$RUNNER_TEMP/$(npm pack --pack-destination "$RUNNER_TEMP")"
+          project=$(mktemp -d)
+          cd "$project"
+          npx --yes --package "$archive" sap-spartacus-docs-skill --agent codex
+          test -s .agents/skills/spartacus-docs/docs/SOURCE.json
+          echo "NPM_ARCHIVE=$archive" >> "$GITHUB_ENV"
+      - name: Publish npm package
+        run: npm publish "$NPM_ARCHIVE" --access public
+

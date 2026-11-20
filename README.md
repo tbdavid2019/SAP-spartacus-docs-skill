@@ -6,6 +6,18 @@ The repository prepares the SAP `spartacus-docs` `develop` branch for local LLM 
 
 ## Install
 
+### npm installation
+
+With Node.js 22.20 or later and Git, run this from your project:
+
+```bash
+npx -y sap-spartacus-docs-skill@latest
+```
+
+The default target is Codex at `.agents/skills/spartacus-docs`. Use `--global` for a user installation or `--agent openclaw` to select OpenClaw. Re-run the same command with the same options to update the installed snapshot. The npm package fetches the validated GitHub `main` snapshot and reports its skill and upstream commits.
+
+### Git checkout installation
+
 Use the canonical repository URL and install it into a directory named `spartacus-docs`, matching the skill name.
 
 ### Codex
@@ -38,27 +50,22 @@ The installer updates an existing git checkout, clones into a new or empty targe
 
 When a user asks an AI agent to install this repository:
 
-1. Clone the canonical URL into the agent's skill directory using the final folder name `spartacus-docs`.
-2. Run `scripts/install-skill.sh` from the installed checkout.
-3. Read `SKILL.md`.
-4. Confirm that `docs/SOURCE.json` and `docs/SKILL_INDEX.md` exist.
-5. Do not run repository-maintenance scripts during installation or ordinary skill use.
-
-Do not claim installation success after copying files into a non-git directory. Installed copies receive later daily snapshots only after `git pull` or rerunning the installer.
+1. Identify the agent and installation scope. For a new npm installation, run `npx -y sap-spartacus-docs-skill@latest` with the appropriate options.
+2. Update an existing installation with its original method. For a Git checkout, clone if needed and run `scripts/install-skill.sh` from the installed checkout.
+3. Read the installed `SKILL.md` and check `docs/SOURCE.json`, `docs/SKILL_INDEX.md`, and `references/task-map.md`.
+4. Report the installed path and both commits. Use the local snapshot for ordinary questions and run repository-maintenance tools only when maintaining this repository.
 
 ## 中文安裝說明
 
-請使用正確的 canonical URL，並把最終 skill 目錄命名為 `spartacus-docs`：
+需要 Node.js 22.20 以上與 Git。在專案目錄執行：
 
 ```bash
-git clone https://github.com/tbdavid2019/SAP-spartacus-docs-skill.git \
-  <你的-agent-skills目錄>/spartacus-docs
-bash <你的-agent-skills目錄>/spartacus-docs/scripts/install-skill.sh
+npx -y sap-spartacus-docs-skill@latest
 ```
 
-安裝後請讓 LLM 讀取 `SKILL.md`，並以 `docs/SOURCE.json` 與 `docs/SKILL_INDEX.md` 作為來源版本和文件導航入口。
+預設安裝到 `.agents/skills/spartacus-docs`。可加 `--global` 全域安裝，或用 `--agent openclaw` 指定宿主。npm 安裝後，重跑相同指令與選項即可取得 GitHub 上的新快照。既有 Git checkout 請沿用 `scripts/install-skill.sh` 更新。平常查詢直接使用本機文件。
 
-來源 repo 每日同步，不代表已安裝的 checkout 會自動更新。已安裝版本需執行 `git pull --ff-only` 或重新執行 installer。
+已知主題可從 `SKILL.md` 或 `references/task-map.md` 直達相關文件，需要探索目錄時再查 `docs/SKILL_INDEX.md` 的對應章節。
 
 ## Snapshot Model
 
@@ -82,6 +89,10 @@ python3 scripts/validate_docs.py docs
 ```
 
 The synchronization flow clones into an isolated staging directory, prepares and validates the complete snapshot, then promotes it. A fetch, transformation, or validation failure leaves the existing `docs/` directory unchanged.
+
+### Release the npm installer
+
+The daily GitHub sync publishes documentation snapshots. To release a new installer, update `package.json` and the lockfile, then prepare the matching `v<version>` tag. For the first release, locally test `npm pack` and publish the tarball with `npm publish <tarball> --access public`. For later releases, configure npm Trusted Publishing for `publish-npm.yml` when ready to publish, then push the tag. The first OIDC publish must succeed within two days of adding the trust configuration.
 
 ## License
 

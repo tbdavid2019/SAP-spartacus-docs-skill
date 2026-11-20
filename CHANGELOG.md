@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0
+
+- Added `npx -y sap-spartacus-docs-skill@latest` for installation and explicit refresh from the daily GitHub snapshot.
+- Routed common tasks directly to the local task map and relevant documentation sections.
+- Added tag-based npm releases for installer changes.
+
 ## 2026-08-19
 
 ### Fixed

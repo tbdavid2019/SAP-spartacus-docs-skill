@@ -9,13 +9,14 @@ Ground Spartacus answers in the prepared local documentation instead of model me
 
 ## Retrieval Workflow
 
-1. Read `docs/SOURCE.json` to identify the upstream commit and snapshot time.
-2. Read `docs/SKILL_INDEX.md` to locate candidate pages.
-3. Identify the exact SAP Commerce, Spartacus, and Angular versions before giving version-sensitive advice.
-4. Use the core map below. For other tasks, read `references/task-map.md`, then search narrowly:
+1. Resolve `docs/` and `references/` relative to this installed `SKILL.md`. Read `docs/SOURCE.json` when provenance or freshness matters.
+2. Identify the exact SAP Commerce, Spartacus, and Angular versions before giving version-sensitive advice.
+3. For a common task, go directly to the relevant page or section in the core map below. Use the task map for other topics, then consult the matching section of `docs/SKILL_INDEX.md` if needed.
+4. For an exact error, class, or configuration key, search the likely topic directory first, then expand to `docs/` if needed.
    ```bash
-   rg -n -i "<feature|error|class|configuration>" docs
+   rg -n -i -F -- '<exact text>' "$skill_dir/docs/dev"
    ```
+   Set `skill_dir` to the directory containing this `SKILL.md`. Read the matched sections.
 5. Read the primary page plus its compatibility, migration, authentication, or integration dependencies. Do not synthesize an installation or production diagnosis from one page alone.
 6. Prefer the prepared local docs when they conflict with model memory.
 
@@ -32,11 +33,9 @@ Ground Spartacus answers in the prepared local documentation instead of model me
 `docs/SOURCE.json` is the freshness authority. The source repository creates a daily snapshot, so it can lag upstream by up to one synchronization cycle.
 
 - During ordinary use, read the installed snapshot without mutating the skill.
-- If the user explicitly needs the newest available snapshot, update the installed checkout with:
-  ```bash
-  git -C <skill-directory> pull --ff-only origin main
-  ```
-- If the pull fails, disclose the snapshot commit and time, then continue with the local files.
+- When the user explicitly asks to update an npm-managed install, re-run `npx -y sap-spartacus-docs-skill@latest` with the same agent and scope options. Detect this installation by its `.spartacus-docs-npm` marker.
+- For a Git checkout, update with `git -C <skill-directory> pull --ff-only origin main`. For a host-managed copy, use that host's update mechanism.
+- If the update fails, disclose the snapshot commit and time, then continue with the local files.
 - Never run `scripts/sync-docs.sh`, `scripts/prepare_docs.py`, or other maintenance scripts during ordinary skill use. Those scripts maintain the source repository.
 
 ## Core Lookup Map
@@ -44,7 +43,7 @@ Ground Spartacus answers in the prepared local documentation instead of model me
 | Task | Start Here |
 | --- | --- |
 | Snapshot provenance | `docs/SOURCE.json` |
-| Find a page | `docs/SKILL_INDEX.md` |
+| Explore a topic | [Task map](references/task-map.md), then the matching section of `docs/SKILL_INDEX.md` |
 | Feature and backend compatibility | `docs/home/compatibility-matrix.md` and `docs/home/feature-release-versions.md` |
 | Fresh storefront install | `docs/install/frontend/building-the-spartacus-storefront-from-libraries.md` |
 | Schematics / `ng add` | `docs/install/schematics.md` |
