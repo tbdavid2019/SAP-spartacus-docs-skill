@@ -56,8 +56,10 @@ Use this map when the core lookup table in `SKILL.md` does not cover the task. R
 | Cart, checkout, ASM, coupons, orders | `docs/dev/features/` |
 | Third-party integrations | `docs/install/integrations/` |
 | B2B organization | `docs/dev/features/b2b-commerce-organization.md` and `docs/using/commerceorg/` |
-| Financial Services Accelerator | `docs/fsa/` |
-| Telco and Utilities Accelerator | `docs/telco/` |
+
+For Financial Services Accelerator (FSA) or Telco and Utilities Accelerator (TUA), search the
+snapshot by product name. If the relevant page is absent, use the official SAP Help documentation
+for the user's release.
 
 ## Search Patterns
 
